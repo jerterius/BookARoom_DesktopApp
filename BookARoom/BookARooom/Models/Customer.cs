@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.ObjectModel;
 
-namespace BookARooom.Models
+namespace BookARoom.Models
 {
     public class Customer
     {

@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.ObjectModel;
 
-namespace BookARooom.Models
+namespace BookARoom.Models
 {
     public class Room
     {

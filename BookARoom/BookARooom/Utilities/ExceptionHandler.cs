@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookARooom.Utilities
+namespace BookARoom.Utilities
 {
     class ExceptionHandler
     {

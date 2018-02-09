@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BookARooom.Models;
+using BookARoom.Models;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace BookARooom.DAL
+namespace BookARoom.DAL
 {
-    public class DAL
+    public class Dal
     {
                
             public BookingContext bContext = new BookingContext();

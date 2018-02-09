@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BookARooom.DAL;
-using BookARooom.Models;
+using BookARoom.DAL;
+using BookARoom.Models;
 using System.Data;
 
-namespace BookARooom.Controllers
+namespace BookARoom.Controllers
 {
     public class Controller
     {

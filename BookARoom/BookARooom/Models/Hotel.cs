@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 
-namespace BookARooom.Models
+namespace BookARoom.Models
 {
     public class Hotel
     {

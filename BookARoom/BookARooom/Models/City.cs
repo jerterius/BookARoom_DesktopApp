@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BookARooom.Models
+namespace BookARoom.Models
 {
     public class City
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARooom", "BookARooom\BookARooom.csproj", "{08CE6CD9-5790-475F-91A2-8F45D11E4D80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoom", "BookARooom\BookARoom.csproj", "{08CE6CD9-5790-475F-91A2-8F45D11E4D80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
