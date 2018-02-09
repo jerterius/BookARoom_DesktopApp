@@ -18,6 +18,7 @@ namespace BookARoom.Models
         [ForeignKey("Customer")]
         public string CPhoneNumber { get; set; }
 
+        [Key]
         [ForeignKey("Room"), Column(Order = 1)]
         public string Adress { get; set; }
 
@@ -26,6 +27,7 @@ namespace BookARoom.Models
         public string RoomNumber { get; set; }
 
         public string BookingNumber { get; set; }
+        [Key, Column(Order = 3)]
         public DateTime Date { get; set; }
         public string Responsible { get; set; }
         public string CreditCardNumber { get; set; }

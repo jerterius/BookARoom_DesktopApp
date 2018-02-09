@@ -61,6 +61,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802091731544_InitialCreate.cs" />
+    <Compile Include="Migrations\201802091731544_InitialCreate.Designer.cs">
+      <DependentUpon>201802091731544_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802091838017_AddPKDate.cs" />
+    <Compile Include="Migrations\201802091838017_AddPKDate.Designer.cs">
+      <DependentUpon>201802091838017_AddPKDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -77,6 +86,12 @@
     <Compile Include="Utilities\ExceptionHandler.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802091731544_InitialCreate.resx">
+      <DependentUpon>201802091731544_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802091838017_AddPKDate.resx">
+      <DependentUpon>201802091838017_AddPKDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
