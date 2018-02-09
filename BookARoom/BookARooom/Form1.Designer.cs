@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using BookARoom.Views;
 
 namespace BookARoom
 {
@@ -36,8 +35,10 @@ namespace BookARoom
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +66,7 @@ namespace BookARoom
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(5, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(237, 506);
@@ -75,7 +77,7 @@ namespace BookARoom
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(730, 513);
+            this.tabPage2.Size = new System.Drawing.Size(770, 513);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Programkonstruktion & Webservice";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -90,6 +92,16 @@ namespace BookARoom
             this.tabPage3.Text = "ERP & Webservice";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(82, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -100,6 +112,7 @@ namespace BookARoom
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -111,6 +124,7 @@ namespace BookARoom
         private TabPage tabPage2;
         private TabPage tabPage3;
         private Panel panel1;
+        private Button button1;
     }
 }
 

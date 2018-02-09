@@ -1,4 +1,4 @@
-﻿namespace BookARoom.Views
+﻿namespace BookARoom
 {
     partial class UserControl1
     {
@@ -31,7 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCity = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -62,12 +62,12 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(54, 124);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 28);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbCity.FormattingEnabled = true;
+            this.cbCity.Location = new System.Drawing.Point(54, 124);
+            this.cbCity.Name = "comboBox1";
+            this.cbCity.Size = new System.Drawing.Size(142, 28);
+            this.cbCity.TabIndex = 2;
+           
             // 
             // comboBox2
             // 
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbCity);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -98,7 +98,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCity;
         private System.Windows.Forms.ComboBox comboBox2;
     }
 }

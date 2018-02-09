@@ -12,11 +12,11 @@ namespace BookARoom.Models
     public class Customer
     {
         [Key]
-        public string PhoneNumber { get; set; }
-        public string Name { get; set; }
+        public string CPhoneNumber { get; set; }
+        public string CName { get; set; }
         public string Title { get; set; }
-        public string Adress { get; set; }
-        public string Email { get; set; }
+        public string CAdress { get; set; }
+        public string CEmail { get; set; }
 
         public virtual ObservableCollection<Booking> Bookings { get; set; } //Rätt
 
@@ -27,11 +27,11 @@ namespace BookARoom.Models
 
         public Customer(string name, string title, string adress, string phonenumber, string email)
         {
-            Name = name;
+            CName = name;
             Title = title;
-            Adress = adress;
-            PhoneNumber = phonenumber;
-            Email = email;
+            CAdress = adress;
+            CPhoneNumber = phonenumber;
+            CEmail = email;
         }
 
     }

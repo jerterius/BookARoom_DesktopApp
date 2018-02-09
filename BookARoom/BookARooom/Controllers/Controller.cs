@@ -11,7 +11,7 @@ namespace BookARoom.Controllers
 {
     public class Controller
     {
- 
+ /*
             public int TotalPrice(string bookingNumber)
             {
                 int price = 0;
@@ -60,7 +60,7 @@ namespace BookARoom.Controllers
                     model = null;
 
                 }
-            }
+           }*/
      }
 
  }

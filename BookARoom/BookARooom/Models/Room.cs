@@ -22,6 +22,7 @@ namespace BookARoom.Models
         [ForeignKey("Hotel")]
         public string Adress { get; set; }
 
+        public virtual Hotel Hotel { get; set; }
         public virtual ObservableCollection<Booking> Bookings { get; set; }
 
 

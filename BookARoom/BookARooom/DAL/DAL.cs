@@ -11,7 +11,7 @@ namespace BookARoom.DAL
 {
     public class Dal
     {
-       
+       /*
                
             public BookingContext bContext = new BookingContext();
 
@@ -89,5 +89,5 @@ namespace BookARoom.DAL
 
         }
 
-        }
+       */ }
     }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.ObjectModel;
 
 namespace BookARoom.Models
 {
@@ -18,6 +19,9 @@ namespace BookARoom.Models
         [Column(Order = 2)]
         public string CountryName { get; set; }
 
+        public virtual ObservableCollection<Hotel> Hotels { get; set; }
+
+        public City() { }
         public City(string cityName, string countryName)
         {
             CityName = cityName;

@@ -14,12 +14,15 @@ namespace BookARoom.Models
     public class Booking
     {
 
-        [Key, Column(Order = 1)]
+        [Key, Column(Order = 0)]
         [ForeignKey("Customer")]
-        public string PhoneNumber { get; set; }
+        public string CPhoneNumber { get; set; }
 
-        [Key, Column(Order = 2)]
-        [ForeignKey("Room")]
+        [ForeignKey("Room"), Column(Order = 1)]
+        public string Adress { get; set; }
+
+        [Key]
+        [ForeignKey("Room"), Column(Order = 2)]
         public string RoomNumber { get; set; }
 
         public string BookingNumber { get; set; }
@@ -27,7 +30,7 @@ namespace BookARoom.Models
         public string Responsible { get; set; }
         public string CreditCardNumber { get; set; }
 
-        public virtual Customer Customers { get; set; }
+        public virtual Customer Customer { get; set; }
         public virtual Room Room { get; set; }
 
 
@@ -38,7 +41,7 @@ namespace BookARoom.Models
             Date = date;
             Responsible = responsible;
             CreditCardNumber = creditCardNumber;
-            PhoneNumber = phoneNumber;
+            CPhoneNumber = phoneNumber;
 
         }
 
