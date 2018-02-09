@@ -16,7 +16,12 @@ namespace BookARoom.Models
         public string CityName { get; set; }
         [Key]
         [Column(Order = 2)]
-        public string Country { get; set; }
+        public string CountryName { get; set; }
 
+        public City(string cityName, string countryName)
+        {
+            CityName = cityName;
+            CountryName = countryName;
+        }
     }
 }
