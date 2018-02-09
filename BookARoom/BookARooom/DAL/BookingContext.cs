@@ -18,7 +18,7 @@ namespace BookARoom.DAL
 
         public DbSet<Room> Rooms { get; set; }
 
-        public DbSet<Hotel> Hotel { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
 
         public DbSet<City> Cities { get; set; }
 

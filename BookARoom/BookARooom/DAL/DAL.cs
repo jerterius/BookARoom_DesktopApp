@@ -45,7 +45,6 @@ namespace BookARoom.DAL
             public int TotalPrice(string bookingNumber)
             {
                 string query = "select BookingNumber from Bookings inner join on Booking.PhoneNumber = Customer.PhoneNumber where BookingNumber = ?";
-                ps = con.prepareStatement(query);
             }
 
 
@@ -65,43 +64,27 @@ namespace BookARoom.DAL
 
                 while (rs.next())
                 {
-                    "Roomtype", "Bed", "Smokefree", "GuestCapacity", "Price", "HotelAdress"
-                    string roomType = rs.getString("ccode").toUpperCase();
-                    string bed = rs.getString("cname").toUpperCase();
-                    string smokeFree = rs.getString("semester").toUpperCase();
-                    string guestCapacity = rs.getString("point");
-                    string price = DataRowState.getString("");
-                    string adress = DataRowState.getString("");
+                    string roomType = rs.getString("roomType").toUpperCase();
+                    string bed = rs.getString("bed").toUpperCase();
+                    string smokeFree = rs.getString("smokeFree").toUpperCase();
+                    string guestCapacity = rs.getString("guestCapacity");
+                    string price = rs.getString("price");
+                    string adress = rs.getString("hotelAdress");
 
-                    Room r = new Room(rs.getString("ccode"));
+                    Room r = new Room();
 
-                    String[] entry = { roomType, bed, smokefree, guestCapacity, price, adress };
+                    String[] entry = { roomType, bed, smokeFree, guestCapacity, price, adress };
                     resultList.Add(entry);
                 }
 
 
 
-                public bool DeleteBooking(string bookingNumber) throws SQLException, Exception
+            public bool DeleteBooking(string bookingNumber)
             {
-                    try
-                    {
-                        con = getConnection();
-
-                        String query = "delete from booking where bookingNumber= ?;";
-
-                        ps = con.prepareStatement(query);
-                        ps.setString(1, bookingNumber);
-
-                        return (0 != ps.executeUpdate());
-
-                    }
-                    finally
-                    {
-                        close();
-                        c = null;
-                    }
-                }
+                String query = "delete from booking where bookingNumber= ?;";
             }
+
+        }
 
         }
     }
