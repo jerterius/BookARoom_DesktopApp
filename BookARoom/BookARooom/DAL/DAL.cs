@@ -11,6 +11,7 @@ namespace BookARoom.DAL
 {
     public class Dal
     {
+       
                
             public BookingContext bContext = new BookingContext();
 
@@ -24,18 +25,23 @@ namespace BookARoom.DAL
                 {
                     case Booking b1:
                         bContext.Bookings.Add(b1);
+                        bContext.SaveChanges();
                         break;
                     case Room r1:
                         bContext.Rooms.Add(r1);
+                        bContext.SaveChanges();
                         break;
                     case Customer c1:
                         bContext.Customers.Add(c1);
+                        bContext.SaveChanges();
                         break;
                     case Hotel h1:
                         bContext.Hotels.Add(h1);
+                        bContext.SaveChanges();
                         break;
                     case City c1:
                         bContext.Cities.Add(c1);
+                        bContext.SaveChanges();
                         break;
                 }
             }
@@ -49,22 +55,19 @@ namespace BookARoom.DAL
 
 
 
-            public List<String[]> AvailableRooms(City city)
+            public List<String[]> FindAvailableRooms()
             {
                 List<String[]> resultList = new List<String[]>();
 
                 string query = "select * from Rooms where Booking.RoomNumber != Roomnumber";
 
-                using (var cmd = new SqlCommand(query, myConnection)) ;
-                {
-                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                    myConnection.Open();
+            from b in db.Blogs
+            orderby b.Name
+            select b;
 
-                }
-
-                while (rs.next())
+            while (rs.next())
                 {
-                    string roomType = rs.getString("roomType").toUpperCase();
+                    string roomType = cmd.getString("roomType").toUpperCase();
                     string bed = rs.getString("bed").toUpperCase();
                     string smokeFree = rs.getString("smokeFree").toUpperCase();
                     string guestCapacity = rs.getString("guestCapacity");

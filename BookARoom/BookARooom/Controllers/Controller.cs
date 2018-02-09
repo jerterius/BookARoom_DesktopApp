@@ -40,7 +40,7 @@ namespace BookARoom.Controllers
                 try
                 {
                     String[] colID = { "Roomtype", "Bed", "Smokefree", "GuestCapacity", "Price", "HotellAdress" };
-                    resultList = d.findAllCourses();
+                    resultList = Dal.FindAvailableRooms();
                     DataTable model = new DataTable();
              
 
