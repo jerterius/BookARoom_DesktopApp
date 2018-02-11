@@ -1,6 +1,6 @@
-﻿namespace BookARoom
+﻿namespace BookARoom.Views
 {
-    partial class UserControl1
+    partial class UCNavigator
     {
         /// <summary> 
         /// Required designer variable.
@@ -37,7 +37,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(234, 414);
+            this.button1.Location = new System.Drawing.Point(152, 414);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 41);
             this.button1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(54, 414);
+            this.button2.Location = new System.Drawing.Point(3, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 41);
             this.button2.TabIndex = 0;
@@ -55,39 +55,39 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 57);
+            this.textBox1.Location = new System.Drawing.Point(4, 57);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 26);
+            this.textBox1.Size = new System.Drawing.Size(291, 26);
             this.textBox1.TabIndex = 1;
             // 
-            // comboBox1
+            // cbCity
             // 
             this.cbCity.FormattingEnabled = true;
-            this.cbCity.Location = new System.Drawing.Point(54, 124);
-            this.cbCity.Name = "comboBox1";
+            this.cbCity.Location = new System.Drawing.Point(4, 124);
+            this.cbCity.Name = "cbCity";
             this.cbCity.Size = new System.Drawing.Size(142, 28);
             this.cbCity.TabIndex = 2;
-           
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(234, 124);
+            this.comboBox2.Location = new System.Drawing.Point(153, 124);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(142, 28);
             this.comboBox2.TabIndex = 2;
             // 
-            // UserControl1
+            // UCNavigator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.cbCity);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(428, 508);
+            this.Name = "UCNavigator";
+            this.Size = new System.Drawing.Size(300, 508);
             this.ResumeLayout(false);
             this.PerformLayout();
 

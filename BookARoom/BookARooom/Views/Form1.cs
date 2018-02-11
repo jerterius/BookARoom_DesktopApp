@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using BookARoom.DAL;
 using BookARoom.Models;
 
-namespace BookARoom
+namespace BookARoom.Views
 {
     public partial class Form1 : Form
     {
@@ -42,6 +42,11 @@ namespace BookARoom
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
+        }
+
+        private void ucNavigator1_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
         }
     }
 }

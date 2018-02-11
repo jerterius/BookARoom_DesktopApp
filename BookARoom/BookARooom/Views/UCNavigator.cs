@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.Models;
 
-namespace BookARoom
+namespace BookARoom.Views
 {
-    public partial class UserControl1 : UserControl
+    public partial class UCNavigator : UserControl
     {
-        public UserControl1()
+        public UCNavigator()
         {
             InitializeComponent();
         }

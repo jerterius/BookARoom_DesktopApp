@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace BookARoom
+namespace BookARoom.Views
 {
     partial class Form1
     {
@@ -32,13 +32,12 @@ namespace BookARoom
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
+            this.ucResult1 = new BookARoom.Views.UCResult();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -50,44 +49,28 @@ namespace BookARoom
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(778, 546);
+            this.tabControl1.Size = new System.Drawing.Size(1178, 720);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.ucResult1);
+            this.tabPage1.Controls.Add(this.ucNavigator1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(770, 513);
+            this.tabPage1.Size = new System.Drawing.Size(1170, 687);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Programkonstruktion";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(5, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(237, 506);
-            this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(82, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(770, 513);
+            this.tabPage2.Size = new System.Drawing.Size(1170, 687);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Programkonstruktion & Webservice";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -97,22 +80,41 @@ namespace BookARoom
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(770, 513);
+            this.tabPage3.Size = new System.Drawing.Size(1170, 687);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "ERP & Webservice";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // ucNavigator1
+            // 
+            this.ucNavigator1.AutoSize = true;
+            this.ucNavigator1.BackColor = System.Drawing.Color.AliceBlue;
+            this.ucNavigator1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucNavigator1.Location = new System.Drawing.Point(3, 3);
+            this.ucNavigator1.Name = "ucNavigator1";
+            this.ucNavigator1.Size = new System.Drawing.Size(298, 681);
+            this.ucNavigator1.TabIndex = 0;
+            this.ucNavigator1.Load += new System.EventHandler(this.ucNavigator1_Load);
+            // 
+            // ucResult1
+            // 
+            this.ucResult1.Location = new System.Drawing.Point(307, 6);
+            this.ucResult1.Name = "ucResult1";
+            this.ucResult1.Size = new System.Drawing.Size(855, 398);
+            this.ucResult1.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 544);
+            this.ClientSize = new System.Drawing.Size(1178, 744);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -123,8 +125,8 @@ namespace BookARoom
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private Panel panel1;
-        private Button button1;
+        private UCNavigator ucNavigator1;
+        private UCResult ucResult1;
     }
 }
 
