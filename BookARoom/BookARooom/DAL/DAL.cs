@@ -49,26 +49,13 @@ namespace BookARoom.DAL
                         db.Bookings.Add(b1);
                         db.SaveChanges();
                         break;
-                    case Room r1:
-                        db.Rooms.Add(r1);
-                        db.SaveChanges();
-                        break;
                     case Customer c1:
                         db.Customers.Add(c1);
-                        db.SaveChanges();
-                        break;
-                    case Hotel h1:
-                        db.Hotels.Add(h1);
-                        db.SaveChanges();
-                        break;
-                    case City c1:
-                        db.Cities.Add(c1);
                         db.SaveChanges();
                         break;
                 }
             CloseConnect(OpenConnect());
         }
-
 
         public int TotalPrice(string bookingNumber)
         {
