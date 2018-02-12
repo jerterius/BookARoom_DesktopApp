@@ -2,6 +2,7 @@
 {
     partial class UCNavigator
     {
+     
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -28,11 +29,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
-            this.cbCity = new System.Windows.Forms.ComboBox();
             this.cbCountry = new System.Windows.Forms.ComboBox();
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbCity = new System.Windows.Forms.ComboBox();
             this.tbGuests = new System.Windows.Forms.TrackBar();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
@@ -42,6 +45,7 @@
             this.lblGuests = new System.Windows.Forms.Label();
             this.tbStandard = new System.Windows.Forms.TrackBar();
             this.lblStandard = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).BeginInit();
             this.SuspendLayout();
@@ -72,21 +76,30 @@
             this.tbSearch.Size = new System.Drawing.Size(291, 26);
             this.tbSearch.TabIndex = 1;
             // 
-            // cbCity
-            // 
-            this.cbCity.FormattingEnabled = true;
-            this.cbCity.Location = new System.Drawing.Point(4, 124);
-            this.cbCity.Name = "cbCity";
-            this.cbCity.Size = new System.Drawing.Size(142, 28);
-            this.cbCity.TabIndex = 2;
-            // 
             // cbCountry
             // 
+            this.cbCountry.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cityBindingSource, "CountryName", true));
+            this.cbCountry.DataSource = this.cityBindingSource;
+            this.cbCountry.DisplayMember = "CountryName";
             this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.Location = new System.Drawing.Point(153, 124);
+            this.cbCountry.Location = new System.Drawing.Point(4, 124);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(142, 28);
             this.cbCountry.TabIndex = 2;
+            this.cbCountry.ValueMember = "CountryName";
+            // 
+            // cityBindingSource
+            // 
+            this.cityBindingSource.DataMember = "Hotels";
+            this.cityBindingSource.DataSource = typeof(BookARoom.Models.City);
+            // 
+            // cbCity
+            // 
+            this.cbCity.FormattingEnabled = true;
+            this.cbCity.Location = new System.Drawing.Point(153, 124);
+            this.cbCity.Name = "cbCity";
+            this.cbCity.Size = new System.Drawing.Size(142, 28);
+            this.cbCity.TabIndex = 2;
             // 
             // tbGuests
             // 
@@ -163,7 +176,7 @@
             this.tbStandard.Name = "tbStandard";
             this.tbStandard.Size = new System.Drawing.Size(196, 69);
             this.tbStandard.TabIndex = 3;
-            this.tbStandard.Scroll += new System.EventHandler(this.tbGuests_Scroll);
+            this.tbStandard.Scroll += new System.EventHandler(this.tbStandard_Scroll);
             // 
             // lblStandard
             // 
@@ -190,13 +203,14 @@
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.tbStandard);
             this.Controls.Add(this.tbGuests);
-            this.Controls.Add(this.cbCountry);
             this.Controls.Add(this.cbCity);
+            this.Controls.Add(this.cbCountry);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClear);
             this.Name = "UCNavigator";
-            this.Size = new System.Drawing.Size(300, 600);
+            this.Size = new System.Drawing.Size(329, 612);
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).EndInit();
             this.ResumeLayout(false);
@@ -209,8 +223,8 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.ComboBox cbCity;
         private System.Windows.Forms.ComboBox cbCountry;
+        private System.Windows.Forms.ComboBox cbCity;
         private System.Windows.Forms.TrackBar tbGuests;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.DateTimePicker dtpToDate;
@@ -220,5 +234,6 @@
         private System.Windows.Forms.Label lblGuests;
         private System.Windows.Forms.TrackBar tbStandard;
         private System.Windows.Forms.Label lblStandard;
+        private System.Windows.Forms.BindingSource cityBindingSource;
     }
 }

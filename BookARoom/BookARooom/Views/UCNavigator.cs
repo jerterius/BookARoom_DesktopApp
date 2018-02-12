@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.Models;
 using BookARoom.DAL;
+using System.Data.Entity;
 
 namespace BookARoom.Views
 {
