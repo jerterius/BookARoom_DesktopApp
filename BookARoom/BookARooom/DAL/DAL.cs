@@ -11,43 +11,48 @@ namespace BookARoom.DAL
 {
     public class Dal
     {
-       /*
-               
-            public BookingContext bContext = new BookingContext();
-
+       
             
-
+       /* public void Connect()
+        { 
+            using (var db = new BookingContext())
+            {
+            }
+        } */
 
             public void Add(Object addToList)
+            {
+            using (var db = new BookingContext())
             {
 
                 switch (addToList)
                 {
                     case Booking b1:
-                        bContext.Bookings.Add(b1);
-                        bContext.SaveChanges();
+                        db.Bookings.Add(b1);
+                        db.SaveChanges();
                         break;
                     case Room r1:
-                        bContext.Rooms.Add(r1);
-                        bContext.SaveChanges();
+                        db.Rooms.Add(r1);
+                        db.SaveChanges();
                         break;
                     case Customer c1:
-                        bContext.Customers.Add(c1);
-                        bContext.SaveChanges();
+                        db.Customers.Add(c1);
+                        db.SaveChanges();
                         break;
                     case Hotel h1:
-                        bContext.Hotels.Add(h1);
-                        bContext.SaveChanges();
+                        db.Hotels.Add(h1);
+                        db.SaveChanges();
                         break;
                     case City c1:
-                        bContext.Cities.Add(c1);
-                        bContext.SaveChanges();
+                        db.Cities.Add(c1);
+                        db.SaveChanges();
                         break;
                 }
             }
+            }
 
 
-
+        /*
             public int TotalPrice(string bookingNumber)
             {
                 string query = "select BookingNumber from Bookings inner join on Booking.PhoneNumber = Customer.PhoneNumber where BookingNumber = ?";
