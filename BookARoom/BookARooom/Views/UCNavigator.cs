@@ -30,7 +30,7 @@ namespace BookARoom.Views
 
         private void tbStandard_Scroll(object addToTable, EventArgs e)
         {
-            lblStandard.Text = "Standard: " + tbStandard.Value.ToString();
+            lblStandard.Text = "Rating: " + tbStandard.Value.ToString();
 
         }
             private void button2_Click(object addToTable, EventArgs e)
