@@ -44,6 +44,21 @@ namespace BookARoom.Views
             }
         }
 
+        private void lblFromDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbGuests_Scroll(object sender, EventArgs e)
+        {
+            lblGuests.Text = "Guests: " + tbGuests.Value.ToString();
+        }
+
+        private void tbStandard_Scroll(object sender, EventArgs e)
+        {
+            lblStandard.Text = "Standard: " + tbStandard.Value.ToString();
+        }
+
 
         /* public City SelectedCity
          {

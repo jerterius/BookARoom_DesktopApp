@@ -30,103 +30,93 @@ namespace BookARoom.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
-            this.ucResult1 = new BookARoom.Views.UCResult();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.tabPagePK = new System.Windows.Forms.TabPage();
+            this.tabPagePKWS = new System.Windows.Forms.TabPage();
+            this.tabPageERPWS = new System.Windows.Forms.TabPage();
+            this.ucNavigator = new BookARoom.Views.UCNavigator();
+            this.tabControlMain.SuspendLayout();
+            this.tabPagePK.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlMain
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1178, 720);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.tabControl1.TabIndex = 0;
+            this.tabControlMain.Controls.Add(this.tabPagePK);
+            this.tabControlMain.Controls.Add(this.tabPagePKWS);
+            this.tabControlMain.Controls.Add(this.tabPageERPWS);
+            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControlMain.Location = new System.Drawing.Point(0, 0);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(1178, 720);
+            this.tabControlMain.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControlMain.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPagePK
             // 
-            this.tabPage1.Controls.Add(this.ucResult1);
-            this.tabPage1.Controls.Add(this.ucNavigator1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1170, 687);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Programkonstruktion";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPagePK.Controls.Add(this.ucNavigator);
+            this.tabPagePK.Location = new System.Drawing.Point(4, 29);
+            this.tabPagePK.Name = "tabPagePK";
+            this.tabPagePK.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePK.Size = new System.Drawing.Size(1170, 687);
+            this.tabPagePK.TabIndex = 0;
+            this.tabPagePK.Text = "Programkonstruktion";
+            this.tabPagePK.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabPagePKWS
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1170, 687);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Programkonstruktion & Webservice";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPagePKWS.Location = new System.Drawing.Point(4, 29);
+            this.tabPagePKWS.Name = "tabPagePKWS";
+            this.tabPagePKWS.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePKWS.Size = new System.Drawing.Size(1170, 687);
+            this.tabPagePKWS.TabIndex = 1;
+            this.tabPagePKWS.Text = "Programkonstruktion & Webservice";
+            this.tabPagePKWS.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // tabPageERPWS
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1170, 687);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "ERP & Webservice";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageERPWS.Location = new System.Drawing.Point(4, 29);
+            this.tabPageERPWS.Name = "tabPageERPWS";
+            this.tabPageERPWS.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageERPWS.Size = new System.Drawing.Size(1170, 687);
+            this.tabPageERPWS.TabIndex = 2;
+            this.tabPageERPWS.Text = "ERP & Webservice";
+            this.tabPageERPWS.UseVisualStyleBackColor = true;
             // 
-            // ucNavigator1
+            // ucNavigator
             // 
-            this.ucNavigator1.AutoSize = true;
-            this.ucNavigator1.BackColor = System.Drawing.Color.AliceBlue;
-            this.ucNavigator1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucNavigator1.Location = new System.Drawing.Point(3, 3);
-            this.ucNavigator1.Name = "ucNavigator1";
-            this.ucNavigator1.Size = new System.Drawing.Size(298, 681);
-            this.ucNavigator1.TabIndex = 0;
-            this.ucNavigator1.Load += new System.EventHandler(this.ucNavigator1_Load);
-            // 
-            // ucResult1
-            // 
-            this.ucResult1.Location = new System.Drawing.Point(307, 6);
-            this.ucResult1.Name = "ucResult1";
-            this.ucResult1.Size = new System.Drawing.Size(855, 398);
-            this.ucResult1.TabIndex = 1;
+            this.ucNavigator.AutoSize = true;
+            this.ucNavigator.BackColor = System.Drawing.Color.AliceBlue;
+            this.ucNavigator.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucNavigator.Location = new System.Drawing.Point(3, 3);
+            this.ucNavigator.Name = "ucNavigator";
+            this.ucNavigator.Size = new System.Drawing.Size(298, 681);
+            this.ucNavigator.TabIndex = 0;
+            this.ucNavigator.Load += new System.EventHandler(this.ucNavigator1_Load);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 744);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlMain);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControlMain.ResumeLayout(false);
+            this.tabPagePK.ResumeLayout(false);
+            this.tabPagePK.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private UCNavigator ucNavigator1;
-        private UCResult ucResult1;
+        private TabControl tabControlMain;
+        private TabPage tabPagePK;
+        private TabPage tabPagePKWS;
+        private TabPage tabPageERPWS;
+        private UCNavigator ucNavigator;
     }
 }
 

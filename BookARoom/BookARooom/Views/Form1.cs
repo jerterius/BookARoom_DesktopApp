@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.DAL;
 using BookARoom.Models;
+using System.Data.Entity;
 
 namespace BookARoom.Views
 {
@@ -28,5 +29,7 @@ namespace BookARoom.Views
         {
             this.Dock = DockStyle.Fill;
         }
+
+        
     }
 }
