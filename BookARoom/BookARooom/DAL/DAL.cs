@@ -101,6 +101,30 @@ namespace BookARoom.DAL
             return (0 != cmd.ExecuteNonQuery());
         }
 
-     }
+        public DataTable AllCountries()
+        {
+            DataTable dt = new DataTable();
+
+            OpenConnect();
+            QueryStatement("select CountryName from Cities");
+            da.Fill(dt);
+
+            CloseConnect(OpenConnect());
+            return dt;
+        }
+
+        public DataTable AllCities()
+        {
+            DataTable dt = new DataTable();
+
+            OpenConnect();
+            QueryStatement("select CityName from Cities");
+            da.Fill(dt);
+
+            CloseConnect(OpenConnect());
+            return dt;
+        }
+
+    }
  }
     
