@@ -20,12 +20,12 @@ namespace BookARoom.DAL
             }
         } */
 
-            public void Add(Object addToList)
+            public void Add(object addToTable)
             {
             using (var db = new BookingContext())
             {
 
-                switch (addToList)
+                switch (addToTable)
                 {
                     case Booking b1:
                         db.Bookings.Add(b1);
@@ -52,28 +52,45 @@ namespace BookARoom.DAL
             }
 
 
-        /*
+        
             public int TotalPrice(string bookingNumber)
             {
-                string query = "select BookingNumber from Bookings inner join on Booking.PhoneNumber = Customer.PhoneNumber where BookingNumber = ?";
+                int totalPrice = 0;
+
+                using (var db = new BookingContext())
+                {
+                    var query = from b in db.Bookings
+                                where b.BookingNumber.Equals(bookingNumber)
+                                select b;
+
+                    foreach (var item in query)
+                    {
+                         totalPrice += item.Room.Price;
+                    }
+
+                    return totalPrice;
+                }
             }
 
 
 
-            public List<Room> FindAvailableRooms()
-            {
-                
+        public DataTable FindAvailableRooms(City city)
+        {
+            DataTable dt = new DataTable();
 
-                string query = "select * from Rooms where Booking.RoomNumber != Roomnumber";
+            SqlConnection con = new SqlConnection("Data Source = MSSQLLocalDB;Initial Catalog=BookingDB;Integrated Security=SSPI");
+            SqlCommand cmd = new SqlCommand("select * from Rooms " +
+                "inner join Hotels on Hotel.Adress = Room.Adress " +
+                "inner join City where City.CityName = Hotel.CityName" +
+                "and where Booking.RoomNumber != Roomnumber", con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
 
-            from b in db.Blogs
-            orderby b.Name
-            select b;
-
-            
-
-
-
+            return dt;
+        }
+            /*
             public bool DeleteBooking(string bookingNumber)
             {
                 String query = "delete from booking where bookingNumber= ?;";
