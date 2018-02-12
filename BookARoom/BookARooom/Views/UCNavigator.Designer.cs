@@ -34,7 +34,6 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.cbCountry = new System.Windows.Forms.ComboBox();
-            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbCity = new System.Windows.Forms.ComboBox();
             this.tbGuests = new System.Windows.Forms.TrackBar();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
@@ -45,9 +44,10 @@
             this.lblGuests = new System.Windows.Forms.Label();
             this.tbStandard = new System.Windows.Forms.TrackBar();
             this.lblStandard = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
@@ -88,18 +88,17 @@
             this.cbCountry.TabIndex = 2;
             this.cbCountry.ValueMember = "CountryName";
             // 
-            // cityBindingSource
-            // 
-            this.cityBindingSource.DataMember = "Hotels";
-            this.cityBindingSource.DataSource = typeof(BookARoom.Models.City);
-            // 
             // cbCity
             // 
+            this.cbCity.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cityBindingSource, "CityName", true));
+            this.cbCity.DataSource = this.cityBindingSource;
+            this.cbCity.DisplayMember = "CityName";
             this.cbCity.FormattingEnabled = true;
             this.cbCity.Location = new System.Drawing.Point(153, 124);
             this.cbCity.Name = "cbCity";
             this.cbCity.Size = new System.Drawing.Size(142, 28);
             this.cbCity.TabIndex = 2;
+            this.cbCity.ValueMember = "CityName";
             // 
             // tbGuests
             // 
@@ -182,10 +181,13 @@
             this.lblStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStandard.Location = new System.Drawing.Point(3, 174);
             this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(88, 20);
+            this.lblStandard.Size = new System.Drawing.Size(67, 20);
             this.lblStandard.TabIndex = 6;
-            this.lblStandard.Text = "Standard:";
-           
+            this.lblStandard.Text = "Rating:";
+            // 
+            // cityBindingSource
+            // 
+            this.cityBindingSource.DataSource = typeof(BookARoom.Models.City);
             // 
             // UCNavigator
             // 
@@ -208,9 +210,9 @@
             this.Controls.Add(this.btnClear);
             this.Name = "UCNavigator";
             this.Size = new System.Drawing.Size(329, 612);
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
