@@ -23,45 +23,20 @@ namespace BookARoom.Views
             InitializeComponent();
         }
 
-        private void button2_Click(object addToTable, EventArgs e)
+        private void tbGuests_Scroll(object addToTable, EventArgs e)
+        {
+            lblGuests.Text = "Guests: " + tbGuests.Value.ToString();
+        }
+
+        private void tbStandard_Scroll(object addToTable, EventArgs e)
+        {
+            lblStandard.Text = "Standard: " + tbStandard.Value.ToString();
+
+        }
+            private void button2_Click(object addToTable, EventArgs e)
         {
             controller.Add(addToTable, e);
            
-
-                // Display all Blogs from the database 
-                var query = from b in db.Cities
-                            orderby b.CityName
-                            select b;
-
-                Console.WriteLine("All blogs in the database:");
-                foreach (var item in query)
-                {
-                    Console.WriteLine(item.CityName);
-                }
-
-                Console.WriteLine("Press any key to exit...");
-                Console.ReadKey();
             }
-        }
-
-
-        /* public City SelectedCity
-         {
-             get
-             {
-                 return (City)cbCity.SelectedItem;
-             }
-         }
-         private void UserControl1_Load(object sender, EventArgs e)
-         {
-             List<City> cityList = new List<City>();
-             cityList.Add(new City("Lund", "Sweden"));
-             cityList.Add(new City("Malmö", "Sweden"));
-             cityList.Add(new City("Eslöv", "Sweden"));
-             cityList.Add(new City("Helsingborg", "Sweden"));
-             cbCity.DataSource = cityList;
-             cbCity.ValueMember = "ID";
-             cbCity.DisplayMember = "Cityname";
-         }*/
     }
 }
