@@ -9,25 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.Models;
 using BookARoom.DAL;
-using System.Data.Entity;
+using BookARoom.Controllers;
+
 
 namespace BookARoom.Views
 {
     public partial class UCNavigator : UserControl
     {
+        Controller controller = new Controller();
+
         public UCNavigator()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object addToTable, EventArgs e)
         {
-            using (var db = new BookingContext())
-            {
-
-                var city = new City("Lund", "Sweden");
-                db.Cities.Add(city);
-                db.SaveChanges();
+            controller.Add(addToTable, e);
+           
 
                 // Display all Blogs from the database 
                 var query = from b in db.Cities
@@ -43,21 +42,6 @@ namespace BookARoom.Views
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
-        }
-
-        private void lblFromDate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbGuests_Scroll(object sender, EventArgs e)
-        {
-            lblGuests.Text = "Guests: " + tbGuests.Value.ToString();
-        }
-
-        private void tbStandard_Scroll(object sender, EventArgs e)
-        {
-            lblStandard.Text = "Standard: " + tbStandard.Value.ToString();
         }
 
 

@@ -90,13 +90,18 @@ namespace BookARoom.DAL
 
             return dt;
         }
-            /*
+            
             public bool DeleteBooking(string bookingNumber)
             {
-                String query = "delete from booking where bookingNumber= ?;";
+                SqlConnection con = new SqlConnection("Data Source = MSSQLLocalDB;Initial Catalog=BookingDB;Integrated Security=SSPI");
+                SqlCommand cmd = new SqlCommand("delete from booking where bookingNumber=?", con);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+
+                return (0 != cmd.ExecuteNonQuery());
             }
 
-        }
-
-       */ }
-    }
+     }
+ }
+    
