@@ -35,7 +35,10 @@ namespace BookARoom.Models
         public virtual Customer Customer { get; set; }
         public virtual Room Room { get; set; }
 
-
+        public Booking (string bookingNumber)
+        {
+            BookingNumber = bookingNumber;
+        }
 
         public Booking(string bookingNumber, DateTime date, string responsible, string creditCardNumber, string phoneNumber)
         {

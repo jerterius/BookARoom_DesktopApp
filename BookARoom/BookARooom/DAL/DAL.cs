@@ -49,26 +49,13 @@ namespace BookARoom.DAL
                         db.Bookings.Add(b1);
                         db.SaveChanges();
                         break;
-                    case Room r1:
-                        db.Rooms.Add(r1);
-                        db.SaveChanges();
-                        break;
                     case Customer c1:
                         db.Customers.Add(c1);
-                        db.SaveChanges();
-                        break;
-                    case Hotel h1:
-                        db.Hotels.Add(h1);
-                        db.SaveChanges();
-                        break;
-                    case City c1:
-                        db.Cities.Add(c1);
                         db.SaveChanges();
                         break;
                 }
             CloseConnect(OpenConnect());
         }
-
 
         public int TotalPrice(string bookingNumber)
         {
@@ -105,7 +92,7 @@ namespace BookARoom.DAL
             return dt;
         }
             
-        public bool DeleteBooking(string bookingNumber)
+        public bool DeleteBooking(Booking booking)
         {
             OpenConnect();
             SqlCommand cmd = QueryStatement("delete from booking where bookingNumber=?");
@@ -114,6 +101,30 @@ namespace BookARoom.DAL
             return (0 != cmd.ExecuteNonQuery());
         }
 
-     }
+        public DataTable AllCountries()
+        {
+            DataTable dt = new DataTable();
+
+            OpenConnect();
+            QueryStatement("select CountryName from Cities");
+            da.Fill(dt);
+
+            CloseConnect(OpenConnect());
+            return dt;
+        }
+
+        public DataTable AllCities()
+        {
+            DataTable dt = new DataTable();
+
+            OpenConnect();
+            QueryStatement("select CityName from Cities");
+            da.Fill(dt);
+
+            CloseConnect(OpenConnect());
+            return dt;
+        }
+
+    }
  }
     
