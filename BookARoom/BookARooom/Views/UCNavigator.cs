@@ -47,6 +47,8 @@ namespace BookARoom.Views
             BindingSource b = new BindingSource();
             b.DataSource = BookingContext.Cities.ToList();
             cbCountry.DataSource = b;
+
+            cbCity.DataSource = b;
         }
     }
 }

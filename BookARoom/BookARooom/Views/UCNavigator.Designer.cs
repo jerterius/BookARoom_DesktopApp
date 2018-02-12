@@ -36,6 +36,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.cbCountry = new System.Windows.Forms.ComboBox();
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbCity = new System.Windows.Forms.ComboBox();
             this.tbGuests = new System.Windows.Forms.TrackBar();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
@@ -48,7 +49,6 @@
             this.lblStandard = new System.Windows.Forms.Label();
             this.cityBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -62,11 +62,11 @@
             this.cityBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.countryNameComboBox = new System.Windows.Forms.ComboBox();
             countryNameLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingNavigator)).BeginInit();
             this.cityBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // countryNameLabel
@@ -106,6 +106,8 @@
             // 
             // cbCountry
             // 
+            this.cbCountry.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cityBindingSource, "CountryName", true));
+            this.cbCountry.DataSource = this.cityBindingSource;
             this.cbCountry.DisplayMember = "CountryName";
             this.cbCountry.FormattingEnabled = true;
             this.cbCountry.Location = new System.Drawing.Point(4, 124);
@@ -114,8 +116,14 @@
             this.cbCountry.TabIndex = 2;
             this.cbCountry.ValueMember = "CountryName";
             // 
+            // cityBindingSource
+            // 
+            this.cityBindingSource.DataSource = typeof(BookARoom.Models.City);
+            // 
             // cbCity
             // 
+            this.cbCity.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cityBindingSource, "CityName", true));
+            this.cbCity.DataSource = this.cityBindingSource;
             this.cbCity.DisplayMember = "CityName";
             this.cbCity.FormattingEnabled = true;
             this.cbCity.Location = new System.Drawing.Point(153, 124);
@@ -249,10 +257,6 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
-            // cityBindingSource
-            // 
-            this.cityBindingSource.DataSource = typeof(BookARoom.Models.City);
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -376,12 +380,12 @@
             this.Name = "UCNavigator";
             this.Size = new System.Drawing.Size(402, 612);
             this.Load += new System.EventHandler(this.UCNavigator_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingNavigator)).EndInit();
             this.cityBindingNavigator.ResumeLayout(false);
             this.cityBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
