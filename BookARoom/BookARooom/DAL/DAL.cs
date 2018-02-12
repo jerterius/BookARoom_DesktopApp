@@ -105,7 +105,7 @@ namespace BookARoom.DAL
             return dt;
         }
             
-        public bool DeleteBooking(string bookingNumber)
+        public bool DeleteBooking(Booking booking)
         {
             OpenConnect();
             SqlCommand cmd = QueryStatement("delete from booking where bookingNumber=?");
