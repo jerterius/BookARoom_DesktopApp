@@ -15,7 +15,7 @@ namespace BookARoom.DAL
                
             public BookingContext bContext = new BookingContext();
 
-            SqlConnection myConnection = new SqlConnection();
+            
 
 
             public void Add(Object addToList)
@@ -55,9 +55,9 @@ namespace BookARoom.DAL
 
 
 
-            public List<String[]> FindAvailableRooms()
+            public List<Room> FindAvailableRooms()
             {
-                List<String[]> resultList = new List<String[]>();
+                
 
                 string query = "select * from Rooms where Booking.RoomNumber != Roomnumber";
 
@@ -65,20 +65,7 @@ namespace BookARoom.DAL
             orderby b.Name
             select b;
 
-            while (rs.next())
-                {
-                    string roomType = cmd.getString("roomType").toUpperCase();
-                    string bed = rs.getString("bed").toUpperCase();
-                    string smokeFree = rs.getString("smokeFree").toUpperCase();
-                    string guestCapacity = rs.getString("guestCapacity");
-                    string price = rs.getString("price");
-                    string adress = rs.getString("hotelAdress");
-
-                    Room r = new Room();
-
-                    String[] entry = { roomType, bed, smokeFree, guestCapacity, price, adress };
-                    resultList.Add(entry);
-                }
+            
 
 
 
