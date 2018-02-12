@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using BookARoom.Models;
 using BookARoom.DAL;
 using BookARoom.Controllers;
+using System.Data.Entity;
 
 
 namespace BookARoom.Views
 {
     public partial class UCNavigator : UserControl
     {
+        BookingContext bc = new BookingContext();
         Controller controller = new Controller();
 
         public UCNavigator()
@@ -38,5 +40,13 @@ namespace BookARoom.Views
             controller.Add(addToTable, e);
            
             }
+
+        private void UCNavigator_Load(object sender, EventArgs e)
+        {
+            var BookingContext = new BookingContext();
+            BindingSource b = new BindingSource();
+            b.DataSource = BookingContext.Cities.ToList();
+            cbCountry.DataSource = b;
+        }
     }
 }
