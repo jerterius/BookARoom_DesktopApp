@@ -21,27 +21,7 @@ namespace BookARoom.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var db = new BookingContext())
-            {
 
-                var city = new City("Lund", "Sweden");
-                db.Cities.Add(city);
-                db.SaveChanges();
-
-                // Display all Blogs from the database 
-                var query = from b in db.Cities
-                            orderby b.CityName
-                            select b;
-
-                Console.WriteLine("All blogs in the database:");
-                foreach (var item in query)
-                {
-                    Console.WriteLine(item.CityName);
-                }
-
-                Console.WriteLine("Press any key to exit...");
-                Console.ReadKey();
-            }
         }
 
         private void ucNavigator1_Load(object sender, EventArgs e)
