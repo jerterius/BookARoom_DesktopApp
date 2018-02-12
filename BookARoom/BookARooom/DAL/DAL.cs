@@ -100,9 +100,8 @@ namespace BookARoom.DAL
                 da.SelectCommand = cmd;
 
                 return (0 != cmd.ExecuteNonQuery());
-        }
+            }
 
-        }
-
-        }
-    }
+     }
+ }
+    
