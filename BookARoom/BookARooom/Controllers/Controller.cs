@@ -25,6 +25,7 @@ namespace BookARoom.Controllers
            return dal.FindAvailableRooms(city);
         }
 
+
         public void Add(object addToTable, EventArgs e)
         {
             dal.Add(addToTable);
