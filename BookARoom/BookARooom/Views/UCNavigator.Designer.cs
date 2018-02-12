@@ -132,7 +132,6 @@
             this.lblFromDate.Size = new System.Drawing.Size(55, 20);
             this.lblFromDate.TabIndex = 6;
             this.lblFromDate.Text = "From:";
-            this.lblFromDate.Click += new System.EventHandler(this.lblFromDate_Click);
             // 
             // lblToDate
             // 
@@ -165,7 +164,6 @@
             this.lblGuests.Size = new System.Drawing.Size(72, 20);
             this.lblGuests.TabIndex = 6;
             this.lblGuests.Text = "Guests:";
-            this.lblGuests.Click += new System.EventHandler(this.lblFromDate_Click);
             // 
             // tbStandard
             // 
@@ -187,7 +185,7 @@
             this.lblStandard.Size = new System.Drawing.Size(88, 20);
             this.lblStandard.TabIndex = 6;
             this.lblStandard.Text = "Standard:";
-            this.lblStandard.Click += new System.EventHandler(this.lblFromDate_Click);
+           
             // 
             // UCNavigator
             // 
