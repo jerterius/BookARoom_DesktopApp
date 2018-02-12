@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookARoom.Utilities
 {
-    class ExceptionHandler
+    public class ExceptionHandler
     {
     }
 }

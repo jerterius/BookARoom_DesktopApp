@@ -11,77 +11,86 @@ namespace BookARoom.DAL
 {
     public class Dal
     {
-       /*
-               
-            public BookingContext bContext = new BookingContext();
+       
+            
+       /* public void Connect()
+        { 
+            using (var db = new BookingContext())
+            {
+            }
+        } */
 
-            SqlConnection myConnection = new SqlConnection();
-
-
-            public void Add(Object addToList)
+            public void Add(object addToTable)
+            {
+            using (var db = new BookingContext())
             {
 
-                switch (addToList)
+                switch (addToTable)
                 {
                     case Booking b1:
-                        bContext.Bookings.Add(b1);
-                        bContext.SaveChanges();
+                        db.Bookings.Add(b1);
+                        db.SaveChanges();
                         break;
                     case Room r1:
-                        bContext.Rooms.Add(r1);
-                        bContext.SaveChanges();
+                        db.Rooms.Add(r1);
+                        db.SaveChanges();
                         break;
                     case Customer c1:
-                        bContext.Customers.Add(c1);
-                        bContext.SaveChanges();
+                        db.Customers.Add(c1);
+                        db.SaveChanges();
                         break;
                     case Hotel h1:
-                        bContext.Hotels.Add(h1);
-                        bContext.SaveChanges();
+                        db.Hotels.Add(h1);
+                        db.SaveChanges();
                         break;
                     case City c1:
-                        bContext.Cities.Add(c1);
-                        bContext.SaveChanges();
+                        db.Cities.Add(c1);
+                        db.SaveChanges();
                         break;
                 }
             }
+            }
 
 
-
+        
             public int TotalPrice(string bookingNumber)
             {
-                string query = "select BookingNumber from Bookings inner join on Booking.PhoneNumber = Customer.PhoneNumber where BookingNumber = ?";
+                int totalPrice = 0;
+
+                using (var db = new BookingContext())
+                {
+                    var query = from b in db.Bookings
+                                where b.BookingNumber.Equals(bookingNumber)
+                                select b;
+
+                    foreach (var item in query)
+                    {
+                         totalPrice += item.Room.Price;
+                    }
+
+                    return totalPrice;
+                }
             }
 
 
 
-            public List<String[]> FindAvailableRooms()
-            {
-                List<String[]> resultList = new List<String[]>();
+        public DataTable FindAvailableRooms(City city)
+        {
+            DataTable dt = new DataTable();
 
-                string query = "select * from Rooms where Booking.RoomNumber != Roomnumber";
+            SqlConnection con = new SqlConnection("Data Source = MSSQLLocalDB;Initial Catalog=BookingDB;Integrated Security=SSPI");
+            SqlCommand cmd = new SqlCommand("select * from Rooms " +
+                "inner join Hotels on Hotel.Adress = Room.Adress " +
+                "inner join City where City.CityName = Hotel.CityName" +
+                "and where Booking.RoomNumber != Roomnumber", con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.Fill(dt);
 
-            from b in db.Blogs
-            orderby b.Name
-            select b;
-
-            while (rs.next())
-                {
-                    string roomType = cmd.getString("roomType").toUpperCase();
-                    string bed = rs.getString("bed").toUpperCase();
-                    string smokeFree = rs.getString("smokeFree").toUpperCase();
-                    string guestCapacity = rs.getString("guestCapacity");
-                    string price = rs.getString("price");
-                    string adress = rs.getString("hotelAdress");
-
-                    Room r = new Room();
-
-                    String[] entry = { roomType, bed, smokeFree, guestCapacity, price, adress };
-                    resultList.Add(entry);
-                }
-
-
-
+            return dt;
+        }
+            /*
             public bool DeleteBooking(string bookingNumber)
             {
                 String query = "delete from booking where bookingNumber= ?;";

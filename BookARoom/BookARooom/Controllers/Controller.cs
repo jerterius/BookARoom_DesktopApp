@@ -11,33 +11,27 @@ namespace BookARoom.Controllers
 {
     public class Controller
     {
- /*
+        Dal dal = new Dal();
+ 
             public int TotalPrice(string bookingNumber)
             {
-                int price = 0;
-                List<Booking> bookingNbr = new List<Booking>();
-                DAL.BookingContext bContext = new BookingContext();
-
-                foreach (Booking b in bContext.Bookings)
-                {
-                    if (b.BookingNumber == bookingNumber)
-                    {
-                        bookingNbr.Add(b);
-                    }
-                }
-
-                foreach (Booking b in bookingNbr)
-                {
-                    price += b.Room.Price;
-                }
-
-                return price;
+                return dal.TotalPrice(bookingNumber);
+             
             }
 
 
-            public DataTable AvailableRooms(City city)
-            {
-                try
+        public DataTable AvailableRooms(City city)
+        {
+           return dal.FindAvailableRooms(city);
+        }
+
+        public void Add(object addToTable, EventArgs e)
+        {
+            dal.Add(addToTable);
+
+        }
+
+                /*try
                 {
                     String[] colID = { "Roomtype", "Bed", "Smokefree", "GuestCapacity", "Price", "HotellAdress" };
                     resultList = Dal.FindAvailableRooms();
