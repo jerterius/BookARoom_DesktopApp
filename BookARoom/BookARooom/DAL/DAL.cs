@@ -24,7 +24,7 @@ namespace BookARoom.DAL
 
         public static void CloseConnect(SqlConnection con)
         {
-            if (con.State == System.Data.ConnectionState.Open)
+            if (con.State == ConnectionState.Open)
                 con.Close();
             con.Dispose();
         }
