@@ -132,6 +132,7 @@ namespace BookARoom.DAL
         }
 
 
+
         public List<Hotel> HotelsWithAvailableRooms(City city)
         {
             var hotelList = from h in db.Hotels

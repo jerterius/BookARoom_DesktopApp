@@ -85,12 +85,6 @@
       <DependentUpon>UCNavigator.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExceptionHandler.cs" />
-    <Compile Include="Views\UCResult.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\UCResult.Designer.cs">
-      <DependentUpon>UCResult.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,15 +107,17 @@
     <EmbeddedResource Include="Views\UCNavigator.resx">
       <DependentUpon>UCNavigator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UCResult.resx">
-      <DependentUpon>UCResult.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BookARoom.Models.Booking.datasource" />
+    <None Include="Properties\DataSources\BookARoom.Models.Booking1.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.City.datasource" />
+    <None Include="Properties\DataSources\BookARoom.Models.City1.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Customer.datasource" />
+    <None Include="Properties\DataSources\BookARoom.Models.Customer1.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Hotel.datasource" />
+    <None Include="Properties\DataSources\BookARoom.Models.Hotel1.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Room.datasource" />
+    <None Include="Properties\DataSources\BookARoom.Models.Room1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

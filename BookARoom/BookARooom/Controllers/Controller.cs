@@ -42,9 +42,15 @@ namespace BookARoom.Controllers
             return dal.HotelsInCity(city);
         }
 
-        public List<Hotel> HotelsWithAvailableRooms (City city)
+        public List<Hotel> HotelsWithAvailableRooms (string cityName)
         {
-            return dal.HotelsWithAvailableRooms(city);
+            City c = new City() { CityName = cityName };
+            return dal.HotelsWithAvailableRooms(c);
+        }
+
+        public void GetAllHotels()
+        {
+
         }
 
         public List<string> Retrieve(string cName)

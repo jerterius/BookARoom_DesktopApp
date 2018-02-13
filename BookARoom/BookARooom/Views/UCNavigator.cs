@@ -17,8 +17,8 @@ namespace BookARoom.Views
 {
     public partial class UCNavigator : UserControl
     {
-        BookingContext bc = new BookingContext();
         Controller controller = new Controller();
+        BindingSource bindingSource = new BindingSource();
 
         public UCNavigator()
         {
@@ -40,18 +40,19 @@ namespace BookARoom.Views
             string search = tbSearch.Text;
             string countryName = cbCountry.Text;
             string cityName = cbCity.Text;
-            lblGuests.Text = cbCountry.Text;
-           
-            }
+            DateTime fromDate = dtpFromDate.Value;
+            DateTime toDate = dtpToDate.Value;
+
+            bindingSource.DataSource = controller.HotelsWithAvailableRooms(cityName);
+            hotelDataGridView.DataSource = bindingSource;
+            //roomsDataGridView.DataSource = bindingSource;
+            //hotelDataGridView.DataSource = controller.GetAllHotels();
+            //controller.getAvailableHotels(search, countryName, cityName, fromDate, toDate);
+
+        }
 
         private void UCNavigator_Load(object sender, EventArgs e)
         {
-            /* var BookingContext = new BookingContext();
-             BindingSource b = new BindingSource();
-             b.DataSource = BookingContext.Cities.ToList();
-             cbCountry.DataSource = b;
-
-             cbCity.DataSource = b;*/
             cbCountry.DataSource = controller.Retrieve("Country");
             cbCountry.Text = "Choose Country";
         }
