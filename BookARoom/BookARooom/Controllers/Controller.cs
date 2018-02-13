@@ -12,7 +12,6 @@ namespace BookARoom.Controllers
     public class Controller
     {
         Dal dal = new Dal();
-        Booking booking;
 
         public int TotalPrice(string bookingNumber)
             {
@@ -53,10 +52,6 @@ namespace BookARoom.Controllers
             return dal.Retrieve(cName);
         }
         
-        public List<string> AllCountries()
-        {
-            return dal.AllCountries();
-        }
 
         public List<string> AllCitiesInCountry(string country)
         {
