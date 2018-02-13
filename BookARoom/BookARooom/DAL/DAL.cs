@@ -73,45 +73,28 @@ namespace BookARoom.DAL
         public int TotalPrice(string bookingNumber)
         {
             int totalPrice = 0;
-            using (var db = new BookingContext())
+           
+            var query = from b in db.Bookings
+                        where b.BookingNumber.Equals(bookingNumber)
+                        select b;
+
+            foreach (var item in query)
             {
-                var query = from b in db.Bookings
-                            where b.BookingNumber.Equals(bookingNumber)
-                            select b;
-
-                foreach (var item in query)
-                {
-                    totalPrice += item.Room.Price;
-                }
-
-            CloseConnect(OpenConnect());
-            return totalPrice;
+                totalPrice += item.Room.Price;
             }
+
+            return totalPrice;
         }
 
-        public DataTable FindAvailableRooms(City city)
+        public List<Room> FindAvailableRooms(City city)
         {
-            DataTable dt = new DataTable();
+            var availableRooms = from r in db.Rooms
+                                 join h in db.Hotels on r.Adress equals h.Adress
+                                 join c in db.Cities on h.CityName equals city.CityName
+                                 where !db.Bookings.Any(b => b.RoomNumber == r.RoomNumber)
+                                 select r;
 
-            OpenConnect();
-            QueryStatement("select * from Rooms " +
-                "inner join Hotels on Hotel.Adress = Room.Adress " +
-                "inner join City where City.CityName = Hotel.CityName" +
-                "and where Booking.RoomNumber != Roomnumber");
-            
-            da.Fill(dt);
-            
-            CloseConnect(OpenConnect());
-            return dt;
-        }
-            
-        public bool DeleteBooking(Booking booking)
-        {
-            OpenConnect();
-            SqlCommand cmd = QueryStatement("delete from booking where bookingNumber=?");
-            CloseConnect(OpenConnect());
-
-            return (0 != cmd.ExecuteNonQuery());
+            return availableRooms.ToList();
         }
 
         public DataTable AllCountries()
@@ -140,6 +123,11 @@ namespace BookARoom.DAL
 
         //Alla städer som finns i ett visst land
 
+        public void roomsInHotel(Hotel hotel)
+        {
+            var roomList = db.Rooms.Where(r => r.Adress == hotel.Adress).ToList();
+                               
+        }
     }
  }
     
