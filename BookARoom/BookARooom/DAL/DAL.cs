@@ -140,6 +140,14 @@ namespace BookARoom.DAL
 
             return hotelList.ToList();
         }
+
+        public List<string[]> Retrieve ()
+        {
+            var cities = from c in db.Cities
+                         select c.CityName;
+
+            return cities.ToList();
+        }
     }
  }
     
