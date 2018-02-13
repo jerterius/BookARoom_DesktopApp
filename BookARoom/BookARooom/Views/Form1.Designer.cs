@@ -35,6 +35,7 @@ namespace BookARoom.Views
             this.tabPagePKWS = new System.Windows.Forms.TabPage();
             this.tabPageERPWS = new System.Windows.Forms.TabPage();
             this.ucNavigator = new BookARoom.Views.UCNavigator();
+            this.ucResult1 = new BookARoom.Views.UCResult();
             this.tabControlMain.SuspendLayout();
             this.tabPagePK.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,7 @@ namespace BookARoom.Views
             // 
             // tabPagePK
             // 
+            this.tabPagePK.Controls.Add(this.ucResult1);
             this.tabPagePK.Controls.Add(this.ucNavigator);
             this.tabPagePK.Location = new System.Drawing.Point(4, 29);
             this.tabPagePK.Name = "tabPagePK";
@@ -90,9 +92,16 @@ namespace BookARoom.Views
             this.ucNavigator.Dock = System.Windows.Forms.DockStyle.Left;
             this.ucNavigator.Location = new System.Drawing.Point(3, 3);
             this.ucNavigator.Name = "ucNavigator";
-            this.ucNavigator.Size = new System.Drawing.Size(298, 681);
+            this.ucNavigator.Size = new System.Drawing.Size(299, 681);
             this.ucNavigator.TabIndex = 0;
             this.ucNavigator.Load += new System.EventHandler(this.ucNavigator1_Load);
+            // 
+            // ucResult1
+            // 
+            this.ucResult1.Location = new System.Drawing.Point(308, 6);
+            this.ucResult1.Name = "ucResult1";
+            this.ucResult1.Size = new System.Drawing.Size(860, 664);
+            this.ucResult1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -117,6 +126,7 @@ namespace BookARoom.Views
         private TabPage tabPagePKWS;
         private TabPage tabPageERPWS;
         private UCNavigator ucNavigator;
+        private UCResult ucResult1;
     }
 }
 

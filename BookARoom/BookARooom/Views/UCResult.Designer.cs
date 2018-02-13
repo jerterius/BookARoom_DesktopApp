@@ -105,7 +105,7 @@ namespace BookARoom.Views
             this.hotelBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hotelBindingNavigator.Name = "hotelBindingNavigator";
             this.hotelBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hotelBindingNavigator.Size = new System.Drawing.Size(931, 31);
+            this.hotelBindingNavigator.Size = new System.Drawing.Size(860, 31);
             this.hotelBindingNavigator.TabIndex = 0;
             this.hotelBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -349,7 +349,7 @@ namespace BookARoom.Views
             this.Controls.Add(this.hotelDataGridView);
             this.Controls.Add(this.hotelBindingNavigator);
             this.Name = "UCResult";
-            this.Size = new System.Drawing.Size(931, 736);
+            this.Size = new System.Drawing.Size(860, 664);
             ((System.ComponentModel.ISupportInitialize)(this.hotelBindingNavigator)).EndInit();
             this.hotelBindingNavigator.ResumeLayout(false);
             this.hotelBindingNavigator.PerformLayout();

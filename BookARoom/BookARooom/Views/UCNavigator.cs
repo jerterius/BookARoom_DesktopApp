@@ -35,7 +35,7 @@ namespace BookARoom.Views
             lblStandard.Text = "Rating: " + tbStandard.Value.ToString();
 
         }
-            private void button2_Click(object addToTable, EventArgs e)
+            private void btnSubmit_Click(object addToTable, EventArgs e)
         {
             controller.Add(addToTable, e);
            
