@@ -123,7 +123,7 @@ namespace BookARoom.DAL
 
         //Alla städer som finns i ett visst land
 
-        public void roomsInHotel(Hotel hotel)
+        public void RoomsInHotel(Hotel hotel)
         {
             var roomList = db.Rooms.Where(r => r.Adress == hotel.Adress).ToList();
                                
