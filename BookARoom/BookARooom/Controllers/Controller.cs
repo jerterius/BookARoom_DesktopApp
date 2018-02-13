@@ -21,12 +21,6 @@ namespace BookARoom.Controllers
             }
 
 
-        public DataTable AvailableRooms(City city)
-        {
-           return dal.FindAvailableRooms(city);
-        }
-
-
         public void Add(object addToTable, EventArgs e)
         {
                 dal.Add(addToTable);
@@ -38,7 +32,22 @@ namespace BookARoom.Controllers
             dal.Remove(removeFromTable);
         }
 
-     }
+
+        public List<Room> FindAvailableRooms(Hotel hotel)
+        {
+            return dal.FindAvailableRooms(hotel);
+        }
+
+        public List<Hotel> HotelsInCity (City city)
+        {
+            return dal.HotelsInCity(city);
+        }
+
+        public List<Hotel> HotelsWithAvailableRooms (City city)
+        {
+            return dal.HotelsWithAvailableRooms(city);
+        }
+    }
 
  }
 

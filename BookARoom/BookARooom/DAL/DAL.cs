@@ -13,7 +13,7 @@ namespace BookARoom.DAL
     {
         BookingContext db = new BookingContext();
 
-        SqlDataAdapter da = new SqlDataAdapter();
+       /* SqlDataAdapter da = new SqlDataAdapter();
 
         public static SqlConnection OpenConnect()
          { 
@@ -38,7 +38,30 @@ namespace BookARoom.DAL
             da.SelectCommand = cmd;
 
             return cmd;
+        } 
+        public DataTable AllCountries()
+        {
+            DataTable dt = new DataTable();
+
+            OpenConnect();
+            QueryStatement("select CountryName from Cities");
+            da.Fill(dt);
+
+            CloseConnect(OpenConnect());
+            return dt;
         }
+
+        public DataTable AllCities()
+        {
+            DataTable dt = new DataTable();
+
+            OpenConnect();
+            QueryStatement("select CityName from Cities");
+            da.Fill(dt);
+
+            CloseConnect(OpenConnect());
+            return dt;
+        } */
 
         public void Add(object addToTable)
         {
@@ -86,47 +109,36 @@ namespace BookARoom.DAL
             return totalPrice;
         }
 
-        public List<Room> FindAvailableRooms(City city)
+        public List<Room> FindAvailableRooms(Hotel hotel)
         {
             var availableRooms = from r in db.Rooms
-                                 join h in db.Hotels on r.Adress equals h.Adress
-                                 join c in db.Cities on h.CityName equals city.CityName
+                                 join h in db.Hotels on r.Adress equals hotel.Adress
+                                 join c in db.Cities on hotel.CityName equals c.CityName
                                  where !db.Bookings.Any(b => b.RoomNumber == r.RoomNumber)
                                  select r;
 
             return availableRooms.ToList();
         }
 
-        public DataTable AllCountries()
-        {
-            DataTable dt = new DataTable();
-
-            OpenConnect();
-            QueryStatement("select CountryName from Cities");
-            da.Fill(dt);
-
-            CloseConnect(OpenConnect());
-            return dt;
-        }
-
-        public DataTable AllCities()
-        {
-            DataTable dt = new DataTable();
-
-            OpenConnect();
-            QueryStatement("select CityName from Cities");
-            da.Fill(dt);
-
-            CloseConnect(OpenConnect());
-            return dt;
-        }
-
         //Alla städer som finns i ett visst land
 
-        public void RoomsInHotel(Hotel hotel)
+        public List<Hotel> HotelsInCity(City city)
         {
-            var roomList = db.Rooms.Where(r => r.Adress == hotel.Adress).ToList();
-                               
+            var hotelList = db.Hotels.Where(h => h.CityName == city.CityName).ToList();
+
+            return hotelList;                    
+        }
+
+
+        public List<Hotel> HotelsWithAvailableRooms(City city)
+        {
+            var hotelList = from h in db.Hotels
+                           join c in db.Cities on h.CityName equals city.CityName
+                           join r in db.Rooms on h.Adress equals r.Adress
+                           where !db.Bookings.Any(b => b.RoomNumber == r.RoomNumber)
+                           select h;
+
+            return hotelList.ToList();
         }
     }
  }
