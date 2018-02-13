@@ -37,7 +37,10 @@ namespace BookARoom.Views
         }
             private void btnSubmit_Click(object addToTable, EventArgs e)
         {
-            controller.Add(addToTable, e);
+            string search = tbSearch.Text;
+            string countryName = cbCountry.Text;
+            string cityName = cbCity.Text;
+            lblGuests.Text = cbCountry.Text;
            
             }
 
