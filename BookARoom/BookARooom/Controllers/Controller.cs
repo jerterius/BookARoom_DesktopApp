@@ -48,14 +48,19 @@ namespace BookARoom.Controllers
             return dal.HotelsWithAvailableRooms(city);
         }
 
-        public List<string> Retrieve()
+        public List<string> Retrieve(string cName)
         {
-            return dal.Retrieve();
+            return dal.Retrieve(cName);
         }
         
         public List<string> AllCountries()
         {
             return dal.AllCountries();
+        }
+
+        public List<string> AllCitiesInCountry(string country)
+        {
+            return dal.AllCitiesInCountry(country);
         }
     }
 
