@@ -12,7 +12,6 @@ namespace BookARoom.Controllers
     public class Controller
     {
         Dal dal = new Dal();
-        Booking booking;
 
         public int TotalPrice(string bookingNumber)
             {
