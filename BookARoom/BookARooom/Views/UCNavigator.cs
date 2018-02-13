@@ -51,5 +51,11 @@ namespace BookARoom.Views
              cbCity.DataSource = b;*/
             cbCountry.DataSource = controller.Retrieve("Country");
         }
+
+        private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbCity.DataSource = controller.AllCitiesInCountry(cbCountry.SelectedValue.ToString());
+            cbCity.Text = "Choose City";
+        }
     }
 }
