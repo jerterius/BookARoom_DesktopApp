@@ -10,7 +10,7 @@ namespace BookARoom.DAL
 {
     public class BookingContext : DbContext
     {
-        public BookingContext() : base("BookingDB")
+        public BookingContext() : base("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BookingDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         { }
         public DbSet<Customer> Customers { get; set; }
 
