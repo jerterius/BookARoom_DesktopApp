@@ -50,6 +50,7 @@ namespace BookARoom.Views
 
              cbCity.DataSource = b;*/
             cbCountry.DataSource = controller.Retrieve("Country");
+            cbCountry.Text = "Choose Country";
         }
 
         private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
