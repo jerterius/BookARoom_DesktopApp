@@ -78,6 +78,7 @@ namespace BookARoom.DAL
             }
         }
 
+
         public void Remove(object removeFromTable)
         {
             switch (removeFromTable)
@@ -92,6 +93,7 @@ namespace BookARoom.DAL
                     break;
             }
         }
+
 
         public int TotalPrice(string bookingNumber)
         {
@@ -109,6 +111,7 @@ namespace BookARoom.DAL
             return totalPrice;
         }
 
+
         public List<Room> FindAvailableRooms(Hotel hotel)
         {
             var availableRooms = from r in db.Rooms
@@ -120,7 +123,6 @@ namespace BookARoom.DAL
             return availableRooms.ToList();
         }
 
-        //Alla städer som finns i ett visst land
 
         public List<Hotel> HotelsInCity(City city)
         {
@@ -141,6 +143,7 @@ namespace BookARoom.DAL
             return hotelList.ToList();
         }
 
+
         public List<string> Retrieve(string cName)
         {
             List<string> List = new List<string>();
@@ -153,10 +156,7 @@ namespace BookARoom.DAL
 
                     return cities.ToList();
 
-                case "Country":
-                    //var countries = db.Cities.GroupBy(c => c.CountryName).Select(grp => grp.First());
-
-
+                    case "Country":
                     var countries = from c in db.Cities
                                     select c.CountryName;
 
@@ -165,13 +165,6 @@ namespace BookARoom.DAL
             return List;
         }
 
-        public List<string> AllCountries ()
-        {
-            var countries = from c in db.Cities
-                            select c.CountryName;
-
-            return countries.ToList();
-        }
 
         public List<string> AllCitiesInCountry (string country)
         {

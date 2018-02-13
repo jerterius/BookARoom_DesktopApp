@@ -52,10 +52,6 @@ namespace BookARoom.Controllers
             return dal.Retrieve(cName);
         }
         
-        public List<string> AllCountries()
-        {
-            return dal.AllCountries();
-        }
 
         public List<string> AllCitiesInCountry(string country)
         {
