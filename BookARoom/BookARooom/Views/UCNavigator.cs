@@ -37,7 +37,7 @@ namespace BookARoom.Views
         }
             private void btnSubmit_Click(object addToTable, EventArgs e)
         {
-            controller.Add(addToTable, e);
+            
            
             }
 
@@ -49,7 +49,14 @@ namespace BookARoom.Views
              cbCountry.DataSource = b;
 
              cbCity.DataSource = b;*/
-            cbCountry.DataSource = controller.Retrieve("City");
+            cbCountry.DataSource = controller.Retrieve("Country");
+            cbCity.DataSource = controller.AllCitiesInCountry(cbCountry.SelectedValue.ToString());
+        }
+
+        private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbCity.DataSource = controller.AllCitiesInCountry(cbCountry.SelectedValue.ToString());
+            cbCity.Text = "Choose City";
         }
     }
 }

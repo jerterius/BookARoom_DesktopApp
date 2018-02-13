@@ -20,10 +20,7 @@ namespace BookARoom.Views
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void ucNavigator1_Load(object sender, EventArgs e)
         {

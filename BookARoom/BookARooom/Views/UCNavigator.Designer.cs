@@ -96,6 +96,7 @@
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(UCResult);
             // 
             // tbSearch
             // 
@@ -115,6 +116,7 @@
             this.cbCountry.Size = new System.Drawing.Size(142, 28);
             this.cbCountry.TabIndex = 2;
             this.cbCountry.ValueMember = "CountryName";
+            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.cbCountry_SelectedIndexChanged);
             // 
             // cityBindingSource
             // 
