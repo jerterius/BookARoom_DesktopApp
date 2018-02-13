@@ -43,11 +43,13 @@ namespace BookARoom.Views
 
         private void UCNavigator_Load(object sender, EventArgs e)
         {
-            var BookingContext = new BookingContext();
-            BindingSource b = new BindingSource();
-            b.DataSource = BookingContext.Cities.ToList();
-            cbCountry.DataSource = b;
+            /* var BookingContext = new BookingContext();
+             BindingSource b = new BindingSource();
+             b.DataSource = BookingContext.Cities.ToList();
+             cbCountry.DataSource = b;
 
+             cbCity.DataSource = b;*/
+            var b = controller.Retrieve();
             cbCity.DataSource = b;
         }
     }
