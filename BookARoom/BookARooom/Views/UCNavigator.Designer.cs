@@ -45,28 +45,27 @@
             this.tbStandard = new System.Windows.Forms.TrackBar();
             this.lblStandard = new System.Windows.Forms.Label();
             this.hotelDataGridView = new System.Windows.Forms.DataGridView();
-            this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smokeFreeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -223,10 +222,7 @@
             this.hotelDataGridView.RowTemplate.Height = 28;
             this.hotelDataGridView.Size = new System.Drawing.Size(747, 261);
             this.hotelDataGridView.TabIndex = 15;
-            // 
-            // hotelBindingSource
-            // 
-            this.hotelBindingSource.DataSource = typeof(BookARoom.Models.Hotel);
+            this.hotelDataGridView.SelectionChanged += new System.EventHandler(this.hotelDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -270,6 +266,10 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // hotelBindingSource
+            // 
+            this.hotelBindingSource.DataSource = typeof(BookARoom.Models.Hotel);
+            // 
             // roomsBindingSource
             // 
             this.roomsBindingSource.DataMember = "Rooms";
@@ -282,13 +282,12 @@
             this.roomsDataGridView.AutoGenerateColumns = false;
             this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
+            this.roomNumberDataGridViewTextBoxColumn,
+            this.bedDataGridViewTextBoxColumn,
+            this.smokeFreeDataGridViewCheckBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.guestCapacityDataGridViewTextBoxColumn,
+            this.adressDataGridViewTextBoxColumn});
             this.roomsDataGridView.DataSource = this.roomsBindingSource;
             this.roomsDataGridView.Location = new System.Drawing.Point(325, 371);
             this.roomsDataGridView.Name = "roomsDataGridView";
@@ -297,54 +296,47 @@
             this.roomsDataGridView.Size = new System.Drawing.Size(747, 220);
             this.roomsDataGridView.TabIndex = 16;
             // 
-            // dataGridViewTextBoxColumn7
+            // roomNumberDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "RoomNumber";
-            this.dataGridViewTextBoxColumn7.HeaderText = "RoomNumber";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
+            this.roomNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn8
+            // bedDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Bed";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Bed";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.bedDataGridViewTextBoxColumn.DataPropertyName = "Bed";
+            this.bedDataGridViewTextBoxColumn.HeaderText = "Bed";
+            this.bedDataGridViewTextBoxColumn.Name = "bedDataGridViewTextBoxColumn";
+            this.bedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewCheckBoxColumn1
+            // smokeFreeDataGridViewCheckBoxColumn
             // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "SmokeFree";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "SmokeFree";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.smokeFreeDataGridViewCheckBoxColumn.DataPropertyName = "SmokeFree";
+            this.smokeFreeDataGridViewCheckBoxColumn.HeaderText = "SmokeFree";
+            this.smokeFreeDataGridViewCheckBoxColumn.Name = "smokeFreeDataGridViewCheckBoxColumn";
+            this.smokeFreeDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn9
+            // priceDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn10
+            // guestCapacityDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "GuestCapacity";
-            this.dataGridViewTextBoxColumn10.HeaderText = "GuestCapacity";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.guestCapacityDataGridViewTextBoxColumn.DataPropertyName = "GuestCapacity";
+            this.guestCapacityDataGridViewTextBoxColumn.HeaderText = "GuestCapacity";
+            this.guestCapacityDataGridViewTextBoxColumn.Name = "guestCapacityDataGridViewTextBoxColumn";
+            this.guestCapacityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn11
+            // adressDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Adress";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Adress";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Hotel";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Hotel";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
+            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            this.adressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // UCNavigator
             // 
@@ -373,8 +365,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -409,12 +401,11 @@
         private System.Windows.Forms.BindingSource bookingsBindingSource;
         private System.Windows.Forms.BindingSource roomsBindingSource;
         private System.Windows.Forms.DataGridView roomsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn smokeFreeDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn guestCapacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
     }
 }

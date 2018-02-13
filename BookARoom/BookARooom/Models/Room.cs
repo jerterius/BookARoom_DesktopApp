@@ -25,7 +25,7 @@ namespace BookARoom.Models
         public virtual Hotel Hotel { get; set; }
         public virtual ObservableCollection<Booking> Bookings { get; set; }
 
-
+        public Room() { }
         public Room(string roomNumber, bool smokeFree, int price, int guestCapacity, string bed, string adress)
         {
             RoomNumber = roomNumber;

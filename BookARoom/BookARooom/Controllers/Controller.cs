@@ -63,6 +63,11 @@ namespace BookARoom.Controllers
         {
             return dal.AllCitiesInCountry(country);
         }
+
+        public DataSet TestGetData()
+        {
+            return dal.TestGetData();
+        }
     }
 
  }

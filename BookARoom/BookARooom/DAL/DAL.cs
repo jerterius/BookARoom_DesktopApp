@@ -175,6 +175,28 @@ namespace BookARoom.DAL
 
             return cities.ToList();
         }
+
+        public DataSet TestGetData()
+        {
+            SqlConnection connection = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = BookingDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
+            DataSet data = new DataSet();
+            data.Locale = System.Globalization.CultureInfo.InvariantCulture;
+
+            SqlDataAdapter masterDataAdapter = new
+              SqlDataAdapter("select * from Hotels", connection);
+            masterDataAdapter.Fill(data, "Hotels");
+
+            SqlDataAdapter detailsDataAdapter = new
+            SqlDataAdapter("select * from Rooms", connection);
+            detailsDataAdapter.Fill(data, "Rooms");
+
+            DataRelation relation = new DataRelation("HotelsRooms",
+                data.Tables["Hotels"].Columns["Adress"],
+                data.Tables["Rooms"].Columns["Adress"]);
+            data.Relations.Add(relation);
+
+            return data;
+        }
     }
  }
     

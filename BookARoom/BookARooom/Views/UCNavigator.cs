@@ -18,7 +18,7 @@ namespace BookARoom.Views
     public partial class UCNavigator : UserControl
     {
         Controller controller = new Controller();
-        BindingSource bindingSource = new BindingSource();
+      
 
         public UCNavigator()
         {
@@ -43,8 +43,9 @@ namespace BookARoom.Views
             DateTime fromDate = dtpFromDate.Value;
             DateTime toDate = dtpToDate.Value;
 
-            bindingSource.DataSource = controller.HotelsWithAvailableRooms(cityName);
-            hotelDataGridView.DataSource = bindingSource;
+            hotelBindingSource.DataSource = controller.HotelsWithAvailableRooms(cityName);
+            hotelDataGridView.DataSource = hotelBindingSource;
+            roomsDataGridView.DataSource = hotelBindingSource;
             //roomsDataGridView.DataSource = bindingSource;
             //hotelDataGridView.DataSource = controller.GetAllHotels();
             //controller.getAvailableHotels(search, countryName, cityName, fromDate, toDate);
@@ -53,14 +54,26 @@ namespace BookARoom.Views
 
         private void UCNavigator_Load(object sender, EventArgs e)
         {
+            //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
             cbCountry.DataSource = controller.Retrieve("Country");
             cbCountry.Text = "Choose Country";
+
+            hotelBindingSource.DataSource = controller.TestGetData();
+            hotelBindingSource.DataMember = "Hotels";
+
+            roomsBindingSource.DataSource = hotelBindingSource;
+            roomsBindingSource.DataMember = "HotelsRooms";
         }
 
         private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbCity.DataSource = controller.AllCitiesInCountry(cbCountry.SelectedValue.ToString());
             cbCity.Text = "Choose City";
+        }
+
+        private void hotelDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
