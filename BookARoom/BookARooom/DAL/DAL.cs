@@ -143,6 +143,8 @@ namespace BookARoom.DAL
 
         public List<string> Retrieve(string cName)
         {
+            List<string> List = new List<string>();
+
             switch (cName)
             {
                 case "City":
@@ -157,7 +159,7 @@ namespace BookARoom.DAL
 
                     return countries.ToList();
             }
-           
+            return List;
         }
 
         public List<string> AllCountries ()
