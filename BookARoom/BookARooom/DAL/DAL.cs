@@ -147,17 +147,20 @@ namespace BookARoom.DAL
 
             switch (cName)
             {
-                case "City":
+                    case "City":
                     var cities = from c in db.Cities
                                  select c.CityName;
 
                     return cities.ToList();
 
                 case "Country":
+                    //var countries = db.Cities.GroupBy(c => c.CountryName).Select(grp => grp.First());
+
+
                     var countries = from c in db.Cities
                                     select c.CountryName;
 
-                    return countries.ToList();
+                    return countries.Distinct().ToList();
             }
             return List;
         }
