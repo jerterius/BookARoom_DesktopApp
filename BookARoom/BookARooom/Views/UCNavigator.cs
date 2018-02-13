@@ -49,7 +49,7 @@ namespace BookARoom.Views
              cbCountry.DataSource = b;
 
              cbCity.DataSource = b;*/
-            cbCountry.DataSource = controller.Retrieve("City");
+            cbCountry.DataSource = controller.Retrieve("Country");
         }
     }
 }
