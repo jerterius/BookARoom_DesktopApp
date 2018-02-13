@@ -98,7 +98,7 @@ namespace BookARoom.DAL
             int totalPrice = 0;
            
             var query = from b in db.Bookings
-                        where b.BookingNumber.Equals(bookingNumber)
+                        where b.BookingNumber == bookingNumber
                         select b;
 
             foreach (var item in query)
@@ -141,15 +141,41 @@ namespace BookARoom.DAL
             return hotelList.ToList();
         }
 
-        public List<string> Retrieve ()
+        public List<string> Retrieve(string cName)
+        {
+            switch (cName)
+            {
+                case "City":
+                    var cities = from c in db.Cities
+                                 select c.CityName;
+
+                    return cities.ToList();
+
+                case "Country":
+                    var countries = from c in db.Cities
+                                    select c.CountryName;
+
+                    return countries.ToList();
+            }
+           
+        }
+
+        public List<string> AllCountries ()
+        {
+            var countries = from c in db.Cities
+                            select c.CountryName;
+
+            return countries.ToList();
+        }
+
+        public List<string> AllCitiesInCountry (string country)
         {
             var cities = from c in db.Cities
+                         where c.CountryName == country
                          select c.CityName;
 
             return cities.ToList();
         }
-
-
     }
  }
     
