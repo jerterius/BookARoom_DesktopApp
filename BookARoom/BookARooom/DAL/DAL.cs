@@ -141,23 +141,32 @@ namespace BookARoom.DAL
             return hotelList.ToList();
         }
 
-        public List<string> Retrieve(string cName)
+        public List<City> Retrieve(string cName)
         {
-            List<string> List = new List<string>();
+            List<City> List = new List<City>();
 
             switch (cName)
             {
-                case "City":
+                /*case "City":
                     var cities = from c in db.Cities
                                  select c.CityName;
 
-                    return cities.ToList();
+                    return cities.ToList();*/
 
                 case "Country":
-                    var countries = from c in db.Cities
-                                    select c.CountryName;
+                    var countries = db.Cities.GroupBy(c => c.CountryName).Select(grp => grp.First());
 
-                    return countries.ToList();
+                    foreach (var c in countries)
+                    {
+                        c.ToString();
+                        List.Add(c);
+                    }
+
+                    return List;
+                    /*var countries = from c in db.Cities
+                                    group c by c.CountryName into g
+                                    select c.CountryName;
+                    return countries.ToList(); */             
             }
             return List;
         }
