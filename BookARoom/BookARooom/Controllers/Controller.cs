@@ -33,10 +33,9 @@ namespace BookARoom.Controllers
         }
 
 
-        public bool DeleteBooking(string bookingNumber)
+       public void Remove(object removeFromTable, EventArgs e)
         {
-            booking = new Booking(bookingNumber);
-            return dal.DeleteBooking(booking);
+            dal.Remove(removeFromTable);
         }
 
      }

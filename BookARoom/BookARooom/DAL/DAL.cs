@@ -11,6 +11,8 @@ namespace BookARoom.DAL
 {
     public class Dal
     {
+        BookingContext db = new BookingContext();
+
         SqlDataAdapter da = new SqlDataAdapter();
 
         public static SqlConnection OpenConnect()
@@ -40,21 +42,32 @@ namespace BookARoom.DAL
 
         public void Add(object addToTable)
         {
-            OpenConnect();
-            var db = new BookingContext();
+            switch (addToTable)
+            {
+                case Booking b1:
+                    db.Bookings.Add(b1);
+                    db.SaveChanges();
+                    break;
+                case Customer c1:
+                    db.Customers.Add(c1);
+                    db.SaveChanges();
+                    break;
+            }
+        }
 
-                switch (addToTable)
-                {
-                    case Booking b1:
-                        db.Bookings.Add(b1);
-                        db.SaveChanges();
-                        break;
-                    case Customer c1:
-                        db.Customers.Add(c1);
-                        db.SaveChanges();
-                        break;
-                }
-            CloseConnect(OpenConnect());
+        public void Remove(object removeFromTable)
+        {
+            switch (removeFromTable)
+            {
+                case Booking b1:
+                    db.Bookings.Remove(b1);
+                    db.SaveChanges();
+                    break;
+                case Customer c1:
+                    db.Customers.Remove(c1);
+                    db.SaveChanges();
+                    break;
+            }
         }
 
         public int TotalPrice(string bookingNumber)
@@ -87,7 +100,7 @@ namespace BookARoom.DAL
                 "and where Booking.RoomNumber != Roomnumber");
             
             da.Fill(dt);
-
+            
             CloseConnect(OpenConnect());
             return dt;
         }
@@ -124,6 +137,8 @@ namespace BookARoom.DAL
             CloseConnect(OpenConnect());
             return dt;
         }
+
+        //Alla städer som finns i ett visst land
 
     }
  }
