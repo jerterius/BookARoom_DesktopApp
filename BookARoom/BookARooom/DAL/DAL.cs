@@ -13,14 +13,12 @@ namespace BookARoom.DAL
     {
         BookingContext db = new BookingContext();
 
-       /* SqlDataAdapter da = new SqlDataAdapter();
+        SqlDataAdapter da = new SqlDataAdapter();
 
         public static SqlConnection OpenConnect()
          { 
-            string dbAdress = "Data Source = MSSQLLocalDB;Initial Catalog=BookingDB;Integrated Security=SSPI";
-            
-            SqlConnection con = new SqlConnection(dbAdress);
-            con.Open();
+            SqlConnection con = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = BookingDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
+
             return con;
          } 
 
@@ -39,29 +37,10 @@ namespace BookARoom.DAL
 
             return cmd;
         } 
-        public DataTable AllCountries()
-        {
-            DataTable dt = new DataTable();
+     
 
-            OpenConnect();
-            QueryStatement("select CountryName from Cities");
-            da.Fill(dt);
+      
 
-            CloseConnect(OpenConnect());
-            return dt;
-        }
-
-        public DataTable AllCities()
-        {
-            DataTable dt = new DataTable();
-
-            OpenConnect();
-            QueryStatement("select CityName from Cities");
-            da.Fill(dt);
-
-            CloseConnect(OpenConnect());
-            return dt;
-        } */
 
         public void Add(object addToTable)
         {
@@ -176,25 +155,27 @@ namespace BookARoom.DAL
             return cities.ToList();
         }
 
-       public DataSet TestGetData()
+
+        public DataSet TestGetData()
         {
-            SqlConnection connection = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = BookingDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
+
+            OpenConnect();
+
             DataSet data = new DataSet();
             data.Locale = System.Globalization.CultureInfo.InvariantCulture;
 
-            SqlDataAdapter masterDataAdapter = new
-              SqlDataAdapter("select * from Hotels", connection);
-            masterDataAdapter.Fill(data, "Hotels");
+            QueryStatement("select * from Hotels");
+            da.Fill(data, "Hotels");
 
-            SqlDataAdapter detailsDataAdapter = new
-            SqlDataAdapter("select * from Rooms", connection);
-            detailsDataAdapter.Fill(data, "Rooms");
+            QueryStatement("select * from Rooms");
+            da.Fill(data, "Rooms");
 
             DataRelation relation = new DataRelation("HotelsRooms",
                 data.Tables["Hotels"].Columns["Adress"],
                 data.Tables["Rooms"].Columns["Adress"]);
             data.Relations.Add(relation);
 
+            CloseConnect(OpenConnect());
             return data;
         }
     }

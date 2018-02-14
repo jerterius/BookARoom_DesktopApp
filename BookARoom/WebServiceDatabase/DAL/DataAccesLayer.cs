@@ -1,0 +1,123 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+using WebServiceDatabase.SQLConnection;
+
+
+namespace WebServiceDatabase.DAL
+{
+    
+    public class DataAccesLayer
+    {
+        Connection con;
+        string selectedFunctions;
+        
+        
+
+        public List<string[]> GetEmployeeTables(string selectedFunctions)
+        {
+            List<string[]> resultList = new List<string[]>();
+            string query = null;
+            this.selectedFunctions = selectedFunctions;
+
+                switch (selectedFunctions)
+                {
+                    case "FindEmployee":
+                        query = "select 'Employee' as Tabellnamn, No_, [First Name], [Last Name], Initials, [Job Title] from  dbo.[CRONUS Sverige AB$Employee]";
+
+                        break;
+                    case "FindEmployeeAbsence":
+                        query = "select 'Employee Absence' as Tabbelnamn, [Entry No_], [Employee No_], [From Date], [To Date], [Cause of Absence Code] from dbo.[CRONUS Sverige AB$Employee Absence]";
+
+                        break;
+                    case "FindEmployeeQualifications":
+                        query = "select 'Employee Qualification' as Tabellnamn, [Employee No_], [Line No_], [Qualification Code], Type, Description from dbo.[CRONUS Sverige AB$Employee Qualification]";
+
+                        break;
+                    case "FindEmployeeRelative":
+                        query = "select 'Employee Relative' as Tabellnamn, [Employee No_], [Line No_], [Relative Code], [First Name], [Last Name] from dbo.[CRONUS Sverige AB$Employee Relative]";
+
+                        break;
+                    case "FindEmployeePortalSetup":
+                        query = "select 'Employee Portal Setup'as Tabellnamn, [Search Limit], [Temp_ Key Index], [Temp_ Table No_], [Temp_ Key String], [Temp_ Option Value]\r\n"
+                                + "	from dbo.[CRONUS Sverige AB$Employee Portal Setup]";
+
+                        break;
+                    case "FindEmployeeStatisticGroup":
+                        query = "select 'Employee Statistics Group' as Tabellnamn, *, ' ', ' ' " // Lade till extra kolumner som
+                                                                                                 // ' '.
+                                + "	from  dbo.[CRONUS Sverige AB$Employee Statistics Group]";
+
+                        break;
+                case "Samtliga nycklar":
+
+                    query = "select distinct constraint_name as [Samtliga nycklar] from INFORMATION_SCHEMA.KEY_COLUMN_USAGE";
+
+                    break;
+                case "Samtliga index":
+
+                    query = "select object_id as [Objekt id],name as Namn, index_id as [Index id], type as Typ, type_desc as Typbeskrivning from sys.indexes where name like '%CRONUS%'";
+
+                    break;
+                case "Samtliga tabellbegränsningar":
+
+                    query = "select constraint_name Begränsningsnamn, table_name as Tabellnamn, constraint_type as Begränsningstyp from INFORMATION_SCHEMA.TABLE_CONSTRAINTS";
+
+                    break;
+                case "Samtliga tabeller":
+
+                    query = "select name as [Samtliga tabeller] from sys.tables order by name";
+
+                    // alt 2
+                    // "select * from INFORMATION_SCHEMA.TABLES";
+
+                    break;
+                case "Samtliga kolumner från tabellen Employee":
+
+                    query = "select column_name as Kolumnnamn, table_name as Tabellnamn from INFORMATION_SCHEMA.COLUMNS where table_name = 'CRONUS Sverige AB$Employee'";
+
+                    // alt 2
+                    // query = "select c.name from sys.columns c inner join sys.tables t
+                    // on c.object_id = t.object_id and t.name = 'CRONUS Sverige
+                    // AB$Employee';";
+
+                    break;
+                case "Tabell med flest rader":
+
+                    query = "select top 1 tablename as Tabellnamn from (select object_name(object_id)tablename, "
+                            + "st.row_count as antal from sys.dm_db_partition_stats st where index_id < 2) "
+                            + "x where tablename like 'CRONUS%' group by tablename, antal order by antal desc;";
+
+                    break;
+            }
+                con.OpenConnect();
+
+            SqlDataReader reader = con.QueryStatement(query).ExecuteReader();
+            var columns = new List<string>();
+
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                columns.Add(reader.GetName(i));
+            }
+
+            resultList.Add(columns.ToArray());
+
+            con.CloseConnect(con.OpenConnect());
+            return resultList;
+            
+                
+            
+
+
+
+
+
+            }
+    }
+	}
+
+	
+
