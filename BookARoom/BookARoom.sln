@@ -23,8 +23,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BookARoomWebservice", "Book
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "52409"
+		SlnRelativePath = "BookARoomWebservice\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDatabase", "WebServiceDatabase\WebServiceDatabase.csproj", "{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +43,10 @@ Global
 		{30860062-47B5-431B-978E-12C78CF74256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30860062-47B5-431B-978E-12C78CF74256}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{30860062-47B5-431B-978E-12C78CF74256}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
