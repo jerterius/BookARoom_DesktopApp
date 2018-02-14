@@ -18,7 +18,7 @@ namespace BookARoom.Views
     public partial class UCNavigator : UserControl
     {
         Controller controller = new Controller();
-      
+       
 
         public UCNavigator()
         {
@@ -80,7 +80,6 @@ namespace BookARoom.Views
 
         private void hotelDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            
         }
     }
 }
