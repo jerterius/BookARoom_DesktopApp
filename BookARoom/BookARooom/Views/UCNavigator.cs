@@ -43,12 +43,27 @@ namespace BookARoom.Views
             DateTime fromDate = dtpFromDate.Value;
             DateTime toDate = dtpToDate.Value;
 
+            //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
+            hotelBindingSource.DataSource = controller.TestGetData();
+            hotelBindingSource.DataMember = "Hotels";
+            
+            roomsBindingSource.DataSource = hotelBindingSource;
+            roomsBindingSource.DataMember = "HotelsRooms";
+
+            DataGridViewButtonColumn col = new DataGridViewButtonColumn();
+            col.UseColumnTextForButtonValue = true;
+            col.Text = "SELECT";
+            col.Name = "Booking";
+            roomsDataGridView.Columns.Add(col);
+            
+
+            /*
             hotelBindingSource.DataSource = controller.HotelsWithAvailableRooms(cityName);
             hotelDataGridView.DataSource = hotelBindingSource;
             roomsDataGridView.DataSource = hotelBindingSource;
             //roomsDataGridView.DataSource = bindingSource;
             //hotelDataGridView.DataSource = controller.GetAllHotels();
-            //controller.getAvailableHotels(search, countryName, cityName, fromDate, toDate);
+            //controller.getAvailableHotels(search, countryName, cityName, fromDate, toDate);*/
 
         }
 
@@ -58,17 +73,12 @@ namespace BookARoom.Views
             cbCountry.DataSource = controller.Retrieve("Country");
             cbCountry.Text = "Choose Country";
 
-            //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
-             hotelBindingSource.DataSource = controller.TestGetData();
-             hotelBindingSource.DataMember = "Hotels";
+            /*//Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
+            hotelBindingSource.DataSource = controller.TestGetData();
+            hotelBindingSource.DataMember = "Hotels";
 
-             roomsBindingSource.DataSource = hotelBindingSource;
-             roomsBindingSource.DataMember = "HotelsRooms";
-            
-           
-          
-            
-
+            roomsBindingSource.DataSource = hotelBindingSource;
+            roomsBindingSource.DataMember = "HotelsRooms";*/
 
         }
 
@@ -81,6 +91,14 @@ namespace BookARoom.Views
         private void hotelDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void roomsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
+            {
+                tbSearch.Text = "Vad händer?";
+            }
         }
     }
 }

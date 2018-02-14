@@ -29,8 +29,6 @@ namespace BookARoom.Models
         public string BookingNumber { get; set; }
         [Key, Column(Order = 3)]
         public DateTime Date { get; set; }
-        public string Responsible { get; set; }
-        public string CreditCardNumber { get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual Room Room { get; set; }
@@ -42,12 +40,10 @@ namespace BookARoom.Models
             BookingNumber = bookingNumber;
         }
 
-        public Booking(string bookingNumber, DateTime date, string responsible, string creditCardNumber, string phoneNumber)
+        public Booking(string bookingNumber, DateTime date, string phoneNumber)
         {
             BookingNumber = bookingNumber;
             Date = date;
-            Responsible = responsible;
-            CreditCardNumber = creditCardNumber;
             CPhoneNumber = phoneNumber;
 
         }

@@ -59,6 +59,14 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="DAL\BookingContext.cs" />
     <Compile Include="DAL\Dal.cs" />
+    <Compile Include="Migrations\201802141103155_AddPassword.cs" />
+    <Compile Include="Migrations\201802141103155_AddPassword.Designer.cs">
+      <DependentUpon>201802141103155_AddPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802141121371_RemoveCreditCardResponsible.cs" />
+    <Compile Include="Migrations\201802141121371_RemoveCreditCardResponsible.Designer.cs">
+      <DependentUpon>201802141121371_RemoveCreditCardResponsible.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +89,18 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\UCAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UCAccount.Designer.cs">
+      <DependentUpon>UCAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UCLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UCLogin.Designer.cs">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UCNavigator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +108,12 @@
       <DependentUpon>UCNavigator.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExceptionHandler.cs" />
+    <EmbeddedResource Include="Migrations\201802141103155_AddPassword.resx">
+      <DependentUpon>201802141103155_AddPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802141121371_RemoveCreditCardResponsible.resx">
+      <DependentUpon>201802141121371_RemoveCreditCardResponsible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +133,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\UCAccount.resx">
+      <DependentUpon>UCAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UCLogin.resx">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UCNavigator.resx">
       <DependentUpon>UCNavigator.cs</DependentUpon>
     </EmbeddedResource>

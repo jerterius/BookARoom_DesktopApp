@@ -45,16 +45,16 @@
             this.tbStandard = new System.Windows.Forms.TrackBar();
             this.lblStandard = new System.Windows.Forms.Label();
             this.hotelDataGridView = new System.Windows.Forms.DataGridView();
-            this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomsDataGridView = new System.Windows.Forms.DataGridView();
-            this.hotelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.smokeFreeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +64,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,20 +220,16 @@
             this.hotelDataGridView.Name = "hotelDataGridView";
             this.hotelDataGridView.ReadOnly = true;
             this.hotelDataGridView.RowTemplate.Height = 28;
-            this.hotelDataGridView.Size = new System.Drawing.Size(747, 261);
+            this.hotelDataGridView.Size = new System.Drawing.Size(1104, 261);
             this.hotelDataGridView.TabIndex = 15;
             this.hotelDataGridView.SelectionChanged += new System.EventHandler(this.hotelDataGridView_SelectionChanged);
-            // 
-            // roomsBindingSource
-            // 
-            this.roomsBindingSource.DataMember = "Rooms";
-            this.roomsBindingSource.DataSource = this.hotelBindingSource;
             // 
             // roomsDataGridView
             // 
             this.roomsDataGridView.AllowUserToAddRows = false;
             this.roomsDataGridView.AllowUserToDeleteRows = false;
             this.roomsDataGridView.AutoGenerateColumns = false;
+            this.roomsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roomNumberDataGridViewTextBoxColumn,
@@ -247,12 +243,14 @@
             this.roomsDataGridView.Name = "roomsDataGridView";
             this.roomsDataGridView.ReadOnly = true;
             this.roomsDataGridView.RowTemplate.Height = 28;
-            this.roomsDataGridView.Size = new System.Drawing.Size(747, 220);
+            this.roomsDataGridView.Size = new System.Drawing.Size(1104, 220);
             this.roomsDataGridView.TabIndex = 16;
+            this.roomsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomsDataGridView_CellClick);
             // 
-            // hotelBindingSource
+            // roomsBindingSource
             // 
-            this.hotelBindingSource.DataSource = typeof(BookARoom.Models.Hotel);
+            this.roomsBindingSource.DataMember = "Rooms";
+            this.roomsBindingSource.DataSource = this.hotelBindingSource;
             // 
             // roomNumberDataGridViewTextBoxColumn
             // 
@@ -260,6 +258,7 @@
             this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
             this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
             this.roomNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.roomNumberDataGridViewTextBoxColumn.Width = 144;
             // 
             // bedDataGridViewTextBoxColumn
             // 
@@ -267,6 +266,7 @@
             this.bedDataGridViewTextBoxColumn.HeaderText = "Bed";
             this.bedDataGridViewTextBoxColumn.Name = "bedDataGridViewTextBoxColumn";
             this.bedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bedDataGridViewTextBoxColumn.Width = 74;
             // 
             // smokeFreeDataGridViewCheckBoxColumn
             // 
@@ -274,6 +274,7 @@
             this.smokeFreeDataGridViewCheckBoxColumn.HeaderText = "SmokeFree";
             this.smokeFreeDataGridViewCheckBoxColumn.Name = "smokeFreeDataGridViewCheckBoxColumn";
             this.smokeFreeDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.smokeFreeDataGridViewCheckBoxColumn.Width = 98;
             // 
             // priceDataGridViewTextBoxColumn
             // 
@@ -281,6 +282,7 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 80;
             // 
             // guestCapacityDataGridViewTextBoxColumn
             // 
@@ -288,6 +290,7 @@
             this.guestCapacityDataGridViewTextBoxColumn.HeaderText = "GuestCapacity";
             this.guestCapacityDataGridViewTextBoxColumn.Name = "guestCapacityDataGridViewTextBoxColumn";
             this.guestCapacityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.guestCapacityDataGridViewTextBoxColumn.Width = 150;
             // 
             // adressDataGridViewTextBoxColumn
             // 
@@ -295,6 +298,11 @@
             this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
             this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
             this.adressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adressDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // hotelBindingSource
+            // 
+            this.hotelBindingSource.DataSource = typeof(BookARoom.Models.Hotel);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -360,14 +368,14 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClear);
             this.Name = "UCNavigator";
-            this.Size = new System.Drawing.Size(1175, 638);
+            this.Size = new System.Drawing.Size(1441, 638);
             this.Load += new System.EventHandler(this.UCNavigator_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

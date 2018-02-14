@@ -27,6 +27,12 @@ namespace BookARoom.Views
             this.Dock = DockStyle.Fill;
         }
 
-        
+
+
+        private void lLblNewUser_Click(object sender, EventArgs e)
+        {
+            tabControlPK.SelectedTab = tabPageAccount;
+          
+        }
     }
 }
