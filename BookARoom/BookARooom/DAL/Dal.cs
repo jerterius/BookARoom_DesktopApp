@@ -141,7 +141,7 @@ namespace BookARoom.DAL
                            where !db.Bookings.Any(b => b.RoomNumber == r.RoomNumber)
                            select h;
 
-            return hotelList.ToList();
+            return hotelList.Distinct().ToList();
         }
 
 
