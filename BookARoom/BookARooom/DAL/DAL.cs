@@ -176,7 +176,7 @@ namespace BookARoom.DAL
             return cities.ToList();
         }
 
-        public DataSet TestGetData()
+       public DataSet TestGetData()
         {
             SqlConnection connection = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = BookingDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
             DataSet data = new DataSet();
