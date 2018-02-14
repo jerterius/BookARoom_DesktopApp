@@ -20,9 +20,10 @@ namespace BookARoom.Controllers
             }
 
 
-        public void Add(object addToTable, EventArgs e)
+        public void AddCustomer(string title, string name, string adress, string telephone, string email, string password)
         {
-                dal.Add(addToTable);
+            Customer c = new Customer(title, name, adress, telephone, email, password);
+                dal.Add(c);
         }
 
 

@@ -49,6 +49,7 @@ namespace BookARoom.Views
             this.btnSave = new System.Windows.Forms.Button();
             this.tbxRePassword = new System.Windows.Forms.TextBox();
             this.lblNewPassword = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,6 +209,7 @@ namespace BookARoom.Views
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tbxRePassword
             // 
@@ -228,6 +230,18 @@ namespace BookARoom.Views
             this.lblNewPassword.TabIndex = 0;
             this.lblNewPassword.Text = "Repeat Password:";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblStatus.Location = new System.Drawing.Point(538, 197);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(62, 20);
+            this.lblStatus.TabIndex = 0;
+            this.lblStatus.Text = "Status";
+            this.lblStatus.Visible = false;
+            // 
             // UCAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -243,6 +257,7 @@ namespace BookARoom.Views
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.cbTitle);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelephone);
             this.Controls.Add(this.lblAdress);
@@ -252,7 +267,7 @@ namespace BookARoom.Views
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTitle);
             this.Name = "UCAccount";
-            this.Size = new System.Drawing.Size(952, 621);
+            this.Size = new System.Drawing.Size(952, 647);
             this.Load += new System.EventHandler(this.UCAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -281,6 +296,7 @@ namespace BookARoom.Views
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbxRePassword;
         private System.Windows.Forms.Label lblNewPassword;
+        private Label lblStatus;
 
         public Button BtnEdit {get; set;}
     }

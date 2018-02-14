@@ -27,13 +27,14 @@ namespace BookARoom.Models
             this.Bookings = new ObservableCollection<Booking>();
         }
 
-        public Customer(string name, string title, string adress, string phonenumber, string email)
+        public Customer(string title, string name, string adress, string phonenumber, string email, string password)
         {
             CName = name;
             Title = title;
             CAdress = adress;
             CPhoneNumber = phonenumber;
             CEmail = email;
+            Password = password;
         }
 
     }

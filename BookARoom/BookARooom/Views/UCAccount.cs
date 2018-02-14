@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookARoom.Controllers;
 
 namespace BookARoom.Views
 {
     public partial class UCAccount : UserControl
     {
+        Controller controller = new Controller();
+
+
         public UCAccount()
         {
             InitializeComponent();
@@ -47,6 +51,26 @@ namespace BookARoom.Views
 
             btnSave.Visible = false;
             btnAbort.Visible = false;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (lblPassword.Text.Equals(lblNewPassword.Text))
+            {
+                string title = cbTitle.Text;
+                string name = tbxName.Text;
+                string adress = tbxAdress.Text;
+                string telephone = tbxTelephone.Text;
+                string email = tbxEmail.Text;
+                string password = tbxPassword.Text;
+
+                controller.AddCustomer(title, name, adress, telephone, email, password);
+
+            }
+            else {
+                lblStatus.Text = "Paswords does not match!";
+                lblStatus.Visible = true;
+            }
         }
     }
 }
