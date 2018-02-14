@@ -54,15 +54,22 @@ namespace BookARoom.Views
 
         private void UCNavigator_Load(object sender, EventArgs e)
         {
-            //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
+            
             cbCountry.DataSource = controller.Retrieve("Country");
             cbCountry.Text = "Choose Country";
 
-            hotelBindingSource.DataSource = controller.TestGetData();
-            hotelBindingSource.DataMember = "Hotels";
+            //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
+             hotelBindingSource.DataSource = controller.TestGetData();
+             hotelBindingSource.DataMember = "Hotels";
 
-            roomsBindingSource.DataSource = hotelBindingSource;
-            roomsBindingSource.DataMember = "HotelsRooms";
+             roomsBindingSource.DataSource = hotelBindingSource;
+             roomsBindingSource.DataMember = "HotelsRooms";
+            
+           
+          
+            
+
+
         }
 
         private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
