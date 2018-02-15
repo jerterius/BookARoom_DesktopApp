@@ -17,7 +17,7 @@ namespace WebServiceDatabase.DAL
         
         
 
-        public List<string[]> GetEmployeeTables(string selectedFunctions)
+        public List<string[]> GetTables(string selectedFunctions)
         {
             List<string[]> resultList = new List<string[]>();
             string query = null;
@@ -30,7 +30,7 @@ namespace WebServiceDatabase.DAL
 
                         break;
                     case "FindEmployeeAbsence":
-                        query = "select 'Employee Absence' as Tabbelnamn, [Entry No_], [Employee No_], [From Date], [To Date], [Cause of Absence Code] from dbo.[CRONUS Sverige AB$Employee Absence]";
+                        query = "select 'Employee Absence' as Tabellnamn, [Entry No_], [Employee No_], [From Date], [To Date], [Cause of Absence Code] from dbo.[CRONUS Sverige AB$Employee Absence]";
 
                         break;
                     case "FindEmployeeQualifications":
@@ -48,10 +48,17 @@ namespace WebServiceDatabase.DAL
                         break;
                     case "FindEmployeeStatisticGroup":
                         query = "select 'Employee Statistics Group' as Tabellnamn, *, ' ', ' ' " // Lade till extra kolumner som
-                                                                                                 // ' '.
-                                + "	from  dbo.[CRONUS Sverige AB$Employee Statistics Group]";
+                                                                                             // ' '.
+                            + "	from  dbo.[CRONUS Sverige AB$Employee Statistics Group]";
+                    break;
 
-                        break;
+                case "FindEmployeeAndRelatives":
+                    query = "select [CRONUS Sverige AB$Employee].[First Name], [CRONUS Sverige AB$Employee].[Last Name], [CRONUS Sverige AB$Employee].[Job Title], [CRONUS Sverige AB$Employee].Address, [CRONUS Sverige AB$Employee Relative].[First Name] Relative " +
+                        "from [CRONUS Sverige AB$Employee Relative] " +
+                        "inner join [CRONUS Sverige AB$Employee] on [CRONUS Sverige AB$Employee Relative].[Employee No_] = [CRONUS Sverige AB$Employee].No_";
+                    break;
+
+                
                 case "Samtliga nycklar":
 
                     query = "select distinct constraint_name as [Samtliga nycklar] from INFORMATION_SCHEMA.KEY_COLUMN_USAGE";
