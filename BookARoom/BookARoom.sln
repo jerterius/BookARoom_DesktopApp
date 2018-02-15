@@ -5,29 +5,28 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoom", "BookARooom\BookARoom.csproj", "{08CE6CD9-5790-475F-91A2-8F45D11E4D80}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BookARoomWebservice", "BookARoomWebservice\", "{30860062-47B5-431B-978E-12C78CF74256}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDatabase", "WebServiceDatabase\WebServiceDatabase.csproj", "{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebService", "CronusWebService\", "{11CEE2FA-3B4D-4677-B9B7-D6B8B23B65E4}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_52409"
-		Debug.AspNetCompiler.PhysicalPath = "BookARoomWebservice\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52409\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52080"
+		Debug.AspNetCompiler.PhysicalPath = "CronusWebService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52080\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_52409"
-		Release.AspNetCompiler.PhysicalPath = "BookARoomWebservice\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52409\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52080"
+		Release.AspNetCompiler.PhysicalPath = "CronusWebService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52080\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "52409"
-		SlnRelativePath = "BookARoomWebservice\"
+		VWDPort = "52080"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDatabase", "WebServiceDatabase\WebServiceDatabase.csproj", "{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,14 +38,14 @@ Global
 		{08CE6CD9-5790-475F-91A2-8F45D11E4D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08CE6CD9-5790-475F-91A2-8F45D11E4D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08CE6CD9-5790-475F-91A2-8F45D11E4D80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{30860062-47B5-431B-978E-12C78CF74256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30860062-47B5-431B-978E-12C78CF74256}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30860062-47B5-431B-978E-12C78CF74256}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{30860062-47B5-431B-978E-12C78CF74256}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CEE2FA-3B4D-4677-B9B7-D6B8B23B65E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CEE2FA-3B4D-4677-B9B7-D6B8B23B65E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CEE2FA-3B4D-4677-B9B7-D6B8B23B65E4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CEE2FA-3B4D-4677-B9B7-D6B8B23B65E4}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

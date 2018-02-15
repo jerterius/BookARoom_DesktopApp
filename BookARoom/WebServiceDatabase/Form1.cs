@@ -11,9 +11,32 @@ namespace WebServiceDatabase
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
+        }
+
+       
+
+        private void comboBoxFunctions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblTables_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCronusTitel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dbTablesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
