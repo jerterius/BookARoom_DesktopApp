@@ -16,6 +16,11 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Choose());
+
+            MathService service = new MathService();
+
+            Console.WriteLine(service.TxtFile());
+            Console.ReadLine();
         }
     }
 }
