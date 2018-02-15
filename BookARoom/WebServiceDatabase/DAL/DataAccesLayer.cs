@@ -68,8 +68,12 @@ namespace WebServiceDatabase.DAL
                         "and[From Date] < '2005-01-01 00:00:00'";
                     break;
 
-                case "EmployeeWithMostAbsence": // Lägg in SQL query
-                    query = " ";
+                case "EmployeeWithMostAbsence": 
+                    query = " select top 5 [CRONUS Sverige AB$Employee].[First Name]" +
+                        "from dbo.[CRONUS Sverige AB$Employee Absence]" +
+                        "inner join [CRONUS Sverige AB$Employee] on [CRONUS Sverige AB$Employee Absence].[Employee No_] = [CRONUS Sverige AB$Employee].No_" +
+                        "group by [CRONUS Sverige AB$Employee].[First Name]" +
+                        "order by COUNT(*) desc";
                     break;
 
                 case "Samtliga nycklar":
