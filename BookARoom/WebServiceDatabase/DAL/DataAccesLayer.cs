@@ -12,16 +12,16 @@ namespace WebServiceDatabase.DAL
     
     public class DataAccesLayer
     {
-        Connection con;
-        string selectedFunctions;
+        private Connection con;
+        private string selectedFunctions;
         
         
 
-        public List<string[]> GetTables(string selectedFunctions)
+        public List<string[]> GetTables(string selectedFunction)
         {
             List<string[]> resultList = new List<string[]>();
             string query = null;
-            this.selectedFunctions = selectedFunctions;
+            selectedFunctions = selectedFunction;
 
                 switch (selectedFunctions)
                 {
@@ -132,16 +132,44 @@ namespace WebServiceDatabase.DAL
             con.CloseConnect(con.OpenConnect());
             return resultList;
             
-                
+        }
+
             
+            public DataSet updateEmployee(DataSet employeeDS)
+            {
+                con.OpenConnect();
 
+            SqlDataAdapter da = new SqlDataAdapter();
 
+                da.InsertCommand = new SqlCommand("insert into dbo.[CRONUS Sverige AB$Employee](No_, [First Name], [Last Name], [Job Title], Adress) values(@No_, @[First Name], @[Last Name], @[Job Title], @Adress)");
+                da.InsertCommand.Parameters.Add("@No_", SqlDbType.NChar, 20, "No_");
+                da.InsertCommand.Parameters.Add("@[First Name", SqlDbType.NChar, 30, "[First Name]");
+                da.InsertCommand.Parameters.Add("@[Last Name]", SqlDbType.NChar, 30, "[Last Name]");
+                da.InsertCommand.Parameters.Add("@[Job Title]", SqlDbType.NChar, 30, "[Job Title]");
+                da.InsertCommand.Parameters.Add("@Adress", SqlDbType.NChar, 50, "Adress");
 
+                da.UpdateCommand = new SqlCommand("update dbo.[CRONUS Sverige AB$Employee set No_ = @No_" + "[First Name] = @[First Name]" + "@[Last Name] = [Last Name]" + "@[Job Title] = [Job Title]" + "@Adress = [Adress] where No_ = @oldNo_");
+                da.UpdateCommand.Parameters.Add("@No_", SqlDbType.NChar, 20, "No_");
+                da.UpdateCommand.Parameters.Add("@[First Name", SqlDbType.NChar, 30, "[First Name]");
+                da.UpdateCommand.Parameters.Add("@[Last Name]", SqlDbType.NChar, 30, "[Last Name]");
+                da.UpdateCommand.Parameters.Add("@[Job Title]", SqlDbType.NChar, 30, "[Job Title]");
+                da.UpdateCommand.Parameters.Add("@Adress", SqlDbType.NChar, 50, "Adress");
 
+                SqlParameter parameter = da.UpdateCommand.Parameters.Add("@oldNo_", SqlDbType.NChar, 20, "No_");
+                parameter.SourceVersion = DataRowVersion.Original;
 
+                da.DeleteCommand = new SqlCommand("delete [CRONUS Sverige AB$Employee] where No_ = @No_", con.OpenConnect());
+
+                parameter = da.DeleteCommand.Parameters.Add("@No_", SqlDbType.NChar, 20, "No_");
+
+                parameter.SourceVersion = DataRowVersion.Original;
+                da.Update(employeeDS, "[CRONUS Sverige AB$Employee]");
+
+                return employeeDS;
             }
+
+        }
     }
-	}
 
 	
 
