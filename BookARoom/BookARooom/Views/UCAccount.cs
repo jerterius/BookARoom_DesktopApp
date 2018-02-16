@@ -15,10 +15,16 @@ namespace BookARoom.Views
     {
         Controller controller = new Controller();
 
+        public delegate void PassBookingData(object sender, EventArgs e);
+        public PassBookingData passBookingData;
 
         public UCAccount()
         {
             InitializeComponent();
+        }
+        public string getTelephoneNo(object sender, EventArgs e)
+        {
+            return tbxTelephone.Text;
         }
 
         public void btnEdit_Click(object sender, EventArgs e)
@@ -71,6 +77,12 @@ namespace BookARoom.Views
                 lblStatus.Text = "Paswords does not match!";
                 lblStatus.Visible = true;
             }
+        }
+
+        private void tbxTelephone_TextChanged(object sender, EventArgs e)
+        {
+            if (passBookingData != null)
+                passBookingData(tbxTelephone, e);
         }
     }
 }

@@ -135,6 +135,7 @@ namespace BookARoom.Views
             this.tbxTelephone.ReadOnly = true;
             this.tbxTelephone.Size = new System.Drawing.Size(320, 26);
             this.tbxTelephone.TabIndex = 2;
+            this.tbxTelephone.TextChanged += new System.EventHandler(this.tbxTelephone_TextChanged);
             // 
             // tbxEmail
             // 

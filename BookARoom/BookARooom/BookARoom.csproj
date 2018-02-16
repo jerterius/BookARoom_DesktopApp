@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201802141121371_RemoveCreditCardResponsible.Designer.cs">
       <DependentUpon>201802141121371_RemoveCreditCardResponsible.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802160936190_UpdateBookingPK.cs" />
+    <Compile Include="Migrations\201802160936190_UpdateBookingPK.Designer.cs">
+      <DependentUpon>201802160936190_UpdateBookingPK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802141121371_RemoveCreditCardResponsible.resx">
       <DependentUpon>201802141121371_RemoveCreditCardResponsible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802160936190_UpdateBookingPK.resx">
+      <DependentUpon>201802160936190_UpdateBookingPK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

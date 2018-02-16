@@ -26,6 +26,11 @@ namespace BookARoom.Controllers
                 dal.Add(c);
         }
 
+        public void AddBooking(string adress, string bookingNo, string cPhonenNo, DateTime date, string roomNo)
+        {
+            Booking b = new Booking(adress, bookingNo, cPhonenNo, date, roomNo);
+            dal.Add(b);
+        }
 
        public void Remove(object removeFromTable, EventArgs e)
         {
