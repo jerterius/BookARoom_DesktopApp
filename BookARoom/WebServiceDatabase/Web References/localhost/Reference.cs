@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace WebServiceDatabase.Grupp25.WebService {
+namespace WebServiceDatabase.localhost {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -35,7 +35,7 @@ namespace WebServiceDatabase.Grupp25.WebService {
         
         /// <remarks/>
         public Service() {
-            this.Url = global::WebServiceDatabase.Properties.Settings.Default.WebServiceDatabase_Grupp25_WebService_Service;
+            this.Url = global::WebServiceDatabase.Properties.Settings.Default.WebServiceDatabase_localhost_Service;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

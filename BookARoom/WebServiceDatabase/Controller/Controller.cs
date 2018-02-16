@@ -5,11 +5,13 @@ using System.Text;
 using System.Data;
 using WebServiceDatabase.DAL;
 
+
 namespace WebServiceDatabase.Controller
 {
     public class Controller
     {
         DataAccesLayer dal = new DataAccesLayer();
+        
         
         List<string> colName = new List<string>();
         List<string[]> resultList;

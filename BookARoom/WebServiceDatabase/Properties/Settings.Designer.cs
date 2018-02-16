@@ -26,10 +26,10 @@ namespace WebServiceDatabase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52080/Service.asmx")]
-        public string WebServiceDatabase_Grupp25_WebService_Service {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52159/Service.asmx")]
+        public string WebServiceDatabase_localhost_Service {
             get {
-                return ((string)(this["WebServiceDatabase_Grupp25_WebService_Service"]));
+                return ((string)(this["WebServiceDatabase_localhost_Service"]));
             }
         }
     }
