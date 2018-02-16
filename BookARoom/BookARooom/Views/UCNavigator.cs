@@ -17,6 +17,9 @@ namespace BookARoom.Views
 {
     public partial class UCNavigator : UserControl
     {
+        public delegate string GetBookingData(object sender, EventArgs e);
+        public GetBookingData getBookingData;
+
         Controller controller = new Controller();
        
 
@@ -24,6 +27,7 @@ namespace BookARoom.Views
         {
             InitializeComponent();
         }
+
 
         private void tbGuests_Scroll(object addToTable, EventArgs e)
         {
@@ -92,12 +96,42 @@ namespace BookARoom.Views
         {
         }
 
+        string roomNumber;
+        string adress;
+        string cPhoneNo;
+
         private void roomsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+ 
+
+            //Här ska delegate list köras (hit)
+            
+            if (getBookingData!=null)
+            getBookingData(this, EventArgs.Empty);
+
+            
             if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
             {
-                tbSearch.Text = "Vad händer?";
+                roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
+                adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
+                //hur ska vi generera bookningsnummer utan att förstöra databasen?
+
+                String bookingNr = DateTime.Now.ToString()+cPhoneNo;
+
+                for (var dt = dtpFromDate.Value; dt <= dtpToDate.Value; dt.AddDays(1))
+                {
+                    controller.AddBooking(adress, "5", cPhoneNo, dt, roomNumber);
+                }
+               
+
             }
         }
+        public void GetCustomer(object sender, EventArgs e)
+        {
+            cPhoneNo = (sender as TextBox).Text;
+    
+        }
+
+
     }
 }

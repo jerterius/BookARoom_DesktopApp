@@ -35,6 +35,7 @@ namespace BookARoom.Views
             this.tabControlPK = new System.Windows.Forms.TabControl();
             this.tabPageLogin = new System.Windows.Forms.TabPage();
             this.lLblNewUser = new System.Windows.Forms.LinkLabel();
+            this.ucAccount1 = new BookARoom.Views.UCAccount();
             this.btnLogin = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@ namespace BookARoom.Views
             this.tabPageSearch = new System.Windows.Forms.TabPage();
             this.ucNavigator1 = new BookARoom.Views.UCNavigator();
             this.tabPageAccount = new System.Windows.Forms.TabPage();
-            this.ucAccount1 = new BookARoom.Views.UCAccount();
             this.tabPagePKWS = new System.Windows.Forms.TabPage();
             this.tabPageERPWS = new System.Windows.Forms.TabPage();
             this.tabControlMain.SuspendLayout();
@@ -116,7 +116,14 @@ namespace BookARoom.Views
             this.lLblNewUser.TabStop = true;
             this.lLblNewUser.Text = "Create New User";
             this.lLblNewUser.Click += new System.EventHandler(this.lLblNewUser_Click);
-            this.lLblNewUser.Click += new System.EventHandler(ucAccount1.btnEdit_Click);
+            // 
+            // ucAccount1
+            // 
+            this.ucAccount1.BtnEdit = null;
+            this.ucAccount1.Location = new System.Drawing.Point(6, 6);
+            this.ucAccount1.Name = "ucAccount1";
+            this.ucAccount1.Size = new System.Drawing.Size(952, 621);
+            this.ucAccount1.TabIndex = 0;
             // 
             // btnLogin
             // 
@@ -188,14 +195,6 @@ namespace BookARoom.Views
             this.tabPageAccount.TabIndex = 2;
             this.tabPageAccount.Text = "Account";
             this.tabPageAccount.UseVisualStyleBackColor = true;
-            // 
-            // ucAccount1
-            // 
-            this.ucAccount1.BtnEdit = null;
-            this.ucAccount1.Location = new System.Drawing.Point(3, 6);
-            this.ucAccount1.Name = "ucAccount1";
-            this.ucAccount1.Size = new System.Drawing.Size(952, 621);
-            this.ucAccount1.TabIndex = 0;
             // 
             // tabPagePKWS
             // 

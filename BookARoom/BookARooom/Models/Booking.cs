@@ -14,37 +14,36 @@ namespace BookARoom.Models
     public class Booking
     {
 
-        [Key, Column(Order = 0)]
+        
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string BookingNumber { get; set; }
+
+        [Index("IX_DateRoom", 1, IsUnique = true)]
+        public DateTime Date { get; set; }
+
         [ForeignKey("Customer")]
         public string CPhoneNumber { get; set; }
 
-        [Key]
+        [Index("IX_DateRoom", 2, IsUnique = true)]
         [ForeignKey("Room"), Column(Order = 1)]
         public string Adress { get; set; }
 
-        [Key]
+        [Index("IX_DateRoom", 3, IsUnique = true)]
         [ForeignKey("Room"), Column(Order = 2)]
         public string RoomNumber { get; set; }
-
-        public string BookingNumber { get; set; }
-        [Key, Column(Order = 3)]
-        public DateTime Date { get; set; }
-
         public virtual Customer Customer { get; set; }
         public virtual Room Room { get; set; }
 
-       
 
-        public Booking (string bookingNumber)
+        public Booking(string adress, string bookingNo, string cPhoneNo, DateTime date, string roomNo)
         {
-            BookingNumber = bookingNumber;
-        }
-
-        public Booking(string bookingNumber, DateTime date, string phoneNumber)
-        {
-            BookingNumber = bookingNumber;
+            Adress = adress;
+            BookingNumber = bookingNo;
+            CPhoneNumber = cPhoneNo;
             Date = date;
-            CPhoneNumber = phoneNumber;
+            RoomNumber = roomNo;
 
         }
 

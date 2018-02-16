@@ -18,9 +18,18 @@ namespace BookARoom.Views
         public Form1()
         {
             InitializeComponent();
+            //Säger till ucNavigator att när dess clickevent körs så skall ucAccount tbxTelephone hämtas
+
+          //  ucNavigator1.getBookingData += new UCNavigator.GetBookingData(ucAccount1.);
+
+            ucAccount1.passBookingData += new UCAccount.PassBookingData(ucNavigator1.GetCustomer);
+         
+
         }
-
-
+        public void PassCustomerData()
+        {
+            
+        }
 
         private void ucNavigator1_Load(object sender, EventArgs e)
         {
