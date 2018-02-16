@@ -16,11 +16,11 @@ namespace BookARoom.DAL
         SqlDataAdapter da = new SqlDataAdapter();
 
         public static SqlConnection OpenConnect()
-         { 
+        {
             SqlConnection con = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = BookingDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
             return con;
-         } 
+        }
 
         public static void CloseConnect(SqlConnection con)
         {
@@ -36,26 +36,28 @@ namespace BookARoom.DAL
             da.SelectCommand = cmd;
 
             return cmd;
-        } 
-     
+        }
 
-      
+
+
 
 
         public void Add(object addToTable)
         {
-            switch (addToTable)
+
+
+            if (addToTable is Booking)
             {
-                case Booking b1:
-                    db.Bookings.Add(b1);
-                    db.SaveChanges();
-                    break;
-                case Customer c1:
-                    db.Customers.Add(c1);
-                    db.SaveChanges();
-                    break;
+
+                db.Bookings.Add(addToTable as Booking);
+                db.SaveChanges();
             }
+
+            else if (addToTable is Customer)
+                db.Customers.Add(addToTable as Customer);
+            db.SaveChanges();
         }
+
 
 
         public void Remove(object removeFromTable)
@@ -74,10 +76,10 @@ namespace BookARoom.DAL
         }
 
 
-        public int TotalPrice(string bookingNumber)
+        public int TotalPrice(Guid bookingNumber)
         {
             int totalPrice = 0;
-           
+
             var query = from b in db.Bookings
                         where b.BookingNumber == bookingNumber
                         select b;
@@ -107,7 +109,7 @@ namespace BookARoom.DAL
         {
             var hotelList = db.Hotels.Where(h => h.CityName == city.CityName).ToList();
 
-            return hotelList;                    
+            return hotelList;
         }
 
 
@@ -115,38 +117,26 @@ namespace BookARoom.DAL
         public List<Hotel> HotelsWithAvailableRooms(City city)
         {
             var hotelList = from h in db.Hotels
-                           join c in db.Cities on h.CityName equals city.CityName
-                           join r in db.Rooms on h.Adress equals r.Adress
-                           where !db.Bookings.Any(b => b.RoomNumber == r.RoomNumber)
-                           select h;
+                            join c in db.Cities on h.CityName equals city.CityName
+                            join r in db.Rooms on h.Adress equals r.Adress
+                            where !db.Bookings.Any(b => b.RoomNumber == r.RoomNumber)
+                            select h;
 
             return hotelList.Distinct().ToList();
         }
 
 
-        public List<string> Retrieve(string cName)
+        public List<string> GetAllCountries()
         {
-            List<string> List = new List<string>();
 
-            switch (cName)
-            {
-                    case "City":
-                    var cities = from c in db.Cities
-                                 select c.CityName;
+            var query = db.Cities.Select(c => c.CountryName);
 
-                    return cities.ToList();
+            return query.Distinct().ToList();
 
-                    case "Country":
-                    var countries = from c in db.Cities
-                                    select c.CountryName;
-
-                    return countries.Distinct().ToList();
-            }
-            return List;
         }
 
 
-        public List<string> AllCitiesInCountry (string country)
+        public List<string> AllCitiesInCountry(string country)
         {
             var cities = from c in db.Cities
                          where c.CountryName == country
@@ -179,5 +169,5 @@ namespace BookARoom.DAL
             return data;
         }
     }
- }
-    
+}
+

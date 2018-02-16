@@ -34,18 +34,13 @@ namespace BookARoom.Views
             this.tabPagePK = new System.Windows.Forms.TabPage();
             this.tabControlPK = new System.Windows.Forms.TabControl();
             this.tabPageLogin = new System.Windows.Forms.TabPage();
-            this.lLblNewUser = new System.Windows.Forms.LinkLabel();
-            this.ucAccount1 = new BookARoom.Views.UCAccount();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblLoginPass = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.tabPageSearch = new System.Windows.Forms.TabPage();
-            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
             this.tabPageAccount = new System.Windows.Forms.TabPage();
             this.tabPagePKWS = new System.Windows.Forms.TabPage();
             this.tabPageERPWS = new System.Windows.Forms.TabPage();
+            this.ucLogin1 = new BookARoom.Views.UCLogin();
+            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
+            this.ucAccount1 = new BookARoom.Views.UCAccount();
             this.tabControlMain.SuspendLayout();
             this.tabPagePK.SuspendLayout();
             this.tabControlPK.SuspendLayout();
@@ -92,12 +87,7 @@ namespace BookARoom.Views
             // 
             // tabPageLogin
             // 
-            this.tabPageLogin.Controls.Add(this.lLblNewUser);
-            this.tabPageLogin.Controls.Add(this.btnLogin);
-            this.tabPageLogin.Controls.Add(this.textBox2);
-            this.tabPageLogin.Controls.Add(this.textBox1);
-            this.tabPageLogin.Controls.Add(this.lblLoginPass);
-            this.tabPageLogin.Controls.Add(this.lblUserName);
+            this.tabPageLogin.Controls.Add(this.ucLogin1);
             this.tabPageLogin.Location = new System.Drawing.Point(4, 29);
             this.tabPageLogin.Name = "tabPageLogin";
             this.tabPageLogin.Padding = new System.Windows.Forms.Padding(3);
@@ -105,66 +95,6 @@ namespace BookARoom.Views
             this.tabPageLogin.TabIndex = 0;
             this.tabPageLogin.Text = "Login";
             this.tabPageLogin.UseVisualStyleBackColor = true;
-            // 
-            // lLblNewUser
-            // 
-            this.lLblNewUser.AutoSize = true;
-            this.lLblNewUser.Location = new System.Drawing.Point(162, 275);
-            this.lLblNewUser.Name = "lLblNewUser";
-            this.lLblNewUser.Size = new System.Drawing.Size(130, 20);
-            this.lLblNewUser.TabIndex = 3;
-            this.lLblNewUser.TabStop = true;
-            this.lLblNewUser.Text = "Create New User";
-            this.lLblNewUser.Click += new System.EventHandler(this.lLblNewUser_Click);
-            // 
-            // ucAccount1
-            // 
-            this.ucAccount1.BtnEdit = null;
-            this.ucAccount1.Location = new System.Drawing.Point(6, 6);
-            this.ucAccount1.Name = "ucAccount1";
-            this.ucAccount1.Size = new System.Drawing.Size(952, 621);
-            this.ucAccount1.TabIndex = 0;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(191, 164);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 31);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(151, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 26);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(151, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 26);
-            this.textBox1.TabIndex = 1;
-            // 
-            // lblLoginPass
-            // 
-            this.lblLoginPass.AutoSize = true;
-            this.lblLoginPass.Location = new System.Drawing.Point(52, 116);
-            this.lblLoginPass.Name = "lblLoginPass";
-            this.lblLoginPass.Size = new System.Drawing.Size(82, 20);
-            this.lblLoginPass.TabIndex = 0;
-            this.lblLoginPass.Text = "Password:";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(77, 73);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(57, 20);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "E-mail:";
             // 
             // tabPageSearch
             // 
@@ -176,14 +106,6 @@ namespace BookARoom.Views
             this.tabPageSearch.TabIndex = 1;
             this.tabPageSearch.Text = "Search";
             this.tabPageSearch.UseVisualStyleBackColor = true;
-            // 
-            // ucNavigator1
-            // 
-            this.ucNavigator1.AutoSize = true;
-            this.ucNavigator1.Location = new System.Drawing.Point(6, 6);
-            this.ucNavigator1.Name = "ucNavigator1";
-            this.ucNavigator1.Size = new System.Drawing.Size(1432, 595);
-            this.ucNavigator1.TabIndex = 0;
             // 
             // tabPageAccount
             // 
@@ -216,6 +138,29 @@ namespace BookARoom.Views
             this.tabPageERPWS.Text = "ERP & Webservice";
             this.tabPageERPWS.UseVisualStyleBackColor = true;
             // 
+            // ucLogin1
+            // 
+            this.ucLogin1.Location = new System.Drawing.Point(6, 6);
+            this.ucLogin1.Name = "ucLogin1";
+            this.ucLogin1.Size = new System.Drawing.Size(487, 406);
+            this.ucLogin1.TabIndex = 4;
+            // 
+            // ucNavigator1
+            // 
+            this.ucNavigator1.AutoSize = true;
+            this.ucNavigator1.Location = new System.Drawing.Point(6, 6);
+            this.ucNavigator1.Name = "ucNavigator1";
+            this.ucNavigator1.Size = new System.Drawing.Size(1432, 595);
+            this.ucNavigator1.TabIndex = 0;
+            // 
+            // ucAccount1
+            // 
+            this.ucAccount1.BtnEdit = null;
+            this.ucAccount1.Location = new System.Drawing.Point(6, 6);
+            this.ucAccount1.Name = "ucAccount1";
+            this.ucAccount1.Size = new System.Drawing.Size(952, 621);
+            this.ucAccount1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -229,7 +174,6 @@ namespace BookARoom.Views
             this.tabPagePK.ResumeLayout(false);
             this.tabControlPK.ResumeLayout(false);
             this.tabPageLogin.ResumeLayout(false);
-            this.tabPageLogin.PerformLayout();
             this.tabPageSearch.ResumeLayout(false);
             this.tabPageSearch.PerformLayout();
             this.tabPageAccount.ResumeLayout(false);
@@ -249,12 +193,7 @@ namespace BookARoom.Views
         private UCNavigator ucNavigator1;
         private TabPage tabPageAccount;
         private UCAccount ucAccount1;
-        private LinkLabel lLblNewUser;
-        private Button btnLogin;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label lblLoginPass;
-        private Label lblUserName;
+        private UCLogin ucLogin1;
     }
 }
 

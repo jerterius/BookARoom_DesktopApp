@@ -23,12 +23,9 @@ namespace BookARoom.Views
           //  ucNavigator1.getBookingData += new UCNavigator.GetBookingData(ucAccount1.);
 
             ucAccount1.passBookingData += new UCAccount.PassBookingData(ucNavigator1.GetCustomer);
+            ucLogin1.changeTab += new UCLogin.ChangeTab(this.SelectAccountTab);
          
 
-        }
-        public void PassCustomerData()
-        {
-            
         }
 
         private void ucNavigator1_Load(object sender, EventArgs e)
@@ -42,6 +39,11 @@ namespace BookARoom.Views
         {
             tabControlPK.SelectedTab = tabPageAccount;
           
+        }
+
+        private void SelectAccountTab(object sender, EventArgs e)
+        {
+            this.tabControlPK.SelectedTab = tabPageAccount;
         }
     }
 }

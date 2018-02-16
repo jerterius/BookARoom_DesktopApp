@@ -48,7 +48,7 @@ namespace BookARoom.Views
             this.btnAbort = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tbxRePassword = new System.Windows.Forms.TextBox();
-            this.lblNewPassword = new System.Windows.Forms.Label();
+            this.lblRePassword = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +135,6 @@ namespace BookARoom.Views
             this.tbxTelephone.ReadOnly = true;
             this.tbxTelephone.Size = new System.Drawing.Size(320, 26);
             this.tbxTelephone.TabIndex = 2;
-            this.tbxTelephone.TextChanged += new System.EventHandler(this.tbxTelephone_TextChanged);
             // 
             // tbxEmail
             // 
@@ -144,6 +143,7 @@ namespace BookARoom.Views
             this.tbxEmail.ReadOnly = true;
             this.tbxEmail.Size = new System.Drawing.Size(320, 26);
             this.tbxEmail.TabIndex = 2;
+            this.tbxEmail.TextChanged += new System.EventHandler(this.tbxEmail_TextChanged);
             // 
             // dataGridView1
             // 
@@ -222,14 +222,14 @@ namespace BookARoom.Views
             this.tbxRePassword.TabIndex = 2;
             this.tbxRePassword.UseSystemPasswordChar = true;
             // 
-            // lblNewPassword
+            // lblRePassword
             // 
-            this.lblNewPassword.AutoSize = true;
-            this.lblNewPassword.Location = new System.Drawing.Point(513, 125);
-            this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(139, 20);
-            this.lblNewPassword.TabIndex = 0;
-            this.lblNewPassword.Text = "Repeat Password:";
+            this.lblRePassword.AutoSize = true;
+            this.lblRePassword.Location = new System.Drawing.Point(513, 125);
+            this.lblRePassword.Name = "lblRePassword";
+            this.lblRePassword.Size = new System.Drawing.Size(139, 20);
+            this.lblRePassword.TabIndex = 0;
+            this.lblRePassword.Text = "Repeat Password:";
             // 
             // lblStatus
             // 
@@ -263,7 +263,7 @@ namespace BookARoom.Views
             this.Controls.Add(this.lblTelephone);
             this.Controls.Add(this.lblAdress);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblNewPassword);
+            this.Controls.Add(this.lblRePassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTitle);
@@ -296,7 +296,7 @@ namespace BookARoom.Views
         private System.Windows.Forms.Button btnAbort;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbxRePassword;
-        private System.Windows.Forms.Label lblNewPassword;
+        private System.Windows.Forms.Label lblRePassword;
         private Label lblStatus;
 
         public Button BtnEdit {get; set;}

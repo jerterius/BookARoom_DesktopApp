@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lblUserName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
+            this.tbxPassword = new System.Windows.Forms.TextBox();
             this.lblLoginPass = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.linkLblNewUser = new System.Windows.Forms.LinkLabel();
@@ -45,20 +45,20 @@
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "E-Mail:";
             // 
-            // textBox1
+            // tbxEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 26);
-            this.textBox1.TabIndex = 2;
+            this.tbxEmail.Location = new System.Drawing.Point(165, 151);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(184, 26);
+            this.tbxEmail.TabIndex = 2;
             // 
-            // textBox2
+            // tbxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 195);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(184, 26);
-            this.textBox2.TabIndex = 2;
+            this.tbxPassword.Location = new System.Drawing.Point(165, 195);
+            this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.PasswordChar = '*';
+            this.tbxPassword.Size = new System.Drawing.Size(184, 26);
+            this.tbxPassword.TabIndex = 2;
             // 
             // lblLoginPass
             // 
@@ -77,6 +77,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // linkLblNewUser
             // 
@@ -87,7 +88,7 @@
             this.linkLblNewUser.TabIndex = 4;
             this.linkLblNewUser.TabStop = true;
             this.linkLblNewUser.Text = "Create Account";
-            this.linkLblNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblNewUser_LinkClicked_1);
+            this.linkLblNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblNewUser_LinkClicked);
             // 
             // UCLogin
             // 
@@ -95,8 +96,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.linkLblNewUser);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxPassword);
+            this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.lblLoginPass);
             this.Controls.Add(this.lblUserName);
             this.Name = "UCLogin";
@@ -109,8 +110,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbxEmail;
+        private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Label lblLoginPass;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel linkLblNewUser;

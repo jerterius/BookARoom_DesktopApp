@@ -13,7 +13,7 @@ namespace BookARoom.Controllers
     {
         Dal dal = new Dal();
 
-        public int TotalPrice(string bookingNumber)
+        public int TotalPrice(Guid bookingNumber)
             {
                 return dal.TotalPrice(bookingNumber);
              
@@ -26,9 +26,9 @@ namespace BookARoom.Controllers
                 dal.Add(c);
         }
 
-        public void AddBooking(string adress, string bookingNo, string cPhonenNo, DateTime date, string roomNo)
+        public void AddBooking(string email, string adress, string roomNo, int bookingNo, DateTime date)
         {
-            Booking b = new Booking(adress, bookingNo, cPhonenNo, date, roomNo);
+            Booking b = new Booking(email, adress, roomNo, date);
             dal.Add(b);
         }
 
@@ -59,9 +59,9 @@ namespace BookARoom.Controllers
 
         }
 
-        public List<string> Retrieve(string cName)
+        public List<string> GetAllCountries()
         {
-            return dal.Retrieve(cName);
+            return dal.GetAllCountries();
         }
         
 

@@ -11,11 +11,11 @@ namespace BookARoom.Models
 {
     public class Customer
     {
-        [Key]
         public string CPhoneNumber { get; set; }
         public string CName { get; set; }
         public string Title { get; set; }
         public string CAdress { get; set; }
+        [Key]
         public string CEmail { get; set; }
         [Required]
         public string Password { get; set; }

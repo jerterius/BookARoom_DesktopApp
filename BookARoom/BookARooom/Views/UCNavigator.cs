@@ -17,8 +17,6 @@ namespace BookARoom.Views
 {
     public partial class UCNavigator : UserControl
     {
-        public delegate string GetBookingData(object sender, EventArgs e);
-        public GetBookingData getBookingData;
 
         Controller controller = new Controller();
        
@@ -74,7 +72,7 @@ namespace BookARoom.Views
         private void UCNavigator_Load(object sender, EventArgs e)
         {
             
-            cbCountry.DataSource = controller.Retrieve("Country");
+            cbCountry.DataSource = controller.GetAllCountries();
             cbCountry.Text = "Choose Country";
 
             /*//Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
@@ -98,29 +96,23 @@ namespace BookARoom.Views
 
         string roomNumber;
         string adress;
-        string cPhoneNo;
+        string cEmail;
 
         private void roomsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
- 
 
-            //Här ska delegate list köras (hit)
-            
-            if (getBookingData!=null)
-            getBookingData(this, EventArgs.Empty);
-
-            
             if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
             {
                 roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
                 adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
                 //hur ska vi generera bookningsnummer utan att förstöra databasen?
 
-                String bookingNr = DateTime.Now.ToString()+cPhoneNo;
+                DateTime fromDate = dtpFromDate.Value;
+                DateTime toDate = dtpToDate.Value;
 
-                for (var dt = dtpFromDate.Value; dt <= dtpToDate.Value; dt.AddDays(1))
+                for (var date = dtpFromDate.Value.Date; date <= dtpToDate.Value.Date; date = date.AddDays(1))
                 {
-                    controller.AddBooking(adress, "5", cPhoneNo, dt, roomNumber);
+                    controller.AddBooking(cEmail, adress, roomNumber, 0, date);
                 }
                
 
@@ -128,7 +120,7 @@ namespace BookARoom.Views
         }
         public void GetCustomer(object sender, EventArgs e)
         {
-            cPhoneNo = (sender as TextBox).Text;
+            cEmail = (sender as TextBox).Text;
     
         }
 

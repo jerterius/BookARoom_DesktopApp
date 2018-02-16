@@ -71,6 +71,24 @@
     <Compile Include="Migrations\201802160936190_UpdateBookingPK.Designer.cs">
       <DependentUpon>201802160936190_UpdateBookingPK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802161007441_AddRequired.cs" />
+    <Compile Include="Migrations\201802161007441_AddRequired.Designer.cs">
+      <DependentUpon>201802161007441_AddRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802161403462_changeCustomerPK.cs" />
+    <Compile Include="Migrations\201802161403462_changeCustomerPK.Designer.cs">
+      <DependentUpon>201802161403462_changeCustomerPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802161435280_updateBookingNo.cs" />
+    <Compile Include="Migrations\201802161435280_updateBookingNo.Designer.cs">
+      <DependentUpon>201802161435280_updateBookingNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802161451243_bookingNoGUID.cs" />
+    <Compile Include="Migrations\201802161451243_bookingNoGUID.Designer.cs">
+      <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +138,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802160936190_UpdateBookingPK.resx">
       <DependentUpon>201802160936190_UpdateBookingPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802161007441_AddRequired.resx">
+      <DependentUpon>201802161007441_AddRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802161403462_changeCustomerPK.resx">
+      <DependentUpon>201802161403462_changeCustomerPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802161435280_updateBookingNo.resx">
+      <DependentUpon>201802161435280_updateBookingNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802161451243_bookingNoGUID.resx">
+      <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

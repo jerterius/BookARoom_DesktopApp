@@ -12,6 +12,11 @@ namespace BookARoom.Views
 {
     public partial class UCLogin : UserControl
     {
+
+        public delegate void ChangeTab(object sender, EventArgs e);
+        public ChangeTab changeTab;
+
+        
         public UCLogin()
         {
             InitializeComponent();
@@ -19,13 +24,16 @@ namespace BookARoom.Views
 
         private void linkLblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            if (changeTab != null)
+                changeTab(this, EventArgs.Empty);
         }
 
-        private void linkLblNewUser_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            TabControl tabControl = this.Parent.Controls.Find("tabControlPK", true)[0] as TabControl;
-            tabControl.SelectedIndex = 2;
+            string email = tbxEmail.Text;
+            string password = tbxPassword.Text;
+
+
         }
     }
 }

@@ -59,9 +59,14 @@ namespace BookARoom.Views
             btnAbort.Visible = false;
         }
 
+        private void UCAccount_LoadUser(object sender, EventArgs e)
+        {
+            sender = sender as UCLogin;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lblPassword.Text.Equals(lblNewPassword.Text))
+            if (tbxPassword.Text.Equals(tbxRePassword.Text))
             {
                 string title = cbTitle.Text;
                 string name = tbxName.Text;
@@ -72,6 +77,20 @@ namespace BookARoom.Views
 
                 controller.AddCustomer(title, name, adress, telephone, email, password);
 
+                lblStatus.Text = "Customer was added!";
+                lblStatus.ForeColor = System.Drawing.Color.Green;
+                lblStatus.Visible = true;
+
+                cbTitle.Enabled = false;
+                tbxName.ReadOnly = true;
+                tbxAdress.ReadOnly = true;
+                tbxTelephone.ReadOnly = true;
+                tbxEmail.ReadOnly = true;
+                tbxPassword.ReadOnly = true;
+                tbxRePassword.ReadOnly = true;
+
+                btnSave.Visible = false;
+                btnAbort.Visible = false;
             }
             else {
                 lblStatus.Text = "Paswords does not match!";
@@ -79,10 +98,10 @@ namespace BookARoom.Views
             }
         }
 
-        private void tbxTelephone_TextChanged(object sender, EventArgs e)
+        private void tbxEmail_TextChanged(object sender, EventArgs e)
         {
             if (passBookingData != null)
-                passBookingData(tbxTelephone, e);
+                passBookingData(tbxEmail, e);
         }
     }
 }
