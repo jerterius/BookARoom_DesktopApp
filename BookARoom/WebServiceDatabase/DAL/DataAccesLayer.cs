@@ -131,17 +131,18 @@ namespace WebServiceDatabase.DAL
 
             con.CloseConnect(con.OpenConnect());
             return resultList;
-            
-                
-            
 
 
+        }
 
-
-
-            }
+        /* 
+         * query = insert 
+         * query =
+         * query = 
+         * query = 
+         */
     }
-	}
+}
 
 	
 
