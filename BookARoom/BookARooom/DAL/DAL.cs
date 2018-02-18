@@ -58,7 +58,20 @@ namespace BookARoom.DAL
             db.SaveChanges();
         }
 
+        public IQueryable<object> Retrieve(object o)
+        {
+            if (o is Customer)
+            {
+                Customer customer = o as Customer;
+                var query = from c in db.Customers
+                            where c.Password == customer.Password && customer.CEmail == c.CEmail
+                            select c;
 
+                return query as IQueryable<Customer>;
+            }
+
+            return null;
+        }
 
         public void Remove(object removeFromTable)
         {

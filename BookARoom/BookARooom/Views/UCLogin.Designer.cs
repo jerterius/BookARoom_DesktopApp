@@ -34,6 +34,7 @@
             this.lblLoginPass = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.linkLblNewUser = new System.Windows.Forms.LinkLabel();
+            this.lblLoginStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -90,10 +91,23 @@
             this.linkLblNewUser.Text = "Create Account";
             this.linkLblNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblNewUser_LinkClicked);
             // 
+            // lblLoginStatus
+            // 
+            this.lblLoginStatus.AutoSize = true;
+            this.lblLoginStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblLoginStatus.Location = new System.Drawing.Point(134, 341);
+            this.lblLoginStatus.Name = "lblLoginStatus";
+            this.lblLoginStatus.Size = new System.Drawing.Size(247, 20);
+            this.lblLoginStatus.TabIndex = 5;
+            this.lblLoginStatus.Text = "Login failed: Incorrect details!";
+            this.lblLoginStatus.Visible = false;
+            // 
             // UCLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblLoginStatus);
             this.Controls.Add(this.linkLblNewUser);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbxPassword);
@@ -115,5 +129,6 @@
         private System.Windows.Forms.Label lblLoginPass;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel linkLblNewUser;
+        private System.Windows.Forms.Label lblLoginStatus;
     }
 }

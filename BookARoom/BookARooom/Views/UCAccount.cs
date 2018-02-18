@@ -59,9 +59,10 @@ namespace BookARoom.Views
             btnAbort.Visible = false;
         }
 
-        private void UCAccount_LoadUser(object sender, EventArgs e)
+        public void LoadUser(object sender, EventArgs e)
         {
             sender = sender as UCLogin;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)

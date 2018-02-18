@@ -34,12 +34,12 @@ namespace BookARoom.Views
             this.tabPagePK = new System.Windows.Forms.TabPage();
             this.tabControlPK = new System.Windows.Forms.TabControl();
             this.tabPageLogin = new System.Windows.Forms.TabPage();
+            this.ucLogin1 = new BookARoom.Views.UCLogin();
             this.tabPageSearch = new System.Windows.Forms.TabPage();
-            this.tabPageAccount = new System.Windows.Forms.TabPage();
+            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
             this.tabPagePKWS = new System.Windows.Forms.TabPage();
             this.tabPageERPWS = new System.Windows.Forms.TabPage();
-            this.ucLogin1 = new BookARoom.Views.UCLogin();
-            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
+            this.tabPageAccount = new System.Windows.Forms.TabPage();
             this.ucAccount1 = new BookARoom.Views.UCAccount();
             this.tabControlMain.SuspendLayout();
             this.tabPagePK.SuspendLayout();
@@ -77,7 +77,6 @@ namespace BookARoom.Views
             // 
             this.tabControlPK.Controls.Add(this.tabPageLogin);
             this.tabControlPK.Controls.Add(this.tabPageSearch);
-            this.tabControlPK.Controls.Add(this.tabPageAccount);
             this.tabControlPK.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControlPK.Location = new System.Drawing.Point(3, 3);
             this.tabControlPK.Name = "tabControlPK";
@@ -96,6 +95,15 @@ namespace BookARoom.Views
             this.tabPageLogin.Text = "Login";
             this.tabPageLogin.UseVisualStyleBackColor = true;
             // 
+            // ucLogin1
+            // 
+            this.ucLogin1.Email = null;
+            this.ucLogin1.Location = new System.Drawing.Point(6, 6);
+            this.ucLogin1.Name = "ucLogin1";
+            this.ucLogin1.Password = null;
+            this.ucLogin1.Size = new System.Drawing.Size(487, 406);
+            this.ucLogin1.TabIndex = 4;
+            // 
             // tabPageSearch
             // 
             this.tabPageSearch.Controls.Add(this.ucNavigator1);
@@ -107,16 +115,13 @@ namespace BookARoom.Views
             this.tabPageSearch.Text = "Search";
             this.tabPageSearch.UseVisualStyleBackColor = true;
             // 
-            // tabPageAccount
+            // ucNavigator1
             // 
-            this.tabPageAccount.Controls.Add(this.ucAccount1);
-            this.tabPageAccount.Location = new System.Drawing.Point(4, 29);
-            this.tabPageAccount.Name = "tabPageAccount";
-            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAccount.Size = new System.Drawing.Size(1556, 1045);
-            this.tabPageAccount.TabIndex = 2;
-            this.tabPageAccount.Text = "Account";
-            this.tabPageAccount.UseVisualStyleBackColor = true;
+            this.ucNavigator1.AutoSize = true;
+            this.ucNavigator1.Location = new System.Drawing.Point(6, 6);
+            this.ucNavigator1.Name = "ucNavigator1";
+            this.ucNavigator1.Size = new System.Drawing.Size(1432, 595);
+            this.ucNavigator1.TabIndex = 0;
             // 
             // tabPagePKWS
             // 
@@ -138,20 +143,16 @@ namespace BookARoom.Views
             this.tabPageERPWS.Text = "ERP & Webservice";
             this.tabPageERPWS.UseVisualStyleBackColor = true;
             // 
-            // ucLogin1
+            // tabPageAccount
             // 
-            this.ucLogin1.Location = new System.Drawing.Point(6, 6);
-            this.ucLogin1.Name = "ucLogin1";
-            this.ucLogin1.Size = new System.Drawing.Size(487, 406);
-            this.ucLogin1.TabIndex = 4;
-            // 
-            // ucNavigator1
-            // 
-            this.ucNavigator1.AutoSize = true;
-            this.ucNavigator1.Location = new System.Drawing.Point(6, 6);
-            this.ucNavigator1.Name = "ucNavigator1";
-            this.ucNavigator1.Size = new System.Drawing.Size(1432, 595);
-            this.ucNavigator1.TabIndex = 0;
+            this.tabPageAccount.Controls.Add(this.ucAccount1);
+            this.tabPageAccount.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAccount.Name = "tabPageAccount";
+            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAccount.Size = new System.Drawing.Size(1556, 1045);
+            this.tabPageAccount.TabIndex = 2;
+            this.tabPageAccount.Text = "Account";
+            this.tabPageAccount.UseVisualStyleBackColor = true;
             // 
             // ucAccount1
             // 

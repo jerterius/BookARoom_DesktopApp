@@ -10,20 +10,26 @@ using System.Windows.Forms;
 using BookARoom.DAL;
 using BookARoom.Models;
 using System.Data.Entity;
+using BookARoom.Controllers;
 
 namespace BookARoom.Views
 {
     public partial class Form1 : Form
     {
+        public Controller Controller {get; set;}
+
         public Form1()
         {
+            Controller = new Controller();
             InitializeComponent();
             //Säger till ucNavigator att när dess clickevent körs så skall ucAccount tbxTelephone hämtas
 
           //  ucNavigator1.getBookingData += new UCNavigator.GetBookingData(ucAccount1.);
 
-            ucAccount1.passBookingData += new UCAccount.PassBookingData(ucNavigator1.GetCustomer);
+            ucAccount1.passBookingData += new UCAccount.PassBookingData(ucNavigator1.GetCustomerData);
             ucLogin1.changeTab += new UCLogin.ChangeTab(this.SelectAccountTab);
+            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucAccount1.LoadUser);
+            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(this.SelectAccountTab);
          
 
         }
@@ -33,16 +39,12 @@ namespace BookARoom.Views
             this.Dock = DockStyle.Fill;
         }
 
-
-
-        private void lLblNewUser_Click(object sender, EventArgs e)
-        {
-            tabControlPK.SelectedTab = tabPageAccount;
-          
-        }
-
         private void SelectAccountTab(object sender, EventArgs e)
         {
+            if (!tabControlPK.TabPages.ContainsKey("tabPageAccount")){
+                this.tabControlPK.TabPages.Add(tabPageAccount);
+            }
+            
             this.tabControlPK.SelectedTab = tabPageAccount;
         }
     }

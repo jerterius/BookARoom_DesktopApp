@@ -30,6 +30,7 @@ namespace BookARoom.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAdress = new System.Windows.Forms.Label();
@@ -40,9 +41,7 @@ namespace BookARoom.Views
             this.tbxAdress = new System.Windows.Forms.TextBox();
             this.tbxTelephone = new System.Windows.Forms.TextBox();
             this.tbxEmail = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAbort = new System.Windows.Forms.Button();
@@ -50,7 +49,17 @@ namespace BookARoom.Views
             this.tbxRePassword = new System.Windows.Forms.TextBox();
             this.lblRePassword = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bookingsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -102,11 +111,6 @@ namespace BookARoom.Views
             // 
             this.cbTitle.Enabled = false;
             this.cbTitle.FormattingEnabled = true;
-            this.cbTitle.Items.AddRange(new object[] {
-            "Mr.",
-            "Mrs.",
-            "Ms.",
-            "Dr."});
             this.cbTitle.Location = new System.Drawing.Point(138, 76);
             this.cbTitle.Name = "cbTitle";
             this.cbTitle.Size = new System.Drawing.Size(121, 28);
@@ -145,15 +149,6 @@ namespace BookARoom.Views
             this.tbxEmail.TabIndex = 2;
             this.tbxEmail.TextChanged += new System.EventHandler(this.tbxEmail_TextChanged);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 350);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(946, 268);
-            this.dataGridView1.TabIndex = 3;
-            // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
@@ -162,15 +157,6 @@ namespace BookARoom.Views
             this.lblPassword.Size = new System.Drawing.Size(82, 20);
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Password:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(949, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name:";
             // 
             // tbxPassword
             // 
@@ -243,14 +229,79 @@ namespace BookARoom.Views
             this.lblStatus.Text = "Status";
             this.lblStatus.Visible = false;
             // 
+            // bookingsDataGridView
+            // 
+            this.bookingsDataGridView.AutoGenerateColumns = false;
+            this.bookingsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bookingsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.bookingsDataGridView.DataSource = this.bookingsBindingSource;
+            this.bookingsDataGridView.Location = new System.Drawing.Point(22, 352);
+            this.bookingsDataGridView.Name = "bookingsDataGridView";
+            this.bookingsDataGridView.RowTemplate.Height = 28;
+            this.bookingsDataGridView.Size = new System.Drawing.Size(982, 268);
+            this.bookingsDataGridView.TabIndex = 20;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "BookingNumber";
+            this.dataGridViewTextBoxColumn1.HeaderText = "BookingNumber";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CEmail";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CEmail";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Adress";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Adress";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "RoomNumber";
+            this.dataGridViewTextBoxColumn5.HeaderText = "RoomNumber";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Customer";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Customer";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Room";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Room";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // bookingsBindingSource
+            // 
+            this.bookingsBindingSource.DataSource = typeof(BookARoom.Models.Booking);
+            // 
             // UCAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bookingsDataGridView);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tbxEmail);
             this.Controls.Add(this.tbxTelephone);
             this.Controls.Add(this.tbxAdress);
@@ -262,15 +313,15 @@ namespace BookARoom.Views
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelephone);
             this.Controls.Add(this.lblAdress);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRePassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTitle);
             this.Name = "UCAccount";
-            this.Size = new System.Drawing.Size(952, 647);
+            this.Size = new System.Drawing.Size(1024, 647);
             this.Load += new System.EventHandler(this.UCAccount_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,9 +339,7 @@ namespace BookARoom.Views
         private System.Windows.Forms.TextBox tbxAdress;
         private System.Windows.Forms.TextBox tbxTelephone;
         private System.Windows.Forms.TextBox tbxEmail;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAbort;
@@ -298,6 +347,15 @@ namespace BookARoom.Views
         private System.Windows.Forms.TextBox tbxRePassword;
         private System.Windows.Forms.Label lblRePassword;
         private Label lblStatus;
+        private BindingSource bookingsBindingSource;
+        private DataGridView bookingsDataGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
 
         public Button BtnEdit {get; set;}
     }

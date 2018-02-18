@@ -17,12 +17,11 @@ namespace BookARoom.Views
 {
     public partial class UCNavigator : UserControl
     {
-
-        Controller controller = new Controller();
+        private Controller controller = new Controller();
        
-
         public UCNavigator()
         {
+
             InitializeComponent();
         }
 
@@ -105,10 +104,6 @@ namespace BookARoom.Views
             {
                 roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
                 adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
-                //hur ska vi generera bookningsnummer utan att förstöra databasen?
-
-                DateTime fromDate = dtpFromDate.Value;
-                DateTime toDate = dtpToDate.Value;
 
                 for (var date = dtpFromDate.Value.Date; date <= dtpToDate.Value.Date; date = date.AddDays(1))
                 {
@@ -118,10 +113,16 @@ namespace BookARoom.Views
 
             }
         }
-        public void GetCustomer(object sender, EventArgs e)
+        public void GetCustomerData(object sender, EventArgs e)
         {
             cEmail = (sender as TextBox).Text;
     
+        }
+
+        public void LoadCustomerData(object sender, EventArgs e)
+        {
+            UCLogin ucLogin = sender as UCLogin;
+
         }
 
 
