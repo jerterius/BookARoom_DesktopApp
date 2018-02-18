@@ -23,6 +23,9 @@ namespace BookARoom.Views
         public string Password { get; set; }
         private Controller controller = new Controller();
 
+        //Kanske inte ska vara en IQueryable<object>
+        public object Customer { get; set; }
+
 
         
         public UCLogin()
@@ -42,16 +45,16 @@ namespace BookARoom.Views
             Email = tbxEmail.Text;
             Password = tbxPassword.Text;
 
-            if(controller.Retrieve(Email, Password) == null) {
+            if(controller.RetrieveCustomer(Email, Password) == null) {
                 lblLoginStatus.Visible = true;
             }
             else
             {
                 lblLoginStatus.Visible = false;
-
+                Customer = controller.RetrieveCustomer(Email, Password);
 
                 if (userLoggedIn != null)
-                    userLoggedIn(this, EventArgs.Empty);
+                    userLoggedIn(Customer, EventArgs.Empty);
 
             }
             

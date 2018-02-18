@@ -67,7 +67,10 @@ namespace BookARoom.DAL
                             where c.Password == customer.Password && customer.CEmail == c.CEmail
                             select c;
 
+                
+
                 return query as IQueryable<Customer>;
+                
             }
 
             return null;

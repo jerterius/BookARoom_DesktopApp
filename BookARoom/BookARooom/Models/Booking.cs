@@ -39,7 +39,7 @@ namespace BookARoom.Models
         public virtual Customer Customer { get; set; }
         public virtual Room Room { get; set; }
 
-
+        public Booking() { }
         public Booking(string cEmail, string adress, string roomNo, DateTime date)
         {
             Adress = adress;

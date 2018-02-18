@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.Controllers;
+using BookARoom.Models;
+using BookARoom.DAL;
 
 namespace BookARoom.Views
 {
@@ -45,24 +47,26 @@ namespace BookARoom.Views
 
         }
 
-        private void UCAccount_Load(object sender, EventArgs e)
+        public void UCAccount_LoadUser(object sender, EventArgs e)
         {
-            cbTitle.Enabled = false;
-            tbxName.ReadOnly = true;
-            tbxAdress.ReadOnly = true;
-            tbxTelephone.ReadOnly = true;
-            tbxEmail.ReadOnly = true;
-            tbxPassword.ReadOnly = true;
-            tbxRePassword.ReadOnly = true;
 
-            btnSave.Visible = false;
-            btnAbort.Visible = false;
-        }
+            /* var Customer = sender as IQueryable<object>;
+             login.Customer = login.Customer as IQueryable<Customer>;
 
-        public void LoadUser(object sender, EventArgs e)
-        {
-            sender = sender as UCLogin;
+             BookingContext db = new BookingContext();
+             var query = from b in db.Bookings select b;*/
 
+            customerBindingSource.DataSource = sender as List<Customer>;
+
+            cbTitle.DataBindings.Add("Text", customerBindingSource, "Title");
+            tbxName.DataBindings.Add("Text", customerBindingSource, "CName");
+            tbxAdress.DataBindings.Add("Text", customerBindingSource, "CAdress");
+            tbxTelephone.DataBindings.Add("Text", customerBindingSource, "CPhoneNumber");
+            tbxEmail.DataBindings.Add("Text", customerBindingSource, "CEmail");
+            tbxPassword.DataBindings.Add("Text", customerBindingSource, "Password");
+            /*
+            bookingsBindingSource.DataSource = customerBindingSource;
+            bookingsBindingSource.DataMember = "Bookings";*/
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -93,7 +97,8 @@ namespace BookARoom.Views
                 btnSave.Visible = false;
                 btnAbort.Visible = false;
             }
-            else {
+            else
+            {
                 lblStatus.Text = "Paswords does not match!";
                 lblStatus.Visible = true;
             }
@@ -103,6 +108,20 @@ namespace BookARoom.Views
         {
             if (passBookingData != null)
                 passBookingData(tbxEmail, e);
+        }
+
+        private void btnAbort_Click(object sender, EventArgs e)
+        {
+            cbTitle.Enabled = false;
+            tbxName.ReadOnly = true;
+            tbxAdress.ReadOnly = true;
+            tbxTelephone.ReadOnly = true;
+            tbxEmail.ReadOnly = true;
+            tbxPassword.ReadOnly = true;
+            tbxRePassword.ReadOnly = true;
+
+            btnSave.Visible = false;
+            btnAbort.Visible = false;
         }
     }
 }

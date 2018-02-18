@@ -28,7 +28,8 @@ namespace BookARoom.Views
 
             ucAccount1.passBookingData += new UCAccount.PassBookingData(ucNavigator1.GetCustomerData);
             ucLogin1.changeTab += new UCLogin.ChangeTab(this.SelectAccountTab);
-            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucAccount1.LoadUser);
+            ucLogin1.changeTab += new UCLogin.ChangeTab(ucAccount1.btnEdit_Click);
+            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucAccount1.UCAccount_LoadUser);
             ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(this.SelectAccountTab);
          
 

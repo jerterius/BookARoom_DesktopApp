@@ -54,15 +54,15 @@ namespace BookARoom.Controllers
             return dal.HotelsWithAvailableRooms(c);
         }
 
-        public IQueryable<object> Retrieve(string email, string password)
+        public List<Customer> RetrieveCustomer(string email, string password)
         {
             Customer c = new Customer() { CEmail = email, Password = password };
             
-            IQueryable<object> result = dal.Retrieve(c);
+            IQueryable<Customer> result = dal.Retrieve(c) as IQueryable<Customer>;
 
-            if (result.Any<object>())
+            if (result.Any<Customer>())
             {
-                return result;
+                return result.ToList();
             }
             return null;
 
