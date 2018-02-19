@@ -50,8 +50,13 @@ namespace BookARoom.Controllers
 
         public List<Hotel> HotelsWithAvailableRooms (string search, string countryName, string cityName, DateTime fromDate, DateTime toDate, string standard, int guests, bool smokeFree)
         {
-            City c = new City() { CityName = cityName };
-            return dal.HotelsWithAvailableRooms(c);
+            List<DateTime> dates = new List<DateTime>();
+            for (var date = fromDate; date <= toDate; date = date.AddDays(1))
+            {
+                dates.Add(date);
+            }
+
+                return dal.HotelsWithAvailableRooms( search,  countryName,  cityName,  dates,  standard,  guests,  smokeFree);
         }
 
         public List<Customer> RetrieveCustomer(string email, string password)

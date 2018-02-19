@@ -54,7 +54,11 @@ namespace BookARoom.Views
              roomsBindingSource.DataSource = hotelBindingSource;
              roomsBindingSource.DataMember = "HotelsRooms";*/
 
-            controller.HotelsWithAvailableRooms(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
+            List<Hotel> hotels = controller.HotelsWithAvailableRooms(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
+            hotelBindingSource.DataSource = hotels;
+
+            roomsBindingSource.DataSource = hotelBindingSource;
+            roomsBindingSource.DataMember = "Rooms";
 
             DataGridViewButtonColumn col = new DataGridViewButtonColumn();
             col.UseColumnTextForButtonValue = true;
