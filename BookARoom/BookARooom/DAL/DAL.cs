@@ -142,7 +142,7 @@ namespace BookARoom.DAL
 
             List<Room> rooms = hotelList.SelectMany(h => h.Rooms).ToList();
 
-            List<Booking> allBookings = rooms.SelectMany(r => r.Bookings).ToList();
+            List<Booking> allBookings = rooms.Where(r => r.GuestCapacity >= guests).SelectMany(r => r.Bookings).ToList();
 
             allBookings = allBookings.Where(b => dates.Contains(b.Date) == false).ToList();
 
