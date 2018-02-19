@@ -48,7 +48,7 @@ namespace BookARoom.Controllers
             return dal.HotelsInCity(city);
         }
 
-        public List<Hotel> HotelsWithAvailableRooms (string cityName)
+        public List<Hotel> HotelsWithAvailableRooms (string search, string countryName, string cityName, DateTime fromDate, DateTime toDate, string standard, int guests, bool smokeFree)
         {
             City c = new City() { CityName = cityName };
             return dal.HotelsWithAvailableRooms(c);
