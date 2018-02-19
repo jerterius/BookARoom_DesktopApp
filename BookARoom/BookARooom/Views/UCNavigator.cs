@@ -38,18 +38,23 @@ namespace BookARoom.Views
         }
             private void btnSubmit_Click(object addToTable, EventArgs e)
         {
-            string search = tbSearch.Text;
+            string search = tbxSearch.Text;
             string countryName = cbCountry.Text;
             string cityName = cbCity.Text;
             DateTime fromDate = dtpFromDate.Value;
             DateTime toDate = dtpToDate.Value;
+            string standard = tbStandard.Value.ToString();
+            int guests = tbGuests.Value;
+            bool smokeFree = clbRoomStandard.GetItemCheckState(0) == CheckState.Checked;
 
-            //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
-            hotelBindingSource.DataSource = controller.TestGetData();
-            hotelBindingSource.DataMember = "Hotels";
-            
-            roomsBindingSource.DataSource = hotelBindingSource;
-            roomsBindingSource.DataMember = "HotelsRooms";
+            /* //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
+             hotelBindingSource.DataSource = controller.TestGetData();
+             hotelBindingSource.DataMember = "Hotels";
+
+             roomsBindingSource.DataSource = hotelBindingSource;
+             roomsBindingSource.DataMember = "HotelsRooms";*/
+
+            controller.HotelsWithAvailableRooms(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
 
             DataGridViewButtonColumn col = new DataGridViewButtonColumn();
             col.UseColumnTextForButtonValue = true;
@@ -63,8 +68,7 @@ namespace BookARoom.Views
             hotelDataGridView.DataSource = hotelBindingSource;
             roomsDataGridView.DataSource = hotelBindingSource;
             //roomsDataGridView.DataSource = bindingSource;
-            //hotelDataGridView.DataSource = controller.GetAllHotels();
-            //controller.getAvailableHotels(search, countryName, cityName, fromDate, toDate);*/
+            //hotelDataGridView.DataSource = controller.GetAllHotels();*/
 
         }
 
@@ -73,13 +77,6 @@ namespace BookARoom.Views
             
             cbCountry.DataSource = controller.GetAllCountries();
             cbCountry.Text = "Choose Country";
-
-            /*//Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
-            hotelBindingSource.DataSource = controller.TestGetData();
-            hotelBindingSource.DataMember = "Hotels";
-
-            roomsBindingSource.DataSource = hotelBindingSource;
-            roomsBindingSource.DataMember = "HotelsRooms";*/
 
         }
 

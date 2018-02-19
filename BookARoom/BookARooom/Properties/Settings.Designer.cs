@@ -22,5 +22,17 @@ namespace BookARoom.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoGenerateColumnsDefault {
+            get {
+                return ((bool)(this["autoGenerateColumnsDefault"]));
+            }
+            set {
+                this["autoGenerateColumnsDefault"] = value;
+            }
+        }
     }
 }
