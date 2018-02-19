@@ -59,12 +59,6 @@ namespace BookARoom.Views
 
             roomsBindingSource.DataSource = hotelBindingSource;
             roomsBindingSource.DataMember = "Rooms";
-
-            DataGridViewButtonColumn col = new DataGridViewButtonColumn();
-            col.UseColumnTextForButtonValue = true;
-            col.Text = "SELECT";
-            col.Name = "Booking";
-            roomsDataGridView.Columns.Add(col);
             
 
             /*
