@@ -32,7 +32,7 @@
             this.components = new System.ComponentModel.Container();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
             this.cbCountry = new System.Windows.Forms.ComboBox();
             this.cbCity = new System.Windows.Forms.ComboBox();
             this.tbGuests = new System.Windows.Forms.TrackBar();
@@ -91,10 +91,10 @@
             // 
             // tbSearch
             // 
-            this.tbSearch.Location = new System.Drawing.Point(4, 57);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(291, 26);
-            this.tbSearch.TabIndex = 1;
+            this.tbxSearch.Location = new System.Drawing.Point(4, 57);
+            this.tbxSearch.Name = "tbSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(291, 26);
+            this.tbxSearch.TabIndex = 1;
             // 
             // cbCountry
             // 
@@ -364,7 +364,7 @@
             this.Controls.Add(this.tbGuests);
             this.Controls.Add(this.cbCity);
             this.Controls.Add(this.cbCountry);
-            this.Controls.Add(this.tbSearch);
+            this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClear);
             this.Name = "UCNavigator";
@@ -386,7 +386,7 @@
 
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.ComboBox cbCountry;
         private System.Windows.Forms.ComboBox cbCity;
         private System.Windows.Forms.TrackBar tbGuests;

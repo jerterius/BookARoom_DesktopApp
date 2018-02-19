@@ -15,6 +15,7 @@ namespace BookARoom.Views
 {
     public partial class UCAccount : UserControl
     {
+        public List<Customer> CustomerData { get; set; }
         Controller controller = new Controller();
 
         public delegate void PassBookingData(object sender, EventArgs e);
@@ -41,22 +42,23 @@ namespace BookARoom.Views
             tbxRePassword.ReadOnly = false;
             tbxRePassword.Text = null;
 
+            lblRePassword.Visible = true;
+            tbxRePassword.Visible = true;
+
+            lblEmailAsterix.Visible = true;
+            lblPasswordAsterix.Visible = true;
+            lblRePasswordAsterix.Visible = true;
+           
+
             btnSave.Visible = true;
             btnAbort.Visible = true;
-
 
         }
 
         public void UCAccount_LoadUser(object sender, EventArgs e)
         {
-
-            /* var Customer = sender as IQueryable<object>;
-             login.Customer = login.Customer as IQueryable<Customer>;
-
-             BookingContext db = new BookingContext();
-             var query = from b in db.Bookings select b;*/
-
-            customerBindingSource.DataSource = sender as List<Customer>;
+            CustomerData = sender as List<Customer>;
+            customerBindingSource.DataSource = CustomerData;
 
             cbTitle.DataBindings.Add("Text", customerBindingSource, "Title");
             tbxName.DataBindings.Add("Text", customerBindingSource, "CName");
@@ -64,9 +66,7 @@ namespace BookARoom.Views
             tbxTelephone.DataBindings.Add("Text", customerBindingSource, "CPhoneNumber");
             tbxEmail.DataBindings.Add("Text", customerBindingSource, "CEmail");
             tbxPassword.DataBindings.Add("Text", customerBindingSource, "Password");
-            /*
-            bookingsBindingSource.DataSource = customerBindingSource;
-            bookingsBindingSource.DataMember = "Bookings";*/
+ 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -122,6 +122,8 @@ namespace BookARoom.Views
 
             btnSave.Visible = false;
             btnAbort.Visible = false;
+
+          
         }
     }
 }
