@@ -56,7 +56,7 @@ namespace BookARoom.Controllers
                 dates.Add(date);
             }
 
-                return dal.HotelsWithAvailableRooms( search,  countryName,  cityName,  dates,  standard,  guests,  smokeFree);
+                return dal.HotelsWithAvailableRooms( search,  countryName,  cityName, dates,  standard,  guests,  smokeFree);
         }
 
         public List<Customer> RetrieveCustomer(string email, string password)

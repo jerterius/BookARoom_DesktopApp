@@ -132,6 +132,7 @@
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(226, 26);
             this.dtpFromDate.TabIndex = 4;
+            
             // 
             // dtpToDate
             // 

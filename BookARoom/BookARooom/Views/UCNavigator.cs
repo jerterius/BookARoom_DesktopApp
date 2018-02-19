@@ -41,18 +41,11 @@ namespace BookARoom.Views
             string search = tbxSearch.Text;
             string countryName = cbCountry.Text;
             string cityName = cbCity.Text;
-            DateTime fromDate = dtpFromDate.Value;
-            DateTime toDate = dtpToDate.Value;
+            DateTime fromDate = dtpFromDate.Value.Date;
+            DateTime toDate = dtpToDate.Value.Date;
             string standard = tbStandard.Value.ToString();
             int guests = tbGuests.Value;
             bool smokeFree = clbRoomStandard.GetItemCheckState(0) == CheckState.Checked;
-
-            /* //Detta är exempelkod på hur vi kan hämta data och binda våra tabeller
-             hotelBindingSource.DataSource = controller.TestGetData();
-             hotelBindingSource.DataMember = "Hotels";
-
-             roomsBindingSource.DataSource = hotelBindingSource;
-             roomsBindingSource.DataMember = "HotelsRooms";*/
 
             List<Hotel> hotels = controller.HotelsWithAvailableRooms(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
             hotelBindingSource.DataSource = hotels;
@@ -60,13 +53,6 @@ namespace BookARoom.Views
             roomsBindingSource.DataSource = hotelBindingSource;
             roomsBindingSource.DataMember = "Rooms";
             
-
-            /*
-            hotelBindingSource.DataSource = controller.HotelsWithAvailableRooms(cityName);
-            hotelDataGridView.DataSource = hotelBindingSource;
-            roomsDataGridView.DataSource = hotelBindingSource;
-            //roomsDataGridView.DataSource = bindingSource;
-            //hotelDataGridView.DataSource = controller.GetAllHotels();*/
 
         }
 

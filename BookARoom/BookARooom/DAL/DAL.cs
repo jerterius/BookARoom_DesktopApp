@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BookARoom.Models;
 using System.Data.SqlClient;
 using System.Data;
+using System.Data.Entity;
 
 namespace BookARoom.DAL
 {
@@ -132,12 +133,48 @@ namespace BookARoom.DAL
 
         public List<Hotel> HotelsWithAvailableRooms(string search, string countryName, string cityName, List<DateTime> dates, string standard, int guests, bool smokeFree)
         {
-            var hotelList = from h in db.Hotels
-                            join b in db.Bookings on h.Adress equals b.Adress
-                            where !dates.Any(d => d == b.Date)
-                            select h;
 
-            return hotelList.Distinct().ToList();
+            var hotelList = this.db.Hotels.Where(hotel =>
+                    hotel.Countryname == countryName &&
+                    hotel.CityName == cityName &&
+                    hotel.Standard == standard)
+                        .Include(hotel => hotel.Rooms.Select(r => r.Bookings)).ToList();
+
+            List<Room> rooms = hotelList.SelectMany(h => h.Rooms).ToList();
+
+            List<Booking> allBookings = rooms.SelectMany(r => r.Bookings).ToList();
+
+            allBookings = allBookings.Where(b => dates.Contains(b.Date) == false).ToList();
+
+            List<Hotel> returnHotels = allBookings.Select(b => b.Room.Hotel).Distinct().ToList();
+
+            return returnHotels;
+
+            /**
+            var bookingsWithNoMatchingDates = hotelList
+                .Select(hotel => hotel.Rooms.Select(r => r.Bookings
+                    .Where(booking => dates.Contains(booking.Date) == false)
+                ));
+
+            var availableRooms = bookingsWithNoMatchingDates.Select(b => b.Room).ToList();
+                //.Where(room => room.Bookings.Where(booking => dates.Contains(booking.Date)).ToList();
+            /*
+            var hotelList = (from h in db.Hotels
+                              join b in db.Bookings on h.Adress equals b.Adress
+                             
+                              select h).Distinct().ToList();*/
+
+           // hotelList.Find(h => h.Countryname.Contains(countryName));
+/*
+            var hotelList = (from h in db.Hotels
+                             join b in db.Bookings on h.Adress equals b.Adress
+                             select h).Distinct().ToList();
+
+            hotelList = hotelList.FindAll(hotel => )*/
+
+
+
+            return hotelList;
         }
 
 
