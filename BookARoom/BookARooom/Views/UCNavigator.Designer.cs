@@ -61,7 +61,7 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Book = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Booking = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataGridView)).BeginInit();
@@ -239,7 +239,7 @@
             this.priceDataGridViewTextBoxColumn,
             this.guestCapacityDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
-            this.Book});
+            this.Booking});
             this.roomsDataGridView.DataSource = this.roomsBindingSource;
             this.roomsDataGridView.Location = new System.Drawing.Point(325, 371);
             this.roomsDataGridView.Name = "roomsDataGridView";
@@ -348,13 +348,14 @@
             this.adressDataGridViewTextBoxColumn.ReadOnly = true;
             this.adressDataGridViewTextBoxColumn.Width = 95;
             // 
-            // Book
+            // Booking
             // 
-            this.Book.HeaderText = "Book";
-            this.Book.Name = "Book";
-            this.Book.ReadOnly = true;
-            this.Book.Text = "SELECT";
-            this.Book.Width = 52;
+            this.Booking.HeaderText = "Booking";
+            this.Booking.Name = "Booking";
+            this.Booking.ReadOnly = true;
+            this.Booking.Text = "SELECT";
+            this.Booking.UseColumnTextForButtonValue = true;
+            this.Booking.Width = 73;
             // 
             // UCNavigator
             // 
@@ -425,6 +426,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn guestCapacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Book;
+        private System.Windows.Forms.DataGridViewButtonColumn Booking;
     }
 }
