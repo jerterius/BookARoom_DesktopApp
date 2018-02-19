@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
+
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -11,6 +12,8 @@ using System.Web.Services;
 
 public class Service : System.Web.Services.WebService
 {
+    Dal dal = new Dal();
+
     public Service () {
 
         //Uncomment the following line if using designed components 
