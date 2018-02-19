@@ -134,8 +134,7 @@ namespace BookARoom.DAL
         {
             var hotelList = from h in db.Hotels
                             join b in db.Bookings on h.Adress equals b.Adress
-                            join d in dates on b.Date equals d
-                            where b.Date != d
+                            where !dates.Any(d => d == b.Date)
                             select h;
 
             return hotelList.Distinct().ToList();
