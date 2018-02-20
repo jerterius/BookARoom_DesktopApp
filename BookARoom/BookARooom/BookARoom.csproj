@@ -203,6 +203,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WebServiceDatabase\WebServiceDatabase.csproj">
+      <Project>{dcf0b633-e59e-4258-9c18-35be7fc0e18b}</Project>
+      <Name>WebServiceDatabase</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

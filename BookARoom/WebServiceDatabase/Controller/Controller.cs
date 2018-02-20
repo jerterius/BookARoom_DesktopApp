@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-using WebServiceDatabase.DAL;
 
 
 namespace WebServiceDatabase.Controller
 {
     public class Controller
     {
-        DataAccesLayer dal = new DataAccesLayer();
+        
         
         
         List<string> colName = new List<string>();
@@ -41,7 +40,7 @@ namespace WebServiceDatabase.Controller
 
             foreach(string colName in colName)
             {
-                data.Rows.Add(dal.GetTables(colName));
+                //data.Rows.Add(dal.GetTables(colName));
             }
 
             return data;
@@ -49,7 +48,7 @@ namespace WebServiceDatabase.Controller
 
         public DataTable GetResults (string selectedFunction)
         {
-            resultList = dal.GetTables(selectedFunction);
+            //resultList = dal.GetTables(selectedFunction);
             string[] colID = resultList.ElementAt(0);
             resultList.RemoveAt(0);
 
@@ -74,5 +73,5 @@ namespace WebServiceDatabase.Controller
     }
 
        
-    }
+    
 }
