@@ -66,11 +66,11 @@ namespace WebServiceDatabase.View
 
         private void cbSelectedTable_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedtable = this.cbSelectedTable.Text;
+            string selectedTable = this.cbSelectedTable.Text;
 
             //Hej Webbservice din "GetTables" med inparameter "selectedtables"
-            
-            employeeBindingSource.DataSource = cronusService.GetEmployeeTables(selectedTable)
+
+            employeeBindingSource.DataSource = cronusService.GetEmployeeTables(selectedTable);
 
             tablesDataGridView.DataSource = employeeBindingSource;
             
