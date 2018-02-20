@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-using WebServiceDatabase.DAL;
+using WebServiceDatabase.localhost;
+using System.Web.Services.Protocols;
+
 
 
 namespace WebServiceDatabase.Controller
 {
     public class Controller
     {
-        DataAccesLayer dal = new DataAccesLayer();
+        Dal dal = new Dal();
         
         
         List<string> colName = new List<string>();

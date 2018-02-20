@@ -17,7 +17,7 @@ public class Connection
         
         SqlDataAdapter da = new SqlDataAdapter();
 
-        public SqlDataAdapter Da { get => da; set => da = value; }
+        
 
         public SqlConnection OpenConnect()
         {
