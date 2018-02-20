@@ -25,10 +25,6 @@ public class Service : System.Web.Services.WebService
         return controller.getEmployeeTables();
     }
 
-    [WebMethod]
-    public DataSet UpdateEmployee(DataSet employeeDS)
-    {
-        return controller.updateEmployee(employeeDS);
-    }
+    
 
 }

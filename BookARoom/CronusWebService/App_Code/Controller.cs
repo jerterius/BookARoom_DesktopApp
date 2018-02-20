@@ -72,9 +72,23 @@ public class Controller
         return data;
     }
 
-    public DataSet updateEmployee(DataSet employeeDS)
+    public DataSet updateEmployee(string no, string firstName, string lastName, string jobTitle, string adress)
     {
-        return dal.updateEmployee(employeeDS);
+        DataTable employeeDT = new DataTable("Employee");
+        employeeDT.Columns.Add("No_");
+        employeeDT.Columns.Add("First Name");
+        employeeDT.Columns.Add("Last Name");
+        employeeDT.Columns.Add("Job Title");
+        employeeDT.Columns.Add("Adress");
+        employeeDT.Rows.Add(no, firstName, lastName, jobTitle, adress);
+
+        DataSet employeeDS = new DataSet("Employee DataSet");
+        employeeDS.Tables.Add(employeeDT);
+
+        dal.updateEmployee(employeeDS);
+
+        return employeeDS;
+
     }
 
 
