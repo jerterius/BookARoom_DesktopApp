@@ -21,8 +21,10 @@ public class Service : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable GetEmployeeTables() {
+    public DataSet getEmployeeTables()
+    {
         return controller.getEmployeeTables();
+    }
     }
 
     

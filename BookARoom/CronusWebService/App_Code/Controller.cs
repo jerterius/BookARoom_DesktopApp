@@ -19,9 +19,10 @@ public class Controller
 
     List<string> colName = new List<string>();
     List<string[]> resultList;
+        
 
 
-    public DataTable getEmployeeTables()
+    public DataSet getEmployeeTables()
     {
         colName.Add("FindEmployee");
         colName.Add("FindEmployeeAbsence");
@@ -46,7 +47,10 @@ public class Controller
             data.Rows.Add(dal.GetTables(colName));
         }
 
-        return data;
+        DataSet getEmployeeDataSet = new DataSet();
+        getEmployeeDataSet.Tables.Add(data);
+
+        return getEmployeeDataSet;
     }
 
     public DataTable GetResults(string selectedFunction)
@@ -75,6 +79,7 @@ public class Controller
     public DataSet updateEmployee(string no, string firstName, string lastName, string jobTitle, string adress)
     {
         DataTable employeeDT = new DataTable("Employee");
+        
         employeeDT.Columns.Add("No_");
         employeeDT.Columns.Add("First Name");
         employeeDT.Columns.Add("Last Name");
@@ -85,10 +90,29 @@ public class Controller
         DataSet employeeDS = new DataSet("Employee DataSet");
         employeeDS.Tables.Add(employeeDT);
 
+
+
         dal.updateEmployee(employeeDS);
 
         return employeeDS;
 
+    }
+
+    public DataSet insertEmployee(string no, string firstName, string lastName, string jobTitle, string adress)
+    {
+        DataTable employeeDT = new DataTable("Employee");
+
+        employeeDT.Columns.Add("No_");
+        employeeDT.Columns.Add("First Name");
+        employeeDT.Columns.Add("Last Name");
+        employeeDT.Columns.Add("Job Title");
+        employeeDT.Columns.Add("Adress");
+        employeeDT.Rows.Add(no, firstName, lastName, jobTitle, adress);
+
+        DataSet employeeDS = new DataSet("Employee DataSet");
+        employeeDS.Tables.Add(employeeDT);
+
+        return dal.insertEmployee(employeeDS);
     }
 
 

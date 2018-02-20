@@ -147,7 +147,7 @@ public class Dal
         da.InsertCommand = new SqlCommand("insert into dbo.[CRONUS Sverige AB$Employee](No_, [First Name], [Last Name], [Job Title], Adress, '', '', '', '', '', '', '', '', '', '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')" +
             " values(@No_, @[First Name], @[Last Name], @[Job Title], @Adress)");
         da.InsertCommand.Parameters.Add("@No_", SqlDbType.NChar, 20, "No_");
-        da.InsertCommand.Parameters.Add("@[First Name", SqlDbType.NChar, 30, "[First Name]");
+        da.InsertCommand.Parameters.Add("@[First Name]", SqlDbType.NChar, 30, "[First Name]");
         da.InsertCommand.Parameters.Add("@[Last Name]", SqlDbType.NChar, 30, "[Last Name]");
         da.InsertCommand.Parameters.Add("@[Job Title]", SqlDbType.NChar, 30, "[Job Title]");
         da.InsertCommand.Parameters.Add("@Adress", SqlDbType.NChar, 50, "Adress");
@@ -195,7 +195,6 @@ public class Dal
         cmd.Parameters.Add("@Adress", SqlDbType.NChar, 50, "Adress");
         cmd.ExecuteNonQuery();
 
-        da.Update(employeeDS, "[CRONUS Sverige AB$Employee]");
         return employeeDS;
 
 

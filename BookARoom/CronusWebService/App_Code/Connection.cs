@@ -38,7 +38,7 @@ public class Connection
         {
             SqlCommand cmd = new SqlCommand(query, OpenConnect());
             cmd.CommandType = CommandType.Text;
-            Da.SelectCommand = cmd;
+            da.SelectCommand = cmd;
 
             return cmd;
         }
