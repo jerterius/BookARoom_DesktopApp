@@ -66,6 +66,8 @@
             // 
             this.cbSelectedTable.FormattingEnabled = true;
             this.cbSelectedTable.Items.AddRange(new object[] {
+            "FindEmployee",
+            "",
             "Innehållet och metadata i Employee (Personal) och relaterade tabeller",
             "Information om Personal och deras släktingar (Personalanhörig)",
             "Information om anställda som har varit borta pga sjukdom år 2004 (Personalfrånvar" +
@@ -212,7 +214,7 @@
             // 
             // cronusService
             // 
-            this.cronusService.Url = "http://localhost:52159/Service.asmx";
+            this.cronusService.Url = "http://localhost:52485/Service.asmx";
             this.cronusService.UseDefaultCredentials = true;
             // 
             // UCEmployee

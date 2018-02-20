@@ -31,25 +31,25 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebServiceUppg1.1", "WebSer
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebService(1)", "CronusWebService\", "{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebServices", "CronusWebServices\", "{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_52159"
-		Debug.AspNetCompiler.PhysicalPath = "CronusWebService\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52159\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52485"
+		Debug.AspNetCompiler.PhysicalPath = "CronusWebServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52485\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_52159"
-		Release.AspNetCompiler.PhysicalPath = "CronusWebService\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52159\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52485"
+		Release.AspNetCompiler.PhysicalPath = "CronusWebServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52485\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "52159"
-		SlnRelativePath = "CronusWebService\"
+		VWDPort = "52485"
+		SlnRelativePath = "CronusWebServices\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
@@ -75,10 +75,10 @@ Global
 		{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
