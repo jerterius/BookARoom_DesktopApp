@@ -13,13 +13,19 @@ public class Dal
 {
     public Dal()
     { }
-    private Connection con;
+    
     private string selectedFunctions;
+    private string query = null;
+
+    private Connection con;
+    SqlDataReader reader;
+    SqlDataAdapter da = new SqlDataAdapter();
+    
 
     public List<string[]> GetTables(string selectedFunction)
     {
         List<string[]> resultList = new List<string[]>();
-        string query = null;
+        
         selectedFunctions = selectedFunction;
 
         switch (selectedFunctions)
@@ -118,7 +124,7 @@ public class Dal
         }
         con.OpenConnect();
 
-        SqlDataReader reader = con.QueryStatement(query).ExecuteReader();
+        reader = con.QueryStatement(query).ExecuteReader();
         var columns = new List<string>();
 
         for (int i = 0; i < reader.FieldCount; i++)
@@ -136,13 +142,12 @@ public class Dal
 
     public DataSet updateEmployee(DataSet employeeDS)
     {
-        con.OpenConnect();
+        con.OpenConnect(); 
 
-        SqlDataAdapter da = new SqlDataAdapter();
-
-        da.InsertCommand = new SqlCommand("insert into dbo.[CRONUS Sverige AB$Employee](No_, [First Name], [Last Name], [Job Title], Adress) values(@No_, @[First Name], @[Last Name], @[Job Title], @Adress)");
+        da.InsertCommand = new SqlCommand("insert into dbo.[CRONUS Sverige AB$Employee](No_, [First Name], [Last Name], [Job Title], Adress, '', '', '', '', '', '', '', '', '', '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')" +
+            " values(@No_, @[First Name], @[Last Name], @[Job Title], @Adress)");
         da.InsertCommand.Parameters.Add("@No_", SqlDbType.NChar, 20, "No_");
-        da.InsertCommand.Parameters.Add("@[First Name", SqlDbType.NChar, 30, "[First Name]");
+        da.InsertCommand.Parameters.Add("@[First Name]", SqlDbType.NChar, 30, "[First Name]");
         da.InsertCommand.Parameters.Add("@[Last Name]", SqlDbType.NChar, 30, "[Last Name]");
         da.InsertCommand.Parameters.Add("@[Job Title]", SqlDbType.NChar, 30, "[Job Title]");
         da.InsertCommand.Parameters.Add("@Adress", SqlDbType.NChar, 50, "Adress");
@@ -166,4 +171,37 @@ public class Dal
 
         return employeeDS;
     }
+
+    public void DeleteEmployee(string no)
+    {
+        con.OpenConnect();
+
+        query = "delete from [CRONUS Sverige AB$Employee] where No_ = " + no;
+        con.QueryStatement(query).ExecuteNonQuery();
+        con.CloseConnect(con.OpenConnect());
+    }
+
+    public DataSet insertEmployee(DataSet employeeDS)
+    {
+       
+        query = "insert into dbo.[CRONUS Sverige AB$Employee](No_, [First Name], [Last Name], [Job Title], Adress, '', '', '', '', '', '', '', '', '', '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')" +
+            " values(@No_, @[First Name], @[Last Name], @[Job Title], @Adress)";
+        SqlCommand cmd = new SqlCommand(query, con.OpenConnect());
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.Add("@No_", SqlDbType.NChar, 20, "No_");
+        cmd.Parameters.Add("@[First Name", SqlDbType.NChar, 30, "[First Name]");
+        cmd.Parameters.Add("@[Last Name]", SqlDbType.NChar, 30, "[Last Name]");
+        cmd.Parameters.Add("@[Job Title]", SqlDbType.NChar, 30, "[Job Title]");
+        cmd.Parameters.Add("@Adress", SqlDbType.NChar, 50, "Adress");
+        cmd.ExecuteNonQuery();
+
+        return employeeDS;
+
+
+
+    }
+
+
+
+
 }
