@@ -30,6 +30,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebServices", "Cronus
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoomClient", "BookARoomClient\BookARoomClient.csproj", "{2406C292-DB50-46F6-AB68-9C28B7F41D8D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C} = {CDC65D13-1DE7-47CB-8197-E4661DFDA85C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoomServiceApp", "BookARoomServiceApp\BookARoomServiceApp.csproj", "{CDC65D13-1DE7-47CB-8197-E4661DFDA85C}"
 EndProject

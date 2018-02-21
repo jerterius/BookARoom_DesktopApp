@@ -179,7 +179,7 @@ namespace BookARoom.Views
             // 
             // ucBookARoomClient1
             // 
-            this.ucBookARoomClient1.Location = new System.Drawing.Point(8, 6);
+            this.ucBookARoomClient1.Location = new System.Drawing.Point(6, 6);
             this.ucBookARoomClient1.Name = "ucBookARoomClient1";
             this.ucBookARoomClient1.Size = new System.Drawing.Size(770, 628);
             this.ucBookARoomClient1.TabIndex = 0;
