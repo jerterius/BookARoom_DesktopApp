@@ -148,7 +148,9 @@ namespace BookARoom.DAL
 
             List<Hotel> returnHotels = allBookings.Select(b => b.Room.Hotel).Distinct().ToList();
 
+
             return returnHotels;
+        }
 
             /**
             var bookingsWithNoMatchingDates = hotelList
@@ -170,13 +172,13 @@ namespace BookARoom.DAL
                              join b in db.Bookings on h.Adress equals b.Adress
                              select h).Distinct().ToList();
 
-            hotelList = hotelList.FindAll(hotel => )*/
+            hotelList = hotelList.FindAll(hotel => )
 
 
 
             return hotelList;
         }
-
+        */
 
         public List<string> GetAllCountries()
         {

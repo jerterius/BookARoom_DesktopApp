@@ -22,15 +22,5 @@ namespace BookARoomClient.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:53701/Service.asmx")]
-        public string BookARoomClient_BookARoomReference_Service {
-            get {
-                return ((string)(this["BookARoomClient_BookARoomReference_Service"]));
-            }
-        }
     }
 }

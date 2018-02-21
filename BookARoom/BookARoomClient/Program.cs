@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BookARoomClient.BookARoomReference;
+
 
 
 namespace BookARoomClient
@@ -11,10 +11,7 @@ namespace BookARoomClient
     {
         static void Main(string[] args)
         {
-            Service service = new Service();
-
-            service.HelloWorld();
-             
+           
             
         }
     }
