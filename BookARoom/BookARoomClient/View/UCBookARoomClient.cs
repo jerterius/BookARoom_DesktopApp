@@ -16,5 +16,12 @@ namespace BookARoomClient.View
         {
             InitializeComponent();
         }
+
+        private void cbSelectEntityTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedTable = cbSelectEntityTable.Text;
+
+            List<object> entityList = bookARoomWebService1.GetEntities(selectedTable);
+        }
     }
 }

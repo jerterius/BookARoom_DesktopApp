@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbSelectEntityTable = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bookARoomWebService1 = new BookARoomClient.localhost.BookARoomWebService();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbSelectEntityTable
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 28);
-            this.comboBox1.TabIndex = 0;
+            this.cbSelectEntityTable.FormattingEnabled = true;
+            this.cbSelectEntityTable.Location = new System.Drawing.Point(16, 143);
+            this.cbSelectEntityTable.Name = "cbSelectEntityTable";
+            this.cbSelectEntityTable.Size = new System.Drawing.Size(272, 28);
+            this.cbSelectEntityTable.TabIndex = 0;
+            this.cbSelectEntityTable.SelectedIndexChanged += new System.EventHandler(this.cbSelectEntityTable_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -73,7 +74,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbSelectEntityTable);
             this.Name = "UCBookARoomClient";
             this.Size = new System.Drawing.Size(770, 628);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -84,7 +85,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbSelectEntityTable;
         private System.Windows.Forms.DataGridView dataGridView1;
         private localhost.BookARoomWebService bookARoomWebService1;
         private System.Windows.Forms.Label label1;
