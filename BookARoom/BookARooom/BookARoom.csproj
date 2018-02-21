@@ -204,6 +204,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookARoomClient\BookARoomClient.csproj">
+      <Project>{2406c292-db50-46f6-ab68-9c28b7f41d8d}</Project>
+      <Name>BookARoomClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebServiceDatabase\WebServiceDatabase.csproj">
       <Project>{dcf0b633-e59e-4258-9c18-35be7fc0e18b}</Project>
       <Name>WebServiceDatabase</Name>
