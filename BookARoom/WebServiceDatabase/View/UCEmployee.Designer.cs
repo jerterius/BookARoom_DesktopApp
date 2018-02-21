@@ -53,26 +53,28 @@
             // 
             // tablesDataGridView
             // 
-            this.tablesDataGridView.AutoGenerateColumns = false;
+            this.tablesDataGridView.AutoGenerateColumns = true;
             this.tablesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablesDataGridView.DataSource = this.employeeBindingSource;
             this.tablesDataGridView.Location = new System.Drawing.Point(19, 361);
             this.tablesDataGridView.Name = "tablesDataGridView";
             this.tablesDataGridView.RowTemplate.Height = 28;
+            this.tablesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablesDataGridView.Size = new System.Drawing.Size(903, 324);
             this.tablesDataGridView.TabIndex = 1;
+            this.tablesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablesDataGridView_CellClick);
+
             // 
             // cbSelectedTable
             // 
             this.cbSelectedTable.FormattingEnabled = true;
             this.cbSelectedTable.Items.AddRange(new object[] {
-            "FindEmployee",
+            "All Employees",
             "",
+            "Employee Absence (2004)",
             "Innehållet och metadata i Employee (Personal) och relaterade tabeller",
-            "Information om Personal och deras släktingar (Personalanhörig)",
-            "Information om anställda som har varit borta pga sjukdom år 2004 (Personalfrånvar" +
-                "o)",
-            "First name på anstallda som har varit mest sjuka",
+            "Employees And Relatives",
+            "Employees With Most Absence",
             "",
             "Alla nycklar ",
             "Alla indexes",

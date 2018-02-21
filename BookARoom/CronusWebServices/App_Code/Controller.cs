@@ -20,9 +20,12 @@ public class Controller
     List<string> colName = new List<string>();
     List<string[]> resultList;
         
+    public DataSet GetTable(string selectedTable)
+    {
+        return dal.GetTable(selectedTable);
+    }
 
-
-    public DataSet getEmployeeTables(string tableName)
+   /* public DataSet getEmployeeTables(string tableName)
     {
         colName.Add("FindEmployee");
         colName.Add("FindEmployeeAbsence");
@@ -113,7 +116,7 @@ public class Controller
         employeeDS.Tables.Add(employeeDT);
 
         return dal.insertEmployee(employeeDS);
-    }
+    }*/
 
 
 }
