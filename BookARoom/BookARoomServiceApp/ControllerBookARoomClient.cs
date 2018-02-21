@@ -14,32 +14,32 @@ public class ControllerBookARoomClient
 
     }
 
-   /* public List<Object> GetEntities(string selectFunction)
+   public List<object> GetEntities(string selectFunction)
     {
 
-        List<Object> returnObjects;
-        
+        List<object> returnObjects = new List<object>();
+
         switch (selectFunction)
         {
             case "All Bookings":
-                returnObjects = dal.GetAllBookings().
+                returnObjects = dal.GetAllBookings().Cast<object>().ToList();
                 break;
             case "All Cities":
-                dal.GetAllCities();
+                returnObjects = dal.GetAllCities().Cast<object>().ToList();
                 break;
             case "All Customers":
-                dal.GetAllCustomers();
+                returnObjects = dal.GetAllCustomers().Cast<object>().ToList();
                 break;
             case "All Hotels":
-                dal.GetAllHotels();
+                returnObjects = dal.GetAllHotels().Cast<object>().ToList();
                 break;
             case "All Rooms":
-                dal.GetAllRooms();
+                returnObjects = dal.GetAllRooms().Cast<object>().ToList();
                 break;
         }
 
         return returnObjects;
         
     }
-    */
+    
 }

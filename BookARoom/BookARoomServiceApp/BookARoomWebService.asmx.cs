@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
+
 namespace BookARoomServiceApp
 {
     /// <summary>
@@ -16,11 +17,12 @@ namespace BookARoomServiceApp
     // [System.Web.Script.Services.ScriptService]
     public class BookARoomWebService : System.Web.Services.WebService
     {
+        ControllerBookARoomClient controller = new ControllerBookARoomClient();
 
         [WebMethod]
-        public string HelloWorld()
+        public List<object> GetEntities(string selectedFunction)
         {
-            return "Hello World";
+            return controller.GetEntities(selectedFunction);
         }
     }
 }
