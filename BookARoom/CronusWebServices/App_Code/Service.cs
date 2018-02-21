@@ -23,7 +23,8 @@ public Service()
 [WebMethod]
 public DataSet GetEmployeeTables(string tableName)
 {
-    return controller.getEmployeeTables(tableName);
+        return controller.GetTable(tableName);
+        
 }
     
 }

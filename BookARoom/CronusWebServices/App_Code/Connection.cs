@@ -14,14 +14,15 @@ public class Connection
 {
     public Connection()
     { }
-        
+            
+
         SqlDataAdapter da = new SqlDataAdapter();
 
         public SqlDataAdapter Da { get; set; }
 
         public SqlConnection OpenConnect()
         {
-            string dbAdress = "Data Source=DESKTOP-5OKAJKP;Initial Catalog=Demo Database NAV(5 - 0);Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string dbAdress = "Data Source=DESKTOP-08VEOGS;Initial Catalog=Demo Database NAV(5 - 0);Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             SqlConnection con = new SqlConnection(dbAdress);
             return con;

@@ -73,9 +73,23 @@ namespace WebServiceDatabase.View
             employeeBindingSource.DataSource = cronusService.GetEmployeeTables(selectedTable);
 
             tablesDataGridView.DataSource = employeeBindingSource;
-            
+            tablesDataGridView.DataMember = "Employees";
 
-            
+
+
+        }
+
+
+
+        private void tablesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (cbSelectedTable.Text.Equals("All Employees"))
+            {
+                tbxTitle.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Job Title"].Value.ToString();
+                tbxFirstName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["First Name"].Value.ToString();
+                tbxLastName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
+                tbxAdress.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+            }
         }
     }
 }
