@@ -25,7 +25,11 @@ public class Controller
         return dal.GetTable(selectedTable);
     }
 
-   /* public DataSet getEmployeeTables(string tableName)
+   /* public int InsertEmployee(string title, string firstName, string lastName, string adress)
+    {
+        
+    }*/
+     public DataSet getEmployeeTables(string tableName)
     {
         colName.Add("FindEmployee");
         colName.Add("FindEmployeeAbsence");
@@ -47,7 +51,7 @@ public class Controller
 
         foreach (string col in colName)
         {
-            data.Rows.Add(dal.GetTables(col));
+            data.Rows.Add(dal.GetTable(col));
         }
 
         DataSet getEmployeeDataSet = new DataSet();
@@ -55,7 +59,7 @@ public class Controller
 
         return getEmployeeDataSet;
     }
-
+    /*
     public DataTable GetResults(string selectedFunction)
     {
         resultList = dal.GetTables(selectedFunction);

@@ -26,5 +26,10 @@ public DataSet GetEmployeeTables(string tableName)
         return controller.GetTable(tableName);
         
 }
+[WebMethod]
+public int InsertEmployee(string title, string firstName, string lastName, string adress)
+    {
+       // return controller
+    }
     
 }

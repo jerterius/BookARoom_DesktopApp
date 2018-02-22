@@ -41,7 +41,7 @@ public class Dal
                 query = "select 'Employee Qualification' as Tabellnamn, [Employee No_], [Line No_], [Qualification Code], Type, Description from dbo.[CRONUS Sverige AB$Employee Qualification]";
 
                 break;
-            case "FindEmployeeRelative":
+            case "Employee And Relatives":
                 query = "select 'Employee Relative' as Tabellnamn, [Employee No_], [Line No_], [Relative Code], [First Name], [Last Name] from dbo.[CRONUS Sverige AB$Employee Relative]";
 
                 break;
@@ -73,29 +73,29 @@ public class Dal
                 break;
 
             case "Employees With Most Absence":
-                query = " select top 5 [CRONUS Sverige AB$Employee].[First Name]" +
-                    "from dbo.[CRONUS Sverige AB$Employee Absence]" +
-                    "inner join [CRONUS Sverige AB$Employee] on [CRONUS Sverige AB$Employee Absence].[Employee No_] = [CRONUS Sverige AB$Employee].No_" +
-                    "group by [CRONUS Sverige AB$Employee].[First Name]" +
+                query = " select top 5 [CRONUS Sverige AB$Employee].[First Name] " +
+                    "from dbo.[CRONUS Sverige AB$Employee Absence] " +
+                    "inner join [CRONUS Sverige AB$Employee] on [CRONUS Sverige AB$Employee Absence].[Employee No_] = [CRONUS Sverige AB$Employee].No_ " +
+                    "group by [CRONUS Sverige AB$Employee].[First Name] " +
                     "order by COUNT(*) desc";
                 break;
 
-            case "Samtliga nycklar":
+            case "All Keys":
 
                 query = "select distinct constraint_name as [Samtliga nycklar] from INFORMATION_SCHEMA.KEY_COLUMN_USAGE";
 
                 break;
-            case "Samtliga index":
+            case "All Indexes":
 
                 query = "select object_id as [Objekt id],name as Namn, index_id as [Index id], type as Typ, type_desc as Typbeskrivning from sys.indexes where name like '%CRONUS%'";
 
                 break;
-            case "Samtliga tabellbegränsningar":
+            case "All Table Constraints":
 
                 query = "select constraint_name Begränsningsnamn, table_name as Tabellnamn, constraint_type as Begränsningstyp from INFORMATION_SCHEMA.TABLE_CONSTRAINTS";
 
                 break;
-            case "Samtliga tabeller":
+            case "All Tables In Database":
 
                 query = "select name as [Samtliga tabeller] from sys.tables order by name";
 
@@ -103,7 +103,7 @@ public class Dal
                 // "select * from INFORMATION_SCHEMA.TABLES";
 
                 break;
-            case "Samtliga kolumner från tabellen Employee":
+            case "All Columns From Employee-Table":
 
                 query = "select column_name as Kolumnnamn, table_name as Tabellnamn from INFORMATION_SCHEMA.COLUMNS where table_name = 'CRONUS Sverige AB$Employee'";
 
@@ -134,6 +134,7 @@ public class Dal
         // Now Return ds which is a DataSet
         return (ds);
     }
+
 
 
     /*public List<string[]> GetTables(string selectedFunction)
