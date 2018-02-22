@@ -22,5 +22,15 @@ namespace WebServiceDatabase.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52485/Service.asmx")]
+        public string WebServiceDatabase_localhost_Service {
+            get {
+                return ((string)(this["WebServiceDatabase_localhost_Service"]));
+            }
+        }
     }
 }

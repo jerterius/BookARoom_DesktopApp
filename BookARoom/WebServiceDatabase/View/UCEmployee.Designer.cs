@@ -46,6 +46,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.serviceCronus = new WebServiceDatabase.localhost.Service();
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,6 @@
             this.tablesDataGridView.Size = new System.Drawing.Size(903, 324);
             this.tablesDataGridView.TabIndex = 1;
             this.tablesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablesDataGridView_CellClick);
-
             // 
             // cbSelectedTable
             // 
@@ -213,6 +213,11 @@
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // serviceCronus
+            // 
+            this.serviceCronus.Url = "http://localhost:52485/Service.asmx";
+            this.serviceCronus.UseDefaultCredentials = true;
+            // 
             // UCEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -260,6 +265,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-    
+        private localhost.Service serviceCronus;
     }
 }
