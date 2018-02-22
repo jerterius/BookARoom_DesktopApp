@@ -67,12 +67,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="View\UCBookARoomClient.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\UCBookARoomClient.Designer.cs">
-      <DependentUpon>UCBookARoomClient.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -115,11 +109,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\UCBookARoomClient.resx">
-      <DependentUpon>UCBookARoomClient.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />

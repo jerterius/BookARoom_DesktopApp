@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookARoomClient.ServiceReference1;
+using BookARoom.ServiceReference1;
 
-namespace BookARoomClient.View
+namespace BookARoom.View
 {
     public partial class UCBookARoomClient : UserControl
     {
