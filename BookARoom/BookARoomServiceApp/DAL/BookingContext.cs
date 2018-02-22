@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
-using BookARoom.Models;
+using BookARoomServiceApp.Models;
 
-namespace BookARoom.DAL
+namespace BookARoomServiceApp.DAL
 {
     public class BookingContext : DbContext
     {
@@ -22,6 +22,4 @@ namespace BookARoom.DAL
         public DbSet<City> Cities { get; set; }
 
     }
-
 }
-

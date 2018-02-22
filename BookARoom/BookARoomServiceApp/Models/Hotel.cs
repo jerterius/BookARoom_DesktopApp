@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BookARoom.Models
+namespace BookARoomServiceApp.Models
 {
     public class Hotel
     {
@@ -16,7 +16,7 @@ namespace BookARoom.Models
         public string Name { get; set; }
         public string Standard { get; set; }
         public string PhoneNumber { get; set; }
-        [ForeignKey("City"), Column(Order =1)]
+        [ForeignKey("City"), Column(Order = 1)]
         public string CityName { get; set; }
         [ForeignKey("City"), Column(Order = 2)]
         public string Countryname { get; set; }

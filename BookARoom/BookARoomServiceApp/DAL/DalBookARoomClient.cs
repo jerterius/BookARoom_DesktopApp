@@ -4,8 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using BookARoom.Models;
-using BookARoom.DAL;
+using BookARoomServiceApp.Models;
+using BookARoomServiceApp.DAL;
 
 
 
@@ -17,7 +17,7 @@ using BookARoom.DAL;
 public class DalBookARoomClient
 {
 
-    SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BookingDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+    
 
     BookingContext db = new BookingContext();
     

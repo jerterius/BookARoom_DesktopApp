@@ -89,15 +89,15 @@
       <DependentUpon>BookARoomWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Booking.cs" />
-    <Compile Include="BookingContext.cs" />
-    <Compile Include="City.cs" />
-    <Compile Include="ControllerBookARoomClient.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="DalBookARoomClient.cs" />
-    <Compile Include="Hotel.cs" />
+    <Compile Include="Controller\ControllerBookARoomClient.cs" />
+    <Compile Include="DAL\DalBookARoomClient.cs" />
+    <Compile Include="DAL\BookingContext.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Hotel.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Room.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

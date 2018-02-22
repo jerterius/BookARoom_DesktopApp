@@ -8,13 +8,12 @@ using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
-namespace BookARoom.Models
+namespace BookARoomServiceApp.Models
 {
     public class Booking
     {
 
-        
+
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoom", "BookARooom\BookARoom.csproj", "{08CE6CD9-5790-475F-91A2-8F45D11E4D80}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDatabase", "WebServiceDatabase\WebServiceDatabase.csproj", "{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA} = {B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}
+	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebServices", "CronusWebServices\", "{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}"
 	ProjectSection(WebsiteProperties) = preProject
