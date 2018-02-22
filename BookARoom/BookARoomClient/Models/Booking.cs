@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace BookARoom.Models
+namespace BookARoomClient.Models
 {
     public class Booking
     {
