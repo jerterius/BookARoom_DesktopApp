@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.ObjectModel;
 
-namespace BookARoom.Models
+namespace BookARoomServiceApp.Models
 {
     public class Customer
     {
@@ -39,4 +39,3 @@ namespace BookARoom.Models
 
     }
 }
-

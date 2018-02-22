@@ -21,7 +21,7 @@ namespace BookARoomClient.View
         {
             string selectedTable = cbSelectEntityTable.Text;
 
-            List<object> entityList = bookARoomWebService1.GetEntities(selectedTable);
+            //List<object> entityList = bookARoomWebService1.GetEntities(selectedTable);
         }
     }
 }

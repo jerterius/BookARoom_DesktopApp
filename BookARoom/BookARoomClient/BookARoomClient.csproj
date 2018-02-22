@@ -83,7 +83,12 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BookARoomServiceApp\BookARoomServiceApp.csproj">
+      <Project>{cdc65d13-1de7-47cb-8197-e4661dfda85c}</Project>
+      <Name>BookARoomServiceApp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <WebReferenceUrl Include="http://localhost:59180/BookARoomWebService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

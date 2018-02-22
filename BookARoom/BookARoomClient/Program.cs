@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BookARoomClient.localhost;
+using BookARoomServiceApp.Models;
 
 
 
@@ -14,9 +15,8 @@ namespace BookARoomClient
         static void Main(string[] args)
         {
 
-            BookARoomWebService service = new BookARoomWebService();
+            
 
-            service.GetEntities("All Bookings");
 
           
         }
