@@ -14,8 +14,7 @@ namespace BookARoomClient
         static void Main(string[] args)
         {
             BookARoomWebServiceSoapClient client = new BookARoomWebServiceSoapClient();
-            List<Customer> customerList = client.GetAllCustomers().Cast<Customer>().ToList();
-
+            List<Customer> customerList = client.GetAllCustomers();
             foreach(Customer c in customerList)
             {
                 Console.WriteLine(c.CName);
