@@ -38,9 +38,11 @@
             // 
             this.cbSelectEntityTable.FormattingEnabled = true;
             this.cbSelectEntityTable.Items.AddRange(new object[] {
+            "All Customers",
             "All Bookings",
             "All Rooms",
-            "All Hotels"});
+            "All Hotels",
+            "All Cities"});
             this.cbSelectEntityTable.Location = new System.Drawing.Point(16, 143);
             this.cbSelectEntityTable.Name = "cbSelectEntityTable";
             this.cbSelectEntityTable.Size = new System.Drawing.Size(272, 28);

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.ServiceReference1;
+using System.Xml.Serialization;
 
 namespace BookARoom.View
 {
@@ -19,17 +20,35 @@ namespace BookARoom.View
             InitializeComponent();
             
         }
-
         private void cbSelectEntityTable_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedTable = cbSelectEntityTable.Text;
-            List<ServiceReference1.Booking> entityList = service.GetAllBookings();
             
 
+            switch (cbSelectEntityTable.Text)
+            {
+                case "All Bookings":
+                    entitiesDataGridView.DataSource = service.GetAllBookings().Cast<Booking>().ToList();
+                    break;
 
-            //List<Booking> entityList = bookARoomWebService1.GetEntities(selectedTable).Cast<Booking>().ToList();
+                case "All Hotels":
+                    entitiesDataGridView.DataSource = service.GetAllHotels();
+                    break;
 
-            entitiesDataGridView.DataSource = entityList;
+                case "All Customers":
+                    entitiesDataGridView.DataSource = service.GetAllCustomers();
+                    break;
+
+                case "All Rooms":
+                    entitiesDataGridView.DataSource = service.GetAllCities();
+                    break;
+
+                case "All Cities":
+                    entitiesDataGridView.DataSource = service.GetAllBookings();
+                    break;
+            }
+           
+
+ 
         }
     }
 }
