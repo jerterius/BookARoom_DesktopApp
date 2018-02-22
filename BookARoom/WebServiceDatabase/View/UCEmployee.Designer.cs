@@ -70,16 +70,16 @@
             this.cbSelectedTable.Items.AddRange(new object[] {
             "All Employees",
             "",
-            "Employee Absence (2004)",
-            "Innehållet och metadata i Employee (Personal) och relaterade tabeller",
+            "Content and metadata from Employee and related tables",
             "Employees And Relatives",
+            "Employee Absence (2004)",
             "Employees With Most Absence",
             "",
-            "Alla nycklar ",
-            "Alla indexes",
-            "Alla table_constraints ",
-            "Alla tabeller i databasen ( 2 lösningar)",
-            "Alla kolumner i tabellen Employee "});
+            "All Keys",
+            "All Indexes",
+            "All Table Constraints",
+            "All Tables In Database",
+            "All Columns From Employee-Table"});
             this.cbSelectedTable.Location = new System.Drawing.Point(19, 314);
             this.cbSelectedTable.Name = "cbSelectedTable";
             this.cbSelectedTable.Size = new System.Drawing.Size(403, 28);

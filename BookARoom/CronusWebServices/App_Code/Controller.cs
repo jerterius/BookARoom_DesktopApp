@@ -25,7 +25,23 @@ public class Controller
         return dal.GetTable(selectedTable);
     }
 
-   /* public DataSet getEmployeeTables(string tableName)
+    public DataSet GetEmployeeTablesMerge()
+    {
+        DataSet empoyeesAndRelatedTables = dal.GetTable("All Employees");
+        empoyeesAndRelatedTables.Merge(dal.GetTable("Employee Absence"));
+        empoyeesAndRelatedTables.Merge(dal.GetTable("Employee Qualifications"));
+        empoyeesAndRelatedTables.Merge(dal.GetTable("Employee And Relatives"));
+        empoyeesAndRelatedTables.Merge(dal.GetTable("Employee Portal Setup"));
+        empoyeesAndRelatedTables.Merge(dal.GetTable("Employee Statistic Group"));
+
+        return empoyeesAndRelatedTables;
+    }
+
+   /* public int InsertEmployee(string title, string firstName, string lastName, string adress)
+    {
+        
+    }/*
+     public DataSet getEmployeeTables(string tableName)
     {
         colName.Add("FindEmployee");
         colName.Add("FindEmployeeAbsence");
