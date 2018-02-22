@@ -70,7 +70,7 @@ namespace WebServiceDatabase.View
 
             //Hej Webbservice din "GetTables" med inparameter "selectedtables"
 
-            employeeBindingSource.DataSource = cronusService.GetEmployeeTables(selectedTable);
+           // employeeBindingSource.DataSource = cronusService.GetEmployeeTables(selectedTable);
 
             tablesDataGridView.DataSource = employeeBindingSource;
             tablesDataGridView.DataMember = "Employees";
