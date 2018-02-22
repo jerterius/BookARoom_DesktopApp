@@ -24,7 +24,7 @@ namespace BookARoomClient.View
         private void cbSelectEntityTable_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedTable = cbSelectEntityTable.Text;
-            List<ServiceReference1.Booking> entityList = service.GetEntities(selectedTable).Cast<ServiceReference1.Booking>().ToList();
+            //List<ServiceReference1.Booking> entityList = service.GetEntities(selectedTable).Cast<ServiceReference1.Booking>().ToList();
             
 
 

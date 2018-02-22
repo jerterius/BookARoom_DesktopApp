@@ -686,26 +686,54 @@ namespace BookARoomClient.ServiceReference1 {
     public interface BookARoomWebServiceSoap {
         
         // CODEGEN: Generating message contract since element name selectedTable from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEntities", ReplyAction="*")]
-        BookARoomClient.ServiceReference1.GetEntitiesResponse GetEntities(BookARoomClient.ServiceReference1.GetEntitiesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllBookings", ReplyAction="*")]
+        BookARoomClient.ServiceReference1.GetAllBookingsResponse GetAllBookings(BookARoomClient.ServiceReference1.GetAllBookingsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEntities", ReplyAction="*")]
-        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetEntitiesResponse> GetEntitiesAsync(BookARoomClient.ServiceReference1.GetEntitiesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllBookings", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllBookingsResponse> GetAllBookingsAsync(BookARoomClient.ServiceReference1.GetAllBookingsRequest request);
+        
+        // CODEGEN: Generating message contract since element name selectedTable from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllRooms", ReplyAction="*")]
+        BookARoomClient.ServiceReference1.GetAllRoomsResponse GetAllRooms(BookARoomClient.ServiceReference1.GetAllRoomsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllRooms", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllRoomsResponse> GetAllRoomsAsync(BookARoomClient.ServiceReference1.GetAllRoomsRequest request);
+        
+        // CODEGEN: Generating message contract since element name selectedTable from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllCities", ReplyAction="*")]
+        BookARoomClient.ServiceReference1.GetAllCitiesResponse GetAllCities(BookARoomClient.ServiceReference1.GetAllCitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllCities", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllCitiesResponse> GetAllCitiesAsync(BookARoomClient.ServiceReference1.GetAllCitiesRequest request);
+        
+        // CODEGEN: Generating message contract since element name selectedTable from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllHotels", ReplyAction="*")]
+        BookARoomClient.ServiceReference1.GetAllHotelsResponse GetAllHotels(BookARoomClient.ServiceReference1.GetAllHotelsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllHotels", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllHotelsResponse> GetAllHotelsAsync(BookARoomClient.ServiceReference1.GetAllHotelsRequest request);
+        
+        // CODEGEN: Generating message contract since element name selectedTable from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllCustomers", ReplyAction="*")]
+        BookARoomClient.ServiceReference1.GetAllCustomersResponse GetAllCustomers(BookARoomClient.ServiceReference1.GetAllCustomersRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllCustomers", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllCustomersResponse> GetAllCustomersAsync(BookARoomClient.ServiceReference1.GetAllCustomersRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetEntitiesRequest {
+    public partial class GetAllBookingsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEntities", Namespace="http://tempuri.org/", Order=0)]
-        public BookARoomClient.ServiceReference1.GetEntitiesRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllBookings", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllBookingsRequestBody Body;
         
-        public GetEntitiesRequest() {
+        public GetAllBookingsRequest() {
         }
         
-        public GetEntitiesRequest(BookARoomClient.ServiceReference1.GetEntitiesRequestBody Body) {
+        public GetAllBookingsRequest(BookARoomClient.ServiceReference1.GetAllBookingsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -714,15 +742,15 @@ namespace BookARoomClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetEntitiesRequestBody {
+    public partial class GetAllBookingsRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string selectedTable;
         
-        public GetEntitiesRequestBody() {
+        public GetAllBookingsRequestBody() {
         }
         
-        public GetEntitiesRequestBody(string selectedTable) {
+        public GetAllBookingsRequestBody(string selectedTable) {
             this.selectedTable = selectedTable;
         }
     }
@@ -731,15 +759,15 @@ namespace BookARoomClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetEntitiesResponse {
+    public partial class GetAllBookingsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEntitiesResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BookARoomClient.ServiceReference1.GetEntitiesResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllBookingsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllBookingsResponseBody Body;
         
-        public GetEntitiesResponse() {
+        public GetAllBookingsResponse() {
         }
         
-        public GetEntitiesResponse(BookARoomClient.ServiceReference1.GetEntitiesResponseBody Body) {
+        public GetAllBookingsResponse(BookARoomClient.ServiceReference1.GetAllBookingsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -748,16 +776,288 @@ namespace BookARoomClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetEntitiesResponseBody {
+    public partial class GetAllBookingsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BookARoomClient.ServiceReference1.Booking[] GetEntitiesResult;
+        public BookARoomClient.ServiceReference1.Booking[] GetAllBookingsResult;
         
-        public GetEntitiesResponseBody() {
+        public GetAllBookingsResponseBody() {
         }
         
-        public GetEntitiesResponseBody(BookARoomClient.ServiceReference1.Booking[] GetEntitiesResult) {
-            this.GetEntitiesResult = GetEntitiesResult;
+        public GetAllBookingsResponseBody(BookARoomClient.ServiceReference1.Booking[] GetAllBookingsResult) {
+            this.GetAllBookingsResult = GetAllBookingsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllRoomsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllRooms", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllRoomsRequestBody Body;
+        
+        public GetAllRoomsRequest() {
+        }
+        
+        public GetAllRoomsRequest(BookARoomClient.ServiceReference1.GetAllRoomsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllRoomsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string selectedTable;
+        
+        public GetAllRoomsRequestBody() {
+        }
+        
+        public GetAllRoomsRequestBody(string selectedTable) {
+            this.selectedTable = selectedTable;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllRoomsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllRoomsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllRoomsResponseBody Body;
+        
+        public GetAllRoomsResponse() {
+        }
+        
+        public GetAllRoomsResponse(BookARoomClient.ServiceReference1.GetAllRoomsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllRoomsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoomClient.ServiceReference1.Room[] GetAllRoomsResult;
+        
+        public GetAllRoomsResponseBody() {
+        }
+        
+        public GetAllRoomsResponseBody(BookARoomClient.ServiceReference1.Room[] GetAllRoomsResult) {
+            this.GetAllRoomsResult = GetAllRoomsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllCitiesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllCities", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllCitiesRequestBody Body;
+        
+        public GetAllCitiesRequest() {
+        }
+        
+        public GetAllCitiesRequest(BookARoomClient.ServiceReference1.GetAllCitiesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllCitiesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string selectedTable;
+        
+        public GetAllCitiesRequestBody() {
+        }
+        
+        public GetAllCitiesRequestBody(string selectedTable) {
+            this.selectedTable = selectedTable;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllCitiesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllCitiesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllCitiesResponseBody Body;
+        
+        public GetAllCitiesResponse() {
+        }
+        
+        public GetAllCitiesResponse(BookARoomClient.ServiceReference1.GetAllCitiesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllCitiesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoomClient.ServiceReference1.City[] GetAllCitiesResult;
+        
+        public GetAllCitiesResponseBody() {
+        }
+        
+        public GetAllCitiesResponseBody(BookARoomClient.ServiceReference1.City[] GetAllCitiesResult) {
+            this.GetAllCitiesResult = GetAllCitiesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllHotelsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllHotels", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllHotelsRequestBody Body;
+        
+        public GetAllHotelsRequest() {
+        }
+        
+        public GetAllHotelsRequest(BookARoomClient.ServiceReference1.GetAllHotelsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllHotelsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string selectedTable;
+        
+        public GetAllHotelsRequestBody() {
+        }
+        
+        public GetAllHotelsRequestBody(string selectedTable) {
+            this.selectedTable = selectedTable;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllHotelsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllHotelsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllHotelsResponseBody Body;
+        
+        public GetAllHotelsResponse() {
+        }
+        
+        public GetAllHotelsResponse(BookARoomClient.ServiceReference1.GetAllHotelsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllHotelsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoomClient.ServiceReference1.Hotel[] GetAllHotelsResult;
+        
+        public GetAllHotelsResponseBody() {
+        }
+        
+        public GetAllHotelsResponseBody(BookARoomClient.ServiceReference1.Hotel[] GetAllHotelsResult) {
+            this.GetAllHotelsResult = GetAllHotelsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllCustomersRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllCustomers", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllCustomersRequestBody Body;
+        
+        public GetAllCustomersRequest() {
+        }
+        
+        public GetAllCustomersRequest(BookARoomClient.ServiceReference1.GetAllCustomersRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllCustomersRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string selectedTable;
+        
+        public GetAllCustomersRequestBody() {
+        }
+        
+        public GetAllCustomersRequestBody(string selectedTable) {
+            this.selectedTable = selectedTable;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllCustomersResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllCustomersResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoomClient.ServiceReference1.GetAllCustomersResponseBody Body;
+        
+        public GetAllCustomersResponse() {
+        }
+        
+        public GetAllCustomersResponse(BookARoomClient.ServiceReference1.GetAllCustomersResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllCustomersResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoomClient.ServiceReference1.Customer[] GetAllCustomersResult;
+        
+        public GetAllCustomersResponseBody() {
+        }
+        
+        public GetAllCustomersResponseBody(BookARoomClient.ServiceReference1.Customer[] GetAllCustomersResult) {
+            this.GetAllCustomersResult = GetAllCustomersResult;
         }
     }
     
@@ -789,28 +1089,128 @@ namespace BookARoomClient.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BookARoomClient.ServiceReference1.GetEntitiesResponse BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetEntities(BookARoomClient.ServiceReference1.GetEntitiesRequest request) {
-            return base.Channel.GetEntities(request);
+        BookARoomClient.ServiceReference1.GetAllBookingsResponse BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllBookings(BookARoomClient.ServiceReference1.GetAllBookingsRequest request) {
+            return base.Channel.GetAllBookings(request);
         }
         
-        public BookARoomClient.ServiceReference1.Booking[] GetEntities(string selectedTable) {
-            BookARoomClient.ServiceReference1.GetEntitiesRequest inValue = new BookARoomClient.ServiceReference1.GetEntitiesRequest();
-            inValue.Body = new BookARoomClient.ServiceReference1.GetEntitiesRequestBody();
+        public BookARoomClient.ServiceReference1.Booking[] GetAllBookings(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllBookingsRequest inValue = new BookARoomClient.ServiceReference1.GetAllBookingsRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllBookingsRequestBody();
             inValue.Body.selectedTable = selectedTable;
-            BookARoomClient.ServiceReference1.GetEntitiesResponse retVal = ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetEntities(inValue);
-            return retVal.Body.GetEntitiesResult;
+            BookARoomClient.ServiceReference1.GetAllBookingsResponse retVal = ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllBookings(inValue);
+            return retVal.Body.GetAllBookingsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetEntitiesResponse> BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetEntitiesAsync(BookARoomClient.ServiceReference1.GetEntitiesRequest request) {
-            return base.Channel.GetEntitiesAsync(request);
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllBookingsResponse> BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllBookingsAsync(BookARoomClient.ServiceReference1.GetAllBookingsRequest request) {
+            return base.Channel.GetAllBookingsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetEntitiesResponse> GetEntitiesAsync(string selectedTable) {
-            BookARoomClient.ServiceReference1.GetEntitiesRequest inValue = new BookARoomClient.ServiceReference1.GetEntitiesRequest();
-            inValue.Body = new BookARoomClient.ServiceReference1.GetEntitiesRequestBody();
+        public System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllBookingsResponse> GetAllBookingsAsync(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllBookingsRequest inValue = new BookARoomClient.ServiceReference1.GetAllBookingsRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllBookingsRequestBody();
             inValue.Body.selectedTable = selectedTable;
-            return ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetEntitiesAsync(inValue);
+            return ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllBookingsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoomClient.ServiceReference1.GetAllRoomsResponse BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllRooms(BookARoomClient.ServiceReference1.GetAllRoomsRequest request) {
+            return base.Channel.GetAllRooms(request);
+        }
+        
+        public BookARoomClient.ServiceReference1.Room[] GetAllRooms(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllRoomsRequest inValue = new BookARoomClient.ServiceReference1.GetAllRoomsRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllRoomsRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            BookARoomClient.ServiceReference1.GetAllRoomsResponse retVal = ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllRooms(inValue);
+            return retVal.Body.GetAllRoomsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllRoomsResponse> BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllRoomsAsync(BookARoomClient.ServiceReference1.GetAllRoomsRequest request) {
+            return base.Channel.GetAllRoomsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllRoomsResponse> GetAllRoomsAsync(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllRoomsRequest inValue = new BookARoomClient.ServiceReference1.GetAllRoomsRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllRoomsRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            return ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllRoomsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoomClient.ServiceReference1.GetAllCitiesResponse BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllCities(BookARoomClient.ServiceReference1.GetAllCitiesRequest request) {
+            return base.Channel.GetAllCities(request);
+        }
+        
+        public BookARoomClient.ServiceReference1.City[] GetAllCities(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllCitiesRequest inValue = new BookARoomClient.ServiceReference1.GetAllCitiesRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllCitiesRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            BookARoomClient.ServiceReference1.GetAllCitiesResponse retVal = ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllCities(inValue);
+            return retVal.Body.GetAllCitiesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllCitiesResponse> BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllCitiesAsync(BookARoomClient.ServiceReference1.GetAllCitiesRequest request) {
+            return base.Channel.GetAllCitiesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllCitiesResponse> GetAllCitiesAsync(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllCitiesRequest inValue = new BookARoomClient.ServiceReference1.GetAllCitiesRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllCitiesRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            return ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllCitiesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoomClient.ServiceReference1.GetAllHotelsResponse BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllHotels(BookARoomClient.ServiceReference1.GetAllHotelsRequest request) {
+            return base.Channel.GetAllHotels(request);
+        }
+        
+        public BookARoomClient.ServiceReference1.Hotel[] GetAllHotels(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllHotelsRequest inValue = new BookARoomClient.ServiceReference1.GetAllHotelsRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllHotelsRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            BookARoomClient.ServiceReference1.GetAllHotelsResponse retVal = ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllHotels(inValue);
+            return retVal.Body.GetAllHotelsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllHotelsResponse> BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllHotelsAsync(BookARoomClient.ServiceReference1.GetAllHotelsRequest request) {
+            return base.Channel.GetAllHotelsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllHotelsResponse> GetAllHotelsAsync(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllHotelsRequest inValue = new BookARoomClient.ServiceReference1.GetAllHotelsRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllHotelsRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            return ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllHotelsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoomClient.ServiceReference1.GetAllCustomersResponse BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllCustomers(BookARoomClient.ServiceReference1.GetAllCustomersRequest request) {
+            return base.Channel.GetAllCustomers(request);
+        }
+        
+        public BookARoomClient.ServiceReference1.Customer[] GetAllCustomers(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllCustomersRequest inValue = new BookARoomClient.ServiceReference1.GetAllCustomersRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllCustomersRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            BookARoomClient.ServiceReference1.GetAllCustomersResponse retVal = ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllCustomers(inValue);
+            return retVal.Body.GetAllCustomersResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllCustomersResponse> BookARoomClient.ServiceReference1.BookARoomWebServiceSoap.GetAllCustomersAsync(BookARoomClient.ServiceReference1.GetAllCustomersRequest request) {
+            return base.Channel.GetAllCustomersAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoomClient.ServiceReference1.GetAllCustomersResponse> GetAllCustomersAsync(string selectedTable) {
+            BookARoomClient.ServiceReference1.GetAllCustomersRequest inValue = new BookARoomClient.ServiceReference1.GetAllCustomersRequest();
+            inValue.Body = new BookARoomClient.ServiceReference1.GetAllCustomersRequestBody();
+            inValue.Body.selectedTable = selectedTable;
+            return ((BookARoomClient.ServiceReference1.BookARoomWebServiceSoap)(this)).GetAllCustomersAsync(inValue);
         }
     }
 }

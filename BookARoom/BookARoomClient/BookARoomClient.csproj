@@ -87,7 +87,31 @@
     <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.Booking.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.GetEntitiesResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.City.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.GetAllBookingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.GetAllCitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.GetAllCustomersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.GetAllHotelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.GetAllRoomsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.Hotel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomClient.ServiceReference1.Room.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\BookARoomWebService.wsdl" />

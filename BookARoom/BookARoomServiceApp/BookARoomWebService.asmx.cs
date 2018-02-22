@@ -21,9 +21,29 @@ namespace BookARoomServiceApp
         ControllerBookARoomClient controller = new ControllerBookARoomClient();
 
         [WebMethod]
-        public List<Booking> GetEntities(string selectedTable)
+        public List<Booking> GetAllBookings(string selectedTable)
         {
             return controller.GetEntities(selectedTable).Cast<Booking>().ToList();
+        }
+        [WebMethod]
+        public List<Room> GetAllRooms(string selectedTable)
+        {
+            return controller.GetEntities(selectedTable).Cast<Room>().ToList();
+        }
+        [WebMethod]
+        public List<City> GetAllCities(string selectedTable)
+        {
+            return controller.GetEntities(selectedTable).Cast<City>().ToList();
+        }
+        [WebMethod]
+        public List<Hotel> GetAllHotels(string selectedTable)
+        {
+            return controller.GetEntities(selectedTable).Cast<Hotel>().ToList();
+        }
+        [WebMethod]
+        public List<Customer> GetAllCustomers(string selectedTable)
+        {
+            return controller.GetEntities(selectedTable).Cast<Customer>().ToList();
         }
     }
 }
