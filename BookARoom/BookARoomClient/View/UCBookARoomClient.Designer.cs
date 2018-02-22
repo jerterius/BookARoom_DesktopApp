@@ -29,55 +29,53 @@
         private void InitializeComponent()
         {
             this.cbSelectEntityTable = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bookARoomWebService1 = new BookARoomClient.localhost.BookARoomWebService();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.entitiesDataGridView = new System.Windows.Forms.DataGridView();
+            this.lblSelectTable = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.entitiesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // cbSelectEntityTable
             // 
             this.cbSelectEntityTable.FormattingEnabled = true;
+            this.cbSelectEntityTable.Items.AddRange(new object[] {
+            "All Bookings",
+            "All Rooms",
+            "All Hotels"});
             this.cbSelectEntityTable.Location = new System.Drawing.Point(16, 143);
             this.cbSelectEntityTable.Name = "cbSelectEntityTable";
             this.cbSelectEntityTable.Size = new System.Drawing.Size(272, 28);
             this.cbSelectEntityTable.TabIndex = 0;
             this.cbSelectEntityTable.SelectedIndexChanged += new System.EventHandler(this.cbSelectEntityTable_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // entitiesDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(737, 393);
-            this.dataGridView1.TabIndex = 1;
+            this.entitiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.entitiesDataGridView.Location = new System.Drawing.Point(16, 208);
+            this.entitiesDataGridView.Name = "entitiesDataGridView";
+            this.entitiesDataGridView.RowTemplate.Height = 28;
+            this.entitiesDataGridView.Size = new System.Drawing.Size(737, 393);
+            this.entitiesDataGridView.TabIndex = 1;
             // 
-            // bookARoomWebService1
+            // lblSelectTable
             // 
-            this.bookARoomWebService1.Url = "http://localhost:59180/BookARoomWebService.asmx";
-            this.bookARoomWebService1.UseDefaultCredentials = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Select table:";
+            this.lblSelectTable.AutoSize = true;
+            this.lblSelectTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectTable.Location = new System.Drawing.Point(12, 101);
+            this.lblSelectTable.Name = "lblSelectTable";
+            this.lblSelectTable.Size = new System.Drawing.Size(110, 20);
+            this.lblSelectTable.TabIndex = 2;
+            this.lblSelectTable.Text = "Select table:";
             // 
             // UCBookARoomClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblSelectTable);
+            this.Controls.Add(this.entitiesDataGridView);
             this.Controls.Add(this.cbSelectEntityTable);
             this.Name = "UCBookARoomClient";
             this.Size = new System.Drawing.Size(770, 628);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entitiesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,8 +84,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbSelectEntityTable;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private localhost.BookARoomWebService bookARoomWebService1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView entitiesDataGridView;
+        private System.Windows.Forms.Label lblSelectTable;
     }
 }

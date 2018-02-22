@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using BookARoom.Models;
 
 
 namespace BookARoomServiceApp
@@ -20,9 +21,9 @@ namespace BookARoomServiceApp
         ControllerBookARoomClient controller = new ControllerBookARoomClient();
 
         [WebMethod]
-        public List<object> GetEntities(string selectedFunction)
+        public List<Booking> GetEntities(string selectedTable)
         {
-            return controller.GetEntities(selectedFunction);
+            return controller.GetEntities(selectedTable).Cast<Booking>().ToList();
         }
     }
 }
