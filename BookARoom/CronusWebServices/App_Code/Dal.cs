@@ -37,7 +37,7 @@ public class Dal
                 query = "select 'Employee Absence' as Tabellnamn, [Entry No_], [Employee No_], [From Date], [To Date], [Cause of Absence Code] from dbo.[CRONUS Sverige AB$Employee Absence]";
 
                 break;
-            case "FindEmployeeQualifications":
+            case "Employee Qualifications":
                 query = "select 'Employee Qualification' as Tabellnamn, [Employee No_], [Line No_], [Qualification Code], Type, Description from dbo.[CRONUS Sverige AB$Employee Qualification]";
 
                 break;
@@ -45,12 +45,12 @@ public class Dal
                 query = "select 'Employee Relative' as Tabellnamn, [Employee No_], [Line No_], [Relative Code], [First Name], [Last Name] from dbo.[CRONUS Sverige AB$Employee Relative]";
 
                 break;
-            case "FindEmployeePortalSetup":
+            case "Employee Portal Setup":
                 query = "select 'Employee Portal Setup'as Tabellnamn, [Search Limit], [Temp_ Key Index], [Temp_ Table No_], [Temp_ Key String], [Temp_ Option Value]\r\n"
                         + "	from dbo.[CRONUS Sverige AB$Employee Portal Setup]";
 
                 break;
-            case "FindEmployeeStatisticGroup":
+            case "Employee Statistic Group":
                 query = "select 'Employee Statistics Group' as Tabellnamn, *, ' ', ' ' " // Lade till extra kolumner som
                                                                                          // ' '.
                     + "	from  dbo.[CRONUS Sverige AB$Employee Statistics Group]";

@@ -70,7 +70,7 @@
             this.cbSelectedTable.Items.AddRange(new object[] {
             "All Employees",
             "",
-            "Innehållet och metadata i Employee (Personal) och relaterade tabeller",
+            "Content and metadata from Employee and related tables",
             "Employees And Relatives",
             "Employee Absence (2004)",
             "Employees With Most Absence",

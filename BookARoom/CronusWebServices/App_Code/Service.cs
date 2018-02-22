@@ -23,13 +23,21 @@ public Service()
 [WebMethod]
 public DataSet GetEmployeeTables(string tableName)
 {
-        return controller.GetTable(tableName);
-        
+        if (tableName.Equals("Content and metadata from Employee and related tables"))
+        {
+            return controller.GetEmployeeTablesMerge();
+        }
+        else
+        {
+
+            return controller.GetTable(tableName);
+        }
 }
-[WebMethod]
+
+/*[WebMethod]
 public int InsertEmployee(string title, string firstName, string lastName, string adress)
     {
        // return controller
-    }
+    }*/
     
 }
