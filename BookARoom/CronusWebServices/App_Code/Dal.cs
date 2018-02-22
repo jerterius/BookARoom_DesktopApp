@@ -301,7 +301,7 @@ public class Dal
         query = "insert into dbo.[CRONUS Sverige AB$Employee](No_, [First Name], [Last Name], [Job Title], Adress, '', '', '', '', '', '', '', '', '', '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')" +
             " values(@No_, @[First Name], @[Last Name], @[Job Title], @Adress)";
         SqlCommand cmd = new SqlCommand(query, con.OpenConnect());
-        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.CommandType = CommandType.Text;
         cmd.Parameters.Add("@No_", SqlDbType.NChar, 20, "No_");
         cmd.Parameters.Add("@[First Name", SqlDbType.NChar, 30, "[First Name]");
         cmd.Parameters.Add("@[Last Name]", SqlDbType.NChar, 30, "[Last Name]");
