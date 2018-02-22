@@ -4,11 +4,7 @@
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:import namespace="http://microsoft.com/wsdl/types/" />
       <s:element name="GetAllBookings">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectedTable" type="s:string" />
-          </s:sequence>
-        </s:complexType>
+        <s:complexType />
       </s:element>
       <s:element name="GetAllBookingsResponse">
         <s:complexType>
@@ -86,11 +82,7 @@
         </s:sequence>
       </s:complexType>
       <s:element name="GetAllRooms">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectedTable" type="s:string" />
-          </s:sequence>
-        </s:complexType>
+        <s:complexType />
       </s:element>
       <s:element name="GetAllRoomsResponse">
         <s:complexType>
@@ -100,11 +92,7 @@
         </s:complexType>
       </s:element>
       <s:element name="GetAllCities">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectedTable" type="s:string" />
-          </s:sequence>
-        </s:complexType>
+        <s:complexType />
       </s:element>
       <s:element name="GetAllCitiesResponse">
         <s:complexType>
@@ -119,11 +107,7 @@
         </s:sequence>
       </s:complexType>
       <s:element name="GetAllHotels">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectedTable" type="s:string" />
-          </s:sequence>
-        </s:complexType>
+        <s:complexType />
       </s:element>
       <s:element name="GetAllHotelsResponse">
         <s:complexType>
@@ -133,11 +117,7 @@
         </s:complexType>
       </s:element>
       <s:element name="GetAllCustomers">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectedTable" type="s:string" />
-          </s:sequence>
-        </s:complexType>
+        <s:complexType />
       </s:element>
       <s:element name="GetAllCustomersResponse">
         <s:complexType>

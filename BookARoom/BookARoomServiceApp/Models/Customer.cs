@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace BookARoomServiceApp.Models
 {
+    [Serializable]
     public class Customer
     {
         public string CPhoneNumber { get; set; }

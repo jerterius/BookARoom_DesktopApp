@@ -14,13 +14,12 @@ namespace BookARoomClient
         static void Main(string[] args)
         {
             BookARoomWebServiceSoapClient client = new BookARoomWebServiceSoapClient();
-            List<Booking> bookingList = client.GetAllBookings("All Bookings").Cast<Booking>().ToList();
-
-            foreach(Booking b in bookingList)
+            List<Customer> customerList = client.GetAllCustomers();
+            foreach(Customer c in customerList)
             {
-                Console.WriteLine("Bookingnumber: {0}, Room number: {1}, Adress: {2}, Customer Email: {3} ", b.BookingNumber, b.RoomNumber, b.Adress, b.CEmail);
+                Console.WriteLine(c.CName);
             }
-
+            Console.ReadLine();
           
         }
     }
