@@ -14,17 +14,17 @@ namespace BookARoomClient.View
 {
     public partial class UCBookARoomClient : UserControl
     {
-       
+        BookARoomWebServiceSoapClient service = new BookARoomWebServiceSoapClient();
         public UCBookARoomClient()
         {
             InitializeComponent();
-           
+            
         }
 
         private void cbSelectEntityTable_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedTable = cbSelectEntityTable.Text;
-            List<Booking> entityList = service.GetEntities(selectedTable).Cast<Booking>().ToList();
+            List<ServiceReference1.Booking> entityList = service.GetEntities(selectedTable).Cast<ServiceReference1.Booking>().ToList();
             
 
 
