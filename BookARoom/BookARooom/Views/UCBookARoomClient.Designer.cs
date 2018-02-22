@@ -1,4 +1,4 @@
-﻿namespace BookARoom.View
+﻿namespace BookARoom.Views
 {
     partial class UCBookARoomClient
     {

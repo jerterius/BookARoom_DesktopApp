@@ -42,7 +42,7 @@ namespace BookARoom.Views
             this.ucLogin1 = new BookARoom.Views.UCLogin();
             this.ucNavigator1 = new BookARoom.Views.UCNavigator();
             this.ucAccount1 = new BookARoom.Views.UCAccount();
-            this.ucBookARoomClient1 = new BookARoom.View.UCBookARoomClient();
+            this.ucBookARoomClient1 = new BookARoom.Views.UCBookARoomClient();
             this.tabControlMain.SuspendLayout();
             this.tabPagePK.SuspendLayout();
             this.tabControlPK.SuspendLayout();
@@ -192,7 +192,7 @@ namespace BookARoom.Views
             this.Controls.Add(this.tabControlMain);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Main Form";
             this.tabControlMain.ResumeLayout(false);
             this.tabPagePK.ResumeLayout(false);
             this.tabControlPK.ResumeLayout(false);
@@ -220,7 +220,7 @@ namespace BookARoom.Views
         private UCAccount ucAccount1;
         private UCLogin ucLogin1;
         private WebServiceDatabase.View.UCEmployee ucEmployee1;
-        private View.UCBookARoomClient ucBookARoomClient1;
+        private UCBookARoomClient ucBookARoomClient1;
     }
 }
 
