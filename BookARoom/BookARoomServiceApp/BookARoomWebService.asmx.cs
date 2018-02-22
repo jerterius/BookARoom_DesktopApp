@@ -6,6 +6,8 @@ using System.Web.Services;
 using BookARoomServiceApp.Models;
 
 
+
+
 namespace BookARoomServiceApp
 {
     /// <summary>
@@ -21,29 +23,29 @@ namespace BookARoomServiceApp
         ControllerBookARoomClient controller = new ControllerBookARoomClient();
 
         [WebMethod]
-        public List<Booking> GetAllBookings(string selectedTable)
+        public List<Booking> GetAllBookings()
         {
-            return controller.GetEntities(selectedTable).Cast<Booking>().ToList();
+            return controller.GetEntities("All Bookings").Cast<Booking>().ToList();
         }
         [WebMethod]
-        public List<Room> GetAllRooms(string selectedTable)
+        public List<Room> GetAllRooms()
         {
-            return controller.GetEntities(selectedTable).Cast<Room>().ToList();
+            return controller.GetEntities("All Rooms").Cast<Room>().ToList();
         }
         [WebMethod]
-        public List<City> GetAllCities(string selectedTable)
+        public List<City> GetAllCities()
         {
-            return controller.GetEntities(selectedTable).Cast<City>().ToList();
+            return controller.GetEntities("All Cities").Cast<City>().ToList();
         }
         [WebMethod]
-        public List<Hotel> GetAllHotels(string selectedTable)
+        public List<Hotel> GetAllHotels()
         {
-            return controller.GetEntities(selectedTable).Cast<Hotel>().ToList();
+            return controller.GetEntities("All Hotels").Cast<Hotel>().ToList();
         }
         [WebMethod]
-        public List<Customer> GetAllCustomers(string selectedTable)
+        public List<Customer> GetAllCustomers()
         {
-            return controller.GetEntities(selectedTable).Cast<Customer>().ToList();
+            return controller.GetEntities("All Customers").Cast<Customer>().ToList();
         }
     }
 }
