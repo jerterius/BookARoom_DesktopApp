@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebServiceDatabase.ServiceReference;
 
 namespace WebServiceDatabase.View
 {
     public partial class UCEmployee : UserControl
     {
-        
+        ServiceSoapClient service = new ServiceSoapClient();
         public UCEmployee()
         {
             InitializeComponent();
@@ -70,7 +71,7 @@ namespace WebServiceDatabase.View
 
             //Hej Webbservice din "GetTables" med inparameter "selectedtables"
 
-           // employeeBindingSource.DataSource = cronusService.GetEmployeeTables(selectedTable);
+           employeeBindingSource.DataSource = service.GetEmployeeTables(selectedTable);
 
             tablesDataGridView.DataSource = employeeBindingSource;
             tablesDataGridView.DataMember = "Employees";
