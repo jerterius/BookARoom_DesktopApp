@@ -14,6 +14,7 @@ namespace BookARoom.Views
 {
     public partial class UCBookARoomClient : UserControl
     {
+        //For making a simple comit
         public UCBookARoomClient()
         {
             InitializeComponent();
