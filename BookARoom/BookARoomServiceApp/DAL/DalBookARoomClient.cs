@@ -21,6 +21,7 @@ public class DalBookARoomClient
 
     BookingContext db = new BookingContext();
     
+    
 
 
     public DalBookARoomClient()
@@ -31,6 +32,7 @@ public class DalBookARoomClient
     public List<Booking> GetAllBookings()
     {
         var allBookings = db.Bookings;
+        
 
         return allBookings.ToList();
     }

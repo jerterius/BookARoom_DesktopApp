@@ -13,6 +13,9 @@ using System.Web.Services;
 public class Service : System.Web.Services.WebService
 { 
     Controller controller = new Controller();
+    List<DataRow> listTables = new List<DataRow>();
+    List<DataRow> employeeList = new List<DataRow>();
+    
 
 public Service()
 {
@@ -21,17 +24,21 @@ public Service()
 }
 
 [WebMethod]
-public DataSet GetEmployeeTables(string tableName)
+public List<DataRow> GetEmployeeTables(string tableName)
 {
+
         if (tableName.Equals("Content and metadata from Employee and related tables"))
         {
-            return controller.GetEmployeeTablesMerge();
+            employeeList = controller.GetEmployeeTablesMerge().Tables[0].AsEnumerable().ToList();
+            return employeeList;
         }
         else
         {
 
-            return controller.GetTable(tableName);
+            listTables = controller.GetTable(tableName).Tables[0].AsEnumerable().ToList();
+            return listTables;
         }
+
 }
 
 /*[WebMethod]
