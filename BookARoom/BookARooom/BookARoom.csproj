@@ -94,8 +94,6 @@
     <Compile Include="Migrations\201802161451243_bookingNoGUID.Designer.cs">
       <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
