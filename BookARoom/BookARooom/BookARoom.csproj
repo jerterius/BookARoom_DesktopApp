@@ -45,6 +45,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="DAL\BookingContext.cs" />
     <Compile Include="DAL\Dal.cs" />
@@ -87,8 +94,6 @@
     <Compile Include="Migrations\201802161451243_bookingNoGUID.Designer.cs">
       <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +121,12 @@
     </Compile>
     <Compile Include="Views\UCAccount.Designer.cs">
       <DependentUpon>UCAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UCBookARoomClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UCBookARoomClient.Designer.cs">
+      <DependentUpon>UCBookARoomClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\UCLogin.cs">
       <SubType>UserControl</SubType>
@@ -173,12 +184,46 @@
     <EmbeddedResource Include="Views\UCAccount.resx">
       <DependentUpon>UCAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\UCBookARoomClient.resx">
+      <DependentUpon>UCBookARoomClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UCLogin.resx">
       <DependentUpon>UCLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UCNavigator.resx">
       <DependentUpon>UCNavigator.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.Booking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.City.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.GetAllBookingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.GetAllCitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.GetAllCustomersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.GetAllHotelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.GetAllRoomsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.Hotel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoom.ServiceReference1.Room.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\BookARoomWebService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BookARoom.Models.Booking.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Booking1.datasource" />
@@ -190,6 +235,11 @@
     <None Include="Properties\DataSources\BookARoom.Models.Hotel1.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Room.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Room1.datasource" />
+    <None Include="Properties\DataSources\BookARoomClient.ServiceReference1.Booking.datasource" />
+    <None Include="Properties\DataSources\BookARoomClient.ServiceReference1.City.datasource" />
+    <None Include="Properties\DataSources\BookARoomClient.ServiceReference1.Customer.datasource" />
+    <None Include="Properties\DataSources\BookARoomClient.ServiceReference1.Hotel.datasource" />
+    <None Include="Properties\DataSources\BookARoomClient.ServiceReference1.Room.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -203,6 +253,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WebServiceDatabase\WebServiceDatabase.csproj">
+      <Project>{dcf0b633-e59e-4258-9c18-35be7fc0e18b}</Project>
+      <Name>WebServiceDatabase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\BookARoomWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

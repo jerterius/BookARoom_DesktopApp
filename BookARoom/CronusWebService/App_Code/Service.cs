@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -12,17 +13,20 @@ using System.Web.Services;
 
 public class Service : System.Web.Services.WebService
 {
-    Dal dal = new Dal();
+    Controller controller = new Controller();
 
     public Service () {
 
-        //Uncomment the following line if using designed components 
-        //InitializeComponent(); 
+        
     }
 
     [WebMethod]
-    public string HelloWorld() {
-        return "Hello World";
+    public DataSet getEmployeeTables()
+    {
+        return controller.getEmployeeTables();
     }
     
+
+    
+
 }

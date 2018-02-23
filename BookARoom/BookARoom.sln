@@ -4,54 +4,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoom", "BookARooom\BookARoom.csproj", "{08CE6CD9-5790-475F-91A2-8F45D11E4D80}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C} = {CDC65D13-1DE7-47CB-8197-E4661DFDA85C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDatabase", "WebServiceDatabase\WebServiceDatabase.csproj", "{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA} = {B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppgift1.1", "Uppgift1.1\Uppgift1.1.csproj", "{D95A912C-852E-4CA7-94FE-D9A5DBDE7310}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebServiceUppg1.1", "WebServiceUppg1.1\", "{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebServices", "CronusWebServices\", "{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_54426"
-		Debug.AspNetCompiler.PhysicalPath = "WebServiceUppg1.1\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54426\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52485"
+		Debug.AspNetCompiler.PhysicalPath = "CronusWebServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52485\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_54426"
-		Release.AspNetCompiler.PhysicalPath = "WebServiceUppg1.1\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54426\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52485"
+		Release.AspNetCompiler.PhysicalPath = "CronusWebServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52485\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "54426"
-		SlnRelativePath = "WebServiceUppg1.1\"
+		VWDPort = "52485"
+		SlnRelativePath = "CronusWebServices\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebService(1)", "CronusWebService\", "{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_52159"
-		Debug.AspNetCompiler.PhysicalPath = "CronusWebService\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52159\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_52159"
-		Release.AspNetCompiler.PhysicalPath = "CronusWebService\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52159\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "52159"
-		SlnRelativePath = "CronusWebService\"
-		DefaultWebSiteLanguage = "Visual C#"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoomClient", "BookARoomClient\BookARoomClient.csproj", "{2406C292-DB50-46F6-AB68-9C28B7F41D8D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C} = {CDC65D13-1DE7-47CB-8197-E4661DFDA85C}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoomServiceApp", "BookARoomServiceApp\BookARoomServiceApp.csproj", "{CDC65D13-1DE7-47CB-8197-E4661DFDA85C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,18 +56,18 @@ Global
 		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D95A912C-852E-4CA7-94FE-D9A5DBDE7310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D95A912C-852E-4CA7-94FE-D9A5DBDE7310}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D95A912C-852E-4CA7-94FE-D9A5DBDE7310}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D95A912C-852E-4CA7-94FE-D9A5DBDE7310}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A7EF43C-3E27-4D3A-8E5F-5CDA793DB6AA}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{2ABB5F93-BFF7-4FCA-BFD0-C08D30EB1F3E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2406C292-DB50-46F6-AB68-9C28B7F41D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2406C292-DB50-46F6-AB68-9C28B7F41D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2406C292-DB50-46F6-AB68-9C28B7F41D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2406C292-DB50-46F6-AB68-9C28B7F41D8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
