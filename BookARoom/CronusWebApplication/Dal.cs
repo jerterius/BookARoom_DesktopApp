@@ -25,9 +25,10 @@ namespace CronusWebApplication
 
             using (CronusContext db = new CronusContext())
             {
-                var queryResult = db.CRONUS_Sverige_AB_Employee.Select(e => e.).ToList();
+                //var queryResult = db.CRONUS_Sverige_AB_Employee.Select(e => e.).ToList();
 
-                return queryResult;
+                //return queryResult;
+                return null;
             }
         }
     }
