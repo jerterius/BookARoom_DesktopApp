@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetMetaDataIndex">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMetaDataIndexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMetaDataIndexResult" type="tns:ArrayOfCronusMetaData_Index" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCronusMetaData_Index">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CronusMetaData_Index" nillable="true" type="tns:CronusMetaData_Index" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CronusMetaData_Index" />
+      <s:element name="GetEmployees">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesResult" type="tns:ArrayOfCRONUS_Sverige_AB_Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRONUS_Sverige_AB_Employee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRONUS_Sverige_AB_Employee" nillable="true" type="tns:CRONUS_Sverige_AB_Employee" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRONUS_Sverige_AB_Employee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="timestamp" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="No_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="First_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Middle_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Last_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Initials" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Job_Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Search_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Post_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone_No_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile_Phone_No_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="E_Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alt__Address_Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Alt__Address_Start_Date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Alt__Address_End_Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birth_Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Social_Security_No_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Union_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Union_Membership_No_" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country_Region_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manager_No_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Emplymt__Contract_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Statistics_Group_Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employment_Date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Inactive_Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cause_of_Inactivity_Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Termination_Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Grounds_for_Term__Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Global_Dimension_1_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Global_Dimension_2_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Resource_No_" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Last_Date_Modified" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pager" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax_No_" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company_E_Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Salespers__Purch__Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="No__Series" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMetaDataIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMetaDataIndex" />
+  </wsdl:message>
+  <wsdl:message name="GetMetaDataIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMetaDataIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CronusWebServiceSoap">
+    <wsdl:operation name="GetMetaDataIndex">
+      <wsdl:input message="tns:GetMetaDataIndexSoapIn" />
+      <wsdl:output message="tns:GetMetaDataIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <wsdl:input message="tns:GetEmployeesSoapIn" />
+      <wsdl:output message="tns:GetEmployeesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CronusWebServiceSoap" type="tns:CronusWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMetaDataIndex">
+      <soap:operation soapAction="http://tempuri.org/GetMetaDataIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap:operation soapAction="http://tempuri.org/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CronusWebServiceSoap12" type="tns:CronusWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMetaDataIndex">
+      <soap12:operation soapAction="http://tempuri.org/GetMetaDataIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CronusWebService">
+    <wsdl:port name="CronusWebServiceSoap" binding="tns:CronusWebServiceSoap">
+      <soap:address location="http://localhost:58882/CronusWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CronusWebServiceSoap12" binding="tns:CronusWebServiceSoap12">
+      <soap12:address location="http://localhost:58882/CronusWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookARoom.ServiceReference1;
+using BookARoom.ServiceReferenceBookARoom;
 
 
 namespace BookARoom.Views
