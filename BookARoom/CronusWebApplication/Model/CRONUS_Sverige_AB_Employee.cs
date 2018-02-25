@@ -1,7 +1,8 @@
-namespace CronusWebApplication
+namespace CronusWebApplication.Model
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -9,10 +10,12 @@ namespace CronusWebApplication
     [Table("CRONUS Sverige AB$Employee")]
     public partial class CRONUS_Sverige_AB_Employee
     {
+        /*
         [Column(TypeName = "timestamp")]
         [MaxLength(8)]
         [Timestamp]
         public byte[] timestamp { get; set; }
+        */
 
         [Key]
         [StringLength(20)]
@@ -94,9 +97,11 @@ namespace CronusWebApplication
 
         [Column("Alt_ Address End Date")]
         public DateTime Alt__Address_End_Date { get; set; }
-
+        
+        /*
         [Column(TypeName = "image")]
         public byte[] Picture { get; set; }
+        */
 
         [Column("Birth Date")]
         public DateTime Birth_Date { get; set; }
@@ -208,5 +213,6 @@ namespace CronusWebApplication
         [Required]
         [StringLength(10)]
         public string No__Series { get; set; }
+
     }
 }

@@ -208,7 +208,7 @@
             // 
             this.hotelDataGridView.AllowUserToAddRows = false;
             this.hotelDataGridView.AllowUserToDeleteRows = false;
-            this.hotelDataGridView.AutoGenerateColumns = false;
+            this.hotelDataGridView.AutoGenerateColumns = true;
             this.hotelDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.hotelDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -230,7 +230,7 @@
             // 
             this.roomsDataGridView.AllowUserToAddRows = false;
             this.roomsDataGridView.AllowUserToDeleteRows = false;
-            this.roomsDataGridView.AutoGenerateColumns = false;
+            this.roomsDataGridView.AutoGenerateColumns = true;
             this.roomsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

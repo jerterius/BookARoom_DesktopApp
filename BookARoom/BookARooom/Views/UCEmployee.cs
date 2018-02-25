@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.ServiceReferenceCronus2;
+using BookARoom.Utilities;
 
 namespace BookARoom.Views
 {
@@ -85,9 +86,54 @@ namespace BookARoom.Views
                 tablesDataGridView.DataSource = nyLista;
                // tablesDataGridView.DataMember = "Employees";*/
 
+                switch (selectedTable)
+                {
+                    case "All Employees":
 
+                        tablesDataGridView.DataSource = service.GetAllEmployees();
+                        
+                        break;
 
-                tablesDataGridView.DataSource = service.GetEmployees();
+                    case "Content and metadata from Employee and related tables":
+
+                        break;
+
+                    case "Employees And Relatives":
+
+                        break;
+
+                    case "Employee Absence(2004)":
+
+                        break;
+
+                    case "Employees With Most Absence":
+
+                        break;
+
+                    case "All Keys":
+
+                        tablesDataGridView.DataSource = service.GetAllKeys();
+                        break;
+
+                    case "All Indexes":
+
+                        tablesDataGridView.DataSource = service.GetAllIndexes();
+                        break;
+
+                    case "All Table Constraints":
+
+                        tablesDataGridView.DataSource = service.GetAllConstraints();
+                        break;
+
+                    case "All Tables In Database":
+
+                        tablesDataGridView.DataSource = service.GetAllTablesInDB();
+                        break;
+
+                    case "All Columns From Employee-Table":
+                        tablesDataGridView.DataSource = service.GetAllColumnsInEmployees();
+                        break;
+                }
                 
 
             }

@@ -1,4 +1,4 @@
-namespace CronusWebApplication
+namespace CronusWebApplication.Model
 {
     using System;
     using System.Collections.Generic;

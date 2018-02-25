@@ -53,9 +53,11 @@
             // tablesDataGridView
             // 
             this.tablesDataGridView.AutoGenerateColumns = true;
+            this.tablesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablesDataGridView.DataSource = this.employeeBindingSource;
             this.tablesDataGridView.Location = new System.Drawing.Point(19, 361);
+            this.tablesDataGridView.MultiSelect = false;
             this.tablesDataGridView.Name = "tablesDataGridView";
             this.tablesDataGridView.RowTemplate.Height = 28;
             this.tablesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -259,6 +261,5 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-
     }
 }

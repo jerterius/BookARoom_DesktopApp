@@ -1,13 +1,13 @@
-namespace CronusWebApplication
+namespace CronusWebApplication.Model
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class CronusContext : DbContext
+    public partial class CRONUSContext : DbContext
     {
-        public CronusContext()
+        public CRONUSContext()
             : base("name=CronusModel1")
         {
         }
@@ -17,14 +17,24 @@ namespace CronusWebApplication
         public virtual DbSet<CRONUS_Sverige_AB_Employee_Portal_Setup> CRONUS_Sverige_AB_Employee_Portal_Setup { get; set; }
         public virtual DbSet<CRONUS_Sverige_AB_Employee_Qualification> CRONUS_Sverige_AB_Employee_Qualification { get; set; }
         public virtual DbSet<CRONUS_Sverige_AB_Employee_Relative> CRONUS_Sverige_AB_Employee_Relative { get; set; }
+        public virtual DbSet<CRONUS_Sverige_AB_Relative> CRONUS_Sverige_AB_Relative { get; set; }
         public virtual DbSet<CRONUS_Sverige_AB_Employee_Statistics_Group> CRONUS_Sverige_AB_Employee_Statistics_Group { get; set; }
         public virtual DbSet<CRONUS_Sverige_AB_Employment_Contract> CRONUS_Sverige_AB_Employment_Contract { get; set; }
 
+        public virtual DbSet<CRONUSMetadata_Index> CRONUSMetadata_Index { get; set; }
+
+        public virtual DbSet<CRONUSMetadata_Constraint> CRONUSMetadata_Constraint { get; set; }
+        public virtual DbSet<CRONUSMetadata_Key> CRONUSMetadata_Key { get; set; }
+        public virtual DbSet<CRONUSMetadata_Table> CRONUSMetadata_Table { get; set; }
+        public virtual DbSet<CRONUSMetadata_Column> CRONUSMetadata_Column { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
+            /*
+           modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.timestamp)
                 .IsFixedLength();
+            */
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.No_)
@@ -283,7 +293,7 @@ namespace CronusWebApplication
                 .IsFixedLength();
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Relative>()
-                .Property(e => e.Employee_No_)
+                .Property(e => e.EmpNo)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Relative>()
@@ -310,6 +320,18 @@ namespace CronusWebApplication
                 .Property(e => e.Relative_s_Employee_No_)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<CRONUS_Sverige_AB_Relative>()
+    .Property(e => e.timestamp)
+    .IsFixedLength();
+
+            modelBuilder.Entity<CRONUS_Sverige_AB_Relative>()
+                .Property(e => e.Code)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CRONUS_Sverige_AB_Relative>()
+                .Property(e => e.Description)
+                .IsUnicode(false);
+
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Statistics_Group>()
                 .Property(e => e.timestamp)
                 .IsFixedLength();
@@ -333,6 +355,26 @@ namespace CronusWebApplication
             modelBuilder.Entity<CRONUS_Sverige_AB_Employment_Contract>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<CRONUSMetadata_Index>()
+                .Property(e => e.Name)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CRONUSMetadata_Constraint>()
+                .Property(e => e.Constraint_Name)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CRONUSMetadata_Key>()
+                .Property(e => e.Constraint_Name)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CRONUSMetadata_Table>()
+                .Property(e => e.Name)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CRONUSMetadata_Column>()
+                .Property(e => e.Column_Name)
+                .IsFixedLength();
         }
     }
 }

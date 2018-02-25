@@ -1,7 +1,8 @@
-namespace CronusWebApplication
+namespace CronusWebApplication.Model
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -56,5 +57,10 @@ namespace CronusWebApplication
         [Required]
         [StringLength(20)]
         public string Relative_s_Employee_No_ { get; set; }
+
+
+
+
+
     }
 }

@@ -1,4 +1,4 @@
-namespace CronusWebApplication
+namespace CronusWebApplication.Model
 {
     using System;
     using System.Collections.Generic;
@@ -6,8 +6,8 @@ namespace CronusWebApplication
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("CRONUS Sverige AB$Employment Contract")]
-    public partial class CRONUS_Sverige_AB_Employment_Contract
+    [Table("CRONUS Sverige AB$Relative")]
+    public partial class CRONUS_Sverige_AB_Relative
     {
         [Column(TypeName = "timestamp")]
         [MaxLength(8)]
@@ -21,5 +21,6 @@ namespace CronusWebApplication
         [Required]
         [StringLength(30)]
         public string Description { get; set; }
+
     }
 }
