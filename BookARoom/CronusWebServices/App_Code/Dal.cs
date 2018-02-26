@@ -31,29 +31,18 @@ public class Dal
         {
             case "All Employees":
                 // query = "select 'Employee' as Tabellnamn, No_, [First Name], [Last Name], Initials, [Job Title] from  dbo.[CRONUS Sverige AB$Employee]";
-                query = "select [Job Title], [First Name], [Last Name], [Address] from  dbo.[CRONUS Sverige AB$Employee]";
-                break;
-            case "Employee Absence":
-                query = "select 'Employee Absence' as Tabellnamn, [Entry No_], [Employee No_], [From Date], [To Date], [Cause of Absence Code] from dbo.[CRONUS Sverige AB$Employee Absence]";
 
-                break;
-            case "Employee Qualifications":
-                query = "select 'Employee Qualification' as Tabellnamn, [Employee No_], [Line No_], [Qualification Code], Type, Description from dbo.[CRONUS Sverige AB$Employee Qualification]";
-
-                break;
-            case "Employee And Relatives":
-                query = "select 'Employee Relative' as Tabellnamn, [Employee No_], [Line No_], [Relative Code], [First Name], [Last Name] from dbo.[CRONUS Sverige AB$Employee Relative]";
-
-                break;
-            case "Employee Portal Setup":
-                query = "select 'Employee Portal Setup'as Tabellnamn, [Search Limit], [Temp_ Key Index], [Temp_ Table No_], [Temp_ Key String], [Temp_ Option Value]\r\n"
-                        + "	from dbo.[CRONUS Sverige AB$Employee Portal Setup]";
-
-                break;
-            case "Employee Statistic Group":
-                query = "select 'Employee Statistics Group' as Tabellnamn, *, ' ', ' ' " // Lade till extra kolumner som
-                                                                                         // ' '.
-                    + "	from  dbo.[CRONUS Sverige AB$Employee Statistics Group]";
+                query = "select 'Employee' as Tabellnamn, [First Name], timestamp, [Job Title], [Address] from dbo.[CRONUS Sverige AB$Employee]" +
+                    "union " +
+                    "select 'Employee Absence' as Tabellnamn, [Employee No_], [Entry No_], [Cause of Absence Code], Description from dbo.[CRONUS Sverige AB$Employee Absence]" +
+                    "union" +
+                    "select 'Employee Qualification' as Tabellnamn, [Employee No_], [Line No_], [Qualification Code], Description from dbo.[CRONUS Sverige AB$Employee Qualification]" +
+                    "union" +
+                    "select 'Employee Relative' as Tabellnamn, [Employee No_], [Line No_], [Relative Code], [First Name] from dbo.[CRONUS Sverige AB$Employee Relative]" +
+                    "union" +
+                    "select 'Employee Portal Setup'as Tabellnamn, [Search Config Table Caption], [Search Limit] , [Config Tool Pane Caption], [Config TP WP Request Caption] from dbo.[CRONUS Sverige AB$Employee Portal Setup]" +
+                    "union" +
+                    "select 'Employee Statistics Group' as Tabellnamn, Code, timestamp, Description, ' ' from dbo.[CRONUS Sverige AB$Employee Statistics Group]";
                 break;
 
             case "Employees And Relatives":
