@@ -30,7 +30,7 @@ namespace CronusWebApplication.DAL
                     er => er.Employee_No_,
                     (e, er) => new { CRONUS_Sverige_AB_Employee = e, CRONUS_Sverige_AB_Employee_Relative = er }).ToList();
 
-                return queryResult;
+                return null;
             }
             
         }

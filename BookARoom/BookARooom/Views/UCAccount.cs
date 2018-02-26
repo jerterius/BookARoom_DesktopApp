@@ -15,11 +15,15 @@ namespace BookARoom.Views
 {
     public partial class UCAccount : UserControl
     {
-        public List<Customer> CustomerData { get; set; }
         Controller controller = new Controller();
 
-        public delegate void PassBookingData(object sender, EventArgs e);
-        public PassBookingData passBookingData;
+        public delegate void UpdateUser(object sender, EventArgs e);
+        public UpdateUser userUpdated;
+
+        public delegate void UserLogOut(object sender, EventArgs e);
+        public UserLogOut userLogOut;
+
+        public Customer Customer { get; set; }
 
         public UCAccount()
         {
@@ -51,21 +55,23 @@ namespace BookARoom.Views
            
 
             btnSave.Visible = true;
-            btnAbort.Visible = true;
+            btnCancel.Visible = true;
+
+            foreach (Control c in Controls)
+            {
+                if (c is TextBox || c is ComboBox)
+                {
+                    c.DataBindings.Clear();
+                }
+            }
 
         }
 
-        public void UCAccount_LoadUser(object sender, EventArgs e)
+        public void LoadUser(object sender, EventArgs e)
         {
-            CustomerData = sender as List<Customer>;
-            customerBindingSource.DataSource = CustomerData;
-
-            cbTitle.DataBindings.Add("Text", customerBindingSource, "Title");
-            tbxName.DataBindings.Add("Text", customerBindingSource, "CName");
-            tbxAdress.DataBindings.Add("Text", customerBindingSource, "CAdress");
-            tbxTelephone.DataBindings.Add("Text", customerBindingSource, "CPhoneNumber");
-            tbxEmail.DataBindings.Add("Text", customerBindingSource, "CEmail");
-            tbxPassword.DataBindings.Add("Text", customerBindingSource, "Password");
+            Customer = sender as Customer;
+            
+            customerBindingSource.DataSource = Customer?? new Customer();
  
         }
 
@@ -95,7 +101,11 @@ namespace BookARoom.Views
                 tbxRePassword.ReadOnly = true;
 
                 btnSave.Visible = false;
-                btnAbort.Visible = false;
+                btnCancel.Visible = false;
+                Customer = controller.RetrieveCustomer(email, password);
+
+                if (userUpdated != null)
+                    userUpdated(Customer, EventArgs.Empty);
             }
             else
             {
@@ -106,8 +116,8 @@ namespace BookARoom.Views
 
         private void tbxEmail_TextChanged(object sender, EventArgs e)
         {
-            if (passBookingData != null)
-                passBookingData(tbxEmail, e);
+            if (userUpdated != null)
+                userUpdated(tbxEmail, e);
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
@@ -118,12 +128,80 @@ namespace BookARoom.Views
             tbxTelephone.ReadOnly = true;
             tbxEmail.ReadOnly = true;
             tbxPassword.ReadOnly = true;
+
             tbxRePassword.ReadOnly = true;
 
+            lblPasswordAsterix.Visible = false;
+            lblEmailAsterix.Visible = false;
+            lblRePassword.Visible = false;
+            tbxRePassword.Visible = false;
+            lblRePasswordAsterix.Visible = false;
             btnSave.Visible = false;
-            btnAbort.Visible = false;
+            btnCancel.Visible = false;
 
-          
+            LoadUser(Customer, e);
+            tbxAdress.Text = Customer.CName;
+
+            cbTitle.DataBindings.Add("Text", customerBindingSource, "Title");
+
+            tbxName.DataBindings.Add("Text", customerBindingSource, "CName");
+
+            tbxAdress.DataBindings.Add("Text", customerBindingSource, "CAdress");
+
+            tbxTelephone.DataBindings.Add("Text", customerBindingSource, "CPhoneNumber");
+
+            tbxEmail.DataBindings.Add("Text", customerBindingSource, "CEmail");
+
+            tbxPassword.DataBindings.Add("Text", customerBindingSource, "Password");
+
+        }
+        public void SetCreateUser(object sender, EventArgs e)
+        {
+            cbTitle.Enabled = true;
+            tbxName.ReadOnly = false;
+            tbxAdress.ReadOnly = false;
+            tbxTelephone.ReadOnly = false;
+            tbxEmail.ReadOnly = false;
+            tbxPassword.ReadOnly = false;
+            tbxPassword.Text = null;
+            tbxRePassword.ReadOnly = false;
+            tbxRePassword.Text = null;
+
+            lblRePassword.Visible = true;
+            tbxRePassword.Visible = true;
+
+            lblEmailAsterix.Visible = true;
+            lblPasswordAsterix.Visible = true;
+            lblRePasswordAsterix.Visible = true;
+
+
+            btnSave.Visible = true;
+            btnCancel.Visible = true;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Customer = null;
+            LoadUser(Customer, e);
+            
+            if (userUpdated != null)
+                userUpdated(Customer, EventArgs.Empty);
+
+            if (userLogOut != null)
+                userLogOut(Customer, EventArgs.Empty);
+
+            
+        }
+
+        private void btnDeleteBooking_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in bookingDataGridView.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[4].Value))
+                {
+                    controller.DeleteBooking(new Guid(row.Cells[0].Value.ToString()));
+                }
+            }
         }
     }
 }

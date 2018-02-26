@@ -153,10 +153,8 @@ namespace BookARoom.Views
             // ucLogin1
             // 
             this.ucLogin1.Customer = null;
-            this.ucLogin1.Email = null;
             this.ucLogin1.Location = new System.Drawing.Point(6, 6);
             this.ucLogin1.Name = "ucLogin1";
-            this.ucLogin1.Password = null;
             this.ucLogin1.Size = new System.Drawing.Size(487, 406);
             this.ucLogin1.TabIndex = 4;
             // 
@@ -171,7 +169,7 @@ namespace BookARoom.Views
             // ucAccount1
             // 
             this.ucAccount1.BtnEdit = null;
-            this.ucAccount1.CustomerData = null;
+            this.ucAccount1.Customer = null;
             this.ucAccount1.Location = new System.Drawing.Point(6, 6);
             this.ucAccount1.Name = "ucAccount1";
             this.ucAccount1.Size = new System.Drawing.Size(952, 621);

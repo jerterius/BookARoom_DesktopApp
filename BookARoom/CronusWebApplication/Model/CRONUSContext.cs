@@ -293,7 +293,7 @@ namespace CronusWebApplication.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Relative>()
-                .Property(e => e.EmpNo)
+                .Property(e => e.Employee_No_)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Relative>()

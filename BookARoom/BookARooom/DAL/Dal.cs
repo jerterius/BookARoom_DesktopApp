@@ -43,54 +43,42 @@ namespace BookARoom.DAL
 
 
 
-        public void Add(object addToTable)
+        public void Add(object newObject)
         {
 
-
-            if (addToTable is Booking)
+            if (newObject is Booking)
             {
 
-                db.Bookings.Add(addToTable as Booking);
+                db.Bookings.Add(newObject as Booking);
                 db.SaveChanges();
             }
 
-            else if (addToTable is Customer)
-                db.Customers.Add(addToTable as Customer);
+            else if (newObject is Customer)
+                db.Customers.Add(newObject as Customer);
             db.SaveChanges();
         }
 
-        public IQueryable<object> Retrieve(object o)
+        public Customer RetrieveCustomer(string email, string password)
         {
-            if (o is Customer)
-            {
-                Customer customer = o as Customer;
-                var query = from c in db.Customers
-                            where c.Password == customer.Password && customer.CEmail == c.CEmail
-                            select c;
-
-                
-
-                return query as IQueryable<Customer>;
-                
-            }
-
-            return null;
+             return db.Customers.Where(c => c.CEmail.Equals(email) && c.Password.Equals(password)).First();
+         
         }
 
-        public void Remove(object removeFromTable)
+        public void Remove(object o)
         {
-            switch (removeFromTable)
+
+            if (o is Booking)
             {
-                case Booking b1:
-                    db.Bookings.Remove(b1);
-                    db.SaveChanges();
-                    break;
-                case Customer c1:
-                    db.Customers.Remove(c1);
-                    db.SaveChanges();
-                    break;
+
+                db.Bookings.Remove(o as Booking);
+                db.SaveChanges();
             }
+
+            else if (o is Customer)
+                db.Customers.Remove(o as Customer);
+            db.SaveChanges();
         }
+    
 
 
         public int TotalPrice(Guid bookingNumber)
@@ -153,33 +141,6 @@ namespace BookARoom.DAL
             return returnHotels;
         }
 
-            /**
-            var bookingsWithNoMatchingDates = hotelList
-                .Select(hotel => hotel.Rooms.Select(r => r.Bookings
-                    .Where(booking => dates.Contains(booking.Date) == false)
-                ));
-
-            var availableRooms = bookingsWithNoMatchingDates.Select(b => b.Room).ToList();
-                //.Where(room => room.Bookings.Where(booking => dates.Contains(booking.Date)).ToList();
-            /*
-            var hotelList = (from h in db.Hotels
-                              join b in db.Bookings on h.Adress equals b.Adress
-                             
-                              select h).Distinct().ToList();*/
-
-           // hotelList.Find(h => h.Countryname.Contains(countryName));
-/*
-            var hotelList = (from h in db.Hotels
-                             join b in db.Bookings on h.Adress equals b.Adress
-                             select h).Distinct().ToList();
-
-            hotelList = hotelList.FindAll(hotel => )
-
-
-
-            return hotelList;
-        }
-        */
 
         public List<string> GetAllCountries()
         {

@@ -224,7 +224,6 @@
             this.hotelDataGridView.RowTemplate.Height = 28;
             this.hotelDataGridView.Size = new System.Drawing.Size(1104, 261);
             this.hotelDataGridView.TabIndex = 15;
-            this.hotelDataGridView.SelectionChanged += new System.EventHandler(this.hotelDataGridView_SelectionChanged);
             // 
             // roomsDataGridView
             // 
