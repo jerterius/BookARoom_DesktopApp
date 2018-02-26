@@ -20,9 +20,33 @@ public class Controller
     List<string> colName = new List<string>();
     List<string[]> resultList;
         
-    public DataSet GetTable(string selectedTable)
+    public List<string[]> GetTable(string selectedTable)
     {
-        return dal.GetTable(selectedTable);
+        DataTable dt = dal.GetTable(selectedTable).Tables[0];
+
+        return dt.Rows.Cast<DataRow>()
+            .Select(row => dt.Columns.Cast<DataColumn>()
+            .Select(col => Convert.ToString(row[col]))
+            .ToArray())
+            .ToList();
+       /* DataSet ds = dal.GetTable(selectedTable);
+        List<string[]> dataList = new List<string[]>();
+        string[] colID = ds.Tables[0].Columns.Cast<DataColumn>()
+                    .Select(x => x.ColumnName)
+                    .ToArray();
+        dataList.Add(colID);
+
+        /*foreach (DataRow row in ds.Tables[0].Rows) {
+            row.ItemArray;
+        }
+
+        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+        {
+            var row = ds.Tables[0].Rows[i].ItemArray.Select(x => x.ToString()).ToArray();
+            dataList.Add(row);
+        }
+
+        return dataList;*/
     }
 
     public DataSet GetEmployeeTablesMerge()

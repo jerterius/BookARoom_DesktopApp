@@ -37,7 +37,7 @@ namespace BookARoom.Views
             this.tabPageSearch = new System.Windows.Forms.TabPage();
             this.tabPagePKWS = new System.Windows.Forms.TabPage();
             this.tabPageERPWS = new System.Windows.Forms.TabPage();
-            this.ucEmployee1 = new WebServiceDatabase.View.UCEmployee();
+            this.ucEmployee1 = new UCEmployee();
             this.tabPageAccount = new System.Windows.Forms.TabPage();
             this.ucLogin1 = new BookARoom.Views.UCLogin();
             this.ucNavigator1 = new BookARoom.Views.UCNavigator();
@@ -219,7 +219,7 @@ namespace BookARoom.Views
         private TabPage tabPageAccount;
         private UCAccount ucAccount1;
         private UCLogin ucLogin1;
-        private WebServiceDatabase.View.UCEmployee ucEmployee1;
+        private UCEmployee ucEmployee1;
         private UCBookARoomClient ucBookARoomClient1;
     }
 }

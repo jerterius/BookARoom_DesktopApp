@@ -253,7 +253,7 @@ namespace BookARoom.Views
             // 
             this.bookingDataGridView.AllowUserToAddRows = false;
             this.bookingDataGridView.AllowUserToDeleteRows = false;
-            this.bookingDataGridView.AutoGenerateColumns = false;
+            this.bookingDataGridView.AutoGenerateColumns = true;
             this.bookingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bookingDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bookingNumberDataGridViewTextBoxColumn,

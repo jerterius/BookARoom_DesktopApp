@@ -11,7 +11,7 @@ using BookARoom.DAL;
 using BookARoom.Models;
 using System.Data.Entity;
 using BookARoom.Controllers;
-using WebServiceDatabase.View;
+
 
 namespace BookARoom.Views
 {
