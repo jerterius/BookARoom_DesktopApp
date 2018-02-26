@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDatabase", "WebSe
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CronusWebServices", "CronusWebServices\", "{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_52485"
 		Debug.AspNetCompiler.PhysicalPath = "CronusWebServices\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52485\"
