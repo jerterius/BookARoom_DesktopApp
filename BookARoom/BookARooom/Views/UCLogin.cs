@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.Controllers;
+using BookARoom.Models;
 
 namespace BookARoom.Views
 {
@@ -17,14 +18,13 @@ namespace BookARoom.Views
         public UserLoggedIn userLoggedIn;
 
         public delegate void ChangeTab(object sender, EventArgs e);
-        public ChangeTab changeTab;
+        public ChangeTab createUser;
 
-        public string Email { get; set; }
-        public string Password { get; set; }
+ 
         private Controller controller = new Controller();
 
         //Kanske inte ska vara en IQueryable<object>
-        public object Customer { get; set; }
+        public Customer Customer { get; set; }
 
 
         
@@ -36,29 +36,52 @@ namespace BookARoom.Views
 
         private void linkLblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (changeTab != null)
-                changeTab(this, EventArgs.Empty);
+            if (Customer == null) {
+                if (createUser != null)
+                {
+                    createUser(this, EventArgs.Empty);
+                    lblLoginStatus.Visible = false;
+                }
+            } else
+            {
+                lblLoginStatus.Text = "You are already logged in!";
+                    lblLoginStatus.Visible = true;
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Email = tbxEmail.Text;
-            Password = tbxPassword.Text;
+            string email = tbxEmail.Text;
+            string password = tbxPassword.Text;
 
-            if(controller.RetrieveCustomer(Email, Password) == null) {
-                lblLoginStatus.Visible = true;
-            }
-            else
+            if (Customer == null)
             {
-                lblLoginStatus.Visible = false;
-                Customer = controller.RetrieveCustomer(Email, Password);
 
-                if (userLoggedIn != null)
-                    userLoggedIn(Customer, EventArgs.Empty);
+                if (controller.RetrieveCustomer(email, password) == null)
+                {
+                    lblLoginStatus.Visible = true;
+                }
+                else
+                {
+                    lblLoginStatus.Visible = false;
+                    Customer = controller.RetrieveCustomer(email, password);
 
+                    if (userLoggedIn != null)
+                        userLoggedIn(Customer, EventArgs.Empty);
+
+                }
+            }else
+            {
+                lblLoginStatus.Text = "You are already logged in!";
+                lblLoginStatus.Visible = true;
             }
             
 
+        }
+
+        public void LoadUser(object sender, EventArgs e)
+        {
+            Customer = sender as Customer;
         }
     }
 }

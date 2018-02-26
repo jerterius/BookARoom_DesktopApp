@@ -22,14 +22,20 @@ namespace BookARoom.Controllers
 
         public void AddCustomer(string title, string name, string adress, string telephone, string email, string password)
         {
-            Customer c = new Customer(title, name, adress, telephone, email, password);
-                dal.Add(c);
+            Customer customer = new Customer(title, name, adress, telephone, email, password);
+            dal.Add(customer);
         }
 
         public void AddBooking(string email, string adress, string roomNo, int bookingNo, DateTime date)
         {
             Booking b = new Booking(email, adress, roomNo, date);
             dal.Add(b);
+        }
+
+        public void DeleteBooking(Guid bookingNo)
+        {
+            Booking b = new Booking() {BookingNumber = bookingNo };
+            dal.Remove(b);
         }
 
        public void Remove(object removeFromTable, EventArgs e)
@@ -59,18 +65,9 @@ namespace BookARoom.Controllers
                 return dal.HotelsWithAvailableRooms( search,  countryName,  cityName, dates,  standard,  guests,  smokeFree);
         }
 
-        public List<Customer> RetrieveCustomer(string email, string password)
+        public Customer RetrieveCustomer(string email, string password)
         {
-            Customer c = new Customer() { CEmail = email, Password = password };
-            
-            IQueryable<Customer> result = dal.Retrieve(c) as IQueryable<Customer>;
-
-            if (result.Any<Customer>())
-            {
-                return result.ToList();
-            }
-            return null;
-
+            return dal.RetrieveCustomer(email, password);
         }
 
         public List<string> GetAllCountries()

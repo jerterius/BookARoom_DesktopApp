@@ -23,16 +23,20 @@ namespace BookARoom.Views
         {
             Controller = new Controller();
             InitializeComponent();
-            //Säger till ucNavigator att när dess clickevent körs så skall ucAccount tbxTelephone hämtas
 
-          //  ucNavigator1.getBookingData += new UCNavigator.GetBookingData(ucAccount1.);
-
-            ucAccount1.passBookingData += new UCAccount.PassBookingData(ucNavigator1.GetCustomerData);
-            ucLogin1.changeTab += new UCLogin.ChangeTab(this.SelectAccountTab);
-            ucLogin1.changeTab += new UCLogin.ChangeTab(ucAccount1.btnEdit_Click);
-            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucAccount1.UCAccount_LoadUser);
+            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucNavigator1.LoadUser);
+            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucAccount1.LoadUser);
             ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(this.SelectAccountTab);
-         
+
+            ucLogin1.createUser += new UCLogin.ChangeTab(this.SelectAccountTab);
+            ucLogin1.createUser += new UCLogin.ChangeTab(ucAccount1.SetCreateUser);
+
+            ucAccount1.userUpdated += new UCAccount.UpdateUser(ucNavigator1.LoadUser);
+            ucAccount1.userUpdated += new UCAccount.UpdateUser(ucLogin1.LoadUser);
+
+            ucAccount1.userLogOut += new UCAccount.UserLogOut(this.CloseAccountTab);
+            ucAccount1.userLogOut += new UCAccount.UserLogOut(ucNavigator1.LoadUser);
+            ucAccount1.userLogOut += new UCAccount.UserLogOut(ucAccount1.LoadUser);
 
         }
 
@@ -48,6 +52,11 @@ namespace BookARoom.Views
             }
             
             this.tabControlPK.SelectedTab = tabPageAccount;
+        }
+
+        private void CloseAccountTab(object sender, EventArgs e)
+        {
+            this.tabControlPK.TabPages.Remove(tabPageAccount);
         }
     }
 }

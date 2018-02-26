@@ -18,7 +18,8 @@ namespace BookARoom.Views
     public partial class UCNavigator : UserControl
     {
         private Controller controller = new Controller();
-       
+        public Customer Customer { get; set; }
+
         public UCNavigator()
         {
 
@@ -36,7 +37,7 @@ namespace BookARoom.Views
             lblStandard.Text = "Rating: " + tbStandard.Value.ToString();
 
         }
-            private void btnSubmit_Click(object addToTable, EventArgs e)
+        private void btnSubmit_Click(object addToTable, EventArgs e)
         {
             string search = tbxSearch.Text;
             string countryName = cbCountry.Text;
@@ -52,13 +53,13 @@ namespace BookARoom.Views
 
             roomsBindingSource.DataSource = hotelBindingSource;
             roomsBindingSource.DataMember = "Rooms";
-            
+
 
         }
 
         private void UCNavigator_Load(object sender, EventArgs e)
         {
-            
+
             cbCountry.DataSource = controller.GetAllCountries();
             cbCountry.Text = "Choose Country";
 
@@ -70,42 +71,28 @@ namespace BookARoom.Views
             cbCity.Text = "Choose City";
         }
 
-        private void hotelDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-        }
-
-        string roomNumber;
-        string adress;
-        string cEmail;
-
         private void roomsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
             if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
             {
-                roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
-                adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
+                string roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
+                string adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
 
                 for (var date = dtpFromDate.Value.Date; date <= dtpToDate.Value.Date; date = date.AddDays(1))
                 {
-                    controller.AddBooking(cEmail, adress, roomNumber, 0, date);
+                    controller.AddBooking(Customer.CEmail, adress, roomNumber, 0, date);
                 }
-               
+
 
             }
         }
-        public void GetCustomerData(object sender, EventArgs e)
+
+        public void LoadUser(object sender, EventArgs e)
         {
-            cEmail = (sender as TextBox).Text;
-    
+            Customer = sender as Customer;
+            
         }
-
-        public void LoadCustomerData(object sender, EventArgs e)
-        {
-            UCLogin ucLogin = sender as UCLogin;
-
-        }
-
 
     }
 }
