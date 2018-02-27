@@ -93,6 +93,12 @@
     <Compile Include="Controller\ControllerBookARoomClient.cs" />
     <Compile Include="DAL\DalBookARoomClient.cs" />
     <Compile Include="DAL\BookingContext.cs" />
+    <Compile Include="DAL\DalBooking.cs" />
+    <Compile Include="DAL\DalCity.cs" />
+    <Compile Include="DAL\DalCustomer.cs" />
+    <Compile Include="DAL\DalHotel.cs" />
+    <Compile Include="DAL\DalRoom.cs" />
+    <Compile Include="DAL\IDal.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Customer.cs" />
