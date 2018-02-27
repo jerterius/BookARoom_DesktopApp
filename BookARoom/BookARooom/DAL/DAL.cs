@@ -149,7 +149,6 @@ namespace BookARoom.DAL
             if (allBookings.Select(b => b.Date).Any(d => dates.Contains(d)))
             { //Bokat något av angivna datum
 
-
                 return new List<Hotel>();
 
             } else

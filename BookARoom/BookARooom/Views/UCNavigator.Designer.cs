@@ -234,6 +234,7 @@
             this.hotelDataGridView.RowTemplate.Height = 28;
             this.hotelDataGridView.Size = new System.Drawing.Size(981, 209);
             this.hotelDataGridView.TabIndex = 15;
+            this.hotelDataGridView.RowHeadersVisible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -296,6 +297,7 @@
             this.guestCapacityDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
             this.Booking});
+            this.roomsDataGridView.RowHeadersVisible = false;
             this.roomsDataGridView.DataSource = this.roomsBindingSource;
             this.roomsDataGridView.Location = new System.Drawing.Point(289, 297);
             this.roomsDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
