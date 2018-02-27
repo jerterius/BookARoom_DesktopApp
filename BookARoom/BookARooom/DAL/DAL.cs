@@ -141,17 +141,44 @@ namespace BookARoom.DAL
                     hotel.Standard == standard)
                         .Include(hotel => hotel.Rooms.Select(r => r.Bookings)).ToList();
 
-            List<Room> rooms = hotelList.SelectMany(h => h.Rooms).ToList();
+            List<Room> rooms = hotelList.SelectMany(h => h.Rooms).ToList().Where(r => r.GuestCapacity >= guests).ToList();
 
-            List<Booking> allBookings = rooms.Where(r => r.GuestCapacity >= guests).SelectMany(r => r.Bookings).ToList();
+            List<Booking> allBookings = rooms.SelectMany(r => r.Bookings).ToList();
 
-            allBookings = allBookings.ToList();
 
-            List<Hotel> returnHotels = allBookings.Select(b => b.Room.Hotel).Distinct().ToList();
+            if (allBookings.Select(b => b.Date).Any(d => dates.Contains(d)))
+            { //Bokat något av angivna datum
+
+
+                return new List<Hotel>();
+
+            } else
+            {
+                return rooms.Select(r => r.Hotel).Distinct().ToList();
+            }
+
+            /*if (!allBookings.Any()) //Ej bokat alls
+            {
+                //return new List<Hotel>() { new Hotel() { Name = "Ej bokat" } };
+               return rooms.Select(r => r.Hotel).Distinct().ToList();
+            }
+            else if (allBookings.Select(b => b.Date).Any(d => dates.Contains(d)))
+            { //Bokat något av angivna datum
+
+
+                return new List<Hotel>() { new Hotel() { Name = "Delvis bokat" } };
+
+            }*/
+
+
+
+
+
+
+            return new List<Hotel>() { new Hotel() {Name ="Fake hotel" } };
+       
+      
             
-
-
-            return returnHotels;
         }
 
 
