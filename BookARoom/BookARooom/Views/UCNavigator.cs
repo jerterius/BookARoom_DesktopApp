@@ -54,13 +54,8 @@ namespace BookARoom.Views
             roomsBindingSource.DataSource = hotelBindingSource;
             roomsBindingSource.DataMember = "Rooms";
 
-<<<<<<< HEAD
             tbxSearch.Text = hotels.First().Name;
-=======
-            //TEST
-            tbxSearch.Text = Customer.CAdress.ToString();
 
->>>>>>> 76a49cf1b575212eb2a559ce71144e13ee034d15
 
         }
 
