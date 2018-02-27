@@ -3,19 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BookARoomServiceApp.Models;
+using BookARoomServiceApp.DAL;
 
 /// <summary>
 /// Summary description for ControllerBookARoomClient
 /// </summary>
 public class ControllerBookARoomClient
 {
-    DalBookARoomClient dal = new DalBookARoomClient();
+    //DalBookARoomClient dal = new DalBookARoomClient();
+    DalBooking dalBooking = new DalBooking();
+    DalCity dalCity = new DalCity();
+    DalCustomer dalCustomer = new DalCustomer();
+    DalHotel dalHotel = new DalHotel();
+    DalRoom dalRoom = new DalRoom();
+
     public ControllerBookARoomClient()
     {
 
     }
 
-   public List<object> GetEntities(string selectFunction)
+    public List<Booking> GetAllBookings()
+    {
+        return dalBooking.GetEntities();
+    }
+
+    public List<City> GetAllCities()
+    {
+        return dalCity.GetEntities();
+    }
+
+    public List<Customer> GetAllCustomers()
+    {
+        return dalCustomer.GetEntities();
+    }
+
+    public List<Hotel> GetAllHotels()
+    {
+        return dalHotel.GetEntities();
+    }
+
+    public List<Room> GetAllRooms()
+    {
+        return dalRoom.GetEntities();
+    }
+
+   /* public List<object> GetEntities(string selectFunction)
     {
 
         List<object> returnObjects = new List<object>();
@@ -42,5 +74,6 @@ public class ControllerBookARoomClient
         return returnObjects;
         
     }
+    */
     
 }

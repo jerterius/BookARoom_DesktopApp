@@ -41,7 +41,7 @@ public class DalBookARoomClient
     {
         var allCities = db.Cities;
 
-        return allCities.ToList(); ;
+        return allCities.ToList(); 
     }
 
     public List<Customer> GetAllCustomers()
@@ -67,7 +67,7 @@ public class DalBookARoomClient
 
     
 
-
+    
      
      
 }

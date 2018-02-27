@@ -26,27 +26,27 @@ namespace BookARoomServiceApp
         [WebMethod]
         public List<Booking> GetAllBookings()
         {
-            return controller.GetEntities("All Bookings").Cast<Booking>().ToList();
+            return controller.GetAllBookings();
         }
         [WebMethod]
         public List<Room> GetAllRooms()
         {
-            return controller.GetEntities("All Rooms").Cast<Room>().ToList();
+            return controller.GetAllRooms();
         }
         [WebMethod]
         public List<City> GetAllCities()
         {
-            return controller.GetEntities("All Cities").Cast<City>().ToList();
+            return controller.GetAllCities();
         }
         [WebMethod]
         public List<Hotel> GetAllHotels()
         {
-            return controller.GetEntities("All Hotels").Cast<Hotel>().ToList();
+            return controller.GetAllHotels();
         }
         [WebMethod]
         public List<Customer> GetAllCustomers()
         {
-            return controller.GetEntities("All Customers").Cast<Customer>().ToList();
+            return controller.GetAllCustomers();
         }
     }
 }

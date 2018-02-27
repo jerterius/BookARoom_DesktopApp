@@ -11,5 +11,7 @@ namespace CronusWebApplication.Repository
         T Retrieve(string key);
         void Update(T obj);
         void Delete(string key);
+
+        T GetEntities(string selectedTable);
     }
 }
