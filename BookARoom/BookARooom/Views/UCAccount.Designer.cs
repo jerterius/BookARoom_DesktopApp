@@ -167,7 +167,6 @@ namespace BookARoom.Views
             this.tbxEmail.ReadOnly = true;
             this.tbxEmail.Size = new System.Drawing.Size(320, 26);
             this.tbxEmail.TabIndex = 2;
-            this.tbxEmail.TextChanged += new System.EventHandler(this.tbxEmail_TextChanged);
             // 
             // lblPassword
             // 
@@ -208,7 +207,7 @@ namespace BookARoom.Views
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnAbort_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 

@@ -20,16 +20,19 @@ namespace BookARoom.Controllers
             }
 
 
-        public void AddCustomer(string title, string name, string adress, string telephone, string email, string password)
+        public void AddCustomer(Customer newCustomer)
         {
-            Customer customer = new Customer(title, name, adress, telephone, email, password);
-            dal.Add(customer);
+            dal.Add(newCustomer);
         }
 
         public void AddBooking(string email, string adress, string roomNo, int bookingNo, DateTime date)
         {
             Booking b = new Booking(email, adress, roomNo, date);
             dal.Add(b);
+        }
+        public void Update(Customer origin, Customer updated)
+        {
+            dal.Update(origin, updated);
         }
 
         public void DeleteBooking(Guid bookingNo)

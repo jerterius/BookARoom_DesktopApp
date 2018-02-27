@@ -17,13 +17,15 @@ namespace BookARoom.Views
     {
         Controller controller = new Controller();
 
-        public delegate void UpdateUser(object sender, EventArgs e);
+        public delegate void UpdateUser(Customer c, EventArgs e);
         public UpdateUser userUpdated;
 
-        public delegate void UserLogOut(object sender, EventArgs e);
+        public delegate void UserLogOut(Customer c, EventArgs e);
         public UserLogOut userLogOut;
 
         public Customer Customer { get; set; }
+
+        public bool createCustomerEnabled = false;
 
         public UCAccount()
         {
@@ -52,7 +54,7 @@ namespace BookARoom.Views
             lblEmailAsterix.Visible = true;
             lblPasswordAsterix.Visible = true;
             lblRePasswordAsterix.Visible = true;
-           
+
 
             btnSave.Visible = true;
             btnCancel.Visible = true;
@@ -67,60 +69,107 @@ namespace BookARoom.Views
 
         }
 
-        public void LoadUser(object sender, EventArgs e)
+        public void LoadUser(Customer c, EventArgs e)
         {
-            Customer = sender as Customer;
-            
-            customerBindingSource.DataSource = Customer?? new Customer();
- 
+            Customer = c;
+
+            customerBindingSource.DataSource = Customer ?? new Customer();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (tbxPassword.Text.Equals(tbxRePassword.Text))
+            string title = cbTitle.Text;
+            string name = tbxName.Text;
+            string adress = tbxAdress.Text;
+            string telephone = tbxTelephone.Text;
+            string email = tbxEmail.Text;
+            string password = tbxPassword.Text;
+
+            Customer newCustomer = new Customer()
             {
-                string title = cbTitle.Text;
-                string name = tbxName.Text;
-                string adress = tbxAdress.Text;
-                string telephone = tbxTelephone.Text;
-                string email = tbxEmail.Text;
-                string password = tbxPassword.Text;
+                Title = title,
+                CName = name,
+                CAdress = adress,
+                CPhoneNumber = telephone,
+                CEmail = email,
+                Password = password
 
-                controller.AddCustomer(title, name, adress, telephone, email, password);
+            };
 
-                lblStatus.Text = "Customer was added!";
-                lblStatus.ForeColor = System.Drawing.Color.Green;
-                lblStatus.Visible = true;
+            if (createCustomerEnabled) //Skapa ny kund
+            {
+                if (tbxPassword.Text.Equals(tbxRePassword.Text))
+                {
 
-                cbTitle.Enabled = false;
-                tbxName.ReadOnly = true;
-                tbxAdress.ReadOnly = true;
-                tbxTelephone.ReadOnly = true;
-                tbxEmail.ReadOnly = true;
-                tbxPassword.ReadOnly = true;
-                tbxRePassword.ReadOnly = true;
+                    controller.AddCustomer(newCustomer);
 
-                btnSave.Visible = false;
-                btnCancel.Visible = false;
-                Customer = controller.RetrieveCustomer(email, password);
+                    lblStatus.Text = "Customer was added!";
+                    lblStatus.ForeColor = System.Drawing.Color.Green;
+                    lblStatus.Visible = true;
 
-                if (userUpdated != null)
-                    userUpdated(Customer, EventArgs.Empty);
+                    cbTitle.Enabled = false;
+                    tbxName.ReadOnly = true;
+                    tbxAdress.ReadOnly = true;
+                    tbxTelephone.ReadOnly = true;
+                    tbxEmail.ReadOnly = true;
+                    tbxPassword.ReadOnly = true;
+                    tbxRePassword.ReadOnly = true;
+
+                    btnSave.Visible = false;
+                    btnCancel.Visible = false;
+                    Customer = controller.RetrieveCustomer(email, password);
+
+                    if (userUpdated != null)
+                        userUpdated(Customer, EventArgs.Empty);
+
+                    createCustomerEnabled = false;
+                }
+                else
+                {
+                    lblStatus.Text = "Paswords does not match!";
+                    lblStatus.Visible = true;
+                }
             }
-            else
+            else //Uppdatera kund
             {
-                lblStatus.Text = "Paswords does not match!";
-                lblStatus.Visible = true;
+                if (tbxPassword.Text.Equals(tbxRePassword.Text))
+                {
+              
+                    controller.Update(Customer, newCustomer);
+
+                    lblStatus.Text = "Customer was updated!";
+                    lblStatus.ForeColor = System.Drawing.Color.Green;
+                    lblStatus.Visible = true;
+
+                    cbTitle.Enabled = false;
+                    tbxName.ReadOnly = true;
+                    tbxAdress.ReadOnly = true;
+                    tbxTelephone.ReadOnly = true;
+                    tbxEmail.ReadOnly = true;
+                    tbxPassword.ReadOnly = true;
+                    tbxRePassword.ReadOnly = true;
+
+                    btnSave.Visible = false;
+                    btnCancel.Visible = false;
+                    Customer = controller.RetrieveCustomer(email, password);
+                    /*
+                    if (userUpdated != null)
+                        userUpdated(Customer, EventArgs.Empty);*/
+
+                    createCustomerEnabled = false;
+                }
+                else
+                {
+                    lblStatus.Text = "Paswords does not match!";
+                    lblStatus.Visible = true;
+                }   
+
             }
         }
 
-        private void tbxEmail_TextChanged(object sender, EventArgs e)
-        {
-            if (userUpdated != null)
-                userUpdated(tbxEmail, e);
-        }
 
-        private void btnAbort_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             cbTitle.Enabled = false;
             tbxName.ReadOnly = true;
@@ -140,7 +189,6 @@ namespace BookARoom.Views
             btnCancel.Visible = false;
 
             LoadUser(Customer, e);
-            tbxAdress.Text = Customer.CName;
 
             cbTitle.DataBindings.Add("Text", customerBindingSource, "Title");
 
@@ -177,25 +225,27 @@ namespace BookARoom.Views
 
             btnSave.Visible = true;
             btnCancel.Visible = true;
+
+            createCustomerEnabled = true;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             Customer = null;
             LoadUser(Customer, e);
-            
+
             if (userUpdated != null)
                 userUpdated(Customer, EventArgs.Empty);
 
             if (userLogOut != null)
                 userLogOut(Customer, EventArgs.Empty);
 
-            
+
         }
 
         private void btnDeleteBooking_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow row in bookingDataGridView.Rows)
+            foreach (DataGridViewRow row in bookingDataGridView.Rows)
             {
                 if (Convert.ToBoolean(row.Cells[4].Value))
                 {

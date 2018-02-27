@@ -54,6 +54,8 @@ namespace BookARoom.Views
             roomsBindingSource.DataSource = hotelBindingSource;
             roomsBindingSource.DataMember = "Rooms";
 
+            tbxSearch.Text = Customer.CAdress.ToString();
+
 
         }
 
@@ -83,14 +85,15 @@ namespace BookARoom.Views
                 {
                     controller.AddBooking(Customer.CEmail, adress, roomNumber, 0, date);
                 }
+                btnSubmit.PerformClick();
 
 
             }
         }
 
-        public void LoadUser(object sender, EventArgs e)
+        public void LoadUser(Customer c, EventArgs e)
         {
-            Customer = sender as Customer;
+            Customer = c;
             
         }
 

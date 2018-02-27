@@ -17,11 +17,9 @@ namespace BookARoom.Views
 {
     public partial class Form1 : Form
     {
-        public Controller Controller {get; set;}
 
         public Form1()
         {
-            Controller = new Controller();
             InitializeComponent();
 
             ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucNavigator1.LoadUser);

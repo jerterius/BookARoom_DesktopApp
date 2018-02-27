@@ -14,7 +14,7 @@ namespace BookARoom.Views
 {
     public partial class UCLogin : UserControl
     {
-        public delegate void UserLoggedIn(object sender, EventArgs e);
+        public delegate void UserLoggedIn(Customer c, EventArgs e);
         public UserLoggedIn userLoggedIn;
 
         public delegate void ChangeTab(object sender, EventArgs e);

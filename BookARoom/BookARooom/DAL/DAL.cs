@@ -60,8 +60,20 @@ namespace BookARoom.DAL
 
         public Customer RetrieveCustomer(string email, string password)
         {
-             return db.Customers.Where(c => c.CEmail.Equals(email) && c.Password.Equals(password)).First();
+             return db.Customers.Where(c => c.CEmail == email && c.Password == password).First();
          
+        }
+
+        public void Update(Customer origin, Customer updated)
+        {
+            var oldRecord = db.Customers.Where(c => c.CEmail == origin.CEmail).First();
+            oldRecord.Title = updated.Title;
+            oldRecord.CName = updated.CName;
+            oldRecord.CAdress = updated.CAdress;
+            oldRecord.CPhoneNumber = updated.CPhoneNumber;
+            oldRecord.CEmail = updated.CEmail;
+            oldRecord.Password = updated.Password;
+            db.SaveChanges();
         }
 
         public void Remove(object o)
