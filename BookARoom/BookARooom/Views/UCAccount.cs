@@ -25,12 +25,45 @@ namespace BookARoom.Views
 
         public Customer Customer { get; set; }
 
-        public bool createCustomerEnabled = false;
+        public bool CreateCustomerEnabled { get; set; } = false;
+        public bool ReadOnly { get; set; } = true;
 
         public UCAccount()
         {
             InitializeComponent();
         }
+
+        private  void ToggleReadOnly(bool setting)
+        {
+  
+                foreach (Control c in Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        (c as TextBox).ReadOnly = setting;
+                    }
+                    else if (c is ComboBox)
+                    {
+                        (c as ComboBox).Enabled = !setting;
+                    }
+
+                    lblRePassword.Visible = !setting;
+                    tbxRePassword.Visible = !setting;
+
+                    lblEmailAsterix.Visible = !setting;
+                    lblPasswordAsterix.Visible = !setting;
+                    lblRePasswordAsterix.Visible = !setting;
+
+                    btnSave.Visible = !setting;
+                    btnCancel.Visible = !setting;
+                }
+
+            btnSave.Visible = !setting;
+            btnCancel.Visible = !setting;
+
+
+        }
+
         public string getTelephoneNo(object sender, EventArgs e)
         {
             return tbxTelephone.Text;
@@ -38,26 +71,7 @@ namespace BookARoom.Views
 
         public void btnEdit_Click(object sender, EventArgs e)
         {
-            cbTitle.Enabled = true;
-            tbxName.ReadOnly = false;
-            tbxAdress.ReadOnly = false;
-            tbxTelephone.ReadOnly = false;
-            tbxEmail.ReadOnly = false;
-            tbxPassword.ReadOnly = false;
-            tbxPassword.Text = null;
-            tbxRePassword.ReadOnly = false;
-            tbxRePassword.Text = null;
-
-            lblRePassword.Visible = true;
-            tbxRePassword.Visible = true;
-
-            lblEmailAsterix.Visible = true;
-            lblPasswordAsterix.Visible = true;
-            lblRePasswordAsterix.Visible = true;
-
-
-            btnSave.Visible = true;
-            btnCancel.Visible = true;
+            ToggleReadOnly(false);
 
             foreach (Control c in Controls)
             {
@@ -97,7 +111,7 @@ namespace BookARoom.Views
 
             };
 
-            if (createCustomerEnabled) //Skapa ny kund
+            if (CreateCustomerEnabled) //Skapa ny kund
             {
                 if (tbxPassword.Text.Equals(tbxRePassword.Text))
                 {
@@ -108,22 +122,14 @@ namespace BookARoom.Views
                     lblStatus.ForeColor = System.Drawing.Color.Green;
                     lblStatus.Visible = true;
 
-                    cbTitle.Enabled = false;
-                    tbxName.ReadOnly = true;
-                    tbxAdress.ReadOnly = true;
-                    tbxTelephone.ReadOnly = true;
-                    tbxEmail.ReadOnly = true;
-                    tbxPassword.ReadOnly = true;
-                    tbxRePassword.ReadOnly = true;
+                    ToggleReadOnly(true);
 
-                    btnSave.Visible = false;
-                    btnCancel.Visible = false;
                     Customer = controller.RetrieveCustomer(email, password);
 
                     if (userUpdated != null)
                         userUpdated(Customer, EventArgs.Empty);
 
-                    createCustomerEnabled = false;
+                    CreateCustomerEnabled = false;
                 }
                 else
                 {
@@ -142,22 +148,14 @@ namespace BookARoom.Views
                     lblStatus.ForeColor = System.Drawing.Color.Green;
                     lblStatus.Visible = true;
 
-                    cbTitle.Enabled = false;
-                    tbxName.ReadOnly = true;
-                    tbxAdress.ReadOnly = true;
-                    tbxTelephone.ReadOnly = true;
-                    tbxEmail.ReadOnly = true;
-                    tbxPassword.ReadOnly = true;
-                    tbxRePassword.ReadOnly = true;
+                    ToggleReadOnly(false);
 
-                    btnSave.Visible = false;
-                    btnCancel.Visible = false;
                     Customer = controller.RetrieveCustomer(email, password);
                     /*
                     if (userUpdated != null)
                         userUpdated(Customer, EventArgs.Empty);*/
 
-                    createCustomerEnabled = false;
+                    CreateCustomerEnabled = false;
                 }
                 else
                 {
@@ -171,22 +169,8 @@ namespace BookARoom.Views
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            cbTitle.Enabled = false;
-            tbxName.ReadOnly = true;
-            tbxAdress.ReadOnly = true;
-            tbxTelephone.ReadOnly = true;
-            tbxEmail.ReadOnly = true;
-            tbxPassword.ReadOnly = true;
 
-            tbxRePassword.ReadOnly = true;
-
-            lblPasswordAsterix.Visible = false;
-            lblEmailAsterix.Visible = false;
-            lblRePassword.Visible = false;
-            tbxRePassword.Visible = false;
-            lblRePasswordAsterix.Visible = false;
-            btnSave.Visible = false;
-            btnCancel.Visible = false;
+            ToggleReadOnly(true);
 
             LoadUser(Customer, e);
 
@@ -205,28 +189,9 @@ namespace BookARoom.Views
         }
         public void SetCreateUser(object sender, EventArgs e)
         {
-            cbTitle.Enabled = true;
-            tbxName.ReadOnly = false;
-            tbxAdress.ReadOnly = false;
-            tbxTelephone.ReadOnly = false;
-            tbxEmail.ReadOnly = false;
-            tbxPassword.ReadOnly = false;
-            tbxPassword.Text = null;
-            tbxRePassword.ReadOnly = false;
-            tbxRePassword.Text = null;
+            ToggleReadOnly(false);
 
-            lblRePassword.Visible = true;
-            tbxRePassword.Visible = true;
-
-            lblEmailAsterix.Visible = true;
-            lblPasswordAsterix.Visible = true;
-            lblRePasswordAsterix.Visible = true;
-
-
-            btnSave.Visible = true;
-            btnCancel.Visible = true;
-
-            createCustomerEnabled = true;
+            CreateCustomerEnabled = true;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -252,6 +217,8 @@ namespace BookARoom.Views
                     controller.DeleteBooking(new Guid(row.Cells[0].Value.ToString()));
                 }
             }
+            Customer = controller.RetrieveCustomer(tbxEmail.Text, tbxPassword.Text);
+            
         }
     }
 }

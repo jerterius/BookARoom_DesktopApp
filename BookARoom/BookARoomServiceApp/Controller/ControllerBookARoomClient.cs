@@ -16,7 +16,7 @@ public class ControllerBookARoomClient
     DalCustomer dalCustomer = new DalCustomer();
     DalHotel dalHotel = new DalHotel();
     DalRoom dalRoom = new DalRoom();
-
+    
     public ControllerBookARoomClient()
     {
 

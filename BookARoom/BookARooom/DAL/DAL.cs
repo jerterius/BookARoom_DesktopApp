@@ -81,8 +81,9 @@ namespace BookARoom.DAL
 
             if (o is Booking)
             {
-
-                db.Bookings.Remove(o as Booking);
+                Booking tempBooking = o as Booking;
+                var booking = db.Bookings.Where(b => b.BookingNumber == tempBooking.BookingNumber).First();
+                db.Bookings.Remove(booking);
                 db.SaveChanges();
             }
 
@@ -144,7 +145,7 @@ namespace BookARoom.DAL
 
             List<Booking> allBookings = rooms.Where(r => r.GuestCapacity >= guests).SelectMany(r => r.Bookings).ToList();
 
-            allBookings = allBookings.Where(b => dates.Contains(b.Date) == false).ToList();
+            allBookings = allBookings.ToList();
 
             List<Hotel> returnHotels = allBookings.Select(b => b.Room.Hotel).Distinct().ToList();
             
