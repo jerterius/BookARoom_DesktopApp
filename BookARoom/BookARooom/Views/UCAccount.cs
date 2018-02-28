@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.Controllers;
 using BookARoom.Models;
+using BookARoom.Utilities;
 using BookARoom.DAL;
 
 namespace BookARoom.Views
@@ -30,12 +31,20 @@ namespace BookARoom.Views
 
         public UCAccount()
         {
+            try { 
+
+
             InitializeComponent();
+             } catch (Exception ex)
+                {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+                }
         }
 
         private  void ToggleReadOnly(bool setting)
         {
-  
+            try { 
                 foreach (Control c in Controls)
                 {
                     if (c is TextBox)
@@ -61,16 +70,17 @@ namespace BookARoom.Views
             btnSave.Visible = !setting;
             btnCancel.Visible = !setting;
 
-
-        }
-
-        public string getTelephoneNo(object sender, EventArgs e)
-        {
-            return tbxTelephone.Text;
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
 
         public void btnEdit_Click(object sender, EventArgs e)
         {
+            try { 
             ToggleReadOnly(false);
 
             foreach (Control c in Controls)
@@ -80,26 +90,47 @@ namespace BookARoom.Views
                     c.DataBindings.Clear();
                 }
             }
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
 
         }
 
         public void LoadCustomer(Customer c, EventArgs e)
         {
-            Customer = c;
-            customerBindingSource.DataSource = Customer ?? new Customer();
+            try
+            {
+                Customer = c;
+                customerBindingSource.DataSource = Customer ?? new Customer();
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
 
         }
 
         public void UpdateCustomer(object sender, EventArgs e)
         {
+            try { 
             Customer = controller.RetrieveCustomer(Customer.CEmail, Customer.Password);
-            LoadCustomer(Customer, null);
+                customerBindingSource.DataSource = Customer;
             
-        }
+             } catch (Exception ex)
+                {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+                }
+}
 
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            try { 
             string title = cbTitle.Text;
             string name = tbxName.Text;
             string adress = tbxAdress.Text;
@@ -126,7 +157,7 @@ namespace BookARoom.Views
                     controller.AddCustomer(newCustomer);
 
                     lblStatus.Text = "Customer was added!";
-                    lblStatus.ForeColor = System.Drawing.Color.Green;
+                    lblStatus.ForeColor = System.Drawing.Color.Black;
                     lblStatus.Visible = true;
 
                     ToggleReadOnly(true);
@@ -141,6 +172,7 @@ namespace BookARoom.Views
                 else
                 {
                     lblStatus.Text = "Paswords does not match!";
+                    lblStatus.ForeColor = System.Drawing.Color.Black;
                     lblStatus.Visible = true;
                 }
             }
@@ -152,7 +184,7 @@ namespace BookARoom.Views
                     controller.Update(Customer, newCustomer);
 
                     lblStatus.Text = "Customer was updated!";
-                    lblStatus.ForeColor = System.Drawing.Color.Green;
+                    lblStatus.ForeColor = System.Drawing.Color.Black;
                     lblStatus.Visible = true;
 
                     ToggleReadOnly(false);
@@ -171,11 +203,18 @@ namespace BookARoom.Views
                 }   
 
             }
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
 
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            try { 
 
             ToggleReadOnly(true);
 
@@ -192,17 +231,30 @@ namespace BookARoom.Views
             tbxEmail.DataBindings.Add("Text", customerBindingSource, "CEmail");
 
             tbxPassword.DataBindings.Add("Text", customerBindingSource, "Password");
-
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
         public void SetCreateUser(object sender, EventArgs e)
         {
+            try { 
             ToggleReadOnly(false);
 
             CreateCustomerEnabled = true;
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            try { 
             Customer = null;
             LoadCustomer(Customer, e);
 
@@ -212,11 +264,17 @@ namespace BookARoom.Views
             if (userLogOut != null)
                 userLogOut(Customer, EventArgs.Empty);
 
-
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
 
         private void btnDeleteBooking_Click(object sender, EventArgs e)
         {
+            try { 
             foreach (DataGridViewRow row in bookingDataGridView.Rows)
             {
                 if (Convert.ToBoolean(row.Cells[4].Value))
@@ -226,6 +284,12 @@ namespace BookARoom.Views
             }
             Customer = controller.RetrieveCustomer(tbxEmail.Text, tbxPassword.Text);
             LoadCustomer(Customer, null);
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
     }
 }

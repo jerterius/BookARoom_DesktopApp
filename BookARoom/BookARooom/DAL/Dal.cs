@@ -69,70 +69,92 @@ namespace BookARoom.DAL
 
         public List<string> AllCitiesInCountry(string country)
         {
-            var cities = from c in db.Cities
-                         where c.CountryName == country
-                         select c.CityName;
-
-            return cities.ToList();
+            try
+            {
+                return db.Cities.Where(c => c.CountryName == country).Select(c => c.CityName).ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
+         
         }
 
         public List<Hotel> HotelFilter(string search, string countryName, string cityName, List<DateTime> dates, string standard, int guests, bool smokeFree)
         {
-
-            var hotelList = this.db.Hotels.Where(hotel =>
-                    hotel.Name.Contains(search) &&
-                    hotel.Countryname == countryName &&
-                    hotel.CityName == cityName &&
-                    hotel.Standard == standard)
-                        .Include(hotel => hotel.Rooms.Select(r => r.Bookings)).ToList();
-
-            List<Room> rooms = hotelList.SelectMany(h => h.Rooms).ToList().Where(r => r.GuestCapacity >= guests).ToList();
-
-            List<Booking> allBookings = rooms.SelectMany(r => r.Bookings).ToList();
-
-
-            foreach (DateTime d in dates)
+            try
             {
+                var hotelList = this.db.Hotels.Where(hotel =>
+                        hotel.Name.Contains(search) &&
+                        hotel.Countryname == countryName &&
+                        hotel.CityName == cityName &&
+                        hotel.Standard == standard)
+                            .Include(hotel => hotel.Rooms.Select(r => r.Bookings)).ToList();
 
-                rooms.Remove(rooms.Where(r => r.Bookings.Any(b => b.Date == d)).FirstOrDefault());
+                List<Room> rooms = hotelList.SelectMany(h => h.Rooms).ToList().Where(r => r.GuestCapacity >= guests).ToList();
+
+                List<Booking> allBookings = rooms.SelectMany(r => r.Bookings).ToList();
+
+
+                foreach (DateTime d in dates)
+                {
+
+                    rooms.Remove(rooms.Where(r => r.Bookings.Any(b => b.Date == d)).FirstOrDefault());
+
+                }
+
+                return rooms.Select(r => r.Hotel).Distinct().ToList();
 
             }
-
-            return rooms.Select(r => r.Hotel).Distinct().ToList();
-
-
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
 
         //Update
         public void UpdateCustomer(Customer origin, Customer updated)
         {
-            var oldRecord = db.Customers.Where(c => c.CEmail == origin.CEmail).First();
-            oldRecord.Title = updated.Title;
-            oldRecord.CName = updated.CName;
-            oldRecord.CAdress = updated.CAdress;
-            oldRecord.CPhoneNumber = updated.CPhoneNumber;
-            oldRecord.CEmail = updated.CEmail;
-            oldRecord.Password = updated.Password;
-            db.SaveChanges();
+            try
+            {
+                var oldRecord = db.Customers.Where(c => c.CEmail == origin.CEmail).First();
+                oldRecord.Title = updated.Title;
+                oldRecord.CName = updated.CName;
+                oldRecord.CAdress = updated.CAdress;
+                oldRecord.CPhoneNumber = updated.CPhoneNumber;
+                oldRecord.CEmail = updated.CEmail;
+                oldRecord.Password = updated.Password;
+                db.SaveChanges();
+            } catch (Exception e)
+            {
+                throw e;
+            }
         }
 
 
         //Delete
         public void Remove(object o)
         {
-
-            if (o is Booking)
+            try
             {
-                Booking tempBooking = o as Booking;
-                var booking = db.Bookings.Where(b => b.BookingNumber == tempBooking.BookingNumber).First();
-                db.Bookings.Remove(booking);
-                db.SaveChanges();
-            }
 
-            else if (o is Customer)
-                db.Customers.Remove(o as Customer);
-            db.SaveChanges();
+                if (o is Booking)
+                {
+                    Booking tempBooking = o as Booking;
+                    var booking = db.Bookings.Where(b => b.BookingNumber == tempBooking.BookingNumber).First();
+                    db.Bookings.Remove(booking);
+                    db.SaveChanges();
+                }
+
+                else if (o is Customer)
+                    db.Customers.Remove(o as Customer);
+                db.SaveChanges();
+            } catch (Exception e)
+            {
+                throw e;
+            }
         }
 
 

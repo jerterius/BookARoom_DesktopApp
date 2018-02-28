@@ -105,11 +105,11 @@
       <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Tools.cs" />
-    <Compile Include="Views\Form1.cs">
+    <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201802091731544_InitialCreate.cs" />
     <Compile Include="Migrations\201802091731544_InitialCreate.Designer.cs">
@@ -179,8 +179,8 @@
     <EmbeddedResource Include="Migrations\201802161451243_bookingNoGUID.resx">
       <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802091731544_InitialCreate.resx">
       <DependentUpon>201802091731544_InitialCreate.cs</DependentUpon>

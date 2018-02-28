@@ -31,6 +31,7 @@
             this.cbSelectEntityTable = new System.Windows.Forms.ComboBox();
             this.entitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.lblSelectTable = new System.Windows.Forms.Label();
+            this.lblResponse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.entitiesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,15 +69,26 @@
             this.lblSelectTable.TabIndex = 2;
             this.lblSelectTable.Text = "Select table:";
             // 
+            // lblResponse
+            // 
+            this.lblResponse.AutoSize = true;
+            this.lblResponse.Location = new System.Drawing.Point(16, 618);
+            this.lblResponse.Name = "lblResponse";
+            this.lblResponse.Size = new System.Drawing.Size(86, 20);
+            this.lblResponse.TabIndex = 3;
+            this.lblResponse.Text = "Response:";
+            this.lblResponse.Visible = false;
+            // 
             // UCBookARoomClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblResponse);
             this.Controls.Add(this.lblSelectTable);
             this.Controls.Add(this.entitiesDataGridView);
             this.Controls.Add(this.cbSelectEntityTable);
             this.Name = "UCBookARoomClient";
-            this.Size = new System.Drawing.Size(770, 628);
+            this.Size = new System.Drawing.Size(770, 656);
             ((System.ComponentModel.ISupportInitialize)(this.entitiesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -88,5 +100,6 @@
         private System.Windows.Forms.ComboBox cbSelectEntityTable;
         private System.Windows.Forms.DataGridView entitiesDataGridView;
         private System.Windows.Forms.Label lblSelectTable;
+        private System.Windows.Forms.Label lblResponse;
     }
 }

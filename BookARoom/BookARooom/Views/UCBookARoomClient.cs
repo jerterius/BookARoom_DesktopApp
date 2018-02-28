@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.ServiceReferenceBookARoom;
+using BookARoom.Utilities;
 
 
 namespace BookARoom.Views
@@ -17,11 +18,20 @@ namespace BookARoom.Views
         //For making a simple comit
         public UCBookARoomClient()
         {
-            InitializeComponent();
-            
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
         }
         private void cbSelectEntityTable_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try { 
             using (BookARoomWebServiceSoapClient service = new BookARoomWebServiceSoapClient())
             {
 
@@ -48,8 +58,14 @@ namespace BookARoom.Views
                         break;
                 }
             }
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
 
- 
+
         }
     }
 }

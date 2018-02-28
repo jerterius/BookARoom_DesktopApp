@@ -16,55 +16,111 @@ namespace BookARoom.Controllers
         //Create
         public void AddCustomer(Customer newCustomer)
         {
-            dal.Add(newCustomer);
+            try
+            {
+                dal.Add(newCustomer);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public void AddBooking(string email, string adress, string roomNo, int bookingNo, DateTime date)
         {
-            Booking b = new Booking(email, adress, roomNo, date);
-            dal.Add(b);
+            try
+            {
+                Booking b = new Booking(email, adress, roomNo, date);
+                dal.Add(b);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
 
         //Retrieve
         public List<Hotel> HotelsWithAvailableRooms (string search, string countryName, string cityName, DateTime fromDate, DateTime toDate, string standard, int guests, bool smokeFree)
         {
-            List<DateTime> dates = new List<DateTime>();
-            for (var date = fromDate; date <= toDate; date = date.AddDays(1))
+            try
             {
-                dates.Add(date);
-            }
+                List<DateTime> dates = new List<DateTime>();
+                for (var date = fromDate; date <= toDate; date = date.AddDays(1))
+                {
+                    dates.Add(date);
+                }
 
-                return dal.HotelFilter( search,  countryName,  cityName, dates,  standard,  guests,  smokeFree);
+                return dal.HotelFilter(search, countryName, cityName, dates, standard, guests, smokeFree);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public Customer RetrieveCustomer(string email, string password)
         {
-            return dal.RetrieveCustomer(email, password);
+            try
+            {
+                return dal.RetrieveCustomer(email, password);
+
+            } catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public List<string> GetAllCountries()
         {
-            return dal.AllCountries();
+            try
+            {
+                return dal.AllCountries();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         
 
         public List<string> AllCitiesInCountry(string country)
         {
-            return dal.AllCitiesInCountry(country);
+            try
+            {
+                return dal.AllCitiesInCountry(country);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         //Update
         public void Update(Customer origin, Customer updated)
         {
-            dal.UpdateCustomer(origin, updated);
+            try
+            {
+                dal.UpdateCustomer(origin, updated);
+
+            } catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         //Delete
         public void DeleteBooking(Guid bookingNo)
         {
-            Booking b = new Booking() { BookingNumber = bookingNo };
-            dal.Remove(b);
+            try
+            {
+                Booking b = new Booking() { BookingNumber = bookingNo };
+                dal.Remove(b);
+            } catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 

@@ -19,6 +19,7 @@ namespace BookARoom.Views
         {
             InitializeComponent();
         }
+        public string EmployeeNo { get; set; }
 
         private void btnSave_UpdateClick(object sender, EventArgs e)
         {
@@ -150,7 +151,15 @@ namespace BookARoom.Views
                 tbxFirstName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["First Name"].Value.ToString();
                 tbxLastName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
                 tbxAdress.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+
+                EmployeeNo = tablesDataGridView.Rows[e.RowIndex].Cells["No_"].Value.ToString();
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            CRONUS_Sverige_AB_Employee newEmployee = new CRONUS_Sverige_AB_Employee();
+
         }
     }
 }

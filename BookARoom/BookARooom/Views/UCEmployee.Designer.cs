@@ -52,7 +52,7 @@
             // 
             // tablesDataGridView
             // 
-            this.tablesDataGridView.AutoGenerateColumns = true;
+            this.tablesDataGridView.AutoGenerateColumns = false;
             this.tablesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablesDataGridView.DataSource = this.employeeBindingSource;
@@ -173,6 +173,7 @@
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 

@@ -48,11 +48,11 @@ namespace BookARoom.Utilities
             }
             catch (Exception e2)
             {
-                return convertExceptionToMessage(e2);
+                return ConvertExceptionToMessage(e2);
             }
         }
 
-        public static string convertExceptionToMessage(Exception e2)
+        public static string ConvertExceptionToMessage(Exception e2)
         {
             string eCode = e2.Message.ToString();
 

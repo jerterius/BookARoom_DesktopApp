@@ -63,6 +63,7 @@ namespace BookARoom.Views
             this.lblEmailAsterix = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnDeleteBooking = new System.Windows.Forms.Button();
+            this.lblResponse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
@@ -276,11 +277,11 @@ namespace BookARoom.Views
             this.bookingDataGridView.Location = new System.Drawing.Point(31, 365);
             this.bookingDataGridView.MultiSelect = false;
             this.bookingDataGridView.Name = "bookingDataGridView";
+            this.bookingDataGridView.RowHeadersVisible = false;
             this.bookingDataGridView.RowTemplate.Height = 28;
             this.bookingDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bookingDataGridView.Size = new System.Drawing.Size(879, 220);
             this.bookingDataGridView.TabIndex = 18;
-            this.bookingDataGridView.RowHeadersVisible = false;
             // 
             // bookingNumberDataGridViewTextBoxColumn
             // 
@@ -371,13 +372,23 @@ namespace BookARoom.Views
             this.btnDeleteBooking.TabIndex = 4;
             this.btnDeleteBooking.Text = "Remove";
             this.btnDeleteBooking.UseVisualStyleBackColor = true;
-            this.btnDeleteBooking.Visible = true;
             this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
+            // 
+            // lblResponse
+            // 
+            this.lblResponse.AutoSize = true;
+            this.lblResponse.Location = new System.Drawing.Point(31, 618);
+            this.lblResponse.Name = "lblResponse";
+            this.lblResponse.Size = new System.Drawing.Size(78, 20);
+            this.lblResponse.TabIndex = 19;
+            this.lblResponse.Text = "Message:";
+            this.lblResponse.Visible = false;
             // 
             // UCAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblResponse);
             this.Controls.Add(this.bookingDataGridView);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDeleteBooking);
@@ -446,6 +457,7 @@ namespace BookARoom.Views
         private Label lblEmailAsterix;
         private Button btnLogOut;
         private Button btnDeleteBooking;
+        private Label lblResponse;
 
         public Button BtnEdit {get; set;}
     }

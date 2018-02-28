@@ -59,7 +59,7 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Booking = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.boookingDataGridViewButtonColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
@@ -305,7 +305,7 @@
             this.priceDataGridViewTextBoxColumn,
             this.guestCapacityDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
-            this.Booking});
+            this.boookingDataGridViewButtonColumn});
             this.roomsDataGridView.DataSource = this.roomsBindingSource;
             this.roomsDataGridView.Location = new System.Drawing.Point(325, 371);
             this.roomsDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -367,12 +367,12 @@
             // 
             // Booking
             // 
-            this.Booking.HeaderText = "Booking";
-            this.Booking.Name = "Booking";
-            this.Booking.ReadOnly = true;
-            this.Booking.Text = "SELECT";
-            this.Booking.UseColumnTextForButtonValue = true;
-            this.Booking.Width = 73;
+            this.boookingDataGridViewButtonColumn.HeaderText = "Booking";
+            this.boookingDataGridViewButtonColumn.Name = "Booking";
+            this.boookingDataGridViewButtonColumn.ReadOnly = true;
+            this.boookingDataGridViewButtonColumn.Text = "SELECT";
+            this.boookingDataGridViewButtonColumn.UseColumnTextForButtonValue = true;
+            this.boookingDataGridViewButtonColumn.Width = 73;
             // 
             // roomsBindingSource
             // 
@@ -449,6 +449,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn guestCapacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Booking;
+        private System.Windows.Forms.DataGridViewButtonColumn boookingDataGridViewButtonColumn;
     }
 }
