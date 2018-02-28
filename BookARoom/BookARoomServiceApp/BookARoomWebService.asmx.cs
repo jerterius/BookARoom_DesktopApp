@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Web.Services.Protocols;
 using System.Xml.Serialization;
 using BookARoomServiceApp.Models;
+using BookARoomServiceApp.Utilities;
+
 
 
 
@@ -26,27 +29,57 @@ namespace BookARoomServiceApp
         [WebMethod]
         public List<Booking> GetAllBookings()
         {
-            return controller.GetAllBookings();
+            try
+            {
+                return controller.GetAllBookings();
+            } catch (Exception e)
+            {
+                throw new SoapException("Oväntat fel", SoapException.ServerFaultCode, "Oväntat fel", e);
+            }
         }
         [WebMethod]
         public List<Room> GetAllRooms()
         {
-            return controller.GetAllRooms();
+            try
+            {
+                return controller.GetAllRooms();
+            } catch (Exception e)
+            {
+                throw new SoapException("Oväntat fel", SoapException.ServerFaultCode, "Oväntat fel", e);
+            }
         }
         [WebMethod]
         public List<City> GetAllCities()
         {
-            return controller.GetAllCities();
+            try
+            {
+                return controller.GetAllCities();
+            } catch (Exception e)
+            {
+                throw new SoapException("Oväntat fel", SoapException.ServerFaultCode, "Oväntat fel", e);
+            }
         }
         [WebMethod]
         public List<Hotel> GetAllHotels()
         {
-            return controller.GetAllHotels();
+            try
+            {
+                return controller.GetAllHotels();
+            } catch (Exception e)
+            {
+                throw new SoapException("Oväntat fel", SoapException.ServerFaultCode, "Oväntat fel", e);
+            }
         }
         [WebMethod]
         public List<Customer> GetAllCustomers()
         {
-            return controller.GetAllCustomers();
+            try
+            {
+                return controller.GetAllCustomers();
+            } catch (Exception e)
+            {
+                throw new SoapException("Oväntat fel", SoapException.ServerFaultCode, "Oväntat fel", e);
+            }
         }
     }
 }
