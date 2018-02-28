@@ -27,6 +27,9 @@ namespace BookARoom.ServiceReferenceBookARoom {
         private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateStringField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CEmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -77,7 +80,20 @@ namespace BookARoom.ServiceReferenceBookARoom {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string DateString {
+            get {
+                return this.DateStringField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateStringField, value) != true)) {
+                    this.DateStringField = value;
+                    this.RaisePropertyChanged("DateString");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string CEmail {
             get {
                 return this.CEmailField;
@@ -90,7 +106,7 @@ namespace BookARoom.ServiceReferenceBookARoom {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string Adress {
             get {
                 return this.AdressField;
@@ -103,7 +119,7 @@ namespace BookARoom.ServiceReferenceBookARoom {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string RoomNumber {
             get {
                 return this.RoomNumberField;
@@ -116,7 +132,7 @@ namespace BookARoom.ServiceReferenceBookARoom {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public BookARoom.ServiceReferenceBookARoom.Customer Customer {
             get {
                 return this.CustomerField;
@@ -129,7 +145,7 @@ namespace BookARoom.ServiceReferenceBookARoom {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public BookARoom.ServiceReferenceBookARoom.Room Room {
             get {
                 return this.RoomField;

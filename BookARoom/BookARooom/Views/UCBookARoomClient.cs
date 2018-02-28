@@ -63,6 +63,7 @@ namespace BookARoom.Views
             {
                 lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
                 lblResponse.Visible = true;
+                lblResponse.Text = ex.GetType().ToString();
             }
 
 

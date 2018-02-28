@@ -6,7 +6,6 @@ using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.Xml.Serialization;
 using BookARoomServiceApp.Models;
-using BookARoomServiceApp.Utilities;
 
 
 
