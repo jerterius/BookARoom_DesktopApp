@@ -78,7 +78,7 @@ namespace BookARoom.Views
             }
         }
 
-        public void btnEdit_Click(object sender, EventArgs e)
+        public void BtnEdit_Click(object sender, EventArgs e)
         {
             try { 
             ToggleReadOnly(false);
@@ -128,7 +128,7 @@ namespace BookARoom.Views
 }
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             try { 
             string title = cbTitle.Text;
@@ -164,10 +164,9 @@ namespace BookARoom.Views
 
                     Customer = controller.RetrieveCustomer(email, password);
 
-                    if (userUpdated != null)
-                        userUpdated(Customer, EventArgs.Empty);
+                        userUpdated?.Invoke(Customer, EventArgs.Empty);
 
-                    CreateCustomerEnabled = false;
+                        CreateCustomerEnabled = false;
                 }
                 else
                 {
@@ -212,7 +211,7 @@ namespace BookARoom.Views
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             try { 
 
@@ -252,17 +251,15 @@ namespace BookARoom.Views
             }
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void BtnLogOut_Click(object sender, EventArgs e)
         {
             try { 
             Customer = null;
             LoadCustomer(Customer, e);
 
-            if (userUpdated != null)
-                userUpdated(Customer, EventArgs.Empty);
+                userUpdated?.Invoke(Customer, EventArgs.Empty);
 
-            if (userLogOut != null)
-                userLogOut(Customer, EventArgs.Empty);
+                userLogOut?.Invoke(Customer, EventArgs.Empty);
 
             }
             catch (Exception ex)
@@ -272,7 +269,7 @@ namespace BookARoom.Views
             }
         }
 
-        private void btnDeleteBooking_Click(object sender, EventArgs e)
+        private void BtnDeleteBooking_Click(object sender, EventArgs e)
         {
             try { 
             foreach (DataGridViewRow row in bookingDataGridView.Rows)

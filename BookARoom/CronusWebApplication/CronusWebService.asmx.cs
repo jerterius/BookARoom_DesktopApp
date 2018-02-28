@@ -85,5 +85,23 @@ namespace CronusWebApplication
         {
             return controller.GetEmployeeMetaDataAndRelated();
         }
+
+        [WebMethod]
+        public List<CRONUS_Employee_Top5_Absence> GetTop5EmployeesAbsent()
+        {
+            return controller.GetTop5EmployeesAbsent();
+        }
+
+        [WebMethod]
+        public List<CRONUS_Employees_And_Relatives> GetEmployeesAndRelatives()
+        {
+            return controller.GetEmployeesAndRelatives();
+        }
+
+        [WebMethod]
+        public List<CRONUS_Employees_Sick_2004> GetEmployeesSick2004()
+        {
+            return controller.GetEmployeesSick2004();
+        }
     }
 }

@@ -59,9 +59,10 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boookingDataGridViewButtonColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Booking = new System.Windows.Forms.DataGridViewButtonColumn();
             this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblResponse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataGridView)).BeginInit();
@@ -90,7 +91,7 @@
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "Search";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // tbxSearch
             // 
@@ -99,7 +100,7 @@
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(291, 26);
             this.tbxSearch.TabIndex = 1;
-            this.tbxSearch.TextChanged += new System.EventHandler(this.btnSubmit_Click);
+            this.tbxSearch.TextChanged += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // cbCountry
             // 
@@ -111,8 +112,8 @@
             this.cbCountry.Size = new System.Drawing.Size(142, 28);
             this.cbCountry.TabIndex = 2;
             this.cbCountry.ValueMember = "CountryName";
-            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.cbCountry_SelectedIndexChanged);
-            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.btnSubmit_Click);
+            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.CbCountry_SelectedIndexChanged);
+            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // cbCity
             // 
@@ -124,7 +125,7 @@
             this.cbCity.Size = new System.Drawing.Size(142, 28);
             this.cbCity.TabIndex = 2;
             this.cbCity.ValueMember = "CityName";
-            this.cbCity.SelectedIndexChanged += new System.EventHandler(this.btnSubmit_Click);
+            this.cbCity.SelectedIndexChanged += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // tbGuests
             // 
@@ -133,8 +134,8 @@
             this.tbGuests.Name = "tbGuests";
             this.tbGuests.Size = new System.Drawing.Size(198, 69);
             this.tbGuests.TabIndex = 3;
-            this.tbGuests.Scroll += new System.EventHandler(this.tbGuests_Scroll);
-            this.tbGuests.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
+            this.tbGuests.Scroll += new System.EventHandler(this.TbGuests_Scroll);
+            this.tbGuests.ValueChanged += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // dtpFromDate
             // 
@@ -143,8 +144,7 @@
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(226, 26);
             this.dtpFromDate.TabIndex = 4;
-            this.dtpFromDate.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
-            this.dtpFromDate.ValueChanged += new System.EventHandler(this.dtpFromDate_ValueChanged);
+            this.dtpFromDate.ValueChanged += new System.EventHandler(this.DtpFromDate_ValueChanged);
             // 
             // dtpToDate
             // 
@@ -153,8 +153,7 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(227, 26);
             this.dtpToDate.TabIndex = 5;
-            this.dtpToDate.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
-            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.DtpToDate_ValueChanged);
             // 
             // lblFromDate
             // 
@@ -209,8 +208,8 @@
             this.tbStandard.Name = "tbStandard";
             this.tbStandard.Size = new System.Drawing.Size(196, 69);
             this.tbStandard.TabIndex = 3;
-            this.tbStandard.Scroll += new System.EventHandler(this.tbStandard_Scroll);
-            this.tbStandard.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
+            this.tbStandard.Scroll += new System.EventHandler(this.TbStandard_Scroll);
+            this.tbStandard.ValueChanged += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // lblStandard
             // 
@@ -226,7 +225,7 @@
             // 
             this.hotelDataGridView.AllowUserToAddRows = false;
             this.hotelDataGridView.AllowUserToDeleteRows = false;
-            this.hotelDataGridView.AutoGenerateColumns = false;
+            this.hotelDataGridView.AutoGenerateColumns = true;
             this.hotelDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.hotelDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -295,7 +294,7 @@
             // 
             this.roomsDataGridView.AllowUserToAddRows = false;
             this.roomsDataGridView.AllowUserToDeleteRows = false;
-            this.roomsDataGridView.AutoGenerateColumns = false;
+            this.roomsDataGridView.AutoGenerateColumns = true;
             this.roomsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -305,7 +304,7 @@
             this.priceDataGridViewTextBoxColumn,
             this.guestCapacityDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
-            this.boookingDataGridViewButtonColumn});
+            this.Booking});
             this.roomsDataGridView.DataSource = this.roomsBindingSource;
             this.roomsDataGridView.Location = new System.Drawing.Point(325, 371);
             this.roomsDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -315,7 +314,7 @@
             this.roomsDataGridView.RowTemplate.Height = 28;
             this.roomsDataGridView.Size = new System.Drawing.Size(1104, 220);
             this.roomsDataGridView.TabIndex = 16;
-            this.roomsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomsDataGridView_CellClick);
+            this.roomsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RoomsDataGridView_CellClick);
             // 
             // roomNumberDataGridViewTextBoxColumn
             // 
@@ -367,23 +366,34 @@
             // 
             // Booking
             // 
-            this.boookingDataGridViewButtonColumn.HeaderText = "Booking";
-            this.boookingDataGridViewButtonColumn.Name = "Booking";
-            this.boookingDataGridViewButtonColumn.ReadOnly = true;
-            this.boookingDataGridViewButtonColumn.Text = "SELECT";
-            this.boookingDataGridViewButtonColumn.UseColumnTextForButtonValue = true;
-            this.boookingDataGridViewButtonColumn.Width = 73;
+            this.Booking.HeaderText = "Booking";
+            this.Booking.Name = "Booking";
+            this.Booking.ReadOnly = true;
+            this.Booking.Text = "SELECT";
+            this.Booking.UseColumnTextForButtonValue = true;
+            this.Booking.Width = 73;
             // 
             // roomsBindingSource
             // 
             this.roomsBindingSource.DataMember = "Rooms";
             this.roomsBindingSource.DataSource = this.hotelBindingSource;
             // 
+            // lblResponse
+            // 
+            this.lblResponse.AutoSize = true;
+            this.lblResponse.Location = new System.Drawing.Point(334, 603);
+            this.lblResponse.Name = "lblResponse";
+            this.lblResponse.Size = new System.Drawing.Size(86, 20);
+            this.lblResponse.TabIndex = 17;
+            this.lblResponse.Text = "Response:";
+            this.lblResponse.Visible = false;
+            // 
             // UCNavigator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.lblResponse);
             this.Controls.Add(this.roomsDataGridView);
             this.Controls.Add(this.hotelDataGridView);
             this.Controls.Add(this.clbRoomStandard);
@@ -450,5 +460,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn guestCapacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn boookingDataGridViewButtonColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Booking;
+        private System.Windows.Forms.Label lblResponse;
     }
 }

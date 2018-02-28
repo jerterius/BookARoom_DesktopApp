@@ -78,7 +78,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // linkLblNewUser
             // 
@@ -89,13 +89,13 @@
             this.linkLblNewUser.TabIndex = 4;
             this.linkLblNewUser.TabStop = true;
             this.linkLblNewUser.Text = "Create Account";
-            this.linkLblNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblNewUser_LinkClicked);
+            this.linkLblNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLblNewUser_LinkClicked);
             // 
             // lblLoginStatus
             // 
             this.lblLoginStatus.AutoSize = true;
             this.lblLoginStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblLoginStatus.ForeColor = System.Drawing.Color.Black;
             this.lblLoginStatus.Location = new System.Drawing.Point(134, 341);
             this.lblLoginStatus.Name = "lblLoginStatus";
             this.lblLoginStatus.Size = new System.Drawing.Size(247, 20);

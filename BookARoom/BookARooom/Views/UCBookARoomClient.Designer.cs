@@ -48,7 +48,7 @@
             this.cbSelectEntityTable.Name = "cbSelectEntityTable";
             this.cbSelectEntityTable.Size = new System.Drawing.Size(272, 28);
             this.cbSelectEntityTable.TabIndex = 0;
-            this.cbSelectEntityTable.SelectedIndexChanged += new System.EventHandler(this.cbSelectEntityTable_SelectedIndexChanged);
+            this.cbSelectEntityTable.SelectedIndexChanged += new System.EventHandler(this.CbSelectEntityTable_SelectedIndexChanged);
             // 
             // entitiesDataGridView
             // 

@@ -112,6 +112,9 @@
     <Compile Include="Model\CRONUSMetadata_Key.cs" />
     <Compile Include="Model\CRONUSMetadata_Table.cs" />
     <Compile Include="Model\CRONUSMetadata_Column.cs" />
+    <Compile Include="Model\CRONUS_Employees_And_Relatives.cs" />
+    <Compile Include="Model\CRONUS_Employees_Sick_2004.cs" />
+    <Compile Include="Model\CRONUS_Employee_Top5_Absence.cs" />
     <Compile Include="Model\CRONUS_Sverige_AB_Employee.cs" />
     <Compile Include="Model\CRONUS_Sverige_AB_Employee_Absence.cs" />
     <Compile Include="Model\CRONUS_Sverige_AB_Employee_Portal_Setup.cs" />

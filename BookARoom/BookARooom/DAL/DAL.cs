@@ -45,7 +45,7 @@ namespace BookARoom.DAL
         {
             try
             {
-                return db.Customers.Where(c => c.CEmail == email && c.Password == password).First();
+                return db.Customers.Where(c => c.CEmail == email && c.Password == password).FirstOrDefault();
             }
             catch (Exception e)
             {
