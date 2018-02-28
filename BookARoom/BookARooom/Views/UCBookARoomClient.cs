@@ -40,11 +40,11 @@ namespace BookARoom.Views
                         break;
 
                     case "All Rooms":
-                        entitiesDataGridView.DataSource = service.GetAllCities();
+                        entitiesDataGridView.DataSource = service.GetAllRooms();
                         break;
 
                     case "All Cities":
-                        entitiesDataGridView.DataSource = service.GetAllBookings();
+                        entitiesDataGridView.DataSource = service.GetAllCities();
                         break;
                 }
             }

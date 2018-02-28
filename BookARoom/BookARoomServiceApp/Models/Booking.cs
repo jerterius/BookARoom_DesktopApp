@@ -22,6 +22,12 @@ namespace BookARoomServiceApp.Models
         [Index("IX_DateRoom", 1, IsUnique = true)]
         public DateTime Date { get; set; }
 
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public string DateString {
+            get { return Date.ToString();  }
+            set { Date = Convert.ToDateTime(value); }
+                } 
+
         [ForeignKey("Customer")]
         [Required]
         public string CEmail { get; set; }
