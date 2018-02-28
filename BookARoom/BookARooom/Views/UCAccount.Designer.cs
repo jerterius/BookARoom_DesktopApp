@@ -280,6 +280,7 @@ namespace BookARoom.Views
             this.bookingDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bookingDataGridView.Size = new System.Drawing.Size(879, 220);
             this.bookingDataGridView.TabIndex = 18;
+            this.bookingDataGridView.RowHeadersVisible = false;
             // 
             // bookingNumberDataGridViewTextBoxColumn
             // 

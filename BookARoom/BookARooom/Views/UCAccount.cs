@@ -83,13 +83,20 @@ namespace BookARoom.Views
 
         }
 
-        public void LoadUser(Customer c, EventArgs e)
+        public void LoadCustomer(Customer c, EventArgs e)
         {
             Customer = c;
-
             customerBindingSource.DataSource = Customer ?? new Customer();
 
         }
+
+        public void UpdateCustomer(object sender, EventArgs e)
+        {
+            Customer = controller.RetrieveCustomer(Customer.CEmail, Customer.Password);
+            LoadCustomer(Customer, null);
+            
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -172,7 +179,7 @@ namespace BookARoom.Views
 
             ToggleReadOnly(true);
 
-            LoadUser(Customer, e);
+            LoadCustomer(Customer, e);
 
             cbTitle.DataBindings.Add("Text", customerBindingSource, "Title");
 
@@ -197,7 +204,7 @@ namespace BookARoom.Views
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             Customer = null;
-            LoadUser(Customer, e);
+            LoadCustomer(Customer, e);
 
             if (userUpdated != null)
                 userUpdated(Customer, EventArgs.Empty);
@@ -218,7 +225,7 @@ namespace BookARoom.Views
                 }
             }
             Customer = controller.RetrieveCustomer(tbxEmail.Text, tbxPassword.Text);
-            LoadUser(Customer, null);
+            LoadCustomer(Customer, null);
         }
     }
 }

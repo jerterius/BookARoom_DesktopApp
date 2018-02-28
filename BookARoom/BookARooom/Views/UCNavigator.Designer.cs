@@ -73,20 +73,20 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(135, 441);
+            this.btnClear.Location = new System.Drawing.Point(152, 551);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(127, 33);
+            this.btnClear.Size = new System.Drawing.Size(143, 41);
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(3, 441);
+            this.btnSubmit.Location = new System.Drawing.Point(3, 551);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(127, 33);
+            this.btnSubmit.Size = new System.Drawing.Size(143, 41);
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "Search";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -94,67 +94,75 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(4, 46);
+            this.tbxSearch.Location = new System.Drawing.Point(4, 58);
             this.tbxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSearch.Name = "tbxSearch";
-            this.tbxSearch.Size = new System.Drawing.Size(259, 22);
+            this.tbxSearch.Size = new System.Drawing.Size(291, 26);
             this.tbxSearch.TabIndex = 1;
+            this.tbxSearch.TextChanged += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cbCountry
             // 
             this.cbCountry.DisplayMember = "CountryName";
             this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.Location = new System.Drawing.Point(4, 99);
+            this.cbCountry.Location = new System.Drawing.Point(4, 124);
             this.cbCountry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCountry.Name = "cbCountry";
-            this.cbCountry.Size = new System.Drawing.Size(127, 24);
+            this.cbCountry.Size = new System.Drawing.Size(142, 28);
             this.cbCountry.TabIndex = 2;
             this.cbCountry.ValueMember = "CountryName";
             this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.cbCountry_SelectedIndexChanged);
+            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cbCity
             // 
             this.cbCity.DisplayMember = "CityName";
             this.cbCity.FormattingEnabled = true;
-            this.cbCity.Location = new System.Drawing.Point(136, 99);
+            this.cbCity.Location = new System.Drawing.Point(153, 124);
             this.cbCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCity.Name = "cbCity";
-            this.cbCity.Size = new System.Drawing.Size(127, 24);
+            this.cbCity.Size = new System.Drawing.Size(142, 28);
             this.cbCity.TabIndex = 2;
             this.cbCity.ValueMember = "CityName";
+            this.cbCity.SelectedIndexChanged += new System.EventHandler(this.btnSubmit_Click);
             // 
             // tbGuests
             // 
-            this.tbGuests.Location = new System.Drawing.Point(86, 303);
+            this.tbGuests.Location = new System.Drawing.Point(97, 379);
             this.tbGuests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbGuests.Name = "tbGuests";
-            this.tbGuests.Size = new System.Drawing.Size(176, 56);
+            this.tbGuests.Size = new System.Drawing.Size(198, 69);
             this.tbGuests.TabIndex = 3;
             this.tbGuests.Scroll += new System.EventHandler(this.tbGuests_Scroll);
+            this.tbGuests.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.Location = new System.Drawing.Point(61, 225);
+            this.dtpFromDate.Location = new System.Drawing.Point(69, 281);
             this.dtpFromDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(201, 22);
+            this.dtpFromDate.Size = new System.Drawing.Size(226, 26);
             this.dtpFromDate.TabIndex = 4;
+            this.dtpFromDate.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
+            this.dtpFromDate.ValueChanged += new System.EventHandler(this.dtpFromDate_ValueChanged);
             // 
             // dtpToDate
             // 
-            this.dtpToDate.Location = new System.Drawing.Point(60, 266);
+            this.dtpToDate.Location = new System.Drawing.Point(68, 332);
             this.dtpToDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(202, 22);
+            this.dtpToDate.Size = new System.Drawing.Size(227, 26);
             this.dtpToDate.TabIndex = 5;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             // 
             // lblFromDate
             // 
             this.lblFromDate.AutoSize = true;
             this.lblFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFromDate.Location = new System.Drawing.Point(7, 226);
+            this.lblFromDate.Location = new System.Drawing.Point(8, 282);
             this.lblFromDate.Name = "lblFromDate";
-            this.lblFromDate.Size = new System.Drawing.Size(49, 17);
+            this.lblFromDate.Size = new System.Drawing.Size(55, 20);
             this.lblFromDate.TabIndex = 6;
             this.lblFromDate.Text = "From:";
             // 
@@ -162,9 +170,9 @@
             // 
             this.lblToDate.AutoSize = true;
             this.lblToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToDate.Location = new System.Drawing.Point(25, 267);
+            this.lblToDate.Location = new System.Drawing.Point(28, 334);
             this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(32, 17);
+            this.lblToDate.Size = new System.Drawing.Size(34, 20);
             this.lblToDate.TabIndex = 6;
             this.lblToDate.Text = "To:";
             // 
@@ -175,19 +183,19 @@
             "Smoke Free",
             "Extrabed",
             "Children"});
-            this.clbRoomStandard.Location = new System.Drawing.Point(4, 365);
+            this.clbRoomStandard.Location = new System.Drawing.Point(4, 456);
             this.clbRoomStandard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clbRoomStandard.Name = "clbRoomStandard";
-            this.clbRoomStandard.Size = new System.Drawing.Size(260, 55);
+            this.clbRoomStandard.Size = new System.Drawing.Size(292, 67);
             this.clbRoomStandard.TabIndex = 7;
             // 
             // lblGuests
             // 
             this.lblGuests.AutoSize = true;
             this.lblGuests.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuests.Location = new System.Drawing.Point(3, 303);
+            this.lblGuests.Location = new System.Drawing.Point(3, 379);
             this.lblGuests.Name = "lblGuests";
-            this.lblGuests.Size = new System.Drawing.Size(64, 17);
+            this.lblGuests.Size = new System.Drawing.Size(72, 20);
             this.lblGuests.TabIndex = 6;
             this.lblGuests.Text = "Guests:";
             // 
@@ -195,21 +203,22 @@
             // 
             this.tbStandard.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbStandard.LargeChange = 1;
-            this.tbStandard.Location = new System.Drawing.Point(88, 139);
+            this.tbStandard.Location = new System.Drawing.Point(99, 174);
             this.tbStandard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbStandard.Maximum = 5;
             this.tbStandard.Name = "tbStandard";
-            this.tbStandard.Size = new System.Drawing.Size(174, 56);
+            this.tbStandard.Size = new System.Drawing.Size(196, 69);
             this.tbStandard.TabIndex = 3;
             this.tbStandard.Scroll += new System.EventHandler(this.tbStandard_Scroll);
+            this.tbStandard.ValueChanged += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblStandard
             // 
             this.lblStandard.AutoSize = true;
             this.lblStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStandard.Location = new System.Drawing.Point(3, 139);
+            this.lblStandard.Location = new System.Drawing.Point(3, 174);
             this.lblStandard.Name = "lblStandard";
-            this.lblStandard.Size = new System.Drawing.Size(60, 17);
+            this.lblStandard.Size = new System.Drawing.Size(67, 20);
             this.lblStandard.TabIndex = 6;
             this.lblStandard.Text = "Rating:";
             // 
@@ -227,14 +236,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.hotelDataGridView.DataSource = this.hotelBindingSource;
-            this.hotelDataGridView.Location = new System.Drawing.Point(289, 46);
+            this.hotelDataGridView.Location = new System.Drawing.Point(325, 58);
             this.hotelDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hotelDataGridView.Name = "hotelDataGridView";
             this.hotelDataGridView.ReadOnly = true;
-            this.hotelDataGridView.RowTemplate.Height = 28;
-            this.hotelDataGridView.Size = new System.Drawing.Size(981, 209);
-            this.hotelDataGridView.TabIndex = 15;
             this.hotelDataGridView.RowHeadersVisible = false;
+            this.hotelDataGridView.RowTemplate.Height = 28;
+            this.hotelDataGridView.Size = new System.Drawing.Size(1104, 261);
+            this.hotelDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -297,14 +306,14 @@
             this.guestCapacityDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
             this.Booking});
-            this.roomsDataGridView.RowHeadersVisible = false;
             this.roomsDataGridView.DataSource = this.roomsBindingSource;
-            this.roomsDataGridView.Location = new System.Drawing.Point(289, 297);
+            this.roomsDataGridView.Location = new System.Drawing.Point(325, 371);
             this.roomsDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roomsDataGridView.Name = "roomsDataGridView";
             this.roomsDataGridView.ReadOnly = true;
+            this.roomsDataGridView.RowHeadersVisible = false;
             this.roomsDataGridView.RowTemplate.Height = 28;
-            this.roomsDataGridView.Size = new System.Drawing.Size(981, 176);
+            this.roomsDataGridView.Size = new System.Drawing.Size(1104, 220);
             this.roomsDataGridView.TabIndex = 16;
             this.roomsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomsDataGridView_CellClick);
             // 
@@ -314,7 +323,7 @@
             this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
             this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
             this.roomNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.roomNumberDataGridViewTextBoxColumn.Width = 124;
+            this.roomNumberDataGridViewTextBoxColumn.Width = 144;
             // 
             // bedDataGridViewTextBoxColumn
             // 
@@ -322,7 +331,7 @@
             this.bedDataGridViewTextBoxColumn.HeaderText = "Bed";
             this.bedDataGridViewTextBoxColumn.Name = "bedDataGridViewTextBoxColumn";
             this.bedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bedDataGridViewTextBoxColumn.Width = 62;
+            this.bedDataGridViewTextBoxColumn.Width = 74;
             // 
             // smokeFreeDataGridViewCheckBoxColumn
             // 
@@ -330,7 +339,7 @@
             this.smokeFreeDataGridViewCheckBoxColumn.HeaderText = "SmokeFree";
             this.smokeFreeDataGridViewCheckBoxColumn.Name = "smokeFreeDataGridViewCheckBoxColumn";
             this.smokeFreeDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.smokeFreeDataGridViewCheckBoxColumn.Width = 86;
+            this.smokeFreeDataGridViewCheckBoxColumn.Width = 98;
             // 
             // priceDataGridViewTextBoxColumn
             // 
@@ -338,7 +347,7 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.priceDataGridViewTextBoxColumn.Width = 69;
+            this.priceDataGridViewTextBoxColumn.Width = 80;
             // 
             // guestCapacityDataGridViewTextBoxColumn
             // 
@@ -346,7 +355,7 @@
             this.guestCapacityDataGridViewTextBoxColumn.HeaderText = "GuestCapacity";
             this.guestCapacityDataGridViewTextBoxColumn.Name = "guestCapacityDataGridViewTextBoxColumn";
             this.guestCapacityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.guestCapacityDataGridViewTextBoxColumn.Width = 129;
+            this.guestCapacityDataGridViewTextBoxColumn.Width = 150;
             // 
             // adressDataGridViewTextBoxColumn
             // 
@@ -354,7 +363,7 @@
             this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
             this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
             this.adressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adressDataGridViewTextBoxColumn.Width = 81;
+            this.adressDataGridViewTextBoxColumn.Width = 95;
             // 
             // Booking
             // 
@@ -363,7 +372,7 @@
             this.Booking.ReadOnly = true;
             this.Booking.Text = "SELECT";
             this.Booking.UseColumnTextForButtonValue = true;
-            this.Booking.Width = 65;
+            this.Booking.Width = 73;
             // 
             // roomsBindingSource
             // 
@@ -372,7 +381,7 @@
             // 
             // UCNavigator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.roomsDataGridView);
@@ -393,7 +402,7 @@
             this.Controls.Add(this.btnClear);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCNavigator";
-            this.Size = new System.Drawing.Size(1281, 510);
+            this.Size = new System.Drawing.Size(1441, 638);
             this.Load += new System.EventHandler(this.UCNavigator_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbGuests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbStandard)).EndInit();

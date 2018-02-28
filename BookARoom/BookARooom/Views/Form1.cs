@@ -23,7 +23,7 @@ namespace BookARoom.Views
             InitializeComponent();
 
             ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucNavigator1.LoadUser);
-            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucAccount1.LoadUser);
+            ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(ucAccount1.LoadCustomer);
             ucLogin1.userLoggedIn += new UCLogin.UserLoggedIn(this.SelectAccountTab);
 
             ucLogin1.createUser += new UCLogin.ChangeTab(this.SelectAccountTab);
@@ -34,7 +34,9 @@ namespace BookARoom.Views
 
             ucAccount1.userLogOut += new UCAccount.UserLogOut(this.CloseAccountTab);
             ucAccount1.userLogOut += new UCAccount.UserLogOut(ucNavigator1.LoadUser);
-            ucAccount1.userLogOut += new UCAccount.UserLogOut(ucAccount1.LoadUser);
+            ucAccount1.userLogOut += new UCAccount.UserLogOut(ucAccount1.LoadCustomer);
+
+            ucNavigator1.updateBookings += new UCNavigator.UpdateBookings(ucAccount1.UpdateCustomer);
 
         }
 

@@ -17,6 +17,9 @@ namespace BookARoom.Views
 {
     public partial class UCNavigator : UserControl
     {
+        public delegate void UpdateBookings(object sender, EventArgs e);
+        public UpdateBookings updateBookings;
+
         private Controller controller = new Controller();
         public Customer Customer { get; set; }
 
@@ -54,8 +57,6 @@ namespace BookARoom.Views
             roomsBindingSource.DataSource = hotelBindingSource;
             roomsBindingSource.DataMember = "Rooms";
 
-
-
         }
 
         private void UCNavigator_Load(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace BookARoom.Views
                 }
                 btnSubmit.PerformClick();
 
+                updateBookings?.Invoke(null, EventArgs.Empty);
 
             }
         }
@@ -94,6 +96,23 @@ namespace BookARoom.Views
         {
             Customer = c;
             
+        }
+
+        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpFromDate.Value > dtpToDate.Value)
+            {
+                dtpFromDate.Value = dtpToDate.Value;
+            }
+        }
+
+        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpFromDate.Value > dtpToDate.Value)
+            {
+                dtpToDate.Value = dtpFromDate.Value;
+            }
+
         }
 
     }

@@ -13,13 +13,7 @@ namespace BookARoom.Controllers
     {
         Dal dal = new Dal();
 
-        public int TotalPrice(Guid bookingNumber)
-            {
-                return dal.TotalPrice(bookingNumber);
-             
-            }
-
-
+        //Create
         public void AddCustomer(Customer newCustomer)
         {
             dal.Add(newCustomer);
@@ -30,33 +24,9 @@ namespace BookARoom.Controllers
             Booking b = new Booking(email, adress, roomNo, date);
             dal.Add(b);
         }
-        public void Update(Customer origin, Customer updated)
-        {
-            dal.Update(origin, updated);
-        }
-
-        public void DeleteBooking(Guid bookingNo)
-        {
-            Booking b = new Booking() {BookingNumber = bookingNo };
-            dal.Remove(b);
-        }
-
-       public void Remove(object removeFromTable, EventArgs e)
-        {
-            dal.Remove(removeFromTable);
-        }
 
 
-        public List<Room> FindAvailableRooms(Hotel hotel)
-        {
-            return dal.FindAvailableRooms(hotel);
-        }
-
-        public List<Hotel> HotelsInCity (City city)
-        {
-            return dal.HotelsInCity(city);
-        }
-
+        //Retrieve
         public List<Hotel> HotelsWithAvailableRooms (string search, string countryName, string cityName, DateTime fromDate, DateTime toDate, string standard, int guests, bool smokeFree)
         {
             List<DateTime> dates = new List<DateTime>();
@@ -65,7 +35,7 @@ namespace BookARoom.Controllers
                 dates.Add(date);
             }
 
-                return dal.HotelsWithAvailableRooms( search,  countryName,  cityName, dates,  standard,  guests,  smokeFree);
+                return dal.HotelFilter( search,  countryName,  cityName, dates,  standard,  guests,  smokeFree);
         }
 
         public Customer RetrieveCustomer(string email, string password)
@@ -75,7 +45,7 @@ namespace BookARoom.Controllers
 
         public List<string> GetAllCountries()
         {
-            return dal.GetAllCountries();
+            return dal.AllCountries();
         }
         
 
@@ -84,9 +54,17 @@ namespace BookARoom.Controllers
             return dal.AllCitiesInCountry(country);
         }
 
-        public DataSet TestGetData()
+        //Update
+        public void Update(Customer origin, Customer updated)
         {
-            return dal.TestGetData();
+            dal.UpdateCustomer(origin, updated);
+        }
+
+        //Delete
+        public void DeleteBooking(Guid bookingNo)
+        {
+            Booking b = new Booking() { BookingNumber = bookingNo };
+            dal.Remove(b);
         }
     }
 
