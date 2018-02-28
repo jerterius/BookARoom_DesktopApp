@@ -218,7 +218,7 @@ namespace BookARoom.Views
                 }
             }
             Customer = controller.RetrieveCustomer(tbxEmail.Text, tbxPassword.Text);
-            
+            LoadUser(Customer, null);
         }
     }
 }

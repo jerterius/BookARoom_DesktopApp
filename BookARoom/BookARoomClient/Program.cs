@@ -25,7 +25,7 @@ namespace BookARoomClient
             List<Booking> bookingList = client.GetAllBookings();
             foreach(Booking b in bookingList)
             {
-                Console.WriteLine("email: {0} \n Adress: {1} \n Room number: {2} \n Date: {3} \n Booking number: {4}  ", b.CEmail, b.Adress, b.RoomNumber, b.Date, b.BookingNumber);
+                Console.WriteLine("Email: {0} \n Adress: {1} \n Room number: {2} \n Date: {3} \n Booking number: {4}  ", b.CEmail, b.Adress, b.RoomNumber, b.Date, b.BookingNumber);
             }
             List<Room> roomList = client.GetAllRooms();
             foreach(Room r in roomList)
