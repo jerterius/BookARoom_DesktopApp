@@ -46,13 +46,14 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblResponse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tablesDataGridView
             // 
-            this.tablesDataGridView.AutoGenerateColumns = true;
+            this.tablesDataGridView.AutoGenerateColumns = false;
             this.tablesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablesDataGridView.DataSource = this.employeeBindingSource;
@@ -215,10 +216,21 @@
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblResponse
+            // 
+            this.lblResponse.AutoSize = true;
+            this.lblResponse.Location = new System.Drawing.Point(19, 700);
+            this.lblResponse.Name = "lblResponse";
+            this.lblResponse.Size = new System.Drawing.Size(86, 20);
+            this.lblResponse.TabIndex = 6;
+            this.lblResponse.Text = "Response:";
+            this.lblResponse.Visible = false;
+            // 
             // UCEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblResponse);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNew);
@@ -236,7 +248,7 @@
             this.Controls.Add(this.cbSelectedTable);
             this.Controls.Add(this.tablesDataGridView);
             this.Name = "UCEmployee";
-            this.Size = new System.Drawing.Size(946, 716);
+            this.Size = new System.Drawing.Size(946, 736);
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -262,5 +274,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblResponse;
     }
 }

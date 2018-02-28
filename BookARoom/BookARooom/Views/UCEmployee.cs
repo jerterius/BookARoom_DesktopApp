@@ -23,122 +23,168 @@ namespace BookARoom.Views
 
         private void btnSave_UpdateClick(object sender, EventArgs e)
         {
+            try {
 
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
         private void btnSave_InsertClick(object sender, EventArgs e)
         {
+            try
+            {
 
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
         private void btnSave_RemoveClick(object sender, EventArgs e)
         {
+            try
+            {
+
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
 
         }
 
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            foreach(Control c in this.Controls)
+
+            try
             {
-                if (c is TextBox)
+                foreach (Control c in this.Controls)
                 {
-                    (c as TextBox).ReadOnly = false;
-                    (c as TextBox).Text = null;
+                    if (c is TextBox)
+                    {
+                        (c as TextBox).ReadOnly = false;
+                        (c as TextBox).Text = null;
+                    }
+
+                    if (c is Button)
+                    {
+                        (c as Button).Visible = true;
+                    }
                 }
-           
-                if (c is Button)
-                {
-                    (c as Button).Visible = true;
-                }
+
             }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)
+            try
             {
-                if (c is TextBox)
+                foreach (Control c in this.Controls)
                 {
-                    (c as TextBox).ReadOnly = true;
+                    if (c is TextBox)
+                    {
+                        (c as TextBox).ReadOnly = true;
+                    }
+
+                    this.btnCancel.Visible = false;
+                    this.btnSave.Visible = false;
+
                 }
 
-                this.btnCancel.Visible = false;
-                this.btnSave.Visible = false;
-
             }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
         }
 
         private void cbSelectedTable_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedTable = this.cbSelectedTable.Text;
-
-            using (CronusWebServiceSoapClient service = new CronusWebServiceSoapClient())
+            try
             {
-                /*
-                //Hej Webbservice din "GetTables" med inparameter "selectedtables"
-                string[] nyArray = { "hej", "svej", "grej" };
-                List<string[]> nyLista = new List<string[]>();
-                nyLista.Add(nyArray);
+                string selectedTable = this.cbSelectedTable.Text;
 
-               //var source = service.GetEmployeeTables(selectedTable);
-               var bindingList = new BindingList<string[]>(nyLista);
-
-                var source = new BindingSource(bindingList, null);
-
-                tablesDataGridView.DataSource = nyLista;
-               // tablesDataGridView.DataMember = "Employees";*/
-
-                switch (selectedTable)
+                using (CronusWebServiceSoapClient service = new CronusWebServiceSoapClient())
                 {
-                    case "All Employees":
 
-                        tablesDataGridView.DataSource = service.GetAllEmployees();
-                        
-                        break;
+                    switch (selectedTable)
+                    {
+                        case "All Employees":
 
-                    case "Content and metadata from Employee and related tables":
-                        tablesDataGridView.DataSource = service.GetEmployeeMetaDataAndRelated();
+                            tablesDataGridView.DataSource = service.GetAllEmployees();
 
-                        break;
+                            break;
 
-                    case "Employees And Relatives":
+                        case "Content and metadata from Employee and related tables":
+                            tablesDataGridView.DataSource = service.GetEmployeeMetaDataAndRelated();
 
-                        break;
+                            break;
 
-                    case "Employee Absence(2004)":
+                        case "Employees And Relatives":
 
-                        break;
+                            break;
 
-                    case "Employees With Most Absence":
+                        case "Employee Absence(2004)":
 
-                        break;
+                            break;
 
-                    case "All Keys":
+                        case "Employees With Most Absence":
 
-                        tablesDataGridView.DataSource = service.GetAllKeys();
-                        break;
+                            break;
 
-                    case "All Indexes":
+                        case "All Keys":
 
-                        tablesDataGridView.DataSource = service.GetAllIndexes();
-                        break;
+                            tablesDataGridView.DataSource = service.GetAllKeys();
+                            break;
 
-                    case "All Table Constraints":
+                        case "All Indexes":
 
-                        tablesDataGridView.DataSource = service.GetAllConstraints();
-                        break;
+                            tablesDataGridView.DataSource = service.GetAllIndexes();
+                            break;
 
-                    case "All Tables In Database":
+                        case "All Table Constraints":
 
-                        tablesDataGridView.DataSource = service.GetAllTablesInDB();
-                        break;
+                            tablesDataGridView.DataSource = service.GetAllConstraints();
+                            break;
 
-                    case "All Columns From Employee-Table":
-                        tablesDataGridView.DataSource = service.GetAllColumnsInEmployees();
-                        break;
+                        case "All Tables In Database":
+
+                            tablesDataGridView.DataSource = service.GetAllTablesInDB();
+                            break;
+
+                        case "All Columns From Employee-Table":
+                            tablesDataGridView.DataSource = service.GetAllColumnsInEmployees();
+                            break;
+                    }
+
+
                 }
-                
 
             }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+            
 
         }
 
@@ -146,20 +192,41 @@ namespace BookARoom.Views
 
         private void tablesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cbSelectedTable.Text.Equals("All Employees"))
+            try
             {
-                tbxTitle.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Job_Title"].Value.ToString();
-                tbxFirstName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["First_Name"].Value.ToString();
-                tbxLastName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Last_Name"].Value.ToString();
-                tbxAdress.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+                if (cbSelectedTable.Text.Equals("All Employees"))
+                {
+                    tbxTitle.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Job_Title"].Value.ToString();
+                    tbxFirstName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["First_Name"].Value.ToString();
+                    tbxLastName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Last_Name"].Value.ToString();
+                    tbxAdress.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Address"].Value.ToString();
 
-                EmployeeNo = tablesDataGridView.Rows[e.RowIndex].Cells["No_"].Value.ToString();
+                    EmployeeNo = tablesDataGridView.Rows[e.RowIndex].Cells["No_"].Value.ToString();
+                }
+
             }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            CRONUS_Sverige_AB_Employee newEmployee = new CRONUS_Sverige_AB_Employee();
+
+            try
+            {
+                CRONUS_Sverige_AB_Employee newEmployee = new CRONUS_Sverige_AB_Employee();
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+           
 
         }
     }

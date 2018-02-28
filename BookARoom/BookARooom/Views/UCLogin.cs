@@ -36,6 +36,7 @@ namespace BookARoom.Views
 
         private void linkLblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
             if (Customer == null) {
                 if (createUser != null)
                 {
