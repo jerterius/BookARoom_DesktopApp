@@ -52,7 +52,7 @@
             // 
             // tablesDataGridView
             // 
-            this.tablesDataGridView.AutoGenerateColumns = false;
+            this.tablesDataGridView.AutoGenerateColumns = true;
             this.tablesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablesDataGridView.DataSource = this.employeeBindingSource;

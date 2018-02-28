@@ -147,9 +147,9 @@ namespace BookARoom.Views
         {
             if (cbSelectedTable.Text.Equals("All Employees"))
             {
-                tbxTitle.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Job Title"].Value.ToString();
-                tbxFirstName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["First Name"].Value.ToString();
-                tbxLastName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
+                tbxTitle.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Job_Title"].Value.ToString();
+                tbxFirstName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["First_Name"].Value.ToString();
+                tbxLastName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Last_Name"].Value.ToString();
                 tbxAdress.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Address"].Value.ToString();
 
                 EmployeeNo = tablesDataGridView.Rows[e.RowIndex].Cells["No_"].Value.ToString();
