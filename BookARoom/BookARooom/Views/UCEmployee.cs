@@ -96,6 +96,7 @@ namespace BookARoom.Views
                         break;
 
                     case "Content and metadata from Employee and related tables":
+                        tablesDataGridView.DataSource = service.GetEmployeeMetaDataAndRelated();
 
                         break;
 

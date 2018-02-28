@@ -48,5 +48,10 @@ namespace CronusWebApplication.Controller
         {
             return dal.GetAllColumnsInEmployees();
         }
+
+        public List<CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelated()
+        {
+            return dal.GetEmployeesMetadataAndRelated();
+        }
     }
 }

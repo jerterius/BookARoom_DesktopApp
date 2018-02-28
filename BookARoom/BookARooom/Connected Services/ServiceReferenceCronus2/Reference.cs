@@ -1010,6 +1010,114 @@ namespace BookARoom.ServiceReferenceCronus2 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUSMetadata_EmployeeRelated", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUSMetadata_EmployeeRelated : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TabellnamnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        private int StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Job_TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Tabellnamn {
+            get {
+                return this.TabellnamnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TabellnamnField, value) != true)) {
+                    this.TabellnamnField = value;
+                    this.RaisePropertyChanged("Tabellnamn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Job_Title {
+            get {
+                return this.Job_TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Job_TitleField, value) != true)) {
+                    this.Job_TitleField = value;
+                    this.RaisePropertyChanged("Job_Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceCronus2.CronusWebServiceSoap")]
     public interface CronusWebServiceSoap {
@@ -1055,6 +1163,13 @@ namespace BookARoom.ServiceReferenceCronus2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllColumnsInEmployees", ReplyAction="*")]
         System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus2.GetAllColumnsInEmployeesResponse> GetAllColumnsInEmployeesAsync(BookARoom.ServiceReferenceCronus2.GetAllColumnsInEmployeesRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetEmployeeMetaDataAndRelatedResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeeMetaDataAndRelated", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse GetEmployeeMetaDataAndRelated(BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeeMetaDataAndRelated", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse> GetEmployeeMetaDataAndRelatedAsync(BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1423,6 +1538,67 @@ namespace BookARoom.ServiceReferenceCronus2 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeeMetaDataAndRelatedRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeeMetaDataAndRelated", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequestBody Body;
+        
+        public GetEmployeeMetaDataAndRelatedRequest() {
+        }
+        
+        public GetEmployeeMetaDataAndRelatedRequest(BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetEmployeeMetaDataAndRelatedRequestBody {
+        
+        public GetEmployeeMetaDataAndRelatedRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeeMetaDataAndRelatedResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeeMetaDataAndRelatedResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponseBody Body;
+        
+        public GetEmployeeMetaDataAndRelatedResponse() {
+        }
+        
+        public GetEmployeeMetaDataAndRelatedResponse(BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEmployeeMetaDataAndRelatedResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus2.CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelatedResult;
+        
+        public GetEmployeeMetaDataAndRelatedResponseBody() {
+        }
+        
+        public GetEmployeeMetaDataAndRelatedResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus2.CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelatedResult) {
+            this.GetEmployeeMetaDataAndRelatedResult = GetEmployeeMetaDataAndRelatedResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CronusWebServiceSoapChannel : BookARoom.ServiceReferenceCronus2.CronusWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -1586,6 +1762,29 @@ namespace BookARoom.ServiceReferenceCronus2 {
             BookARoom.ServiceReferenceCronus2.GetAllColumnsInEmployeesRequest inValue = new BookARoom.ServiceReferenceCronus2.GetAllColumnsInEmployeesRequest();
             inValue.Body = new BookARoom.ServiceReferenceCronus2.GetAllColumnsInEmployeesRequestBody();
             return ((BookARoom.ServiceReferenceCronus2.CronusWebServiceSoap)(this)).GetAllColumnsInEmployeesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse BookARoom.ServiceReferenceCronus2.CronusWebServiceSoap.GetEmployeeMetaDataAndRelated(BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest request) {
+            return base.Channel.GetEmployeeMetaDataAndRelated(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus2.CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelated() {
+            BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest inValue = new BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequestBody();
+            BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse retVal = ((BookARoom.ServiceReferenceCronus2.CronusWebServiceSoap)(this)).GetEmployeeMetaDataAndRelated(inValue);
+            return retVal.Body.GetEmployeeMetaDataAndRelatedResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse> BookARoom.ServiceReferenceCronus2.CronusWebServiceSoap.GetEmployeeMetaDataAndRelatedAsync(BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest request) {
+            return base.Channel.GetEmployeeMetaDataAndRelatedAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse> GetEmployeeMetaDataAndRelatedAsync() {
+            BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest inValue = new BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedRequestBody();
+            return ((BookARoom.ServiceReferenceCronus2.CronusWebServiceSoap)(this)).GetEmployeeMetaDataAndRelatedAsync(inValue);
         }
     }
 }

@@ -35,6 +35,14 @@ namespace CronusWebApplication.DAL
             
         }
 
+        public List<CRONUSMetadata_EmployeeRelated> GetEmployeesMetadataAndRelated()
+        {
+            using (db = new CRONUSContext())
+            {
+                return db.CRONUSMetadata_EmployeeRelated.ToList();
+            }
+        }
+
         public List<CRONUSMetadata_Key> GetAllKeys()
         {
             using (db = new CRONUSContext())

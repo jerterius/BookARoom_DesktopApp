@@ -79,5 +79,11 @@ namespace CronusWebApplication
         {
             return controller.GetAllColumnsInEmployees();
         }
+
+        [WebMethod]
+        public List<CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelated()
+        {
+            return controller.GetEmployeeMetaDataAndRelated();
+        }
     }
 }

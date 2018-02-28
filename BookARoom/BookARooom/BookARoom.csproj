@@ -250,6 +250,9 @@
     <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_Constraint.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_EmployeeRelated.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_Index.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -278,6 +281,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetAllTablesInDBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceCronus2\CronusWebService.wsdl" />

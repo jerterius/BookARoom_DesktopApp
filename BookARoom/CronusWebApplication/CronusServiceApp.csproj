@@ -102,6 +102,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\CRONUSMetadata_Constraint.cs" />
+    <Compile Include="Model\CRONUSMetadata_EmployeeRelated.cs" />
     <Compile Include="Model\CRONUSMetadata_Index.cs" />
     <Compile Include="Model\CRONUSContext.cs" />
     <Compile Include="CronusWebService.asmx.cs">
