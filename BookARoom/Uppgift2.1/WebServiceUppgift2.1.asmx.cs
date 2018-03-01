@@ -21,7 +21,7 @@ namespace Uppgift2._1
         [WebMethod]
         public string GetFile()
         {
-            StreamReader sr = File.OpenText("C:\\Users\\Nina\\Documents\\Programkonstruktion\\Text.txt");
+            StreamReader sr = File.OpenText("C:\\Users\\Ulrik\\Desktop\\Test.txt");
 
             string line = sr.ReadToEnd();
             return line;
