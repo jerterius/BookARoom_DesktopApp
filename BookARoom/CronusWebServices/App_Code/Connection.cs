@@ -22,7 +22,7 @@ public class Connection
 
         public SqlConnection OpenConnect()
         {
-            string dbAdress = "Data Source=DESKTOP-08VEOGS;Initial Catalog=Demo Database NAV(5 - 0);Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string dbAdress = "Data Source=LAPTOP-MN49AD24;Initial Catalog=Demo Database NAV(5 - 0);Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             SqlConnection con = new SqlConnection(dbAdress);
             return con;

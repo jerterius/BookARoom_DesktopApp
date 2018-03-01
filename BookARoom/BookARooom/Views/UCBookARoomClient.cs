@@ -67,5 +67,10 @@ namespace BookARoom.Views
 
 
         }
+
+        private void UCBookARoomClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

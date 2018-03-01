@@ -89,6 +89,7 @@
             this.Controls.Add(this.cbSelectEntityTable);
             this.Name = "UCBookARoomClient";
             this.Size = new System.Drawing.Size(770, 656);
+            this.Load += new System.EventHandler(this.UCBookARoomClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.entitiesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
