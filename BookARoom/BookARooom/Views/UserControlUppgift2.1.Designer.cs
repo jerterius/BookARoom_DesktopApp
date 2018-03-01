@@ -57,6 +57,8 @@
             // cbSelectFile
             // 
             this.cbSelectFile.FormattingEnabled = true;
+            this.cbSelectFile.Items.AddRange(new object[] {
+            "Notepad"});
             this.cbSelectFile.Location = new System.Drawing.Point(146, 150);
             this.cbSelectFile.Name = "cbSelectFile";
             this.cbSelectFile.Size = new System.Drawing.Size(411, 24);
