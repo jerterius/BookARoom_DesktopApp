@@ -7,6 +7,8 @@ using BookARoom.Models;
 using System.Data.SqlClient;
 using System.Data;
 using System.Data.Entity;
+using Z.EntityFramework.Plus;
+using System.Collections.ObjectModel;
 
 namespace BookARoom.DAL
 {
@@ -63,7 +65,7 @@ namespace BookARoom.DAL
             {
                 throw e;
             }
-            
+
         }
 
 
@@ -77,34 +79,41 @@ namespace BookARoom.DAL
             {
                 throw e;
             }
-            
-         
+
+
         }
 
-        public List<Hotel> HotelFilter(string search, string countryName, string cityName, List<DateTime> dates, string standard, int guests, bool smokeFree)
+        public List<Hotel> HotelFilter(string search, string countryName, string cityName, DateTime fromDate, DateTime toDate, string standard, int guests, bool smokeFree)
         {
             try
             {
-                var hotelList = this.db.Hotels.Where(hotel =>
-                        hotel.Name.Contains(search) &&
-                        hotel.Countryname == countryName &&
-                        hotel.CityName == cityName &&
-                        hotel.Standard == standard)
-                            .Include(hotel => hotel.Rooms.Select(r => r.Bookings)).ToList();
 
-                List<Room> rooms = hotelList.SelectMany(h => h.Rooms).ToList().Where(r => r.GuestCapacity >= guests).ToList();
+                var roomsList = db.Hotels.Where(h =>
+                 h.Name.Contains(search) &&
+                       h.Countryname == countryName &&
+                       h.CityName == cityName &&
+                       h.Standard == standard)
 
-                List<Booking> allBookings = rooms.SelectMany(r => r.Bookings).ToList();
-
-
-                foreach (DateTime d in dates)
+                .Select(hotel => new
                 {
+                    hotel,
+                    rooms = hotel.Rooms.Where(r =>
+                        r.GuestCapacity >= guests &&
+                        !r.Bookings.Any(b => b.Date >= fromDate && b.Date <= toDate))
 
-                    rooms.Remove(rooms.Where(r => r.Bookings.Any(b => b.Date == d)).FirstOrDefault());
+                })
+                .AsEnumerable()
+                .SelectMany(a =>
+                {
+                    a.hotel.Rooms = new ObservableCollection<Room>(a.rooms);
+                    return a.rooms;
+                })
 
-                }
+                .Select(r => r.Hotel).ToList();
 
-                return rooms.Select(r => r.Hotel).Distinct().ToList();
+
+
+                return roomsList.Distinct().ToList();
 
             }
             catch (Exception e)
@@ -127,7 +136,8 @@ namespace BookARoom.DAL
                 oldRecord.CEmail = updated.CEmail;
                 oldRecord.Password = updated.Password;
                 db.SaveChanges();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 throw e;
             }
@@ -151,7 +161,8 @@ namespace BookARoom.DAL
                 else if (o is Customer)
                     db.Customers.Remove(o as Customer);
                 db.SaveChanges();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 throw e;
             }

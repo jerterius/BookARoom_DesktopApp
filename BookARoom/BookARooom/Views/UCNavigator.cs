@@ -76,7 +76,7 @@ namespace BookARoom.Views
                 int guests = tbGuests.Value;
                 bool smokeFree = clbRoomStandard.GetItemCheckState(0) == CheckState.Checked;
 
-                List<Hotel> hotels = controller.HotelsWithAvailableRooms(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
+                List<Hotel> hotels = controller.HotelFilter(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
                 hotelBindingSource.DataSource = hotels;
 
                 roomsBindingSource.DataSource = hotelBindingSource;

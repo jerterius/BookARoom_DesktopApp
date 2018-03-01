@@ -41,17 +41,12 @@ namespace BookARoom.Controllers
 
 
         //Retrieve
-        public List<Hotel> HotelsWithAvailableRooms (string search, string countryName, string cityName, DateTime fromDate, DateTime toDate, string standard, int guests, bool smokeFree)
+        public List<Hotel> HotelFilter (string search, string countryName, string cityName, DateTime fromDate, DateTime toDate, string standard, int guests, bool smokeFree)
         {
             try
             {
-                List<DateTime> dates = new List<DateTime>();
-                for (var date = fromDate; date <= toDate; date = date.AddDays(1))
-                {
-                    dates.Add(date);
-                }
-
-                return dal.HotelFilter(search, countryName, cityName, dates, standard, guests, smokeFree);
+       
+                return dal.HotelFilter(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
 
             }
             catch (Exception e)

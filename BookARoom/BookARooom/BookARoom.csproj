@@ -56,6 +56,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Z.EntityFramework.Plus.QueryIncludeFilter.EF6, Version=1.7.11.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Z.EntityFramework.Plus.QueryIncludeFilter.EF6.1.7.11\lib\net45\Z.EntityFramework.Plus.QueryIncludeFilter.EF6.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\ServiceReferenceBookARoom\Reference.cs">
@@ -104,7 +107,6 @@
     <Compile Include="Migrations\201802161451243_bookingNoGUID.Designer.cs">
       <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\Tools.cs" />
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
