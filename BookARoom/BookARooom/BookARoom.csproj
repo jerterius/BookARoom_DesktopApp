@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ServiceReferenceUppg2_1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="DAL\BookingContext.cs" />
     <Compile Include="DAL\Dal.cs" />
@@ -155,6 +160,12 @@
       <DependentUpon>UCNavigator.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExceptionHandler.cs" />
+    <Compile Include="Views\UCUppgift2_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UCUppgift2_1.Designer.cs">
+      <DependentUpon>UCUppgift2_1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\201802141103155_AddPassword.resx">
       <DependentUpon>201802141103155_AddPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UCNavigator.resx">
       <DependentUpon>UCNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UCUppgift2_1.resx">
+      <DependentUpon>UCUppgift2_1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Connected Services\ServiceReferenceBookARoom\BookARoom.ServiceReferenceBookARoom.Booking.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -311,6 +325,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceCronus\CronusWebService.wsdl" />
+    <None Include="Connected Services\ServiceReferenceUppg2_1\BookARoom.ServiceReferenceUppg2_1.GetFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceUppg2_1\WSUppgift2_1.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BookARoom.Models.Booking.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Booking1.datasource" />
@@ -352,6 +370,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceBookARoom\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceCronus\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceUppg2_1\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReferenceBookARoom\BookARoomWebService.disco" />
@@ -379,6 +398,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReferenceCronus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceUppg2_1\WSUppgift2_1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceUppg2_1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceUppg2_1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceUppg2_1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
