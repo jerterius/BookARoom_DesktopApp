@@ -6,7 +6,6 @@ using System.Net.Http;
 using System.Web.Http;
 using CronusWebApplication.Model;
 using CronusWebApplication.DAL;
-using System.Data.Entity.Validation;
 
 namespace CronusWebApplication.Controller
 {
@@ -14,54 +13,16 @@ namespace CronusWebApplication.Controller
     {
         Dal dal = new Dal();
 
-        
-        public CRONUS_Sverige_AB_Partner AddPartner(CRONUS_Sverige_AB_Partner newPartner)
+
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployees()
         {
-            try
-            {
-                return dal.AddPartner(newPartner);
-            }
-            catch (DbEntityValidationException e)
-            {
-                throw e;
-            }
-            
-  
+            return dal.GetAllEmployees();
         }
 
-       
-        public CRONUS_Sverige_AB_Partner UpdatePartner(CRONUS_Sverige_AB_Partner oldPartner, CRONUS_Sverige_AB_Partner newPartner)
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployeesAndRelatives()
         {
-            try
-            {
-                dal.RemovePartner(oldPartner);
-                return dal.AddPartner(newPartner);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            
+            return dal.GetAllEmployees();
         }
-
-        
-        public CRONUS_Sverige_AB_Partner RemovePartner(CRONUS_Sverige_AB_Partner partner)
-        {
-            try
-            {
-                return dal.RemovePartner(partner);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public List<CRONUS_Sverige_AB_Partner> GetAllPartners()
-        {
-            return dal.GetAllPartners();
-        }
-
 
         public List<CRONUSMetadata_Key> GetAllKeys()
         {

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using CronusWebApplication.Model;
@@ -12,50 +11,17 @@ namespace CronusWebApplication.DAL
     {
         CRONUSContext db;
 
-        public CRONUS_Sverige_AB_Partner AddPartner(CRONUS_Sverige_AB_Partner newPartner)
-        {
-            try
-            {
-                using (db = new CRONUSContext())
-                {
-                    db.CRONUS_Sverige_AB_Partner.Add(newPartner);
-                    db.SaveChanges();
-                }
-                return newPartner;
-            }catch (DbEntityValidationException e)
-            {
-                throw e;
-            }
-      
-        }
 
-        public CRONUS_Sverige_AB_Partner RemovePartner(CRONUS_Sverige_AB_Partner partnerToRemove)
-        {
-            try
-            {
-                using (db = new CRONUSContext())
-                {
-                    var partner = db.CRONUS_Sverige_AB_Partner.Where(p => p.Company == partnerToRemove.Company).SingleOrDefault();
-                    db.CRONUS_Sverige_AB_Partner.Remove(partner);
-                    db.SaveChanges();
-                    return partnerToRemove;
-                }
-            } catch (Exception e)
-            {
-                throw e;
-            }
-            
-        }
 
-        public List<CRONUS_Sverige_AB_Partner> GetAllPartners()
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployees()
         {
             using (db = new CRONUSContext())
             {
-                return db.CRONUS_Sverige_AB_Partner.ToList();
+                return db.CRONUS_Sverige_AB_Employee.ToList();
             }
         }
 
-        public List<CRONUS_Sverige_AB_Partner> GetAllEmployeesAndRelatives()
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployeesAndRelatives()
         {
             using (db = new CRONUSContext())
             {

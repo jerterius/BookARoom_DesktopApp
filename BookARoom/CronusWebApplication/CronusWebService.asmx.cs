@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Services;
 using CronusWebApplication.Model;
 using CronusWebApplication.Controller;
-using System.Data.Entity.Validation;
 
 namespace CronusWebApplication
 {
@@ -21,67 +20,32 @@ namespace CronusWebApplication
     {
         CronusController controller = new CronusController();
 
+
+
         [WebMethod]
-        public CRONUS_Sverige_AB_Partner AddPartner(CRONUS_Sverige_AB_Partner newPartner)
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployees()
         {
-            try
-            {
-                return controller.AddPartner(newPartner);
-            }
-            catch (DbEntityValidationException e)
-            {
-                return null;
-            }
-   
+            return controller.GetAllEmployees();
+        }
+/*
+        [WebMethod]
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployeesAndRelatives()
+        {
+            return controller.GetAllEmployeesAndRelatives();
         }
 
         [WebMethod]
-        public CRONUS_Sverige_AB_Partner UpdatePartner(CRONUS_Sverige_AB_Partner oldPartner, CRONUS_Sverige_AB_Partner newPartner)
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployeeWithAbsence()
         {
-            try
-            {
-                return controller.UpdatePartner(oldPartner, newPartner);
-            } catch (Exception e)
-            {
-                throw e;
-            }
+            return controller.GetAllEmployeeWithAbsence();
         }
 
         [WebMethod]
-        public CRONUS_Sverige_AB_Partner RemovePartner(CRONUS_Sverige_AB_Partner partner)
+        public List<CRONUS_Sverige_AB_Employee> GetAllEmployeeWithAbsenceSick()
         {
-            return controller.RemovePartner(partner);
-        }
+            return controller.GetAllEmployeeWithAbsence();
+        }*/
 
-        [WebMethod]
-        public List<CRONUS_Sverige_AB_Partner> GetAllPartners()
-        {
-            return controller.GetAllPartners();
-        }
-
-        [WebMethod]
-        public List<CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelated()
-        {
-            return controller.GetEmployeeMetaDataAndRelated();
-        }
-
-        [WebMethod]
-        public List<CRONUS_Employee_Top5_Absence> GetTop5EmployeesAbsent()
-        {
-            return controller.GetTop5EmployeesAbsent();
-        }
-
-        [WebMethod]
-        public List<CRONUS_Employees_And_Relatives> GetEmployeesAndRelatives()
-        {
-            return controller.GetEmployeesAndRelatives();
-        }
-
-        [WebMethod]
-        public List<CRONUS_Employees_Sick_2004> GetEmployeesSick2004()
-        {
-            return controller.GetEmployeesSick2004();
-        }
 
         //METADATA
         [WebMethod]
@@ -116,6 +80,28 @@ namespace CronusWebApplication
             return controller.GetAllColumnsInEmployees();
         }
 
+        [WebMethod]
+        public List<CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelated()
+        {
+            return controller.GetEmployeeMetaDataAndRelated();
+        }
 
+        [WebMethod]
+        public List<CRONUS_Employee_Top5_Absence> GetTop5EmployeesAbsent()
+        {
+            return controller.GetTop5EmployeesAbsent();
+        }
+
+        [WebMethod]
+        public List<CRONUS_Employees_And_Relatives> GetEmployeesAndRelatives()
+        {
+            return controller.GetEmployeesAndRelatives();
+        }
+
+        [WebMethod]
+        public List<CRONUS_Employees_Sick_2004> GetEmployeesSick2004()
+        {
+            return controller.GetEmployeesSick2004();
+        }
     }
 }

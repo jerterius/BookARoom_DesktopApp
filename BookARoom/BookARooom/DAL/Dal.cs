@@ -168,6 +168,25 @@ namespace BookARoom.DAL
             }
         }
 
+
+        /*
+        public int TotalPrice(Guid bookingNumber)
+        {
+            int totalPrice = 0;
+
+            var query = from b in db.Bookings
+                        where b.BookingNumber == bookingNumber
+                        select b;
+
+            foreach (var item in query)
+            {
+                totalPrice += item.Room.Price;
+            }
+
+            return totalPrice;
+        }*/
+
+
     }
 }
 

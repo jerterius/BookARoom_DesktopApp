@@ -33,14 +33,14 @@
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbSelectedTable = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbxAddress = new System.Windows.Forms.TextBox();
+            this.tbxFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblAdress = new System.Windows.Forms.Label();
-            this.tbxPhoneNo = new System.Windows.Forms.TextBox();
-            this.tbxEmail = new System.Windows.Forms.TextBox();
-            this.lblCompanyName = new System.Windows.Forms.Label();
-            this.tbxCompanyName = new System.Windows.Forms.TextBox();
+            this.tbxLastName = new System.Windows.Forms.TextBox();
+            this.tbxAdress = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxTitle = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             // 
             this.cbSelectedTable.FormattingEnabled = true;
             this.cbSelectedTable.Items.AddRange(new object[] {
-            "All Partners",
+            "All Employees",
             "",
             "Content and metadata from Employee and related tables",
             "Employees And Relatives",
@@ -85,7 +85,7 @@
             "All Columns From Employee-Table"});
             this.cbSelectedTable.Location = new System.Drawing.Point(19, 314);
             this.cbSelectedTable.Name = "cbSelectedTable";
-            this.cbSelectedTable.Size = new System.Drawing.Size(431, 28);
+            this.cbSelectedTable.Size = new System.Drawing.Size(403, 28);
             this.cbSelectedTable.TabIndex = 2;
             this.cbSelectedTable.SelectedIndexChanged += new System.EventHandler(this.CbSelectedTable_SelectedIndexChanged);
             // 
@@ -99,73 +99,73 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Tables:";
             // 
-            // tbxAddress
+            // tbxFirstName
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(147, 103);
-            this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.ReadOnly = true;
-            this.tbxAddress.Size = new System.Drawing.Size(303, 26);
-            this.tbxAddress.TabIndex = 4;
+            this.tbxFirstName.Location = new System.Drawing.Point(119, 103);
+            this.tbxFirstName.Name = "tbxFirstName";
+            this.tbxFirstName.ReadOnly = true;
+            this.tbxFirstName.Size = new System.Drawing.Size(303, 26);
+            this.tbxFirstName.TabIndex = 4;
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Location = new System.Drawing.Point(15, 106);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(72, 20);
+            this.lblFirstName.Size = new System.Drawing.Size(90, 20);
             this.lblFirstName.TabIndex = 3;
-            this.lblFirstName.Text = "Address:";
+            this.lblFirstName.Text = "First Name:";
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Location = new System.Drawing.Point(15, 155);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(83, 20);
+            this.lblLastName.Size = new System.Drawing.Size(90, 20);
             this.lblLastName.TabIndex = 3;
-            this.lblLastName.Text = "Phone No:";
+            this.lblLastName.Text = "Last Name:";
             // 
             // lblAdress
             // 
             this.lblAdress.AutoSize = true;
             this.lblAdress.Location = new System.Drawing.Point(15, 203);
             this.lblAdress.Name = "lblAdress";
-            this.lblAdress.Size = new System.Drawing.Size(52, 20);
+            this.lblAdress.Size = new System.Drawing.Size(63, 20);
             this.lblAdress.TabIndex = 3;
-            this.lblAdress.Text = "Email:";
+            this.lblAdress.Text = "Adress:";
             // 
-            // tbxPhoneNo
+            // tbxLastName
             // 
-            this.tbxPhoneNo.Location = new System.Drawing.Point(147, 152);
-            this.tbxPhoneNo.Name = "tbxPhoneNo";
-            this.tbxPhoneNo.ReadOnly = true;
-            this.tbxPhoneNo.Size = new System.Drawing.Size(303, 26);
-            this.tbxPhoneNo.TabIndex = 4;
+            this.tbxLastName.Location = new System.Drawing.Point(119, 152);
+            this.tbxLastName.Name = "tbxLastName";
+            this.tbxLastName.ReadOnly = true;
+            this.tbxLastName.Size = new System.Drawing.Size(303, 26);
+            this.tbxLastName.TabIndex = 4;
             // 
-            // tbxEmail
+            // tbxAdress
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(147, 200);
-            this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.ReadOnly = true;
-            this.tbxEmail.Size = new System.Drawing.Size(303, 26);
-            this.tbxEmail.TabIndex = 4;
+            this.tbxAdress.Location = new System.Drawing.Point(119, 200);
+            this.tbxAdress.Name = "tbxAdress";
+            this.tbxAdress.ReadOnly = true;
+            this.tbxAdress.Size = new System.Drawing.Size(303, 26);
+            this.tbxAdress.TabIndex = 4;
             // 
-            // lblCompanyName
+            // label2
             // 
-            this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(15, 59);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(126, 20);
-            this.lblCompanyName.TabIndex = 3;
-            this.lblCompanyName.Text = "Company Name:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Job Title:";
             // 
-            // tbxCompanyName
+            // tbxTitle
             // 
-            this.tbxCompanyName.Location = new System.Drawing.Point(147, 56);
-            this.tbxCompanyName.Name = "tbxCompanyName";
-            this.tbxCompanyName.ReadOnly = true;
-            this.tbxCompanyName.Size = new System.Drawing.Size(303, 26);
-            this.tbxCompanyName.TabIndex = 4;
+            this.tbxTitle.Location = new System.Drawing.Point(119, 56);
+            this.tbxTitle.Name = "tbxTitle";
+            this.tbxTitle.ReadOnly = true;
+            this.tbxTitle.Size = new System.Drawing.Size(303, 26);
+            this.tbxTitle.TabIndex = 4;
             // 
             // btnEdit
             // 
@@ -185,7 +185,6 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNew
             // 
@@ -199,18 +198,17 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(248, 246);
+            this.btnSave.Location = new System.Drawing.Point(220, 249);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 37);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(352, 246);
+            this.btnCancel.Location = new System.Drawing.Point(324, 249);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
             this.btnCancel.TabIndex = 5;
@@ -239,13 +237,13 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.tbxEmail);
-            this.Controls.Add(this.tbxPhoneNo);
-            this.Controls.Add(this.tbxCompanyName);
-            this.Controls.Add(this.tbxAddress);
+            this.Controls.Add(this.tbxAdress);
+            this.Controls.Add(this.tbxLastName);
+            this.Controls.Add(this.tbxTitle);
+            this.Controls.Add(this.tbxFirstName);
             this.Controls.Add(this.lblAdress);
             this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.lblCompanyName);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbSelectedTable);
@@ -264,14 +262,14 @@
         private System.Windows.Forms.ComboBox cbSelectedTable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource employeeBindingSource;
-        private System.Windows.Forms.TextBox tbxAddress;
+        private System.Windows.Forms.TextBox tbxFirstName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblAdress;
-        private System.Windows.Forms.TextBox tbxPhoneNo;
-        private System.Windows.Forms.TextBox tbxEmail;
-        private System.Windows.Forms.Label lblCompanyName;
-        private System.Windows.Forms.TextBox tbxCompanyName;
+        private System.Windows.Forms.TextBox tbxLastName;
+        private System.Windows.Forms.TextBox tbxAdress;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbxTitle;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNew;

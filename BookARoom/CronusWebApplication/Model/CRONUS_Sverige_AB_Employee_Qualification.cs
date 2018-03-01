@@ -43,7 +43,7 @@ namespace CronusWebApplication.Model
 
         [Required]
         [StringLength(30)]
-        public string Institution_CRONUS_Sverige_AB_Partner { get; set; }
+        public string Institution_Company { get; set; }
 
         public decimal Cost { get; set; }
 
