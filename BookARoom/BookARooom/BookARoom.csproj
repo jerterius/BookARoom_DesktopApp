@@ -66,11 +66,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceReferenceCronus2\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\ServiceReferenceCronus\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -246,74 +241,76 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceBookARoom\BookARoomWebService.wsdl" />
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_Column.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.AddPartnerResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_Constraint.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUSMetadata_Column.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_EmployeeRelated.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUSMetadata_Constraint.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_Index.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUSMetadata_EmployeeRelated.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_Key.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUSMetadata_Index.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUSMetadata_Table.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUSMetadata_Key.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUS_Employees_And_Relatives.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUSMetadata_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUS_Employees_Sick_2004.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUS_Employees_And_Relatives.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUS_Employee_Top5_Absence.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUS_Employees_Sick_2004.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.CRONUS_Sverige_AB_Employee.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUS_Employee_Top5_Absence.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetAllColumnsInEmployeesResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetAllConstraintsResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetAllEmployeesResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetAllConstraintsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetAllIndexesResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetAllIndexesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetAllKeysResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetAllKeysResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetAllTablesInDBResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetAllPartnersResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetEmployeeMetaDataAndRelatedResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetEmployeesAndRelativesResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetEmployeesSick2004Response.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\BookARoom.ServiceReferenceCronus2.GetTop5EmployeesAbsentResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus2\CronusWebService.wsdl" />
-    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.ArrayOfString.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponse.datasource">
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.RemovePartnerResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceCronus\Service.wsdl" />
+    <None Include="Connected Services\ServiceReferenceCronus\BookARoom.ServiceReferenceCronus.UpdatePartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceCronus\CronusWebService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BookARoom.Models.Booking.datasource" />
     <None Include="Properties\DataSources\BookARoom.Models.Booking1.datasource" />
@@ -354,7 +351,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceBookARoom\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReferenceCronus2\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceCronus\" />
   </ItemGroup>
   <ItemGroup>
@@ -373,7 +369,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceCronus\Service.disco" />
+    <None Include="Connected Services\ServiceReferenceCronus\CronusWebService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReferenceCronus\configuration91.svcinfo" />
@@ -383,21 +379,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReferenceCronus\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceCronus2\CronusWebService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceCronus2\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceCronus2\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceCronus2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

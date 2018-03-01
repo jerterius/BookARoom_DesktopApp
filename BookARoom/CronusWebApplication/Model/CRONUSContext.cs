@@ -12,6 +12,7 @@ namespace CronusWebApplication.Model
         {
         }
 
+        public virtual DbSet<CRONUS_Sverige_AB_Partner> CRONUS_Sverige_AB_Partner { get; set; }
         public virtual DbSet<CRONUS_Sverige_AB_Employee> CRONUS_Sverige_AB_Employee { get; set; }
         public virtual DbSet<CRONUS_Sverige_AB_Employee_Absence> CRONUS_Sverige_AB_Employee_Absence { get; set; }
         public virtual DbSet<CRONUS_Sverige_AB_Employee_Portal_Setup> CRONUS_Sverige_AB_Employee_Portal_Setup { get; set; }
@@ -39,46 +40,23 @@ namespace CronusWebApplication.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.No_)
+            modelBuilder.Entity<CRONUS_Sverige_AB_Partner>()
+     .Property(e => e.Company)
+     .IsUnicode(false);
+
+            modelBuilder.Entity<CRONUS_Sverige_AB_Partner>()
+                .Property(e => e.Adress)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.First_Name)
-                .IsUnicode(false);
- 
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Last_Name)
-                .IsUnicode(false);
-  
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Job_Title)
-                .IsUnicode(false);
-    
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Address)
-                .IsUnicode(false);
- 
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.City)
+            modelBuilder.Entity<CRONUS_Sverige_AB_Partner>()
+                .Property(e => e.PhoneNumber)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Post_Code)
-                .IsUnicode(false);
-      
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Phone_No_)
+            modelBuilder.Entity<CRONUS_Sverige_AB_Partner>()
+                .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Mobile_Phone_No_)
-                .IsUnicode(false);
 
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.E_Mail)
-                .IsUnicode(false);
-            
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Absence>()
                 .Property(e => e.timestamp)
                 .IsFixedLength();
@@ -180,7 +158,7 @@ namespace CronusWebApplication.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Qualification>()
-                .Property(e => e.Institution_Company)
+                .Property(e => e.Institution_CRONUS_Sverige_AB_Partner)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Qualification>()

@@ -129,7 +129,7 @@ namespace BookARoom.Views
         {
             try
             {
-                if (Customer == null)
+                if (Customer != null)
                 {
 
                     if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
