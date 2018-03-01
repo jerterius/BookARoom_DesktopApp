@@ -132,24 +132,26 @@ namespace BookARoom.Views
                 if (Customer == null)
                 {
 
-                }
-
-
-                if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
-                {
-                    string roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
-                    string adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
-
-                    for (var date = dtpFromDate.Value.Date; date <= dtpToDate.Value.Date; date = date.AddDays(1))
+                    if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
                     {
-                        controller.AddBooking(Customer.CEmail, adress, roomNumber, 0, date);
+                        string roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
+                        string adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
+
+                        for (var date = dtpFromDate.Value.Date; date <= dtpToDate.Value.Date; date = date.AddDays(1))
+                        {
+                            controller.AddBooking(Customer.CEmail, adress, roomNumber, 0, date);
+                        }
+                        btnSubmit.PerformClick();
+
+                        updateBookings?.Invoke(null, EventArgs.Empty);
+
+                        lblResponse.Text = "Booking was added.";
                     }
-                    btnSubmit.PerformClick();
-
-                    updateBookings?.Invoke(null, EventArgs.Empty);
-
                 }
-
+                else
+                {
+                    lblResponse.Text = "Booking not allowed. Please login.";
+                }
             }
             catch (Exception ex)
             {
