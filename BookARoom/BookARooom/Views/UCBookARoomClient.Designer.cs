@@ -56,7 +56,7 @@
             this.entitiesDataGridView.Location = new System.Drawing.Point(16, 208);
             this.entitiesDataGridView.Name = "entitiesDataGridView";
             this.entitiesDataGridView.RowTemplate.Height = 28;
-            this.entitiesDataGridView.Size = new System.Drawing.Size(737, 393);
+            this.entitiesDataGridView.Size = new System.Drawing.Size(1517, 671);
             this.entitiesDataGridView.TabIndex = 1;
             // 
             // lblSelectTable
@@ -72,7 +72,7 @@
             // lblResponse
             // 
             this.lblResponse.AutoSize = true;
-            this.lblResponse.Location = new System.Drawing.Point(16, 618);
+            this.lblResponse.Location = new System.Drawing.Point(12, 891);
             this.lblResponse.Name = "lblResponse";
             this.lblResponse.Size = new System.Drawing.Size(86, 20);
             this.lblResponse.TabIndex = 3;
@@ -88,7 +88,7 @@
             this.Controls.Add(this.entitiesDataGridView);
             this.Controls.Add(this.cbSelectEntityTable);
             this.Name = "UCBookARoomClient";
-            this.Size = new System.Drawing.Size(770, 656);
+            this.Size = new System.Drawing.Size(1550, 950);
             this.Load += new System.EventHandler(this.UCBookARoomClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.entitiesDataGridView)).EndInit();
             this.ResumeLayout(false);

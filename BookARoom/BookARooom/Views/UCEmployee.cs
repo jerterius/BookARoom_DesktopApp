@@ -14,7 +14,6 @@ namespace BookARoom.Views
 {
     public partial class UCEmployee : UserControl
     {
-        //ServiceSoapClient service = new ServiceSoapClient();
         public UCEmployee()
         {
             InitializeComponent();

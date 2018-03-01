@@ -271,22 +271,22 @@ namespace BookARoom.Views
 
         private void BtnDeleteBooking_Click(object sender, EventArgs e)
         {
-            try { 
+           // try { 
             foreach (DataGridViewRow row in bookingDataGridView.Rows)
             {
-                if (Convert.ToBoolean(row.Cells[4].Value))
+                if (Convert.ToBoolean(row.Cells["removeDataGridViewTextBoxColumn"].Value))
                 {
-                    controller.DeleteBooking(new Guid(row.Cells[0].Value.ToString()));
+                    controller.DeleteBooking(new Guid(row.Cells["bookingNumberDataGridViewTextBoxColumn"].Value.ToString()));
                 }
             }
             Customer = controller.RetrieveCustomer(tbxEmail.Text, tbxPassword.Text);
             LoadCustomer(Customer, null);
-            }
+            /*}
             catch (Exception ex)
             {
                 lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
                 lblResponse.Visible = true;
-            }
+            }*/
         }
     }
 }

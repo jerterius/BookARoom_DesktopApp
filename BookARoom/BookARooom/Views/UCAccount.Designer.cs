@@ -52,11 +52,6 @@ namespace BookARoom.Views
             this.lblStatus = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookingDataGridView = new System.Windows.Forms.DataGridView();
-            this.bookingNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblPasswordAsterix = new System.Windows.Forms.Label();
             this.lblRePasswordAsterix = new System.Windows.Forms.Label();
@@ -64,6 +59,11 @@ namespace BookARoom.Views
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnDeleteBooking = new System.Windows.Forms.Button();
             this.lblResponse = new System.Windows.Forms.Label();
+            this.bookingNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.removeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
@@ -265,14 +265,14 @@ namespace BookARoom.Views
             // 
             this.bookingDataGridView.AllowUserToAddRows = false;
             this.bookingDataGridView.AllowUserToDeleteRows = false;
-            this.bookingDataGridView.AutoGenerateColumns = true;
+            this.bookingDataGridView.AutoGenerateColumns = false;
             this.bookingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bookingDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bookingNumberDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
             this.roomNumberDataGridViewTextBoxColumn,
-            this.Remove});
+            this.removeDataGridViewTextBoxColumn});
             this.bookingDataGridView.DataSource = this.bookingsBindingSource;
             this.bookingDataGridView.Location = new System.Drawing.Point(31, 365);
             this.bookingDataGridView.MultiSelect = false;
@@ -282,39 +282,6 @@ namespace BookARoom.Views
             this.bookingDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bookingDataGridView.Size = new System.Drawing.Size(879, 220);
             this.bookingDataGridView.TabIndex = 18;
-            // 
-            // bookingNumberDataGridViewTextBoxColumn
-            // 
-            this.bookingNumberDataGridViewTextBoxColumn.DataPropertyName = "BookingNumber";
-            this.bookingNumberDataGridViewTextBoxColumn.HeaderText = "BookingNumber";
-            this.bookingNumberDataGridViewTextBoxColumn.Name = "bookingNumberDataGridViewTextBoxColumn";
-            this.bookingNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adressDataGridViewTextBoxColumn
-            // 
-            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
-            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
-            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            this.adressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // roomNumberDataGridViewTextBoxColumn
-            // 
-            this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
-            this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
-            this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
-            this.roomNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Remove
-            // 
-            this.Remove.HeaderText = "Remove";
-            this.Remove.Name = "Remove";
             // 
             // bookingsBindingSource
             // 
@@ -384,6 +351,39 @@ namespace BookARoom.Views
             this.lblResponse.Text = "Message:";
             this.lblResponse.Visible = false;
             // 
+            // bookingNumberDataGridViewTextBoxColumn
+            // 
+            this.bookingNumberDataGridViewTextBoxColumn.DataPropertyName = "BookingNumber";
+            this.bookingNumberDataGridViewTextBoxColumn.HeaderText = "BookingNumber";
+            this.bookingNumberDataGridViewTextBoxColumn.Name = "bookingNumberDataGridViewTextBoxColumn";
+            this.bookingNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // adressDataGridViewTextBoxColumn
+            // 
+            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
+            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            this.adressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // roomNumberDataGridViewTextBoxColumn
+            // 
+            this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
+            this.roomNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // removeDataGridViewTextBoxColumn
+            // 
+            this.removeDataGridViewTextBoxColumn.HeaderText = "Remove";
+            this.removeDataGridViewTextBoxColumn.Name = "removeDataGridViewTextBoxColumn";
+            // 
             // UCAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -447,17 +447,17 @@ namespace BookARoom.Views
         private DataGridViewTextBoxColumn Column1;
         private DataGridView bookingDataGridView;
         private BindingSource bookingsBindingSource;
-        private DataGridViewTextBoxColumn bookingNumberDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn Remove;
         private Label lblPasswordAsterix;
         private Label lblRePasswordAsterix;
         private Label lblEmailAsterix;
         private Button btnLogOut;
         private Button btnDeleteBooking;
         private Label lblResponse;
+        private DataGridViewTextBoxColumn bookingNumberDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn removeDataGridViewTextBoxColumn;
 
         public Button BtnEdit {get; set;}
     }
