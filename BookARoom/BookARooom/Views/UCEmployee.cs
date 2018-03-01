@@ -130,12 +130,12 @@ namespace BookARoom.Views
                         case "All Employees":
 
                             tablesDataGridView.DataSource = service.GetAllEmployees();
-
+                            
                             break;
 
                         case "Content and metadata from Employee and related tables":
                             tablesDataGridView.DataSource = service.GetEmployeeMetaDataAndRelated();
-
+                    
                             break;
 
                         case "Employees And Relatives":
