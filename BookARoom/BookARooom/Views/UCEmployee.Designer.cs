@@ -53,7 +53,7 @@
             // 
             // tablesDataGridView
             // 
-            this.tablesDataGridView.AutoGenerateColumns = false;
+            this.tablesDataGridView.AutoGenerateColumns = true;
             this.tablesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablesDataGridView.DataSource = this.employeeBindingSource;
@@ -64,7 +64,7 @@
             this.tablesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablesDataGridView.Size = new System.Drawing.Size(903, 324);
             this.tablesDataGridView.TabIndex = 1;
-            this.tablesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablesDataGridView_CellClick);
+            this.tablesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablesDataGridView_CellClick);
             // 
             // cbSelectedTable
             // 
@@ -86,7 +86,7 @@
             this.cbSelectedTable.Name = "cbSelectedTable";
             this.cbSelectedTable.Size = new System.Drawing.Size(403, 28);
             this.cbSelectedTable.TabIndex = 2;
-            this.cbSelectedTable.SelectedIndexChanged += new System.EventHandler(this.cbSelectedTable_SelectedIndexChanged);
+            this.cbSelectedTable.SelectedIndexChanged += new System.EventHandler(this.CbSelectedTable_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -174,7 +174,7 @@
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnDelete
             // 
@@ -193,7 +193,7 @@
             this.btnNew.TabIndex = 5;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // btnSave
             // 
@@ -214,7 +214,7 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // lblResponse
             // 

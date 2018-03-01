@@ -34,13 +34,13 @@ namespace BookARoom.Views
             this.tabPagePK = new System.Windows.Forms.TabPage();
             this.tabControlPK = new System.Windows.Forms.TabControl();
             this.tabPageLogin = new System.Windows.Forms.TabPage();
+            this.ucLogin1 = new BookARoom.Views.UCLogin();
             this.tabPageSearch = new System.Windows.Forms.TabPage();
+            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
             this.tabPagePKWS = new System.Windows.Forms.TabPage();
             this.tabPageERPWS = new System.Windows.Forms.TabPage();
-            this.ucEmployee1 = new UCEmployee();
+            this.ucEmployee1 = new BookARoom.Views.UCEmployee();
             this.tabPageAccount = new System.Windows.Forms.TabPage();
-            this.ucLogin1 = new BookARoom.Views.UCLogin();
-            this.ucNavigator1 = new BookARoom.Views.UCNavigator();
             this.ucAccount1 = new BookARoom.Views.UCAccount();
             this.ucBookARoomClient1 = new BookARoom.Views.UCBookARoomClient();
             this.tabControlMain.SuspendLayout();
@@ -99,6 +99,14 @@ namespace BookARoom.Views
             this.tabPageLogin.Text = "Login";
             this.tabPageLogin.UseVisualStyleBackColor = true;
             // 
+            // ucLogin1
+            // 
+            this.ucLogin1.Customer = null;
+            this.ucLogin1.Location = new System.Drawing.Point(6, 6);
+            this.ucLogin1.Name = "ucLogin1";
+            this.ucLogin1.Size = new System.Drawing.Size(487, 406);
+            this.ucLogin1.TabIndex = 4;
+            // 
             // tabPageSearch
             // 
             this.tabPageSearch.Controls.Add(this.ucNavigator1);
@@ -109,6 +117,16 @@ namespace BookARoom.Views
             this.tabPageSearch.TabIndex = 1;
             this.tabPageSearch.Text = "Search";
             this.tabPageSearch.UseVisualStyleBackColor = true;
+            // 
+            // ucNavigator1
+            // 
+            this.ucNavigator1.AutoSize = true;
+            this.ucNavigator1.Customer = null;
+            this.ucNavigator1.Location = new System.Drawing.Point(6, 6);
+            this.ucNavigator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ucNavigator1.Name = "ucNavigator1";
+            this.ucNavigator1.Size = new System.Drawing.Size(1432, 595);
+            this.ucNavigator1.TabIndex = 0;
             // 
             // tabPagePKWS
             // 
@@ -134,6 +152,7 @@ namespace BookARoom.Views
             // 
             // ucEmployee1
             // 
+            this.ucEmployee1.EmployeeNo = null;
             this.ucEmployee1.Location = new System.Drawing.Point(6, 15);
             this.ucEmployee1.Name = "ucEmployee1";
             this.ucEmployee1.Size = new System.Drawing.Size(946, 716);
@@ -150,28 +169,14 @@ namespace BookARoom.Views
             this.tabPageAccount.Text = "Account";
             this.tabPageAccount.UseVisualStyleBackColor = true;
             // 
-            // ucLogin1
-            // 
-            this.ucLogin1.Customer = null;
-            this.ucLogin1.Location = new System.Drawing.Point(6, 6);
-            this.ucLogin1.Name = "ucLogin1";
-            this.ucLogin1.Size = new System.Drawing.Size(487, 406);
-            this.ucLogin1.TabIndex = 4;
-            // 
-            // ucNavigator1
-            // 
-            this.ucNavigator1.AutoSize = true;
-            this.ucNavigator1.Location = new System.Drawing.Point(6, 6);
-            this.ucNavigator1.Name = "ucNavigator1";
-            this.ucNavigator1.Size = new System.Drawing.Size(1432, 595);
-            this.ucNavigator1.TabIndex = 0;
-            // 
             // ucAccount1
             // 
             this.ucAccount1.BtnEdit = null;
+            this.ucAccount1.CreateCustomerEnabled = false;
             this.ucAccount1.Customer = null;
             this.ucAccount1.Location = new System.Drawing.Point(6, 6);
             this.ucAccount1.Name = "ucAccount1";
+            this.ucAccount1.ReadOnly = true;
             this.ucAccount1.Size = new System.Drawing.Size(952, 621);
             this.ucAccount1.TabIndex = 0;
             // 
@@ -179,16 +184,16 @@ namespace BookARoom.Views
             // 
             this.ucBookARoomClient1.Location = new System.Drawing.Point(8, 6);
             this.ucBookARoomClient1.Name = "ucBookARoomClient1";
-            this.ucBookARoomClient1.Size = new System.Drawing.Size(770, 628);
+            this.ucBookARoomClient1.Size = new System.Drawing.Size(770, 656);
             this.ucBookARoomClient1.TabIndex = 0;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1578, 1144);
             this.Controls.Add(this.tabControlMain);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Form";
             this.tabControlMain.ResumeLayout(false);

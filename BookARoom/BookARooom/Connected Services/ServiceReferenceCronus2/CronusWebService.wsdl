@@ -192,6 +192,76 @@
           <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetTop5EmployeesAbsent">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTop5EmployeesAbsentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTop5EmployeesAbsentResult" type="tns:ArrayOfCRONUS_Employee_Top5_Absence" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRONUS_Employee_Top5_Absence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRONUS_Employee_Top5_Absence" nillable="true" type="tns:CRONUS_Employee_Top5_Absence" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRONUS_Employee_Top5_Absence">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="First_Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEmployeesAndRelatives">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeesAndRelativesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesAndRelativesResult" type="tns:ArrayOfCRONUS_Employees_And_Relatives" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRONUS_Employees_And_Relatives">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRONUS_Employees_And_Relatives" nillable="true" type="tns:CRONUS_Employees_And_Relatives" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRONUS_Employees_And_Relatives">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="First_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Last_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Job_Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Relative" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEmployeesSick2004">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeesSick2004Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesSick2004Result" type="tns:ArrayOfCRONUS_Employees_Sick_2004" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRONUS_Employees_Sick_2004">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRONUS_Employees_Sick_2004" nillable="true" type="tns:CRONUS_Employees_Sick_2004" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRONUS_Employees_Sick_2004">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="First_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Job_Title" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="From_Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="From_DateString" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="To_Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="To_DateString" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cause_of_Absence_Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetAllEmployeesSoapIn">
@@ -236,6 +306,24 @@
   <wsdl:message name="GetEmployeeMetaDataAndRelatedSoapOut">
     <wsdl:part name="parameters" element="tns:GetEmployeeMetaDataAndRelatedResponse" />
   </wsdl:message>
+  <wsdl:message name="GetTop5EmployeesAbsentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTop5EmployeesAbsent" />
+  </wsdl:message>
+  <wsdl:message name="GetTop5EmployeesAbsentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTop5EmployeesAbsentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesAndRelativesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesAndRelatives" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesAndRelativesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesAndRelativesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSick2004SoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesSick2004" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSick2004SoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesSick2004Response" />
+  </wsdl:message>
   <wsdl:portType name="CronusWebServiceSoap">
     <wsdl:operation name="GetAllEmployees">
       <wsdl:input message="tns:GetAllEmployeesSoapIn" />
@@ -264,6 +352,18 @@
     <wsdl:operation name="GetEmployeeMetaDataAndRelated">
       <wsdl:input message="tns:GetEmployeeMetaDataAndRelatedSoapIn" />
       <wsdl:output message="tns:GetEmployeeMetaDataAndRelatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTop5EmployeesAbsent">
+      <wsdl:input message="tns:GetTop5EmployeesAbsentSoapIn" />
+      <wsdl:output message="tns:GetTop5EmployeesAbsentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesAndRelatives">
+      <wsdl:input message="tns:GetEmployeesAndRelativesSoapIn" />
+      <wsdl:output message="tns:GetEmployeesAndRelativesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesSick2004">
+      <wsdl:input message="tns:GetEmployeesSick2004SoapIn" />
+      <wsdl:output message="tns:GetEmployeesSick2004SoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CronusWebServiceSoap" type="tns:CronusWebServiceSoap">
@@ -331,6 +431,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTop5EmployeesAbsent">
+      <soap:operation soapAction="http://tempuri.org/GetTop5EmployeesAbsent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesAndRelatives">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeesAndRelatives" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesSick2004">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeesSick2004" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CronusWebServiceSoap12" type="tns:CronusWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -390,6 +517,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetEmployeeMetaDataAndRelated">
       <soap12:operation soapAction="http://tempuri.org/GetEmployeeMetaDataAndRelated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTop5EmployeesAbsent">
+      <soap12:operation soapAction="http://tempuri.org/GetTop5EmployeesAbsent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesAndRelatives">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeesAndRelatives" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesSick2004">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeesSick2004" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

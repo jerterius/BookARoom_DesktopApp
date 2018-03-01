@@ -29,7 +29,7 @@ namespace BookARoom.Views
             }
 
         }
-        private void cbSelectEntityTable_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbSelectEntityTable_SelectedIndexChanged(object sender, EventArgs e)
         {
             try { 
             using (BookARoomWebServiceSoapClient service = new BookARoomWebServiceSoapClient())
@@ -63,8 +63,14 @@ namespace BookARoom.Views
             {
                 lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
                 lblResponse.Visible = true;
+                lblResponse.Text = ex.GetType().ToString();
             }
 
+
+        }
+
+        private void UCBookARoomClient_Load(object sender, EventArgs e)
+        {
 
         }
     }

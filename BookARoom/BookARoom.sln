@@ -46,6 +46,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoomServiceApp", "Book
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CronusServiceApp", "CronusWebApplication\CronusServiceApp.csproj", "{59B3520D-737C-488F-B7F7-BEA4C4573AC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathApplication", "..\..\..\..\source\repos\MathApplication\MathApplication\MathApplication.csproj", "{13DFCE51-7013-4948-936A-8A445AFB7C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "..\..\..\..\source\repos\MathApplication\WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,14 @@ Global
 		{59B3520D-737C-488F-B7F7-BEA4C4573AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59B3520D-737C-488F-B7F7-BEA4C4573AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59B3520D-737C-488F-B7F7-BEA4C4573AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

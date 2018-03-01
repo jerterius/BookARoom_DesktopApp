@@ -24,7 +24,7 @@ public class Dal
     {
         SqlConnection sqlConnection1 = new SqlConnection();
         // Now Pass a Connection String To the Connection
-        sqlConnection1.ConnectionString = "Data Source = DESKTOP-08VEOGS; Initial Catalog = Demo Database NAV (5-0); User ID = admin; Password = admin";
+        sqlConnection1.ConnectionString = "Data Source = LAPTOP-MN49AD24; Initial Catalog = Demo Database NAV (5-0); User ID = admin; Password = admin";
         // Now the Select statement you want to run
 
         switch (selectedTable)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.Controllers;
 using BookARoom.Models;
+using BookARoom.Utilities;
 
 namespace BookARoom.Views
 {
@@ -34,46 +35,65 @@ namespace BookARoom.Views
             InitializeComponent();
         }
 
-        private void linkLblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLblNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-            if (Customer == null) {
-                if (createUser != null)
+            try
+            {
+                if (Customer == null)
                 {
-                    createUser(this, EventArgs.Empty);
+                    createUser?.Invoke(this, EventArgs.Empty);
                     lblLoginStatus.Visible = false;
-                }
-            } else
-            {
-                lblLoginStatus.Text = "You are already logged in!";
-                    lblLoginStatus.Visible = true;
-            }
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string email = tbxEmail.Text;
-            string password = tbxPassword.Text;
-
-            if (Customer == null)
-            {
-
-                if (controller.RetrieveCustomer(email, password) == null)
-                {
-                    lblLoginStatus.Visible = true;
+                    
                 }
                 else
                 {
-                    lblLoginStatus.Visible = false;
-                    Customer = controller.RetrieveCustomer(email, password);
-
-                    if (userLoggedIn != null)
-                        userLoggedIn(Customer, EventArgs.Empty);
-
+                    lblLoginStatus.Text = "You are already logged in!";
+                    lblLoginStatus.Visible = true;
                 }
-            }else
+
+            }
+            catch (Exception ex)
             {
-                lblLoginStatus.Text = "You are already logged in!";
+                lblLoginStatus.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblLoginStatus.Visible = true;
+            }
+
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string email = tbxEmail.Text;
+                string password = tbxPassword.Text;
+
+                if (Customer == null)
+                {
+
+                    if (controller.RetrieveCustomer(email, password) == null)
+                    {
+                        lblLoginStatus.Visible = true;
+                    }
+                    else
+                    {
+                        lblLoginStatus.Visible = false;
+                        Customer = controller.RetrieveCustomer(email, password);
+
+                        userLoggedIn?.Invoke(Customer, EventArgs.Empty);
+
+                    }
+                }
+                else
+                {
+                    lblLoginStatus.Text = "You are already logged in!";
+                    lblLoginStatus.Visible = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lblLoginStatus.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
                 lblLoginStatus.Visible = true;
             }
             
@@ -82,7 +102,18 @@ namespace BookARoom.Views
 
         public void LoadUser(object sender, EventArgs e)
         {
-            Customer = sender as Customer;
+
+            try
+            {
+                Customer = sender as Customer;
+
+            }
+            catch (Exception ex)
+            {
+                lblLoginStatus.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblLoginStatus.Visible = true;
+            }
+            
         }
     }
 }

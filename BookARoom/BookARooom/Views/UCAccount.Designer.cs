@@ -197,7 +197,7 @@ namespace BookARoom.Views
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnCancel
             // 
@@ -208,7 +208,7 @@ namespace BookARoom.Views
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnSave
             // 
@@ -219,7 +219,7 @@ namespace BookARoom.Views
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // tbxRePassword
             // 
@@ -265,7 +265,7 @@ namespace BookARoom.Views
             // 
             this.bookingDataGridView.AllowUserToAddRows = false;
             this.bookingDataGridView.AllowUserToDeleteRows = false;
-            this.bookingDataGridView.AutoGenerateColumns = false;
+            this.bookingDataGridView.AutoGenerateColumns = true;
             this.bookingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bookingDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bookingNumberDataGridViewTextBoxColumn,
@@ -362,7 +362,7 @@ namespace BookARoom.Views
             this.btnLogOut.TabIndex = 4;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.btnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
             // btnDeleteBooking
             // 
@@ -372,7 +372,7 @@ namespace BookARoom.Views
             this.btnDeleteBooking.TabIndex = 4;
             this.btnDeleteBooking.Text = "Remove";
             this.btnDeleteBooking.UseVisualStyleBackColor = true;
-            this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
+            this.btnDeleteBooking.Click += new System.EventHandler(this.BtnDeleteBooking_Click);
             // 
             // lblResponse
             // 

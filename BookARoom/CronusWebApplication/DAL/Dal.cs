@@ -84,17 +84,29 @@ namespace CronusWebApplication.DAL
             }
         }
 
-        /* public List<CronusMetaData_Index> GetMetaData()
-         {
-             string query = "select name as Namn from sys.indexes where name like '%CRONUS%'";
+        public List<CRONUS_Employee_Top5_Absence> GetTop5EmployeesAbsent()
+        {
+            using (db = new CRONUSContext())
+            {
+                return db.CRONUS_Employee_Top5_Absence.ToList();
+            }
+        }
 
-             using (CRONUSContext db = new CRONUSContext())
-             {
-                 var queryResult = db.Database.SqlQuery<CRONUSMetaData_Index>(query).ToList();
+        public List<CRONUS_Employees_And_Relatives> GetEmployeesAndRelatives()
+        {
+            using (db = new CRONUSContext())
+            {
+                return db.CRONUS_Employees_And_Relatives.ToList();
+            }
+        }
 
-                 return queryResult;
-             }
-         }*/
+        public List<CRONUS_Employees_Sick_2004> GetEmployeesSick2004()
+        {
+            using (db = new CRONUSContext())
+            {
+                return db.CRONUS_Employees_Sick_2004.ToList();
+            }
+        }
 
     }
 }

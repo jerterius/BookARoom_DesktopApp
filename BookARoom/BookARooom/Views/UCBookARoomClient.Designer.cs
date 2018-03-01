@@ -48,7 +48,7 @@
             this.cbSelectEntityTable.Name = "cbSelectEntityTable";
             this.cbSelectEntityTable.Size = new System.Drawing.Size(272, 28);
             this.cbSelectEntityTable.TabIndex = 0;
-            this.cbSelectEntityTable.SelectedIndexChanged += new System.EventHandler(this.cbSelectEntityTable_SelectedIndexChanged);
+            this.cbSelectEntityTable.SelectedIndexChanged += new System.EventHandler(this.CbSelectEntityTable_SelectedIndexChanged);
             // 
             // entitiesDataGridView
             // 
@@ -89,6 +89,7 @@
             this.Controls.Add(this.cbSelectEntityTable);
             this.Name = "UCBookARoomClient";
             this.Size = new System.Drawing.Size(770, 656);
+            this.Load += new System.EventHandler(this.UCBookARoomClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.entitiesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -21,7 +21,7 @@ namespace BookARoom.Views
         }
         public string EmployeeNo { get; set; }
 
-        private void btnSave_UpdateClick(object sender, EventArgs e)
+        private void BtnSave_UpdateClick(object sender, EventArgs e)
         {
             try {
 
@@ -33,7 +33,7 @@ namespace BookARoom.Views
                 lblResponse.Visible = true;
             }
         }
-        private void btnSave_InsertClick(object sender, EventArgs e)
+        private void BtnSave_InsertClick(object sender, EventArgs e)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace BookARoom.Views
                 lblResponse.Visible = true;
             }
         }
-        private void btnSave_RemoveClick(object sender, EventArgs e)
+        private void BtnSave_RemoveClick(object sender, EventArgs e)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace BookARoom.Views
         }
 
 
-        private void btnNew_Click(object sender, EventArgs e)
+        private void BtnNew_Click(object sender, EventArgs e)
         {
 
             try
@@ -91,7 +91,7 @@ namespace BookARoom.Views
 
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             try
             {
@@ -116,7 +116,7 @@ namespace BookARoom.Views
 
         }
 
-        private void cbSelectedTable_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbSelectedTable_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -139,15 +139,15 @@ namespace BookARoom.Views
                             break;
 
                         case "Employees And Relatives":
-
+                            tablesDataGridView.DataSource = service.GetEmployeesAndRelatives();
                             break;
 
                         case "Employee Absence(2004)":
-
+                            tablesDataGridView.DataSource = service.GetEmployeesSick2004();
                             break;
 
                         case "Employees With Most Absence":
-
+                            tablesDataGridView.DataSource = service.GetTop5EmployeesAbsent();
                             break;
 
                         case "All Keys":
@@ -190,7 +190,7 @@ namespace BookARoom.Views
 
 
 
-        private void tablesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void TablesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -213,7 +213,7 @@ namespace BookARoom.Views
 
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
 
             try

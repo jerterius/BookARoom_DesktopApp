@@ -11,6 +11,7 @@ using BookARoom.Models;
 using BookARoom.DAL;
 using BookARoom.Controllers;
 using System.Data.Entity;
+using BookARoom.Utilities;
 
 
 namespace BookARoom.Views
@@ -30,88 +31,181 @@ namespace BookARoom.Views
         }
 
 
-        private void tbGuests_Scroll(object addToTable, EventArgs e)
+        private void TbGuests_Scroll(object addToTable, EventArgs e)
         {
-            lblGuests.Text = "Guests: " + tbGuests.Value.ToString();
+            try
+            {
+                lblGuests.Text = "Guests: " + tbGuests.Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
+
         }
 
-        private void tbStandard_Scroll(object addToTable, EventArgs e)
+        private void TbStandard_Scroll(object addToTable, EventArgs e)
         {
-            lblStandard.Text = "Rating: " + tbStandard.Value.ToString();
+            try
+            {
+                lblStandard.Text = "Rating: " + tbStandard.Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
 
         }
-        private void btnSubmit_Click(object addToTable, EventArgs e)
+        private void BtnSubmit_Click(object addToTable, EventArgs e)
         {
-            string search = tbxSearch.Text;
-            string countryName = cbCountry.Text;
-            string cityName = cbCity.Text;
-            DateTime fromDate = dtpFromDate.Value.Date;
-            DateTime toDate = dtpToDate.Value.Date;
-            string standard = tbStandard.Value.ToString();
-            int guests = tbGuests.Value;
-            bool smokeFree = clbRoomStandard.GetItemCheckState(0) == CheckState.Checked;
+            try
+            {
 
-            List<Hotel> hotels = controller.HotelsWithAvailableRooms(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
-            hotelBindingSource.DataSource = hotels;
+                string search = tbxSearch.Text;
+                string countryName = cbCountry.Text;
+                string cityName = cbCity.Text;
+                DateTime fromDate = dtpFromDate.Value.Date;
+                DateTime toDate = dtpToDate.Value.Date;
+                string standard = tbStandard.Value.ToString();
+                int guests = tbGuests.Value;
+                bool smokeFree = clbRoomStandard.GetItemCheckState(0) == CheckState.Checked;
 
-            roomsBindingSource.DataSource = hotelBindingSource;
-            roomsBindingSource.DataMember = "Rooms";
+                List<Hotel> hotels = controller.HotelsWithAvailableRooms(search, countryName, cityName, fromDate, toDate, standard, guests, smokeFree);
+                hotelBindingSource.DataSource = hotels;
+
+                roomsBindingSource.DataSource = hotelBindingSource;
+                roomsBindingSource.DataMember = "Rooms";
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
 
         }
 
         private void UCNavigator_Load(object sender, EventArgs e)
         {
-
-            cbCountry.DataSource = controller.GetAllCountries();
-            cbCountry.Text = "Choose Country";
-
-        }
-
-        private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbCity.DataSource = controller.AllCitiesInCountry(cbCountry.SelectedValue.ToString());
-            cbCity.Text = "Choose City";
-        }
-
-        private void roomsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
+            try
             {
-                string roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
-                string adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
-
-                for (var date = dtpFromDate.Value.Date; date <= dtpToDate.Value.Date; date = date.AddDays(1))
-                {
-                    controller.AddBooking(Customer.CEmail, adress, roomNumber, 0, date);
-                }
-                btnSubmit.PerformClick();
-
-                updateBookings?.Invoke(null, EventArgs.Empty);
+                cbCountry.DataSource = controller.GetAllCountries();
+                cbCountry.Text = "Choose Country";
 
             }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
+
+        }
+
+        private void CbCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                cbCity.DataSource = controller.AllCitiesInCountry(cbCountry.SelectedValue.ToString());
+                cbCity.Text = "Choose City";
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
+
+        }
+
+        private void RoomsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
+                {
+                    string roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();
+                    string adress = ((DataGridView)sender).Rows[e.RowIndex].Cells["adressDataGridViewTextBoxColumn"].Value.ToString();
+
+                    for (var date = dtpFromDate.Value.Date; date <= dtpToDate.Value.Date; date = date.AddDays(1))
+                    {
+                        controller.AddBooking(Customer.CEmail, adress, roomNumber, 0, date);
+                    }
+                    btnSubmit.PerformClick();
+
+                    updateBookings?.Invoke(null, EventArgs.Empty);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
         }
 
         public void LoadUser(Customer c, EventArgs e)
         {
-            Customer = c;
-            
+
+            try
+            {
+                Customer = c;
+
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
+
+
         }
 
-        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        private void DtpFromDate_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpFromDate.Value > dtpToDate.Value)
+            try
             {
-                dtpFromDate.Value = dtpToDate.Value;
+                if (dtpFromDate.Value > dtpToDate.Value)
+                {
+                    dtpFromDate.Value = dtpToDate.Value;
+                }
+
             }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
         }
 
-        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        private void DtpToDate_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpFromDate.Value > dtpToDate.Value)
+            try
             {
-                dtpToDate.Value = dtpFromDate.Value;
+                if (dtpFromDate.Value > dtpToDate.Value)
+                {
+                    dtpToDate.Value = dtpFromDate.Value;
+                }
+
             }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
+
 
         }
 

@@ -29,6 +29,13 @@ namespace CronusWebApplication.Model
         public virtual DbSet<CRONUSMetadata_Column> CRONUSMetadata_Column { get; set; }
 
         public virtual DbSet<CRONUSMetadata_EmployeeRelated> CRONUSMetadata_EmployeeRelated { get; set; }
+        public virtual DbSet<CRONUS_Employee_Top5_Absence> CRONUS_Employee_Top5_Absence { get; set; }
+
+        public virtual DbSet<CRONUS_Employees_Sick_2004> CRONUS_Employees_Sick_2004 { get; set; }
+
+        public virtual DbSet<CRONUS_Employees_And_Relatives> CRONUS_Employees_And_Relatives { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
