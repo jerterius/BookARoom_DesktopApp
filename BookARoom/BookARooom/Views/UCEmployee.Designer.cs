@@ -53,7 +53,7 @@
             // 
             // tablesDataGridView
             // 
-            this.tablesDataGridView.AutoGenerateColumns = true;
+            this.tablesDataGridView.AutoGenerateColumns = false;
             this.tablesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablesDataGridView.DataSource = this.employeeBindingSource;
@@ -62,7 +62,7 @@
             this.tablesDataGridView.Name = "tablesDataGridView";
             this.tablesDataGridView.RowTemplate.Height = 28;
             this.tablesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablesDataGridView.Size = new System.Drawing.Size(903, 324);
+            this.tablesDataGridView.Size = new System.Drawing.Size(1436, 324);
             this.tablesDataGridView.TabIndex = 1;
             this.tablesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablesDataGridView_CellClick);
             // 
@@ -168,7 +168,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(824, 98);
+            this.btnEdit.Location = new System.Drawing.Point(1348, 106);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(98, 37);
             this.btnEdit.TabIndex = 5;
@@ -178,7 +178,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(824, 147);
+            this.btnDelete.Location = new System.Drawing.Point(1348, 155);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(98, 37);
             this.btnDelete.TabIndex = 5;
@@ -187,7 +187,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(824, 51);
+            this.btnNew.Location = new System.Drawing.Point(1348, 59);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(98, 37);
             this.btnNew.TabIndex = 5;
@@ -197,7 +197,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(720, 203);
+            this.btnSave.Location = new System.Drawing.Point(1244, 211);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 37);
             this.btnSave.TabIndex = 5;
@@ -207,7 +207,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(824, 203);
+            this.btnCancel.Location = new System.Drawing.Point(1348, 211);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
             this.btnCancel.TabIndex = 5;
@@ -248,7 +248,7 @@
             this.Controls.Add(this.cbSelectedTable);
             this.Controls.Add(this.tablesDataGridView);
             this.Name = "UCEmployee";
-            this.Size = new System.Drawing.Size(946, 736);
+            this.Size = new System.Drawing.Size(1473, 736);
             ((System.ComponentModel.ISupportInitialize)(this.tablesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -127,9 +127,14 @@ namespace BookARoom.Views
 
         private void RoomsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             try
             {
+                if (Customer == null)
+                {
+
+                }
+
+
                 if (roomsDataGridView.Columns[e.ColumnIndex].Name == "Booking")
                 {
                     string roomNumber = ((DataGridView)sender).Rows[e.RowIndex].Cells["roomNumberDataGridViewTextBoxColumn"].Value.ToString();

@@ -145,6 +145,7 @@
             this.dtpFromDate.Size = new System.Drawing.Size(226, 26);
             this.dtpFromDate.TabIndex = 4;
             this.dtpFromDate.ValueChanged += new System.EventHandler(this.DtpFromDate_ValueChanged);
+            this.dtpFromDate.ValueChanged += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // dtpToDate
             // 
@@ -154,6 +155,7 @@
             this.dtpToDate.Size = new System.Drawing.Size(227, 26);
             this.dtpToDate.TabIndex = 5;
             this.dtpToDate.ValueChanged += new System.EventHandler(this.DtpToDate_ValueChanged);
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // lblFromDate
             // 

@@ -29,19 +29,10 @@ namespace BookARoom.ServiceReferenceCronus2 {
         private string First_NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Middle_NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Last_NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InitialsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Job_TitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Search_NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AddressField;
@@ -66,84 +57,6 @@ namespace BookARoom.ServiceReferenceCronus2 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string E_MailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Alt__Address_CodeField;
-        
-        private System.DateTime Alt__Address_Start_DateField;
-        
-        private System.DateTime Alt__Address_End_DateField;
-        
-        private System.DateTime Birth_DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Social_Security_No_Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Union_CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Union_Membership_No_Field;
-        
-        private int SexField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Country_Region_CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Manager_No_Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Emplymt__Contract_CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Statistics_Group_CodeField;
-        
-        private System.DateTime Employment_DateField;
-        
-        private int StatusField;
-        
-        private System.DateTime Inactive_DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Cause_of_Inactivity_CodeField;
-        
-        private System.DateTime Termination_DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Grounds_for_Term__CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Global_Dimension_1_CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Global_Dimension_2_CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Resource_No_Field;
-        
-        private System.DateTime Last_Date_ModifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExtensionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PagerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Fax_No_Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Company_E_MailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Salespers__Purch__CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string No__SeriesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -182,19 +95,6 @@ namespace BookARoom.ServiceReferenceCronus2 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Middle_Name {
-            get {
-                return this.Middle_NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Middle_NameField, value) != true)) {
-                    this.Middle_NameField = value;
-                    this.RaisePropertyChanged("Middle_Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Last_Name {
             get {
                 return this.Last_NameField;
@@ -207,20 +107,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Initials {
-            get {
-                return this.InitialsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InitialsField, value) != true)) {
-                    this.InitialsField = value;
-                    this.RaisePropertyChanged("Initials");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Job_Title {
             get {
                 return this.Job_TitleField;
@@ -233,20 +120,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Search_Name {
-            get {
-                return this.Search_NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Search_NameField, value) != true)) {
-                    this.Search_NameField = value;
-                    this.RaisePropertyChanged("Search_Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string Address {
             get {
                 return this.AddressField;
@@ -259,7 +133,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string Address_2 {
             get {
                 return this.Address_2Field;
@@ -272,7 +146,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string City {
             get {
                 return this.CityField;
@@ -285,7 +159,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string Post_Code {
             get {
                 return this.Post_CodeField;
@@ -298,7 +172,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string County {
             get {
                 return this.CountyField;
@@ -311,7 +185,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public string Phone_No_ {
             get {
                 return this.Phone_No_Field;
@@ -324,7 +198,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string Mobile_Phone_No_ {
             get {
                 return this.Mobile_Phone_No_Field;
@@ -337,7 +211,7 @@ namespace BookARoom.ServiceReferenceCronus2 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public string E_Mail {
             get {
                 return this.E_MailField;
@@ -346,383 +220,6 @@ namespace BookARoom.ServiceReferenceCronus2 {
                 if ((object.ReferenceEquals(this.E_MailField, value) != true)) {
                     this.E_MailField = value;
                     this.RaisePropertyChanged("E_Mail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
-        public string Alt__Address_Code {
-            get {
-                return this.Alt__Address_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Alt__Address_CodeField, value) != true)) {
-                    this.Alt__Address_CodeField = value;
-                    this.RaisePropertyChanged("Alt__Address_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public System.DateTime Alt__Address_Start_Date {
-            get {
-                return this.Alt__Address_Start_DateField;
-            }
-            set {
-                if ((this.Alt__Address_Start_DateField.Equals(value) != true)) {
-                    this.Alt__Address_Start_DateField = value;
-                    this.RaisePropertyChanged("Alt__Address_Start_Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public System.DateTime Alt__Address_End_Date {
-            get {
-                return this.Alt__Address_End_DateField;
-            }
-            set {
-                if ((this.Alt__Address_End_DateField.Equals(value) != true)) {
-                    this.Alt__Address_End_DateField = value;
-                    this.RaisePropertyChanged("Alt__Address_End_Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public System.DateTime Birth_Date {
-            get {
-                return this.Birth_DateField;
-            }
-            set {
-                if ((this.Birth_DateField.Equals(value) != true)) {
-                    this.Birth_DateField = value;
-                    this.RaisePropertyChanged("Birth_Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
-        public string Social_Security_No_ {
-            get {
-                return this.Social_Security_No_Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Social_Security_No_Field, value) != true)) {
-                    this.Social_Security_No_Field = value;
-                    this.RaisePropertyChanged("Social_Security_No_");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
-        public string Union_Code {
-            get {
-                return this.Union_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Union_CodeField, value) != true)) {
-                    this.Union_CodeField = value;
-                    this.RaisePropertyChanged("Union_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
-        public string Union_Membership_No_ {
-            get {
-                return this.Union_Membership_No_Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Union_Membership_No_Field, value) != true)) {
-                    this.Union_Membership_No_Field = value;
-                    this.RaisePropertyChanged("Union_Membership_No_");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public int Sex {
-            get {
-                return this.SexField;
-            }
-            set {
-                if ((this.SexField.Equals(value) != true)) {
-                    this.SexField = value;
-                    this.RaisePropertyChanged("Sex");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
-        public string Country_Region_Code {
-            get {
-                return this.Country_Region_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Country_Region_CodeField, value) != true)) {
-                    this.Country_Region_CodeField = value;
-                    this.RaisePropertyChanged("Country_Region_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
-        public string Manager_No_ {
-            get {
-                return this.Manager_No_Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Manager_No_Field, value) != true)) {
-                    this.Manager_No_Field = value;
-                    this.RaisePropertyChanged("Manager_No_");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
-        public string Emplymt__Contract_Code {
-            get {
-                return this.Emplymt__Contract_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Emplymt__Contract_CodeField, value) != true)) {
-                    this.Emplymt__Contract_CodeField = value;
-                    this.RaisePropertyChanged("Emplymt__Contract_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=26)]
-        public string Statistics_Group_Code {
-            get {
-                return this.Statistics_Group_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Statistics_Group_CodeField, value) != true)) {
-                    this.Statistics_Group_CodeField = value;
-                    this.RaisePropertyChanged("Statistics_Group_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
-        public System.DateTime Employment_Date {
-            get {
-                return this.Employment_DateField;
-            }
-            set {
-                if ((this.Employment_DateField.Equals(value) != true)) {
-                    this.Employment_DateField = value;
-                    this.RaisePropertyChanged("Employment_Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=28)]
-        public int Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((this.StatusField.Equals(value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=29)]
-        public System.DateTime Inactive_Date {
-            get {
-                return this.Inactive_DateField;
-            }
-            set {
-                if ((this.Inactive_DateField.Equals(value) != true)) {
-                    this.Inactive_DateField = value;
-                    this.RaisePropertyChanged("Inactive_Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
-        public string Cause_of_Inactivity_Code {
-            get {
-                return this.Cause_of_Inactivity_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Cause_of_Inactivity_CodeField, value) != true)) {
-                    this.Cause_of_Inactivity_CodeField = value;
-                    this.RaisePropertyChanged("Cause_of_Inactivity_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=31)]
-        public System.DateTime Termination_Date {
-            get {
-                return this.Termination_DateField;
-            }
-            set {
-                if ((this.Termination_DateField.Equals(value) != true)) {
-                    this.Termination_DateField = value;
-                    this.RaisePropertyChanged("Termination_Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=32)]
-        public string Grounds_for_Term__Code {
-            get {
-                return this.Grounds_for_Term__CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Grounds_for_Term__CodeField, value) != true)) {
-                    this.Grounds_for_Term__CodeField = value;
-                    this.RaisePropertyChanged("Grounds_for_Term__Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=33)]
-        public string Global_Dimension_1_Code {
-            get {
-                return this.Global_Dimension_1_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Global_Dimension_1_CodeField, value) != true)) {
-                    this.Global_Dimension_1_CodeField = value;
-                    this.RaisePropertyChanged("Global_Dimension_1_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=34)]
-        public string Global_Dimension_2_Code {
-            get {
-                return this.Global_Dimension_2_CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Global_Dimension_2_CodeField, value) != true)) {
-                    this.Global_Dimension_2_CodeField = value;
-                    this.RaisePropertyChanged("Global_Dimension_2_Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=35)]
-        public string Resource_No_ {
-            get {
-                return this.Resource_No_Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Resource_No_Field, value) != true)) {
-                    this.Resource_No_Field = value;
-                    this.RaisePropertyChanged("Resource_No_");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=36)]
-        public System.DateTime Last_Date_Modified {
-            get {
-                return this.Last_Date_ModifiedField;
-            }
-            set {
-                if ((this.Last_Date_ModifiedField.Equals(value) != true)) {
-                    this.Last_Date_ModifiedField = value;
-                    this.RaisePropertyChanged("Last_Date_Modified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=37)]
-        public string Extension {
-            get {
-                return this.ExtensionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExtensionField, value) != true)) {
-                    this.ExtensionField = value;
-                    this.RaisePropertyChanged("Extension");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=38)]
-        public string Pager {
-            get {
-                return this.PagerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PagerField, value) != true)) {
-                    this.PagerField = value;
-                    this.RaisePropertyChanged("Pager");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=39)]
-        public string Fax_No_ {
-            get {
-                return this.Fax_No_Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Fax_No_Field, value) != true)) {
-                    this.Fax_No_Field = value;
-                    this.RaisePropertyChanged("Fax_No_");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=40)]
-        public string Company_E_Mail {
-            get {
-                return this.Company_E_MailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Company_E_MailField, value) != true)) {
-                    this.Company_E_MailField = value;
-                    this.RaisePropertyChanged("Company_E_Mail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=41)]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=42)]
-        public string Salespers__Purch__Code {
-            get {
-                return this.Salespers__Purch__CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Salespers__Purch__CodeField, value) != true)) {
-                    this.Salespers__Purch__CodeField = value;
-                    this.RaisePropertyChanged("Salespers__Purch__Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=43)]
-        public string No__Series {
-            get {
-                return this.No__SeriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.No__SeriesField, value) != true)) {
-                    this.No__SeriesField = value;
-                    this.RaisePropertyChanged("No__Series");
                 }
             }
         }

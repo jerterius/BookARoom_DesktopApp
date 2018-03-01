@@ -39,12 +39,6 @@ namespace CronusWebApplication.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            /*
-           modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.timestamp)
-                .IsFixedLength();
-            */
-
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.No_)
                 .IsUnicode(false);
@@ -52,35 +46,19 @@ namespace CronusWebApplication.Model
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.First_Name)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Middle_Name)
-                .IsUnicode(false);
-
+ 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.Last_Name)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Initials)
-                .IsUnicode(false);
-
+  
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.Job_Title)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Search_Name)
-                .IsUnicode(false);
-
+    
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.Address)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Address_2)
-                .IsUnicode(false);
-
+ 
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.City)
                 .IsUnicode(false);
@@ -88,11 +66,7 @@ namespace CronusWebApplication.Model
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.Post_Code)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.County)
-                .IsUnicode(false);
-
+      
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.Phone_No_)
                 .IsUnicode(false);
@@ -104,87 +78,7 @@ namespace CronusWebApplication.Model
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
                 .Property(e => e.E_Mail)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Alt__Address_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Social_Security_No_)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Union_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Union_Membership_No_)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Country_Region_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Manager_No_)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Emplymt__Contract_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Statistics_Group_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Cause_of_Inactivity_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Grounds_for_Term__Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Global_Dimension_1_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Global_Dimension_2_Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Resource_No_)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Extension)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Pager)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Fax_No_)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Company_E_Mail)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Title)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.Salespers__Purch__Code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CRONUS_Sverige_AB_Employee>()
-                .Property(e => e.No__Series)
-                .IsUnicode(false);
-
+            
             modelBuilder.Entity<CRONUS_Sverige_AB_Employee_Absence>()
                 .Property(e => e.timestamp)
                 .IsFixedLength();
@@ -330,8 +224,8 @@ namespace CronusWebApplication.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Relative>()
-    .Property(e => e.timestamp)
-    .IsFixedLength();
+                .Property(e => e.timestamp)
+                .IsFixedLength();
 
             modelBuilder.Entity<CRONUS_Sverige_AB_Relative>()
                 .Property(e => e.Code)
