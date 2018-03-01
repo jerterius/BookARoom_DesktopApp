@@ -151,13 +151,18 @@ namespace BookARoom.Views
                     {
                         case "All Partners":
 
+<<<<<<< HEAD
                             tablesDataGridView.DataSource = service.GetAllPartners();
 
+=======
+                            tablesDataGridView.DataSource = service.GetAllEmployees();
+                            
+>>>>>>> 42b5a5c4bef5cfd482dd7bfae05d1e3c055ec911
                             break;
 
                         case "Content and metadata from Employee and related tables":
                             tablesDataGridView.DataSource = service.GetEmployeeMetaDataAndRelated();
-
+                    
                             break;
 
                         case "Employees And Relatives":

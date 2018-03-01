@@ -8,6 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoom", "BookARooom\Boo
 		{59B3520D-737C-488F-B7F7-BEA4C4573AC6} = {59B3520D-737C-488F-B7F7-BEA4C4573AC6}
 		{CDC65D13-1DE7-47CB-8197-E4661DFDA85C} = {CDC65D13-1DE7-47CB-8197-E4661DFDA85C}
 		{B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA} = {B95556B4-7B57-4D1A-8A72-C5F80DF5C5CA}
+		{A97757C6-6199-43CF-A400-65FE0983335F} = {A97757C6-6199-43CF-A400-65FE0983335F}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDatabase", "WebServiceDatabase\WebServiceDatabase.csproj", "{DCF0B633-E59E-4258-9C18-35BE7FC0E18B}"
@@ -46,9 +47,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookARoomServiceApp", "Book
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CronusServiceApp", "CronusWebApplication\CronusServiceApp.csproj", "{59B3520D-737C-488F-B7F7-BEA4C4573AC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathApplication", "..\..\..\..\source\repos\MathApplication\MathApplication\MathApplication.csproj", "{13DFCE51-7013-4948-936A-8A445AFB7C6C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "..\..\..\..\source\repos\MathApplication\WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppgift2.1", "Uppgift2.1\Uppgift2.1.csproj", "{A97757C6-6199-43CF-A400-65FE0983335F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,14 +79,10 @@ Global
 		{59B3520D-737C-488F-B7F7-BEA4C4573AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59B3520D-737C-488F-B7F7-BEA4C4573AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59B3520D-737C-488F-B7F7-BEA4C4573AC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13DFCE51-7013-4948-936A-8A445AFB7C6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AA9F5C9-1E88-4DC1-AB5B-F53A87AA75DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97757C6-6199-43CF-A400-65FE0983335F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97757C6-6199-43CF-A400-65FE0983335F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97757C6-6199-43CF-A400-65FE0983335F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97757C6-6199-43CF-A400-65FE0983335F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
