@@ -280,7 +280,7 @@ namespace BookARoom.Views
                 }
             }
             Customer = controller.RetrieveCustomer(tbxEmail.Text, tbxPassword.Text);
-            LoadCustomer(Customer, null);
+            //LoadCustomer(Customer, null);
             /*}
             catch (Exception ex)
             {

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookARoom.ServiceReferenceCronus2;
+using BookARoom.ServiceReferenceCronus;
 using BookARoom.Utilities;
+using System.Data.Entity.Validation;
 
 namespace BookARoom.Views
 {
@@ -20,46 +21,79 @@ namespace BookARoom.Views
         }
         public string EmployeeNo { get; set; }
 
-        private void BtnSave_UpdateClick(object sender, EventArgs e)
+        public bool CreateEmployeeEnabled { get; set; }
+
+        private CRONUS_Sverige_AB_Partner partner;
+
+        private void ToggleReadOnly(bool setting)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox)
+                {
+                    (c as TextBox).ReadOnly = setting;
+                }
+
+                
+                btnSave.Visible = !setting;
+                btnCancel.Visible = !setting;
+                
+            }
+        }
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             try {
+                using (CronusWebServiceSoapClient service = new CronusWebServiceSoapClient())
+                {
 
+
+
+                    if (CreateEmployeeEnabled) //Skapa ny kund
+                    {
+                        partner = new CRONUS_Sverige_AB_Partner()
+                        {
+                            Company = tbxCompanyName.Text,
+                            Adress = tbxAddress.Text,
+                            PhoneNumber = tbxPhoneNo.Text,
+                            Email = tbxEmail.Text
+                           
+
+                        };
+                        
+                        service.AddPartner(partner);
+                        
+                            lblResponse.Text = "Partner was added.";
+                            lblResponse.Visible = true;
+
+                        ToggleReadOnly(true);
+
+                    }
+                    else //Uppdatera befintlig kund
+                    {
+
+                        CRONUS_Sverige_AB_Partner updatePartner = new CRONUS_Sverige_AB_Partner()
+                        {
+                            Company = tbxCompanyName.Text,
+                            Adress = tbxAddress.Text,
+                            PhoneNumber = tbxPhoneNo.Text,
+                            Email = tbxEmail.Text
+                        };
+
+                        service.UpdatePartner(partner, updatePartner);
+
+
+                        lblResponse.Text = "Partner was updated.";
+                        lblResponse.Visible = true;
+                    }
+                } 
 
             }
             catch (Exception ex)
             {
-                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
-                lblResponse.Visible = true;
+                
             }
         }
-        private void BtnSave_InsertClick(object sender, EventArgs e)
-        {
-            try
-            {
 
-
-            }
-            catch (Exception ex)
-            {
-                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
-                lblResponse.Visible = true;
-            }
-        }
-        private void BtnSave_RemoveClick(object sender, EventArgs e)
-        {
-            try
-            {
-
-
-            }
-            catch (Exception ex)
-            {
-                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
-                lblResponse.Visible = true;
-            }
-
-
-        }
 
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -67,17 +101,16 @@ namespace BookARoom.Views
 
             try
             {
+                CreateEmployeeEnabled = true;
+
+                ToggleReadOnly(false);
+
                 foreach (Control c in this.Controls)
                 {
                     if (c is TextBox)
                     {
-                        (c as TextBox).ReadOnly = false;
+                        
                         (c as TextBox).Text = null;
-                    }
-
-                    if (c is Button)
-                    {
-                        (c as Button).Visible = true;
                     }
                 }
 
@@ -94,17 +127,7 @@ namespace BookARoom.Views
         {
             try
             {
-                foreach (Control c in this.Controls)
-                {
-                    if (c is TextBox)
-                    {
-                        (c as TextBox).ReadOnly = true;
-                    }
-
-                    this.btnCancel.Visible = false;
-                    this.btnSave.Visible = false;
-
-                }
+                ToggleReadOnly(true);
 
             }
             catch (Exception ex)
@@ -126,10 +149,15 @@ namespace BookARoom.Views
 
                     switch (selectedTable)
                     {
-                        case "All Employees":
+                        case "All Partners":
 
+<<<<<<< HEAD
+                            tablesDataGridView.DataSource = service.GetAllPartners();
+
+=======
                             tablesDataGridView.DataSource = service.GetAllEmployees();
                             
+>>>>>>> 42b5a5c4bef5cfd482dd7bfae05d1e3c055ec911
                             break;
 
                         case "Content and metadata from Employee and related tables":
@@ -193,14 +221,21 @@ namespace BookARoom.Views
         {
             try
             {
-                if (cbSelectedTable.Text.Equals("All Employees"))
+                if (cbSelectedTable.Text.Equals("All Partners"))
                 {
-                    tbxTitle.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Job_Title"].Value.ToString();
-                    tbxFirstName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["First_Name"].Value.ToString();
-                    tbxLastName.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Last_Name"].Value.ToString();
-                    tbxAdress.Text = tablesDataGridView.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+                    tbxCompanyName.Text = tablesDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    tbxAddress.Text = tablesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    tbxPhoneNo.Text = tablesDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    tbxEmail.Text = tablesDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
 
-                    EmployeeNo = tablesDataGridView.Rows[e.RowIndex].Cells["No_"].Value.ToString();
+                    partner = new CRONUS_Sverige_AB_Partner()
+                    {
+                        Company = tbxCompanyName.Text,
+                        Adress = tbxAddress.Text,
+                        PhoneNumber = tbxPhoneNo.Text,
+                        Email = tbxEmail.Text
+                    };
+                    
                 }
 
             }
@@ -217,7 +252,15 @@ namespace BookARoom.Views
 
             try
             {
-                CRONUS_Sverige_AB_Employee newEmployee = new CRONUS_Sverige_AB_Employee();
+                ToggleReadOnly(false);
+
+                partner = new CRONUS_Sverige_AB_Partner()
+                {
+                    Company = tbxCompanyName.Text,
+                    Adress = tbxAddress.Text,
+                    PhoneNumber = tbxPhoneNo.Text,
+                    Email = tbxEmail.Text
+                };
 
             }
             catch (Exception ex)
@@ -227,6 +270,34 @@ namespace BookARoom.Views
             }
            
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (CronusWebServiceSoapClient service = new CronusWebServiceSoapClient())
+                {
+                    service.RemovePartner(partner);
+                }
+
+                foreach (Control c in this.Controls)
+                {
+                    if (c is TextBox)
+                    {
+
+                        (c as TextBox).Text = null;
+                    }
+                }
+
+                lblResponse.Text = "Partner was removed.";
+                lblResponse.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Visible = true;
+            }
         }
     }
 }

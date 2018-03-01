@@ -15,36 +15,880 @@ namespace BookARoom.ServiceReferenceCronus {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://tempuri.org/", ItemName="string")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUS_Sverige_AB_Partner", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public class ArrayOfString : System.Collections.Generic.List<string> {
+    public partial class CRONUS_Sverige_AB_Partner : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AdressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Company {
+            get {
+                return this.CompanyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompanyField, value) != true)) {
+                    this.CompanyField = value;
+                    this.RaisePropertyChanged("Company");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Adress {
+            get {
+                return this.AdressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdressField, value) != true)) {
+                    this.AdressField = value;
+                    this.RaisePropertyChanged("Adress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PhoneNumber {
+            get {
+                return this.PhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
+                    this.PhoneNumberField = value;
+                    this.RaisePropertyChanged("PhoneNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUSMetadata_EmployeeRelated", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUSMetadata_EmployeeRelated : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TabellnamnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        private int StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Job_TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Tabellnamn {
+            get {
+                return this.TabellnamnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TabellnamnField, value) != true)) {
+                    this.TabellnamnField = value;
+                    this.RaisePropertyChanged("Tabellnamn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Job_Title {
+            get {
+                return this.Job_TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Job_TitleField, value) != true)) {
+                    this.Job_TitleField = value;
+                    this.RaisePropertyChanged("Job_Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUS_Employee_Top5_Absence", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUS_Employee_Top5_Absence : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUS_Employees_And_Relatives", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUS_Employees_And_Relatives : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Last_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Job_TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RelativeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Last_Name {
+            get {
+                return this.Last_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Last_NameField, value) != true)) {
+                    this.Last_NameField = value;
+                    this.RaisePropertyChanged("Last_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Job_Title {
+            get {
+                return this.Job_TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Job_TitleField, value) != true)) {
+                    this.Job_TitleField = value;
+                    this.RaisePropertyChanged("Job_Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Relative {
+            get {
+                return this.RelativeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RelativeField, value) != true)) {
+                    this.RelativeField = value;
+                    this.RaisePropertyChanged("Relative");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUS_Employees_Sick_2004", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUS_Employees_Sick_2004 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string First_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Job_TitleField;
+        
+        private System.DateTime From_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string From_DateStringField;
+        
+        private System.DateTime To_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string To_DateStringField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Cause_of_Absence_CodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string First_Name {
+            get {
+                return this.First_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.First_NameField, value) != true)) {
+                    this.First_NameField = value;
+                    this.RaisePropertyChanged("First_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Job_Title {
+            get {
+                return this.Job_TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Job_TitleField, value) != true)) {
+                    this.Job_TitleField = value;
+                    this.RaisePropertyChanged("Job_Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.DateTime From_Date {
+            get {
+                return this.From_DateField;
+            }
+            set {
+                if ((this.From_DateField.Equals(value) != true)) {
+                    this.From_DateField = value;
+                    this.RaisePropertyChanged("From_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string From_DateString {
+            get {
+                return this.From_DateStringField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.From_DateStringField, value) != true)) {
+                    this.From_DateStringField = value;
+                    this.RaisePropertyChanged("From_DateString");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.DateTime To_Date {
+            get {
+                return this.To_DateField;
+            }
+            set {
+                if ((this.To_DateField.Equals(value) != true)) {
+                    this.To_DateField = value;
+                    this.RaisePropertyChanged("To_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string To_DateString {
+            get {
+                return this.To_DateStringField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.To_DateStringField, value) != true)) {
+                    this.To_DateStringField = value;
+                    this.RaisePropertyChanged("To_DateString");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Cause_of_Absence_Code {
+            get {
+                return this.Cause_of_Absence_CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Cause_of_Absence_CodeField, value) != true)) {
+                    this.Cause_of_Absence_CodeField = value;
+                    this.RaisePropertyChanged("Cause_of_Absence_Code");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUSMetadata_Key", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUSMetadata_Key : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Constraint_NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Constraint_Name {
+            get {
+                return this.Constraint_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Constraint_NameField, value) != true)) {
+                    this.Constraint_NameField = value;
+                    this.RaisePropertyChanged("Constraint_Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUSMetadata_Index", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUSMetadata_Index : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUSMetadata_Constraint", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUSMetadata_Constraint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Constraint_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Table_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Constraint_TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Constraint_Name {
+            get {
+                return this.Constraint_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Constraint_NameField, value) != true)) {
+                    this.Constraint_NameField = value;
+                    this.RaisePropertyChanged("Constraint_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Table_Name {
+            get {
+                return this.Table_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Table_NameField, value) != true)) {
+                    this.Table_NameField = value;
+                    this.RaisePropertyChanged("Table_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Constraint_Type {
+            get {
+                return this.Constraint_TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Constraint_TypeField, value) != true)) {
+                    this.Constraint_TypeField = value;
+                    this.RaisePropertyChanged("Constraint_Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUSMetadata_Table", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUSMetadata_Table : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRONUSMetadata_Column", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRONUSMetadata_Column : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Table_NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Column_NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Table_Name {
+            get {
+                return this.Table_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Table_NameField, value) != true)) {
+                    this.Table_NameField = value;
+                    this.RaisePropertyChanged("Table_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Column_Name {
+            get {
+                return this.Column_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Column_NameField, value) != true)) {
+                    this.Column_NameField = value;
+                    this.RaisePropertyChanged("Column_Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceCronus.ServiceSoap")]
-    public interface ServiceSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceCronus.CronusWebServiceSoap")]
+    public interface CronusWebServiceSoap {
         
-        // CODEGEN: Generating message contract since element name tableName from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeeTables", ReplyAction="*")]
-        BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponse GetEmployeeTables(BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest request);
+        // CODEGEN: Generating message contract since element name newPartner from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddPartner", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.AddPartnerResponse AddPartner(BookARoom.ServiceReferenceCronus.AddPartnerRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeeTables", ReplyAction="*")]
-        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponse> GetEmployeeTablesAsync(BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddPartner", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.AddPartnerResponse> AddPartnerAsync(BookARoom.ServiceReferenceCronus.AddPartnerRequest request);
+        
+        // CODEGEN: Generating message contract since element name oldPartner from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePartner", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.UpdatePartnerResponse UpdatePartner(BookARoom.ServiceReferenceCronus.UpdatePartnerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePartner", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.UpdatePartnerResponse> UpdatePartnerAsync(BookARoom.ServiceReferenceCronus.UpdatePartnerRequest request);
+        
+        // CODEGEN: Generating message contract since element name partner from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RemovePartner", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.RemovePartnerResponse RemovePartner(BookARoom.ServiceReferenceCronus.RemovePartnerRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RemovePartner", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.RemovePartnerResponse> RemovePartnerAsync(BookARoom.ServiceReferenceCronus.RemovePartnerRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllPartnersResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllPartners", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetAllPartnersResponse GetAllPartners(BookARoom.ServiceReferenceCronus.GetAllPartnersRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllPartners", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllPartnersResponse> GetAllPartnersAsync(BookARoom.ServiceReferenceCronus.GetAllPartnersRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetEmployeeMetaDataAndRelatedResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeeMetaDataAndRelated", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponse GetEmployeeMetaDataAndRelated(BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeeMetaDataAndRelated", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponse> GetEmployeeMetaDataAndRelatedAsync(BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetTop5EmployeesAbsentResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTop5EmployeesAbsent", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponse GetTop5EmployeesAbsent(BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTop5EmployeesAbsent", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponse> GetTop5EmployeesAbsentAsync(BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetEmployeesAndRelativesResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeesAndRelatives", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponse GetEmployeesAndRelatives(BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeesAndRelatives", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponse> GetEmployeesAndRelativesAsync(BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetEmployeesSick2004Result from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeesSick2004", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Response GetEmployeesSick2004(BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetEmployeesSick2004", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Response> GetEmployeesSick2004Async(BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request request);
+        
+        // CODEGEN: Generating message contract since element name GetAllKeysResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllKeys", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetAllKeysResponse GetAllKeys(BookARoom.ServiceReferenceCronus.GetAllKeysRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllKeys", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllKeysResponse> GetAllKeysAsync(BookARoom.ServiceReferenceCronus.GetAllKeysRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllIndexesResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllIndexes", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetAllIndexesResponse GetAllIndexes(BookARoom.ServiceReferenceCronus.GetAllIndexesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllIndexes", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllIndexesResponse> GetAllIndexesAsync(BookARoom.ServiceReferenceCronus.GetAllIndexesRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllConstraintsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllConstraints", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetAllConstraintsResponse GetAllConstraints(BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllConstraints", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllConstraintsResponse> GetAllConstraintsAsync(BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllTablesInDBResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllTablesInDB", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponse GetAllTablesInDB(BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllTablesInDB", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponse> GetAllTablesInDBAsync(BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllColumnsInEmployeesResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllColumnsInEmployees", ReplyAction="*")]
+        BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponse GetAllColumnsInEmployees(BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllColumnsInEmployees", ReplyAction="*")]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponse> GetAllColumnsInEmployeesAsync(BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetEmployeeTablesRequest {
+    public partial class AddPartnerRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeeTables", Namespace="http://tempuri.org/", Order=0)]
-        public BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddPartner", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.AddPartnerRequestBody Body;
         
-        public GetEmployeeTablesRequest() {
+        public AddPartnerRequest() {
         }
         
-        public GetEmployeeTablesRequest(BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequestBody Body) {
+        public AddPartnerRequest(BookARoom.ServiceReferenceCronus.AddPartnerRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -53,16 +897,16 @@ namespace BookARoom.ServiceReferenceCronus {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetEmployeeTablesRequestBody {
+    public partial class AddPartnerRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string tableName;
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner;
         
-        public GetEmployeeTablesRequestBody() {
+        public AddPartnerRequestBody() {
         }
         
-        public GetEmployeeTablesRequestBody(string tableName) {
-            this.tableName = tableName;
+        public AddPartnerRequestBody(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner) {
+            this.newPartner = newPartner;
         }
     }
     
@@ -70,15 +914,15 @@ namespace BookARoom.ServiceReferenceCronus {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetEmployeeTablesResponse {
+    public partial class AddPartnerResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeeTablesResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddPartnerResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.AddPartnerResponseBody Body;
         
-        public GetEmployeeTablesResponse() {
+        public AddPartnerResponse() {
         }
         
-        public GetEmployeeTablesResponse(BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponseBody Body) {
+        public AddPartnerResponse(BookARoom.ServiceReferenceCronus.AddPartnerResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -87,69 +931,1101 @@ namespace BookARoom.ServiceReferenceCronus {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GetEmployeeTablesResponseBody {
+    public partial class AddPartnerResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.ArrayOfString> GetEmployeeTablesResult;
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner AddPartnerResult;
         
-        public GetEmployeeTablesResponseBody() {
+        public AddPartnerResponseBody() {
         }
         
-        public GetEmployeeTablesResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.ArrayOfString> GetEmployeeTablesResult) {
-            this.GetEmployeeTablesResult = GetEmployeeTablesResult;
+        public AddPartnerResponseBody(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner AddPartnerResult) {
+            this.AddPartnerResult = AddPartnerResult;
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ServiceSoapChannel : BookARoom.ServiceReferenceCronus.ServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceSoapClient : System.ServiceModel.ClientBase<BookARoom.ServiceReferenceCronus.ServiceSoap>, BookARoom.ServiceReferenceCronus.ServiceSoap {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdatePartnerRequest {
         
-        public ServiceSoapClient() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdatePartner", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.UpdatePartnerRequestBody Body;
+        
+        public UpdatePartnerRequest() {
         }
         
-        public ServiceSoapClient(string endpointConfigurationName) : 
+        public UpdatePartnerRequest(BookARoom.ServiceReferenceCronus.UpdatePartnerRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdatePartnerRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner oldPartner;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner;
+        
+        public UpdatePartnerRequestBody() {
+        }
+        
+        public UpdatePartnerRequestBody(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner oldPartner, BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner) {
+            this.oldPartner = oldPartner;
+            this.newPartner = newPartner;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdatePartnerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdatePartnerResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.UpdatePartnerResponseBody Body;
+        
+        public UpdatePartnerResponse() {
+        }
+        
+        public UpdatePartnerResponse(BookARoom.ServiceReferenceCronus.UpdatePartnerResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdatePartnerResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner UpdatePartnerResult;
+        
+        public UpdatePartnerResponseBody() {
+        }
+        
+        public UpdatePartnerResponseBody(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner UpdatePartnerResult) {
+            this.UpdatePartnerResult = UpdatePartnerResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RemovePartnerRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RemovePartner", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.RemovePartnerRequestBody Body;
+        
+        public RemovePartnerRequest() {
+        }
+        
+        public RemovePartnerRequest(BookARoom.ServiceReferenceCronus.RemovePartnerRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RemovePartnerRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner partner;
+        
+        public RemovePartnerRequestBody() {
+        }
+        
+        public RemovePartnerRequestBody(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner partner) {
+            this.partner = partner;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RemovePartnerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RemovePartnerResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.RemovePartnerResponseBody Body;
+        
+        public RemovePartnerResponse() {
+        }
+        
+        public RemovePartnerResponse(BookARoom.ServiceReferenceCronus.RemovePartnerResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RemovePartnerResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner RemovePartnerResult;
+        
+        public RemovePartnerResponseBody() {
+        }
+        
+        public RemovePartnerResponseBody(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner RemovePartnerResult) {
+            this.RemovePartnerResult = RemovePartnerResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllPartnersRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllPartners", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllPartnersRequestBody Body;
+        
+        public GetAllPartnersRequest() {
+        }
+        
+        public GetAllPartnersRequest(BookARoom.ServiceReferenceCronus.GetAllPartnersRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllPartnersRequestBody {
+        
+        public GetAllPartnersRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllPartnersResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllPartnersResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllPartnersResponseBody Body;
+        
+        public GetAllPartnersResponse() {
+        }
+        
+        public GetAllPartnersResponse(BookARoom.ServiceReferenceCronus.GetAllPartnersResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllPartnersResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner> GetAllPartnersResult;
+        
+        public GetAllPartnersResponseBody() {
+        }
+        
+        public GetAllPartnersResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner> GetAllPartnersResult) {
+            this.GetAllPartnersResult = GetAllPartnersResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeeMetaDataAndRelatedRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeeMetaDataAndRelated", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequestBody Body;
+        
+        public GetEmployeeMetaDataAndRelatedRequest() {
+        }
+        
+        public GetEmployeeMetaDataAndRelatedRequest(BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetEmployeeMetaDataAndRelatedRequestBody {
+        
+        public GetEmployeeMetaDataAndRelatedRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeeMetaDataAndRelatedResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeeMetaDataAndRelatedResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponseBody Body;
+        
+        public GetEmployeeMetaDataAndRelatedResponse() {
+        }
+        
+        public GetEmployeeMetaDataAndRelatedResponse(BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEmployeeMetaDataAndRelatedResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelatedResult;
+        
+        public GetEmployeeMetaDataAndRelatedResponseBody() {
+        }
+        
+        public GetEmployeeMetaDataAndRelatedResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelatedResult) {
+            this.GetEmployeeMetaDataAndRelatedResult = GetEmployeeMetaDataAndRelatedResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTop5EmployeesAbsentRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTop5EmployeesAbsent", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequestBody Body;
+        
+        public GetTop5EmployeesAbsentRequest() {
+        }
+        
+        public GetTop5EmployeesAbsentRequest(BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetTop5EmployeesAbsentRequestBody {
+        
+        public GetTop5EmployeesAbsentRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTop5EmployeesAbsentResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTop5EmployeesAbsentResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponseBody Body;
+        
+        public GetTop5EmployeesAbsentResponse() {
+        }
+        
+        public GetTop5EmployeesAbsentResponse(BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetTop5EmployeesAbsentResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employee_Top5_Absence> GetTop5EmployeesAbsentResult;
+        
+        public GetTop5EmployeesAbsentResponseBody() {
+        }
+        
+        public GetTop5EmployeesAbsentResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employee_Top5_Absence> GetTop5EmployeesAbsentResult) {
+            this.GetTop5EmployeesAbsentResult = GetTop5EmployeesAbsentResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeesAndRelativesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeesAndRelatives", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequestBody Body;
+        
+        public GetEmployeesAndRelativesRequest() {
+        }
+        
+        public GetEmployeesAndRelativesRequest(BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetEmployeesAndRelativesRequestBody {
+        
+        public GetEmployeesAndRelativesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeesAndRelativesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeesAndRelativesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponseBody Body;
+        
+        public GetEmployeesAndRelativesResponse() {
+        }
+        
+        public GetEmployeesAndRelativesResponse(BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEmployeesAndRelativesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employees_And_Relatives> GetEmployeesAndRelativesResult;
+        
+        public GetEmployeesAndRelativesResponseBody() {
+        }
+        
+        public GetEmployeesAndRelativesResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employees_And_Relatives> GetEmployeesAndRelativesResult) {
+            this.GetEmployeesAndRelativesResult = GetEmployeesAndRelativesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeesSick2004Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeesSick2004", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetEmployeesSick2004RequestBody Body;
+        
+        public GetEmployeesSick2004Request() {
+        }
+        
+        public GetEmployeesSick2004Request(BookARoom.ServiceReferenceCronus.GetEmployeesSick2004RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetEmployeesSick2004RequestBody {
+        
+        public GetEmployeesSick2004RequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetEmployeesSick2004Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmployeesSick2004Response", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetEmployeesSick2004ResponseBody Body;
+        
+        public GetEmployeesSick2004Response() {
+        }
+        
+        public GetEmployeesSick2004Response(BookARoom.ServiceReferenceCronus.GetEmployeesSick2004ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetEmployeesSick2004ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employees_Sick_2004> GetEmployeesSick2004Result;
+        
+        public GetEmployeesSick2004ResponseBody() {
+        }
+        
+        public GetEmployeesSick2004ResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employees_Sick_2004> GetEmployeesSick2004Result) {
+            this.GetEmployeesSick2004Result = GetEmployeesSick2004Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllKeysRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllKeys", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllKeysRequestBody Body;
+        
+        public GetAllKeysRequest() {
+        }
+        
+        public GetAllKeysRequest(BookARoom.ServiceReferenceCronus.GetAllKeysRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllKeysRequestBody {
+        
+        public GetAllKeysRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllKeysResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllKeysResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllKeysResponseBody Body;
+        
+        public GetAllKeysResponse() {
+        }
+        
+        public GetAllKeysResponse(BookARoom.ServiceReferenceCronus.GetAllKeysResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllKeysResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Key> GetAllKeysResult;
+        
+        public GetAllKeysResponseBody() {
+        }
+        
+        public GetAllKeysResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Key> GetAllKeysResult) {
+            this.GetAllKeysResult = GetAllKeysResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllIndexesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllIndexes", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllIndexesRequestBody Body;
+        
+        public GetAllIndexesRequest() {
+        }
+        
+        public GetAllIndexesRequest(BookARoom.ServiceReferenceCronus.GetAllIndexesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllIndexesRequestBody {
+        
+        public GetAllIndexesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllIndexesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllIndexesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllIndexesResponseBody Body;
+        
+        public GetAllIndexesResponse() {
+        }
+        
+        public GetAllIndexesResponse(BookARoom.ServiceReferenceCronus.GetAllIndexesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllIndexesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Index> GetAllIndexesResult;
+        
+        public GetAllIndexesResponseBody() {
+        }
+        
+        public GetAllIndexesResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Index> GetAllIndexesResult) {
+            this.GetAllIndexesResult = GetAllIndexesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllConstraintsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllConstraints", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllConstraintsRequestBody Body;
+        
+        public GetAllConstraintsRequest() {
+        }
+        
+        public GetAllConstraintsRequest(BookARoom.ServiceReferenceCronus.GetAllConstraintsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllConstraintsRequestBody {
+        
+        public GetAllConstraintsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllConstraintsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllConstraintsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllConstraintsResponseBody Body;
+        
+        public GetAllConstraintsResponse() {
+        }
+        
+        public GetAllConstraintsResponse(BookARoom.ServiceReferenceCronus.GetAllConstraintsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllConstraintsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Constraint> GetAllConstraintsResult;
+        
+        public GetAllConstraintsResponseBody() {
+        }
+        
+        public GetAllConstraintsResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Constraint> GetAllConstraintsResult) {
+            this.GetAllConstraintsResult = GetAllConstraintsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllTablesInDBRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllTablesInDB", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequestBody Body;
+        
+        public GetAllTablesInDBRequest() {
+        }
+        
+        public GetAllTablesInDBRequest(BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllTablesInDBRequestBody {
+        
+        public GetAllTablesInDBRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllTablesInDBResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllTablesInDBResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponseBody Body;
+        
+        public GetAllTablesInDBResponse() {
+        }
+        
+        public GetAllTablesInDBResponse(BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllTablesInDBResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Table> GetAllTablesInDBResult;
+        
+        public GetAllTablesInDBResponseBody() {
+        }
+        
+        public GetAllTablesInDBResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Table> GetAllTablesInDBResult) {
+            this.GetAllTablesInDBResult = GetAllTablesInDBResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllColumnsInEmployeesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllColumnsInEmployees", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequestBody Body;
+        
+        public GetAllColumnsInEmployeesRequest() {
+        }
+        
+        public GetAllColumnsInEmployeesRequest(BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllColumnsInEmployeesRequestBody {
+        
+        public GetAllColumnsInEmployeesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllColumnsInEmployeesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllColumnsInEmployeesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponseBody Body;
+        
+        public GetAllColumnsInEmployeesResponse() {
+        }
+        
+        public GetAllColumnsInEmployeesResponse(BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllColumnsInEmployeesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Column> GetAllColumnsInEmployeesResult;
+        
+        public GetAllColumnsInEmployeesResponseBody() {
+        }
+        
+        public GetAllColumnsInEmployeesResponseBody(System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Column> GetAllColumnsInEmployeesResult) {
+            this.GetAllColumnsInEmployeesResult = GetAllColumnsInEmployeesResult;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface CronusWebServiceSoapChannel : BookARoom.ServiceReferenceCronus.CronusWebServiceSoap, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CronusWebServiceSoapClient : System.ServiceModel.ClientBase<BookARoom.ServiceReferenceCronus.CronusWebServiceSoap>, BookARoom.ServiceReferenceCronus.CronusWebServiceSoap {
+        
+        public CronusWebServiceSoapClient() {
+        }
+        
+        public CronusWebServiceSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServiceSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public CronusWebServiceSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CronusWebServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CronusWebServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponse BookARoom.ServiceReferenceCronus.ServiceSoap.GetEmployeeTables(BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest request) {
-            return base.Channel.GetEmployeeTables(request);
+        BookARoom.ServiceReferenceCronus.AddPartnerResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.AddPartner(BookARoom.ServiceReferenceCronus.AddPartnerRequest request) {
+            return base.Channel.AddPartner(request);
         }
         
-        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.ArrayOfString> GetEmployeeTables(string tableName) {
-            BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest inValue = new BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest();
-            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequestBody();
-            inValue.Body.tableName = tableName;
-            BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponse retVal = ((BookARoom.ServiceReferenceCronus.ServiceSoap)(this)).GetEmployeeTables(inValue);
-            return retVal.Body.GetEmployeeTablesResult;
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner AddPartner(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner) {
+            BookARoom.ServiceReferenceCronus.AddPartnerRequest inValue = new BookARoom.ServiceReferenceCronus.AddPartnerRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.AddPartnerRequestBody();
+            inValue.Body.newPartner = newPartner;
+            BookARoom.ServiceReferenceCronus.AddPartnerResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).AddPartner(inValue);
+            return retVal.Body.AddPartnerResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponse> BookARoom.ServiceReferenceCronus.ServiceSoap.GetEmployeeTablesAsync(BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest request) {
-            return base.Channel.GetEmployeeTablesAsync(request);
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.AddPartnerResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.AddPartnerAsync(BookARoom.ServiceReferenceCronus.AddPartnerRequest request) {
+            return base.Channel.AddPartnerAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeeTablesResponse> GetEmployeeTablesAsync(string tableName) {
-            BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest inValue = new BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequest();
-            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeeTablesRequestBody();
-            inValue.Body.tableName = tableName;
-            return ((BookARoom.ServiceReferenceCronus.ServiceSoap)(this)).GetEmployeeTablesAsync(inValue);
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.AddPartnerResponse> AddPartnerAsync(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner) {
+            BookARoom.ServiceReferenceCronus.AddPartnerRequest inValue = new BookARoom.ServiceReferenceCronus.AddPartnerRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.AddPartnerRequestBody();
+            inValue.Body.newPartner = newPartner;
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).AddPartnerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.UpdatePartnerResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.UpdatePartner(BookARoom.ServiceReferenceCronus.UpdatePartnerRequest request) {
+            return base.Channel.UpdatePartner(request);
+        }
+        
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner UpdatePartner(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner oldPartner, BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner) {
+            BookARoom.ServiceReferenceCronus.UpdatePartnerRequest inValue = new BookARoom.ServiceReferenceCronus.UpdatePartnerRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.UpdatePartnerRequestBody();
+            inValue.Body.oldPartner = oldPartner;
+            inValue.Body.newPartner = newPartner;
+            BookARoom.ServiceReferenceCronus.UpdatePartnerResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).UpdatePartner(inValue);
+            return retVal.Body.UpdatePartnerResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.UpdatePartnerResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.UpdatePartnerAsync(BookARoom.ServiceReferenceCronus.UpdatePartnerRequest request) {
+            return base.Channel.UpdatePartnerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.UpdatePartnerResponse> UpdatePartnerAsync(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner oldPartner, BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner newPartner) {
+            BookARoom.ServiceReferenceCronus.UpdatePartnerRequest inValue = new BookARoom.ServiceReferenceCronus.UpdatePartnerRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.UpdatePartnerRequestBody();
+            inValue.Body.oldPartner = oldPartner;
+            inValue.Body.newPartner = newPartner;
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).UpdatePartnerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.RemovePartnerResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.RemovePartner(BookARoom.ServiceReferenceCronus.RemovePartnerRequest request) {
+            return base.Channel.RemovePartner(request);
+        }
+        
+        public BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner RemovePartner(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner partner) {
+            BookARoom.ServiceReferenceCronus.RemovePartnerRequest inValue = new BookARoom.ServiceReferenceCronus.RemovePartnerRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.RemovePartnerRequestBody();
+            inValue.Body.partner = partner;
+            BookARoom.ServiceReferenceCronus.RemovePartnerResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).RemovePartner(inValue);
+            return retVal.Body.RemovePartnerResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.RemovePartnerResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.RemovePartnerAsync(BookARoom.ServiceReferenceCronus.RemovePartnerRequest request) {
+            return base.Channel.RemovePartnerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.RemovePartnerResponse> RemovePartnerAsync(BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner partner) {
+            BookARoom.ServiceReferenceCronus.RemovePartnerRequest inValue = new BookARoom.ServiceReferenceCronus.RemovePartnerRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.RemovePartnerRequestBody();
+            inValue.Body.partner = partner;
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).RemovePartnerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetAllPartnersResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllPartners(BookARoom.ServiceReferenceCronus.GetAllPartnersRequest request) {
+            return base.Channel.GetAllPartners(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Sverige_AB_Partner> GetAllPartners() {
+            BookARoom.ServiceReferenceCronus.GetAllPartnersRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllPartnersRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllPartnersRequestBody();
+            BookARoom.ServiceReferenceCronus.GetAllPartnersResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllPartners(inValue);
+            return retVal.Body.GetAllPartnersResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllPartnersResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllPartnersAsync(BookARoom.ServiceReferenceCronus.GetAllPartnersRequest request) {
+            return base.Channel.GetAllPartnersAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllPartnersResponse> GetAllPartnersAsync() {
+            BookARoom.ServiceReferenceCronus.GetAllPartnersRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllPartnersRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllPartnersRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllPartnersAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetEmployeeMetaDataAndRelated(BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest request) {
+            return base.Channel.GetEmployeeMetaDataAndRelated(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_EmployeeRelated> GetEmployeeMetaDataAndRelated() {
+            BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest inValue = new BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequestBody();
+            BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetEmployeeMetaDataAndRelated(inValue);
+            return retVal.Body.GetEmployeeMetaDataAndRelatedResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetEmployeeMetaDataAndRelatedAsync(BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest request) {
+            return base.Channel.GetEmployeeMetaDataAndRelatedAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedResponse> GetEmployeeMetaDataAndRelatedAsync() {
+            BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest inValue = new BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeeMetaDataAndRelatedRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetEmployeeMetaDataAndRelatedAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetTop5EmployeesAbsent(BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest request) {
+            return base.Channel.GetTop5EmployeesAbsent(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employee_Top5_Absence> GetTop5EmployeesAbsent() {
+            BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest inValue = new BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequestBody();
+            BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetTop5EmployeesAbsent(inValue);
+            return retVal.Body.GetTop5EmployeesAbsentResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetTop5EmployeesAbsentAsync(BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest request) {
+            return base.Channel.GetTop5EmployeesAbsentAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentResponse> GetTop5EmployeesAbsentAsync() {
+            BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest inValue = new BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetTop5EmployeesAbsentRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetTop5EmployeesAbsentAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetEmployeesAndRelatives(BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest request) {
+            return base.Channel.GetEmployeesAndRelatives(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employees_And_Relatives> GetEmployeesAndRelatives() {
+            BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest inValue = new BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequestBody();
+            BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetEmployeesAndRelatives(inValue);
+            return retVal.Body.GetEmployeesAndRelativesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetEmployeesAndRelativesAsync(BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest request) {
+            return base.Channel.GetEmployeesAndRelativesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesResponse> GetEmployeesAndRelativesAsync() {
+            BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest inValue = new BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeesAndRelativesRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetEmployeesAndRelativesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Response BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetEmployeesSick2004(BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request request) {
+            return base.Channel.GetEmployeesSick2004(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUS_Employees_Sick_2004> GetEmployeesSick2004() {
+            BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request inValue = new BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeesSick2004RequestBody();
+            BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Response retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetEmployeesSick2004(inValue);
+            return retVal.Body.GetEmployeesSick2004Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Response> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetEmployeesSick2004Async(BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request request) {
+            return base.Channel.GetEmployeesSick2004Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Response> GetEmployeesSick2004Async() {
+            BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request inValue = new BookARoom.ServiceReferenceCronus.GetEmployeesSick2004Request();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetEmployeesSick2004RequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetEmployeesSick2004Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetAllKeysResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllKeys(BookARoom.ServiceReferenceCronus.GetAllKeysRequest request) {
+            return base.Channel.GetAllKeys(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Key> GetAllKeys() {
+            BookARoom.ServiceReferenceCronus.GetAllKeysRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllKeysRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllKeysRequestBody();
+            BookARoom.ServiceReferenceCronus.GetAllKeysResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllKeys(inValue);
+            return retVal.Body.GetAllKeysResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllKeysResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllKeysAsync(BookARoom.ServiceReferenceCronus.GetAllKeysRequest request) {
+            return base.Channel.GetAllKeysAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllKeysResponse> GetAllKeysAsync() {
+            BookARoom.ServiceReferenceCronus.GetAllKeysRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllKeysRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllKeysRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllKeysAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetAllIndexesResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllIndexes(BookARoom.ServiceReferenceCronus.GetAllIndexesRequest request) {
+            return base.Channel.GetAllIndexes(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Index> GetAllIndexes() {
+            BookARoom.ServiceReferenceCronus.GetAllIndexesRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllIndexesRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllIndexesRequestBody();
+            BookARoom.ServiceReferenceCronus.GetAllIndexesResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllIndexes(inValue);
+            return retVal.Body.GetAllIndexesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllIndexesResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllIndexesAsync(BookARoom.ServiceReferenceCronus.GetAllIndexesRequest request) {
+            return base.Channel.GetAllIndexesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllIndexesResponse> GetAllIndexesAsync() {
+            BookARoom.ServiceReferenceCronus.GetAllIndexesRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllIndexesRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllIndexesRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllIndexesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetAllConstraintsResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllConstraints(BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest request) {
+            return base.Channel.GetAllConstraints(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Constraint> GetAllConstraints() {
+            BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllConstraintsRequestBody();
+            BookARoom.ServiceReferenceCronus.GetAllConstraintsResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllConstraints(inValue);
+            return retVal.Body.GetAllConstraintsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllConstraintsResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllConstraintsAsync(BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest request) {
+            return base.Channel.GetAllConstraintsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllConstraintsResponse> GetAllConstraintsAsync() {
+            BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllConstraintsRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllConstraintsRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllConstraintsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllTablesInDB(BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest request) {
+            return base.Channel.GetAllTablesInDB(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Table> GetAllTablesInDB() {
+            BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequestBody();
+            BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllTablesInDB(inValue);
+            return retVal.Body.GetAllTablesInDBResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllTablesInDBAsync(BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest request) {
+            return base.Channel.GetAllTablesInDBAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllTablesInDBResponse> GetAllTablesInDBAsync() {
+            BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllTablesInDBRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllTablesInDBAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponse BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllColumnsInEmployees(BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest request) {
+            return base.Channel.GetAllColumnsInEmployees(request);
+        }
+        
+        public System.Collections.Generic.List<BookARoom.ServiceReferenceCronus.CRONUSMetadata_Column> GetAllColumnsInEmployees() {
+            BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequestBody();
+            BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponse retVal = ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllColumnsInEmployees(inValue);
+            return retVal.Body.GetAllColumnsInEmployeesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponse> BookARoom.ServiceReferenceCronus.CronusWebServiceSoap.GetAllColumnsInEmployeesAsync(BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest request) {
+            return base.Channel.GetAllColumnsInEmployeesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesResponse> GetAllColumnsInEmployeesAsync() {
+            BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest inValue = new BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequest();
+            inValue.Body = new BookARoom.ServiceReferenceCronus.GetAllColumnsInEmployeesRequestBody();
+            return ((BookARoom.ServiceReferenceCronus.CronusWebServiceSoap)(this)).GetAllColumnsInEmployeesAsync(inValue);
         }
     }
 }

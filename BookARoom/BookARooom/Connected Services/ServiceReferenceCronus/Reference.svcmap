@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3d516a09-278d-40f3-95f9-03a9ff88c529" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d6d25109-9e4c-408b-b654-6bfd947219f9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -21,11 +21,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:52485/Service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:58882/CronusWebService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="78c4b4a7-0fd6-4a78-9a81-ebde8b60be15" SourceId="1" SourceUrl="http://localhost:52485/Service.asmx?disco" />
-    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="2497cf73-4d49-4a00-8919-af9088210e68" SourceId="1" SourceUrl="http://localhost:52485/Service.asmx?wsdl" />
+    <MetadataFile FileName="CronusWebService.disco" MetadataType="Disco" ID="7fa83346-b8c1-402c-9505-4e1bc1e0d128" SourceId="1" SourceUrl="http://localhost:58882/CronusWebService.asmx?disco" />
+    <MetadataFile FileName="CronusWebService.wsdl" MetadataType="Wsdl" ID="0654c2d3-dea3-4819-ac90-ab85e80355d6" SourceId="1" SourceUrl="http://localhost:58882/CronusWebService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

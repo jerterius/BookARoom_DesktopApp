@@ -123,6 +123,7 @@
     <Compile Include="Model\CRONUS_Sverige_AB_Employee_Statistics_Group.cs" />
     <Compile Include="Model\CRONUS_Sverige_AB_Employment_Contract.cs" />
     <Compile Include="DAL\Dal.cs" />
+    <Compile Include="Model\CRONUS_Sverige_AB_Partner.cs" />
     <Compile Include="Model\CRONUS_Sverige_AB_Relative.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
