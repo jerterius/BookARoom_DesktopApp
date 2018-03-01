@@ -31,7 +31,7 @@
             this.lbSelectFile = new System.Windows.Forms.Label();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.cbSelectFile = new System.Windows.Forms.ComboBox();
-            this.rtbShowFile = new System.Windows.Forms.RichTextBox();
+            this.tbxShowFile = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbSelectFile
@@ -65,24 +65,24 @@
             this.cbSelectFile.TabIndex = 4;
             this.cbSelectFile.SelectedIndexChanged += new System.EventHandler(this.cbSelectFile_SelectedIndexChanged);
             // 
-            // rtbShowFile
+            // tbxShowFile
             // 
-            this.rtbShowFile.Location = new System.Drawing.Point(38, 233);
-            this.rtbShowFile.Name = "rtbShowFile";
-            this.rtbShowFile.Size = new System.Drawing.Size(1003, 354);
-            this.rtbShowFile.TabIndex = 0;
-            this.rtbShowFile.Text = "";
+            this.tbxShowFile.Location = new System.Drawing.Point(26, 226);
+            this.tbxShowFile.Multiline = true;
+            this.tbxShowFile.Name = "tbxShowFile";
+            this.tbxShowFile.Size = new System.Drawing.Size(875, 329);
+            this.tbxShowFile.TabIndex = 5;
             // 
             // UserControlUppgift2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbxShowFile);
             this.Controls.Add(this.cbSelectFile);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.lbSelectFile);
-            this.Controls.Add(this.rtbShowFile);
             this.Name = "UserControlUppgift2";
-            this.Size = new System.Drawing.Size(1078, 609);
+            this.Size = new System.Drawing.Size(931, 578);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,6 +92,6 @@
         private System.Windows.Forms.Label lbSelectFile;
         private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.ComboBox cbSelectFile;
-        private System.Windows.Forms.RichTextBox rtbShowFile;
+        private System.Windows.Forms.TextBox tbxShowFile;
     }
 }

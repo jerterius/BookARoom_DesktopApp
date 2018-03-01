@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookARoom.ServiceReferenceFile;
-using Uppgift2._1; 
+
 
 namespace BookARoom.Views
 {
     public partial class UserControlUppgift2 : UserControl
     {
-        ControllerUppgift2 controller = new ControllerUppgift2();
+        
 
         public UserControlUppgift2()
         {
             InitializeComponent();
+
             cbSelectFile.Text = "Select....";
         }
  
@@ -33,8 +34,12 @@ namespace BookARoom.Views
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
             
-                rtbShowFile.Text = controller.GetFile();
-            
+            using (WebServiceUppgift2__1SoapClient service = new WebServiceUppgift2__1SoapClient())
+            {
+                tbxShowFile.Text = service.GetFile();
+            }
+
+
 
         }
 
