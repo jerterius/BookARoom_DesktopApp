@@ -3,13 +3,13 @@ namespace BookARoom.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class bookingNoGUID : DbMigration
+    public partial class BookingPKtoInt : DbMigration
     {
         public override void Up()
         {
             DropPrimaryKey("dbo.Bookings");
             DropColumn("dbo.Bookings", "BookingNumber");
-            AddColumn("dbo.Bookings", "BookingNumber", c => c.Guid(nullable: false, identity: true));
+            AddColumn("dbo.Bookings", "BookingNumber", c => c.Int(nullable: false, identity: true));
             AddPrimaryKey("dbo.Bookings", "BookingNumber");
         }
         
@@ -17,7 +17,7 @@ namespace BookARoom.Migrations
         {
             DropPrimaryKey("dbo.Bookings");
             DropColumn("dbo.Bookings", "BookingNumber");
-            AddColumn("dbo.Bookings", "BookingNumber", c => c.Int(nullable: false, identity: true));
+            AddColumn("dbo.Bookings", "BookingNumber", c => c.Guid(nullable: false, identity: true));
             AddPrimaryKey("dbo.Bookings", "BookingNumber");
         }
     }

@@ -6,6 +6,9 @@ using System.Web.Services;
 using CronusWebApplication.Model;
 using CronusWebApplication.Controller;
 using System.Data.Entity.Validation;
+using System.Data.SqlClient;
+using System.Web.Services.Protocols;
+using System.Xml;
 
 namespace CronusWebApplication
 {
@@ -28,9 +31,24 @@ namespace CronusWebApplication
             {
                 return controller.AddPartner(newPartner);
             }
+            catch (SoapException e)
+            {
+                throw e;
+            }
+
+            catch (SqlException e)
+            {
+                throw e;
+            }
+
             catch (DbEntityValidationException e)
             {
-                return null;
+                throw new SoapException();
+            }
+
+            catch (Exception e)
+            {
+                throw e;
             }
    
         }

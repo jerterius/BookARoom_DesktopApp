@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BookARoom.ServiceReferenceCronus;
 using BookARoom.Utilities;
 using System.Data.Entity.Validation;
+using System.Web.Services.Protocols;
 
 namespace BookARoom.Views
 {
@@ -88,9 +89,9 @@ namespace BookARoom.Views
                 } 
 
             }
-            catch (Exception ex)
+            catch (SoapException ex)
             {
-                
+                lblResponse.Text = "Partner could not be added. Check required fields.";
             }
         }
 

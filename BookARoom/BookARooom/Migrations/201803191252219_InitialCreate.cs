@@ -11,31 +11,30 @@ namespace BookARoom.Migrations
                 "dbo.Bookings",
                 c => new
                     {
-                        CPhoneNumber = c.String(nullable: false, maxLength: 128),
-                        Adress = c.String(maxLength: 128),
+                        Adress = c.String(nullable: false, maxLength: 128),
                         RoomNumber = c.String(nullable: false, maxLength: 128),
-                        BookingNumber = c.String(),
+                        BookingNumber = c.Guid(nullable: false, identity: true),
                         Date = c.DateTime(nullable: false),
-                        Responsible = c.String(),
-                        CreditCardNumber = c.String(),
+                        CEmail = c.String(nullable: false, maxLength: 128),
                     })
-                .PrimaryKey(t => new { t.CPhoneNumber, t.RoomNumber })
-                .ForeignKey("dbo.Customers", t => t.CPhoneNumber, cascadeDelete: true)
-                .ForeignKey("dbo.Rooms", t => new { t.Adress, t.RoomNumber })
-                .Index(t => t.CPhoneNumber)
-                .Index(t => new { t.Adress, t.RoomNumber });
+                .PrimaryKey(t => t.BookingNumber)
+                .ForeignKey("dbo.Customers", t => t.CEmail, cascadeDelete: true)
+                .ForeignKey("dbo.Rooms", t => new { t.Adress, t.RoomNumber }, cascadeDelete: true)
+                .Index(t => new { t.Date, t.Adress, t.RoomNumber }, unique: true, name: "IX_DateRoom")
+                .Index(t => t.CEmail);
             
             CreateTable(
                 "dbo.Customers",
                 c => new
                     {
-                        CPhoneNumber = c.String(nullable: false, maxLength: 128),
+                        CEmail = c.String(nullable: false, maxLength: 128),
+                        CPhoneNumber = c.String(),
                         CName = c.String(),
                         Title = c.String(),
                         CAdress = c.String(),
-                        CEmail = c.String(),
+                        Password = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.CPhoneNumber);
+                .PrimaryKey(t => t.CEmail);
             
             CreateTable(
                 "dbo.Rooms",
@@ -83,11 +82,11 @@ namespace BookARoom.Migrations
             DropForeignKey("dbo.Bookings", new[] { "Adress", "RoomNumber" }, "dbo.Rooms");
             DropForeignKey("dbo.Rooms", "Adress", "dbo.Hotels");
             DropForeignKey("dbo.Hotels", new[] { "CityName", "Countryname" }, "dbo.Cities");
-            DropForeignKey("dbo.Bookings", "CPhoneNumber", "dbo.Customers");
+            DropForeignKey("dbo.Bookings", "CEmail", "dbo.Customers");
             DropIndex("dbo.Hotels", new[] { "CityName", "Countryname" });
             DropIndex("dbo.Rooms", new[] { "Adress" });
-            DropIndex("dbo.Bookings", new[] { "Adress", "RoomNumber" });
-            DropIndex("dbo.Bookings", new[] { "CPhoneNumber" });
+            DropIndex("dbo.Bookings", new[] { "CEmail" });
+            DropIndex("dbo.Bookings", "IX_DateRoom");
             DropTable("dbo.Cities");
             DropTable("dbo.Hotels");
             DropTable("dbo.Rooms");

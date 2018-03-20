@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using CronusWebApplication.Model;
@@ -23,6 +24,15 @@ namespace CronusWebApplication.DAL
                 }
                 return newPartner;
             }catch (DbEntityValidationException e)
+            {
+                throw e;
+            }
+
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
             {
                 throw e;
             }

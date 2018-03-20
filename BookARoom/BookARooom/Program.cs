@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using BookARoom.Views;
 using BookARoom.Models;
 using BookARoom.DAL;
+using System.Data.Entity;
 
 namespace BookARoom
 {
@@ -21,6 +22,7 @@ namespace BookARoom
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+            Database.SetInitializer<BookingContext>(null);
         }
     }
 }

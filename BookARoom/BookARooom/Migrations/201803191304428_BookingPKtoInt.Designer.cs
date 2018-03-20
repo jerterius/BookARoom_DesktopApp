@@ -7,13 +7,13 @@ namespace BookARoom.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddPKDate : IMigrationMetadata
+    public sealed partial class BookingPKtoInt : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddPKDate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(BookingPKtoInt));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802091838017_AddPKDate"; }
+            get { return "201803191304428_BookingPKtoInt"; }
         }
         
         string IMigrationMetadata.Source

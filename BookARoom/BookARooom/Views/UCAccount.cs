@@ -11,6 +11,7 @@ using BookARoom.Controllers;
 using BookARoom.Models;
 using BookARoom.Utilities;
 using BookARoom.DAL;
+using System.Data.Entity.Validation;
 
 namespace BookARoom.Views
 {
@@ -189,9 +190,9 @@ namespace BookARoom.Views
                     ToggleReadOnly(false);
 
                     Customer = controller.RetrieveCustomer(email, password);
-                    /*
-                    if (userUpdated != null)
-                        userUpdated(Customer, EventArgs.Empty);*/
+                        /*
+                        if (userUpdated != null)
+                            userUpdated(Customer, EventArgs.Empty);*/
 
                     CreateCustomerEnabled = false;
                 }
@@ -205,7 +206,8 @@ namespace BookARoom.Views
             }
             catch (Exception ex)
             {
-                lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
+                lblResponse.Text = "Fields are not valid!";
+                //lblResponse.Text = ExceptionHandler.ConvertExceptionToMessage(ex);
                 lblResponse.Visible = true;
             }
         }
@@ -276,7 +278,7 @@ namespace BookARoom.Views
             {
                 if (Convert.ToBoolean(row.Cells["removeDataGridViewTextBoxColumn"].Value))
                 {
-                    controller.DeleteBooking(new Guid(row.Cells["bookingNumberDataGridViewTextBoxColumn"].Value.ToString()));
+                    controller.DeleteBooking((int)row.Cells["bookingNumberDataGridViewTextBoxColumn"].Value);
                 }
             }
             Customer = controller.RetrieveCustomer(tbxEmail.Text, tbxPassword.Text);

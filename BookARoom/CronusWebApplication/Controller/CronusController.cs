@@ -7,6 +7,7 @@ using System.Web.Http;
 using CronusWebApplication.Model;
 using CronusWebApplication.DAL;
 using System.Data.Entity.Validation;
+using System.Data.SqlClient;
 
 namespace CronusWebApplication.Controller
 {
@@ -22,6 +23,15 @@ namespace CronusWebApplication.Controller
                 return dal.AddPartner(newPartner);
             }
             catch (DbEntityValidationException e)
+            {
+                throw e;
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+
+            catch (Exception e)
             {
                 throw e;
             }

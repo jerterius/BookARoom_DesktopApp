@@ -106,7 +106,7 @@ namespace BookARoom.Controllers
         }
 
         //Delete
-        public void DeleteBooking(Guid bookingNo)
+        public void DeleteBooking(int bookingNo)
         {
             try
             {

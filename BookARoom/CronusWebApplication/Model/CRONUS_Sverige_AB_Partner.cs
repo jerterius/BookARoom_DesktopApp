@@ -10,6 +10,7 @@ namespace CronusWebApplication.Model
     public partial class CRONUS_Sverige_AB_Partner
     {
         [Key]
+        [Required]
         [StringLength(32)]
         public string Company { get; set; }
 

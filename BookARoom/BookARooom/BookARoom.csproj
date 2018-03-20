@@ -47,6 +47,7 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,49 +75,25 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="DAL\BookingContext.cs" />
     <Compile Include="DAL\Dal.cs" />
-    <Compile Include="Migrations\201802141103155_AddPassword.cs" />
-    <Compile Include="Migrations\201802141103155_AddPassword.Designer.cs">
-      <DependentUpon>201802141103155_AddPassword.cs</DependentUpon>
+    <Compile Include="Migrations\201803191252219_InitialCreate.cs" />
+    <Compile Include="Migrations\201803191252219_InitialCreate.Designer.cs">
+      <DependentUpon>201803191252219_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802141121371_RemoveCreditCardResponsible.cs" />
-    <Compile Include="Migrations\201802141121371_RemoveCreditCardResponsible.Designer.cs">
-      <DependentUpon>201802141121371_RemoveCreditCardResponsible.cs</DependentUpon>
+    <Compile Include="Migrations\201803191304428_BookingPKtoInt.cs" />
+    <Compile Include="Migrations\201803191304428_BookingPKtoInt.Designer.cs">
+      <DependentUpon>201803191304428_BookingPKtoInt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802160936190_UpdateBookingPK.cs" />
-    <Compile Include="Migrations\201802160936190_UpdateBookingPK.Designer.cs">
-      <DependentUpon>201802160936190_UpdateBookingPK.cs</DependentUpon>
+    <Compile Include="Migrations\201803191445511_BookingPKidentity.cs" />
+    <Compile Include="Migrations\201803191445511_BookingPKidentity.Designer.cs">
+      <DependentUpon>201803191445511_BookingPKidentity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802161007441_AddRequired.cs" />
-    <Compile Include="Migrations\201802161007441_AddRequired.Designer.cs">
-      <DependentUpon>201802161007441_AddRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802161403462_changeCustomerPK.cs" />
-    <Compile Include="Migrations\201802161403462_changeCustomerPK.Designer.cs">
-      <DependentUpon>201802161403462_changeCustomerPK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802161435280_updateBookingNo.cs" />
-    <Compile Include="Migrations\201802161435280_updateBookingNo.Designer.cs">
-      <DependentUpon>201802161435280_updateBookingNo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802161451243_bookingNoGUID.cs" />
-    <Compile Include="Migrations\201802161451243_bookingNoGUID.Designer.cs">
-      <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802091731544_InitialCreate.cs" />
-    <Compile Include="Migrations\201802091731544_InitialCreate.Designer.cs">
-      <DependentUpon>201802091731544_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802091838017_AddPKDate.cs" />
-    <Compile Include="Migrations\201802091838017_AddPKDate.Designer.cs">
-      <DependentUpon>201802091838017_AddPKDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -155,35 +132,17 @@
       <DependentUpon>UCNavigator.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ExceptionHandler.cs" />
-    <EmbeddedResource Include="Migrations\201802141103155_AddPassword.resx">
-      <DependentUpon>201802141103155_AddPassword.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803191252219_InitialCreate.resx">
+      <DependentUpon>201803191252219_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802141121371_RemoveCreditCardResponsible.resx">
-      <DependentUpon>201802141121371_RemoveCreditCardResponsible.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803191304428_BookingPKtoInt.resx">
+      <DependentUpon>201803191304428_BookingPKtoInt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802160936190_UpdateBookingPK.resx">
-      <DependentUpon>201802160936190_UpdateBookingPK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802161007441_AddRequired.resx">
-      <DependentUpon>201802161007441_AddRequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802161403462_changeCustomerPK.resx">
-      <DependentUpon>201802161403462_changeCustomerPK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802161435280_updateBookingNo.resx">
-      <DependentUpon>201802161435280_updateBookingNo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802161451243_bookingNoGUID.resx">
-      <DependentUpon>201802161451243_bookingNoGUID.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803191445511_BookingPKidentity.resx">
+      <DependentUpon>201803191445511_BookingPKidentity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802091731544_InitialCreate.resx">
-      <DependentUpon>201802091731544_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802091838017_AddPKDate.resx">
-      <DependentUpon>201802091838017_AddPKDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -338,13 +297,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebServiceDatabase\WebServiceDatabase.csproj">
-      <Project>{dcf0b633-e59e-4258-9c18-35be7fc0e18b}</Project>
-      <Name>WebServiceDatabase</Name>
-    </ProjectReference>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

@@ -38,6 +38,8 @@ namespace BookARoom.Views
 
             ucNavigator1.updateBookings += new UCNavigator.UpdateBookings(ucAccount1.UpdateCustomer);
 
+            
+
         }
 
         private void ucNavigator1_Load(object sender, EventArgs e)

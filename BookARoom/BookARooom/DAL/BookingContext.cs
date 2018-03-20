@@ -10,7 +10,7 @@ namespace BookARoom.DAL
 {
     public class BookingContext : DbContext
     {
-        public BookingContext() : base("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BookingDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        public BookingContext() : base("name=BookingDB")
         {  }
         public DbSet<Customer> Customers { get; set; }
 
@@ -22,7 +22,14 @@ namespace BookARoom.DAL
 
         public DbSet<City> Cities { get; set; }
 
-    }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+        }
+
+        }
+
+      
 
 }
 

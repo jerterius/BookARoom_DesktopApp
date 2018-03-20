@@ -16,6 +16,7 @@ namespace BookARoom.Models
         public string Title { get; set; }
         public string CAdress { get; set; }
         [Key]
+        [Required]
         public string CEmail { get; set; }
         [Required]
         public string Password { get; set; }

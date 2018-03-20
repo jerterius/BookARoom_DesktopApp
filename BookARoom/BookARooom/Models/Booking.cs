@@ -18,7 +18,7 @@ namespace BookARoom.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid BookingNumber { get; set; }
+        public Int64 BookingNumber { get; set; }
 
         [Index("IX_DateRoom", 1, IsUnique = true)]
         public DateTime Date { get; set; }
