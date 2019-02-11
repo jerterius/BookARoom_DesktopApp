@@ -1,4 +1,35 @@
-﻿
+﻿/*INSTRUCTIONS:
+
+This testdata clears the whole databse and inserts new fresh data.
+
+1. Select database in the drop-down list in your top left corner (SQL Server Management Studio)
+2. Execute
+3. Enjoy!
+
+*/
+
+delete from Bookings
+delete from Rooms
+delete from Hotels
+delete from Cities
+delete from Customers
+
+
+/***** INDEX *****
+Customers
+Cities
+Hotels
+Rooms
+Bookings
+*/
+
+--Customers
+--CEmail: string, CPhoneNumber: string, CName: string, Title: string, CAdress: string, Password: string
+insert into Customers (CEmail, CPhoneNumber, CName, Title, CAdress, Password) values ('tester@testmail.com',' 012 - 34 56 78', 'tester testerson', 'Mr.', 'Testvägen 1', 'test')
+insert into Customers (CEmail, CPhoneNumber, CName, Title, CAdress, Password) values ('joe@testmail.com',' 012 - 90 12 34', 'joe', 'Mr.', 'Somestreet 33', 'joe')
+insert into Customers (CEmail, CPhoneNumber, CName, Title, CAdress, Password) values ('johanna@testmail.com',' 023 - 45 67 89', 'johanna', 'Mrs.', 'Berlinerstraße 66, Berlin', 'test')
+insert into Customers (CEmail, CPhoneNumber, CName, Title, CAdress, Password) values ('johannesjohansson@testmail.com',' 0345 - 678 90 12', 'johannes johansson', 'Dr.', 'Bersärkagången 10, Lund', 'johannes')
+insert into Customers (CEmail, CPhoneNumber, CName, Title, CAdress, Password) values ('apu_nahasapeemapetilu@testmail.com',' 0345 - 67 89 101', 'apu nahasapeemapetilu', 'Mr.', 'Maharadjinga Road 43, Calcutta', 'apu')
 
 --Cities
 --CityName: string, CountryName: string
@@ -8,12 +39,13 @@ insert into Cities (CityName, CountryName) values ('Brest', 'France')
 insert into Cities (CityName, CountryName) values ('Brest', 'Belarus')
 insert into Cities (CityName, CountryName) values ('Ystad', 'Sweden')
 insert into Cities (CityName, CountryName) values ('Halmstad', 'Sweden')
+insert into Cities (CityName, CountryName) values ('Stockholm', 'Sweden')
 
 --Hotels
 -- CityName: string, CityName: string, Countryname: string, Adress: string, Name: string, Standard: string, PhoneNumber: string 
-insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Halmstad','Sverige','Rådhusgatan 4','Scandic Hallandia','3','+46 35-295 86 00')
-insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Halmstad','Sverige','Stationsgatan 44','BEST WESTERN PLUS Grand Hotel','4','+46 35-280 81 00')
-insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Halmstad','Sverige','Kungsgatan 5','Hotel Continental','4','+46 35-17 63 00')
+insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Halmstad','Sweden','Rådhusgatan 4','Scandic Hallandia','3','+46 35-295 86 00')
+insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Halmstad','Sweden','Stationsgatan 44','BEST WESTERN PLUS Grand Hotel','4','+46 35-280 81 00')
+insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Halmstad','Sweden','Kungsgatan 5','Hotel Continental','4','+46 35-17 63 00')
 
 insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Brest','Belarus','Ulitsa Chkalova 7','Hermitage Hotel ','4','+375 162 27-60-00')
 insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Brest','France','17 Avenue Georges Clemenceau','Hôtel Vauban','3','+33 2 98 46 06 88')
@@ -34,7 +66,8 @@ insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) 
 insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Stockholm','Sweden','Tegnérlunden 8','Hotel Micro','2','+46 8-545 455 69')
 insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Stockholm','Sweden','111 28 Stockholm','Mälardrottningen Yacht Hotel','3','+46 8-120 902 00')
 insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Stockholm','Sweden','Kungsgatan 70','Grand Central by Scandic','4','+46 8-512 520 00')
-
+insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Stockholm','Sweden','Götgatan 2','Scandic','4','+46 8-512 520 00')
+insert into Hotels (CityName, Countryname, Adress, Name, Standard, PhoneNumber) values ('Stockholm','Sweden','Sveavägen 4','Grand Hotel','5','08-454545')
 
 --Rooms
 -- Adress: string, RoomNumber: string, Bed: string, SmokeFree: bit(1/0), Price: int, GuestCapacity: int
@@ -1568,3 +1601,21 @@ insert into Rooms (Adress, RoomNumber, Bed, SmokeFree, Price, GuestCapacity) val
 insert into Rooms (Adress, RoomNumber, Bed, SmokeFree, Price, GuestCapacity) values ('Ulitsa Chkalova 7', '97', 'Double', 1, 1940, 1)
 insert into Rooms (Adress, RoomNumber, Bed, SmokeFree, Price, GuestCapacity) values ('Ulitsa Chkalova 7', '98', 'Queensize', 1, 1960, 2)
 insert into Rooms (Adress, RoomNumber, Bed, SmokeFree, Price, GuestCapacity) values ('Ulitsa Chkalova 7', '99', 'Kingsize', 0, 1980, 3)
+
+--Bookings
+--Adress: string, Room: string, Date: datetime, CEmail: string, BookingNumber: bigint
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Tulegatan 8', '67', '2018-03-23 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Tulegatan 8', '67', '2018-03-24 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Tulegatan 8', '67', '2018-03-25 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Tulegatan 8', '67', '2018-03-26 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Saltsjöbadsvägen 15', '79', '2018-03-27 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Saltsjöbadsvägen 15', '79', '2018-03-28 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Saltsjöbadsvägen 15', '79', '2018-03-29 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Saltsjöbadsvägen 15', '79', '2018-03-30 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Saltsjöbadsvägen 15', '79', '2018-03-31 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Saltsjöbadsvägen 15', '79', '2018-04-01 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Saltsjöbadsvägen 15', '79', '2018-04-02 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Lübecker Str. 109', '15', '2018-04-15 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Lübecker Str. 109', '15', '2018-04-16 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Lübecker Str. 109', '15', '2018-04-17 00:00:00.000', 'tester@testmail.com')
+insert into Bookings (Adress, RoomNumber, Date, CEmail) values ('Lübecker Str. 109', '15', '2018-04-18 00:00:00.000', 'tester@testmail.com')
